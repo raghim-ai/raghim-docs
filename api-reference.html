@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - RaghimAI Enterprise RAG System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
+    <meta name="description" content="Complete API reference for RaghimAI Enterprise RAG System - authentication, documents, chat, and live chat endpoints">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
+                    <span class="brand-text">RaghimAI Enterprise</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="deployment-guide.html" class="nav-link">Deployment</a>
+                    <a href="api-reference.html" class="nav-link active">API Reference</a>
+                    <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
+                    <a href="security-guide.html" class="nav-link">Security</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>API Reference</h1>
+                <p class="page-subtitle">Complete API documentation for RaghimAI Enterprise RAG System</p>
+            </div>
+
+            <div class="content-grid">
+                <nav class="sidebar">
+                    <h3>API Endpoints</h3>
+                    <ul class="toc">
+                        <li><a href="#authentication">Authentication</a></li>
+                        <li><a href="#documents">Document Management</a></li>
+                        <li><a href="#chat">Chat & AI</a></li>
+                        <li><a href="#live-chat">Live Chat</a></li>
+                        <li><a href="#banking">Banking Integration</a></li>
+                        <li><a href="#admin">Admin Functions</a></li>
+                        <li><a href="#analytics">Analytics</a></li>
+                        <li><a href="#widgets">Widgets</a></li>
+                    </ul>
+                </nav>
+
+                <div class="content">
+                    <section id="authentication">
+                        <h2>Authentication</h2>
+                        <p>All API endpoints require authentication except for login and registration.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/auth/login</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Authenticate user and receive JWT token</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "username": "string",
+  "password": "string"
+}</code></pre>
+                                    </div>
+                                    <h4>Response:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "access_token": "string",
+  "token_type": "bearer",
+  "user": {
+    "id": 1,
+    "username": "string",
+    "email": "string",
+    "tier": "FREE"
+  }
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/auth/register</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Register new user account</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "username": "string",
+  "email": "string",
+  "password": "string",
+  "full_name": "string"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/auth/me</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Get current user information</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Headers:</h4>
+                                    <div class="code-block">
+                                        <pre><code>Authorization: Bearer &lt;token&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="documents">
+                        <h2>Document Management</h2>
+                        <p>Upload, process, and manage documents in collections.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/documents/upload</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Upload documents for processing</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request:</h4>
+                                    <div class="code-block">
+                                        <pre><code>Content-Type: multipart/form-data
+
+FormData:
+- files: File[]
+- collection_name: string (optional)
+- chunk_strategy: string (optional)</code></pre>
+                                    </div>
+                                    <h4>Response:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "task_id": "string",
+  "status": "processing",
+  "message": "Documents uploaded successfully"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/documents/collections</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>List all document collections</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Response:</h4>
+                                    <div class="code-block">
+                                        <pre><code>[
+  {
+    "id": 1,
+    "name": "string",
+    "description": "string",
+    "document_count": 10,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+]</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/documents/search</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Search documents using vector similarity</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "query": "string",
+  "collection_name": "string",
+  "limit": 10,
+  "threshold": 0.7
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="chat">
+                        <h2>Chat & AI</h2>
+                        <p>Interact with AI models for question-answering and document analysis.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/chat</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Send message to AI chat interface</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "message": "string",
+  "prompt_id": "string (optional)",
+  "collection_name": "string (optional)",
+  "stream": true
+}</code></pre>
+                                    </div>
+                                    <h4>Response (Streaming):</h4>
+                                    <div class="code-block">
+                                        <pre><code>data: {"type": "content", "content": "partial response"}
+data: {"type": "sources", "sources": [...]}
+data: {"type": "done", "message": "complete"}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/chat/history</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Get chat conversation history</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Query Parameters:</h4>
+                                    <div class="code-block">
+                                        <pre><code>?conversation_id=string&limit=50</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="live-chat">
+                        <h2>Live Chat System</h2>
+                        <p>Real-time chat with agent handoff capabilities.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/live-chat/handoff</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Request handoff to human agent</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "conversation_id": "string",
+  "reason": "string",
+  "severity": "low|medium|high|critical"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/live-chat/sessions</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Get active chat sessions</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Response:</h4>
+                                    <div class="code-block">
+                                        <pre><code>[
+  {
+    "conversation_id": "string",
+    "status": "active|queued|handoff_requested",
+    "user_id": 1,
+    "created_at": "2024-01-01T00:00:00Z"
+  }
+]</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/live-chat/accept</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Accept handoff request</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "conversation_id": "string"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="banking">
+                        <h2>Banking Integration</h2>
+                        <p>Specialized endpoints for financial document processing.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/banking/process</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Process banking documents with encryption</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "query": "string",
+  "document_type": "statement|transaction|report",
+  "encryption_key": "string (optional)"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/banking/upload</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Upload encrypted banking documents</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request:</h4>
+                                    <div class="code-block">
+                                        <pre><code>Content-Type: multipart/form-data
+
+FormData:
+- files: File[]
+- encryption_key: string
+- document_type: string</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="admin">
+                        <h2>Admin Functions</h2>
+                        <p>Administrative endpoints for system management.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/admin/users</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>List all users (admin only)</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/admin/users</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Create new user (admin only)</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/admin/metrics</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Get system metrics and statistics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="analytics">
+                        <h2>Analytics</h2>
+                        <p>Analytics and reporting endpoints.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/analytics/usage</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Get usage analytics</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/analytics/conversations</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Get conversation analytics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="widgets">
+                        <h2>Widgets</h2>
+                        <p>Widget management and embedding endpoints.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/widgets/create</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Create new chat widget</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4>Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "name": "string",
+  "description": "string",
+  "collection_id": 1,
+  "theme": "light|dark",
+  "position": "bottom-right|bottom-left"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/widgets/embed/{widget_id}</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Get widget embed code</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="error-codes">
+                        <h2>Error Codes</h2>
+                        <div class="error-codes-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Message</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>400</td>
+                                        <td>Bad Request</td>
+                                        <td>Invalid request parameters</td>
+                                    </tr>
+                                    <tr>
+                                        <td>401</td>
+                                        <td>Unauthorized</td>
+                                        <td>Authentication required</td>
+                                    </tr>
+                                    <tr>
+                                        <td>403</td>
+                                        <td>Forbidden</td>
+                                        <td>Insufficient permissions</td>
+                                    </tr>
+                                    <tr>
+                                        <td>404</td>
+                                        <td>Not Found</td>
+                                        <td>Resource not found</td>
+                                    </tr>
+                                    <tr>
+                                        <td>429</td>
+                                        <td>Too Many Requests</td>
+                                        <td>Rate limit exceeded</td>
+                                    </tr>
+                                    <tr>
+                                        <td>500</td>
+                                        <td>Internal Server Error</td>
+                                        <td>Server error occurred</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
+                    <p>RaghimAI Enterprise RAG System</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="deployment-guide.html">Deployment Guide</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Email: contact@raghim.com</li>
+                        <li>Technical Support</li>
+                        <li>Enterprise Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

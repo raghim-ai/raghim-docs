@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting - RaghimAI Enterprise RAG System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
+    <meta name="description" content="Troubleshooting guide for RaghimAI Enterprise RAG System - common issues and solutions">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
+                    <span class="brand-text">RaghimAI Enterprise</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="deployment-guide.html" class="nav-link">Deployment</a>
+                    <a href="api-reference.html" class="nav-link">API Reference</a>
+                    <a href="troubleshooting.html" class="nav-link active">Troubleshooting</a>
+                    <a href="security-guide.html" class="nav-link">Security</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Troubleshooting Guide</h1>
+                <p class="page-subtitle">Common issues and solutions for RaghimAI Enterprise RAG System</p>
+            </div>
+
+            <div class="content-grid">
+                <nav class="sidebar">
+                    <h3>Quick Links</h3>
+                    <ul class="toc">
+                        <li><a href="#connection-issues">Connection Issues</a></li>
+                        <li><a href="#performance-issues">Performance Issues</a></li>
+                        <li><a href="#deployment-issues">Deployment Issues</a></li>
+                        <li><a href="#database-issues">Database Issues</a></li>
+                        <li><a href="#gpu-issues">GPU Issues</a></li>
+                        <li><a href="#authentication-issues">Authentication Issues</a></li>
+                        <li><a href="#diagnostic-tools">Diagnostic Tools</a></li>
+                    </ul>
+                </nav>
+
+                <div class="content">
+                    <section id="connection-issues">
+                        <h2>Connection Issues</h2>
+                        
+                        <div class="troubleshooting-grid">
+                            <div class="issue-card">
+                                <h3>Site Can't Be Reached</h3>
+                                <p><strong>Symptoms:</strong> "This site can't be reached" or "ERR_CONNECTION_REFUSED"</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check if containers are running: <code>docker ps</code></li>
+                                        <li>Verify firewall settings (ports 80, 443)</li>
+                                        <li>Use external IP for VM deployments</li>
+                                        <li>Test from server: <code>curl http://localhost</code></li>
+                                        <li>Check Docker binding: ensure containers bind to 0.0.0.0</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>API Not Responding</h3>
+                                <p><strong>Symptoms:</strong> Backend API returns timeout or connection errors</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check backend container status: <code>docker logs rag-backend</code></li>
+                                        <li>Verify database connections</li>
+                                        <li>Check resource limits (CPU/Memory)</li>
+                                        <li>Restart backend service</li>
+                                        <li>Check network connectivity between containers</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>WebSocket Connection Failed</h3>
+                                <p><strong>Symptoms:</strong> Live chat or real-time features not working</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check WebSocket endpoint: <code>ws://localhost:8000/ws</code></li>
+                                        <li>Verify proxy configuration in Nginx</li>
+                                        <li>Check browser console for WebSocket errors</li>
+                                        <li>Ensure WebSocket support in browser</li>
+                                        <li>Check firewall for WebSocket ports</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="performance-issues">
+                        <h2>Performance Issues</h2>
+                        
+                        <div class="troubleshooting-grid">
+                            <div class="issue-card">
+                                <h3>Slow AI Responses</h3>
+                                <p><strong>Symptoms:</strong> AI responses take 10+ seconds</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Enable GPU acceleration: <code>GPU_ENABLED=true</code></li>
+                                        <li>Check GPU availability: <code>nvidia-smi</code></li>
+                                        <li>Reduce model size or use quantized models</li>
+                                        <li>Increase <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
+                                        <li>Pre-load models: <code>ollama pull model-name</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>High Memory Usage</h3>
+                                <p><strong>Symptoms:</strong> System running out of memory</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Reduce <code>OLLAMA_MAX_LOADED_MODELS</code></li>
+                                        <li>Lower <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
+                                        <li>Use smaller models (3B instead of 7B)</li>
+                                        <li>Increase system RAM</li>
+                                        <li>Enable memory cleanup: <code>./scripts/health_check.sh</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>Slow Document Processing</h3>
+                                <p><strong>Symptoms:</strong> Document upload and processing takes too long</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check ChromaDB container status</li>
+                                        <li>Verify embedding model is loaded</li>
+                                        <li>Use faster embedding models</li>
+                                        <li>Check disk I/O performance</li>
+                                        <li>Optimize chunking strategy</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="deployment-issues">
+                        <h2>Deployment Issues</h2>
+                        
+                        <div class="troubleshooting-grid">
+                            <div class="issue-card">
+                                <h3>Docker Compose Fails</h3>
+                                <p><strong>Symptoms:</strong> Containers fail to start or exit immediately</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check Docker version: <code>docker --version</code></li>
+                                        <li>Verify Docker Compose version: <code>docker-compose --version</code></li>
+                                        <li>Check available disk space</li>
+                                        <li>Review container logs: <code>docker-compose logs</code></li>
+                                        <li>Check port conflicts</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>Image Loading Failed</h3>
+                                <p><strong>Symptoms:</strong> Docker images fail to load from tar.gz files</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Verify tar.gz file integrity</li>
+                                        <li>Check available disk space</li>
+                                        <li>Use <code>docker load -i image.tar.gz</code> manually</li>
+                                        <li>Check Docker daemon status</li>
+                                        <li>Restart Docker service if needed</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>Environment Configuration</h3>
+                                <p><strong>Symptoms:</strong> Services start but behave unexpectedly</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check .env file syntax</li>
+                                        <li>Verify all required variables are set</li>
+                                        <li>Check variable values and formats</li>
+                                        <li>Use interactive installer for proper setup</li>
+                                        <li>Review environment variable documentation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="database-issues">
+                        <h2>Database Issues</h2>
+                        
+                        <div class="troubleshooting-grid">
+                            <div class="issue-card">
+                                <h3>PostgreSQL Connection Failed</h3>
+                                <p><strong>Symptoms:</strong> Database connection errors in logs</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check PostgreSQL container: <code>docker logs rag-postgres</code></li>
+                                        <li>Verify database credentials in .env</li>
+                                        <li>Check database initialization</li>
+                                        <li>Verify network connectivity</li>
+                                        <li>Check database disk space</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>Redis Connection Issues</h3>
+                                <p><strong>Symptoms:</strong> Cache operations failing</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check Redis container: <code>docker logs rag-redis</code></li>
+                                        <li>Verify Redis password configuration</li>
+                                        <li>Check Redis memory usage</li>
+                                        <li>Restart Redis container</li>
+                                        <li>Check Redis persistence settings</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>ChromaDB Issues</h3>
+                                <p><strong>Symptoms:</strong> Vector search not working</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check ChromaDB container: <code>docker logs rag-chroma</code></li>
+                                        <li>Verify ChromaDB API endpoint</li>
+                                        <li>Check collection initialization</li>
+                                        <li>Verify embedding model compatibility</li>
+                                        <li>Check ChromaDB disk space</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="gpu-issues">
+                        <h2>GPU Issues</h2>
+                        
+                        <div class="troubleshooting-grid">
+                            <div class="issue-card">
+                                <h3>GPU Not Detected</h3>
+                                <p><strong>Symptoms:</strong> System falls back to CPU processing</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Install NVIDIA Docker runtime</li>
+                                        <li>Check GPU availability: <code>nvidia-smi</code></li>
+                                        <li>Verify CUDA installation</li>
+                                        <li>Set <code>GPU_ENABLED=true</code> in .env</li>
+                                        <li>Check Docker GPU support: <code>docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>GPU Memory Issues</h3>
+                                <p><strong>Symptoms:</strong> CUDA out of memory errors</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Reduce <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
+                                        <li>Use smaller models</li>
+                                        <li>Reduce <code>OLLAMA_MAX_LOADED_MODELS</code></li>
+                                        <li>Check GPU memory usage: <code>nvidia-smi</code></li>
+                                        <li>Restart containers to clear GPU memory</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>External GPU Connection</h3>
+                                <p><strong>Symptoms:</strong> External GPU Ollama not accessible</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check SSH tunnel status</li>
+                                        <li>Verify external GPU endpoint</li>
+                                        <li>Test connection: <code>curl http://external-gpu:11434/api/tags</code></li>
+                                        <li>Check firewall settings</li>
+                                        <li>Verify Ollama is running on external GPU</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="authentication-issues">
+                        <h2>Authentication Issues</h2>
+                        
+                        <div class="troubleshooting-grid">
+                            <div class="issue-card">
+                                <h3>Login Failed</h3>
+                                <p><strong>Symptoms:</strong> Cannot log in with valid credentials</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check user account status in database</li>
+                                        <li>Verify password hashing</li>
+                                        <li>Check JWT secret configuration</li>
+                                        <li>Review authentication logs</li>
+                                        <li>Reset user password if needed</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>Token Expired</h3>
+                                <p><strong>Symptoms:</strong> "Token expired" errors</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check JWT expiration settings</li>
+                                        <li>Refresh token or re-login</li>
+                                        <li>Verify system clock synchronization</li>
+                                        <li>Check JWT secret key consistency</li>
+                                        <li>Review token refresh logic</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="issue-card">
+                                <h3>Permission Denied</h3>
+                                <p><strong>Symptoms:</strong> Access denied for valid users</p>
+                                <div class="solution">
+                                    <h4>Solutions:</h4>
+                                    <ul>
+                                        <li>Check user role and permissions</li>
+                                        <li>Verify organization membership</li>
+                                        <li>Check resource access policies</li>
+                                        <li>Review RBAC configuration</li>
+                                        <li>Update user permissions if needed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="diagnostic-tools">
+                        <h2>Diagnostic Tools</h2>
+                        <p>Use these built-in tools to diagnose and resolve issues:</p>
+
+                        <div class="verification-steps">
+                            <div class="verification-step">
+                                <h3>Health Check Script</h3>
+                                <div class="code-block">
+                                    <pre><code># Run comprehensive health check
+./scripts/health_check.sh</code></pre>
+                                </div>
+                                <p>Checks all services, endpoints, and provides status information.</p>
+                            </div>
+
+                            <div class="verification-step">
+                                <h3>Quick Health Check</h3>
+                                <div class="code-block">
+                                    <pre><code># Quick system status
+./scripts/quick_health_check.sh</code></pre>
+                                </div>
+                                <p>Fast check of critical services and endpoints.</p>
+                            </div>
+
+                            <div class="verification-step">
+                                <h3>Database Diagnostic</h3>
+                                <div class="code-block">
+                                    <pre><code># Database-specific diagnostics
+./scripts/database_diagnostic.sh</code></pre>
+                                </div>
+                                <p>Comprehensive database health and performance check.</p>
+                            </div>
+
+                            <div class="verification-step">
+                                <h3>Comprehensive Diagnostic</h3>
+                                <div class="code-block">
+                                    <pre><code># Full system diagnostic
+./scripts/comprehensive_diagnostic.sh</code></pre>
+                                </div>
+                                <p>Complete system analysis including logs, resources, and configuration.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <strong>Tip:</strong> Run diagnostic tools regularly to identify potential issues before they become problems. All tools provide detailed output and recommendations for resolution.
+                        </div>
+                    </section>
+
+                    <section id="getting-help">
+                        <h2>Getting Additional Help</h2>
+                        <p>If you're still experiencing issues after trying the solutions above:</p>
+
+                        <div class="support-options">
+                            <div class="support-card">
+                                <h3>Enterprise Support</h3>
+                                <p>For Enterprise customers with active support contracts:</p>
+                                <ul>
+                                    <li>Email: contact@raghim.com</li>
+                                    <li>Priority technical support</li>
+                                    <li>Direct access to engineering team</li>
+                                    <li>Custom solutions and configurations</li>
+                                </ul>
+                            </div>
+
+                            <div class="support-card">
+                                <h3>Documentation Resources</h3>
+                                <p>Additional resources for troubleshooting:</p>
+                                <ul>
+                                    <li><a href="deployment-guide.html">Deployment Guide</a></li>
+                                    <li><a href="api-reference.html">API Reference</a></li>
+                                    <li><a href="security-guide.html">Security Guide</a></li>
+                                    <li>Error code reference</li>
+                                </ul>
+                            </div>
+
+                            <div class="support-card">
+                                <h3>Community Support</h3>
+                                <p>For general questions and community help:</p>
+                                <ul>
+                                    <li>GitHub Issues (for documentation)</li>
+                                    <li>Enterprise user community</li>
+                                    <li>Best practices sharing</li>
+                                    <li>Feature requests</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
+                    <p>RaghimAI Enterprise RAG System</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="deployment-guide.html">Deployment Guide</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Email: contact@raghim.com</li>
+                        <li>Technical Support</li>
+                        <li>Enterprise Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
