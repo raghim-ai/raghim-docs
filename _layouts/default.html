@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="home-content">
+    <img src="{{ '/assets/images/logo192.png' | relative_url }}" alt="{{ site.title }}" class="home-logo">
+    {{ content }}
+  </div>
+</div>
+
+<style>
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.home-content {
+  text-align: center;
+}
+
+.home-logo {
+  height: 64px;
+  width: 64px;
+  margin-bottom: 2rem;
+}
+
+.home h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.home h2 {
+  color: #34495e;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.home ul {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home li {
+  margin-bottom: 0.5rem;
+}
+
+.home a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.home a:hover {
+  text-decoration: underline;
+}
+
+.home p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.home .feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.home .feature-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.home .feature-item strong {
+  color: #2c3e50;
+}
+</style>
