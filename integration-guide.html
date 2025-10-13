@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Guide - RaghimAI Enterprise RAG System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
+    <link rel="apple-touch-icon" href="assets/images/logo192.png">
+    <meta name="description" content="Integration guide for RaghimAI Enterprise RAG System - API integration and embedding">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
+                    <span class="brand-text">RaghimAI Enterprise</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="deployment-guide-secure.html" class="nav-link">Deployment</a>
+                    <a href="integration-guide.html" class="nav-link active">Integration</a>
+                    <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
+                    <a href="security-guide.html" class="nav-link">Security</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Integration Guide</h1>
+                <p class="page-subtitle">Complete integration guide for RaghimAI Enterprise RAG System</p>
+            </div>
+
+            <div class="content-grid">
+                <nav class="sidebar">
+                    <h3>Integration Topics</h3>
+                    <ul class="toc">
+                        <li><a href="#api-integration">API Integration</a></li>
+                        <li><a href="#widget-embedding">Widget Embedding</a></li>
+                        <li><a href="#webhook-integration">Webhook Integration</a></li>
+                        <li><a href="#authentication">Authentication</a></li>
+                        <li><a href="#examples">Code Examples</a></li>
+                    </ul>
+                </nav>
+
+                <div class="content">
+                    <section id="api-integration">
+                        <h2>API Integration</h2>
+                        <p>Integrate RaghimAI Enterprise RAG System with your existing applications using our comprehensive REST API.</p>
+
+                        <div class="integration-section">
+                            <h3>Base URL</h3>
+                            <div class="code-block">
+                                <pre><code>https://your-domain.com/api</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Authentication</h3>
+                            <p>All API requests require authentication using JWT tokens.</p>
+                            <div class="code-block">
+                                <pre><code>Authorization: Bearer YOUR_JWT_TOKEN</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Common Endpoints</h3>
+                            <div class="api-categories">
+                                <div class="api-category">
+                                    <h4>Document Management</h4>
+                                    <p>Upload and manage documents</p>
+                                </div>
+                                <div class="api-category">
+                                    <h4>AI Processing</h4>
+                                    <p>Send queries and get AI responses</p>
+                                </div>
+                                <div class="api-category">
+                                    <h4>User Management</h4>
+                                    <p>Manage users and permissions</p>
+                                </div>
+                                <div class="api-category">
+                                    <h4>Analytics</h4>
+                                    <p>Access usage and performance data</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="widget-embedding">
+                        <h2>Widget Embedding</h2>
+                        <p>Embed RaghimAI chat widgets directly into your existing applications.</p>
+
+                        <div class="integration-section">
+                            <h3>Basic Widget Embedding</h3>
+                            <div class="code-block">
+                                <pre><code>&lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  RaghimAI.init({
+    apiUrl: 'https://your-domain.com/api',
+    widgetId: 'your-widget-id'
+  });
+&lt;/script&gt;</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Custom Styling</h3>
+                            <div class="code-block">
+                                <pre><code>&lt;script&gt;
+  RaghimAI.init({
+    apiUrl: 'https://your-domain.com/api',
+    widgetId: 'your-widget-id',
+    theme: 'dark',
+    position: 'bottom-right',
+    customCSS: {
+      primaryColor: '#2563eb',
+      borderRadius: '8px'
+    }
+  });
+&lt;/script&gt;</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="webhook-integration">
+                        <h2>Webhook Integration</h2>
+                        <p>Receive real-time notifications about system events.</p>
+
+                        <div class="integration-section">
+                            <h3>Webhook Configuration</h3>
+                            <div class="code-block">
+                                <pre><code>POST /api/webhooks/configure
+{
+  "url": "https://your-app.com/webhook",
+  "events": ["document.processed", "user.created"],
+  "secret": "your-webhook-secret"
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Event Types</h3>
+                            <ul>
+                                <li><strong>document.processed</strong> - Document processing completed</li>
+                                <li><strong>user.created</strong> - New user registered</li>
+                                <li><strong>query.processed</strong> - AI query completed</li>
+                                <li><strong>error.occurred</strong> - System error occurred</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="authentication">
+                        <h2>Authentication</h2>
+                        <p>Secure authentication methods for API access.</p>
+
+                        <div class="integration-section">
+                            <h3>JWT Token Authentication</h3>
+                            <div class="code-block">
+                                <pre><code># Login to get token
+curl -X POST https://your-domain.com/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username": "your-username", "password": "your-password"}'
+
+# Use token in subsequent requests
+curl -X GET https://your-domain.com/api/documents \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>API Key Authentication</h3>
+                            <div class="code-block">
+                                <pre><code>curl -X GET https://your-domain.com/api/documents \
+  -H "X-API-Key: YOUR_API_KEY"</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="examples">
+                        <h2>Code Examples</h2>
+                        <p>Practical examples for common integration scenarios.</p>
+
+                        <div class="integration-section">
+                            <h3>JavaScript Integration</h3>
+                            <div class="code-block">
+                                <pre><code>// Initialize RaghimAI client
+const raghimAI = new RaghimAIClient({
+  apiUrl: 'https://your-domain.com/api',
+  token: 'your-jwt-token'
+});
+
+// Upload document
+const uploadResult = await raghimAI.documents.upload(file);
+
+// Send query
+const response = await raghimAI.chat.send({
+  message: 'What is this document about?',
+  collectionId: uploadResult.collectionId
+});</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Python Integration</h3>
+                            <div class="code-block">
+                                <pre><code>import requests
+
+# Initialize client
+api_url = 'https://your-domain.com/api'
+headers = {'Authorization': 'Bearer your-jwt-token'}
+
+# Upload document
+with open('document.pdf', 'rb') as f:
+    files = {'file': f}
+    response = requests.post(f'{api_url}/documents/upload', 
+                           files=files, headers=headers)
+
+# Send query
+query_data = {
+    'message': 'Summarize this document',
+    'collection_id': response.json()['collectionId']
+}
+response = requests.post(f'{api_url}/chat', 
+                        json=query_data, headers=headers)</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
+                    <p>RaghimAI Enterprise RAG System</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="deployment-guide-secure.html">Deployment Guide</a></li>
+                        <li><a href="integration-guide.html">Integration Guide</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Email: contact@raghim.com</li>
+                        <li>Technical Support</li>
+                        <li>Enterprise Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

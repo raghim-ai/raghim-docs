@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Guide - RaghimAI Enterprise RAG System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
+    <link rel="apple-touch-icon" href="assets/images/logo192.png">
+    <meta name="description" content="Security guide for RaghimAI Enterprise RAG System - authentication, encryption, and compliance">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
+                    <span class="brand-text">RaghimAI Enterprise</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="deployment-guide-secure.html" class="nav-link">Deployment</a>
+                    <a href="integration-guide.html" class="nav-link">Integration</a>
+                    <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
+                    <a href="security-guide.html" class="nav-link active">Security</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Security Guide</h1>
+                <p class="page-subtitle">Comprehensive security guide for RaghimAI Enterprise RAG System</p>
+            </div>
+
+            <div class="content-grid">
+                <nav class="sidebar">
+                    <h3>Security Topics</h3>
+                    <ul class="toc">
+                        <li><a href="#authentication">Authentication</a></li>
+                        <li><a href="#authorization">Authorization</a></li>
+                        <li><a href="#encryption">Data Encryption</a></li>
+                        <li><a href="#network-security">Network Security</a></li>
+                        <li><a href="#audit-logging">Audit Logging</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                    </ul>
+                </nav>
+
+                <div class="content">
+                    <section id="authentication">
+                        <h2>Authentication</h2>
+                        <p>Secure authentication mechanisms to protect access to your RaghimAI Enterprise system.</p>
+
+                        <div class="security-grid">
+                            <div class="security-card">
+                                <h3>JWT Token Authentication</h3>
+                                <ul>
+                                    <li>Secure token-based authentication</li>
+                                    <li>Configurable token expiration</li>
+                                    <li>Refresh token support</li>
+                                    <li>Token revocation capabilities</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Multi-Factor Authentication</h3>
+                                <ul>
+                                    <li>TOTP-based MFA support</li>
+                                    <li>SMS verification options</li>
+                                    <li>Email-based authentication</li>
+                                    <li>Hardware token compatibility</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Single Sign-On (SSO)</h3>
+                                <ul>
+                                    <li>SAML 2.0 integration</li>
+                                    <li>OAuth 2.0 support</li>
+                                    <li>LDAP/Active Directory</li>
+                                    <li>Custom SSO providers</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Session Management</h3>
+                                <ul>
+                                    <li>Secure session handling</li>
+                                    <li>Automatic session timeout</li>
+                                    <li>Concurrent session limits</li>
+                                    <li>Session invalidation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="authorization">
+                        <h2>Authorization</h2>
+                        <p>Role-based access control and permission management.</p>
+
+                        <div class="integration-section">
+                            <h3>Role-Based Access Control (RBAC)</h3>
+                            <div class="code-block">
+                                <pre><code># User roles
+- Admin: Full system access
+- Manager: Organization management
+- User: Standard user access
+- Viewer: Read-only access
+
+# Resource permissions
+- documents:read, write, delete
+- users:read, write, delete
+- analytics:read
+- settings:read, write</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Organization-Level Permissions</h3>
+                            <ul>
+                                <li><strong>Organization Admin:</strong> Full organization control</li>
+                                <li><strong>Department Manager:</strong> Department-level access</li>
+                                <li><strong>Team Lead:</strong> Team management</li>
+                                <li><strong>Member:</strong> Basic user access</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="encryption">
+                        <h2>Data Encryption</h2>
+                        <p>Comprehensive encryption for data protection at rest and in transit.</p>
+
+                        <div class="security-grid">
+                            <div class="security-card">
+                                <h3>Data at Rest</h3>
+                                <ul>
+                                    <li>AES-256 encryption for databases</li>
+                                    <li>Encrypted file storage</li>
+                                    <li>Secure key management</li>
+                                    <li>Hardware security modules</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Data in Transit</h3>
+                                <ul>
+                                    <li>TLS 1.3 encryption</li>
+                                    <li>HTTPS enforcement</li>
+                                    <li>Certificate pinning</li>
+                                    <li>Secure API communication</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Client-Side Encryption</h3>
+                                <ul>
+                                    <li>Browser-based encryption</li>
+                                    <li>End-to-end encryption</li>
+                                    <li>Zero-knowledge architecture</li>
+                                    <li>Client key management</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Key Management</h3>
+                                <ul>
+                                    <li>Automated key rotation</li>
+                                    <li>Secure key storage</li>
+                                    <li>Key escrow services</li>
+                                    <li>Backup key recovery</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="network-security">
+                        <h2>Network Security</h2>
+                        <p>Network-level security controls and protection mechanisms.</p>
+
+                        <div class="integration-section">
+                            <h3>Firewall Configuration</h3>
+                            <div class="code-block">
+                                <pre><code># Recommended firewall rules
+- Allow HTTPS (443) from trusted networks
+- Allow SSH (22) from admin IPs only
+- Block all other incoming traffic
+- Enable DDoS protection</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>IP Access Controls</h3>
+                            <ul>
+                                <li><strong>IP Whitelisting:</strong> Restrict access to specific IP ranges</li>
+                                <li><strong>Geographic Restrictions:</strong> Block access from certain countries</li>
+                                <li><strong>VPN Detection:</strong> Detect and block VPN traffic</li>
+                                <li><strong>Rate Limiting:</strong> Prevent abuse and DDoS attacks</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>CORS Configuration</h3>
+                            <div class="code-block">
+                                <pre><code># Secure CORS settings
+Access-Control-Allow-Origin: https://yourdomain.com
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+Access-Control-Allow-Headers: Authorization, Content-Type
+Access-Control-Max-Age: 86400</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="audit-logging">
+                        <h2>Audit Logging</h2>
+                        <p>Comprehensive logging and monitoring for security compliance.</p>
+
+                        <div class="security-grid">
+                            <div class="security-card">
+                                <h3>Security Events</h3>
+                                <ul>
+                                    <li>Login attempts and failures</li>
+                                    <li>Permission changes</li>
+                                    <li>Data access events</li>
+                                    <li>System configuration changes</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>User Activity</h3>
+                                <ul>
+                                    <li>Document uploads and downloads</li>
+                                    <li>Query and search activities</li>
+                                    <li>User management actions</li>
+                                    <li>API usage patterns</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>System Events</h3>
+                                <ul>
+                                    <li>System startup and shutdown</li>
+                                    <li>Error and exception logs</li>
+                                    <li>Performance metrics</li>
+                                    <li>Resource utilization</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Compliance Reporting</h3>
+                                <ul>
+                                    <li>Automated compliance reports</li>
+                                    <li>Data retention tracking</li>
+                                    <li>Access audit trails</li>
+                                    <li>Regulatory compliance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="compliance">
+                        <h2>Compliance</h2>
+                        <p>Meet regulatory requirements and industry standards.</p>
+
+                        <div class="integration-section">
+                            <h3>Data Protection Regulations</h3>
+                            <ul>
+                                <li><strong>GDPR:</strong> European data protection compliance</li>
+                                <li><strong>CCPA:</strong> California consumer privacy</li>
+                                <li><strong>HIPAA:</strong> Healthcare data protection</li>
+                                <li><strong>SOX:</strong> Financial reporting compliance</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Security Standards</h3>
+                            <ul>
+                                <li><strong>ISO 27001:</strong> Information security management</li>
+                                <li><strong>SOC 2:</strong> Service organization controls</li>
+                                <li><strong>PCI DSS:</strong> Payment card industry standards</li>
+                                <li><strong>NIST:</strong> Cybersecurity framework</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Data Retention Policies</h3>
+                            <div class="code-block">
+                                <pre><code># Configurable retention periods
+- User data: 7 years
+- Audit logs: 3 years
+- Document data: Per organization policy
+- Temporary files: 30 days</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
+                    <p>RaghimAI Enterprise RAG System</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="deployment-guide-secure.html">Deployment Guide</a></li>
+                        <li><a href="integration-guide.html">Integration Guide</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Email: contact@raghim.com</li>
+                        <li>Technical Support</li>
+                        <li>Enterprise Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

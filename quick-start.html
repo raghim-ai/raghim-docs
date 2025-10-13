@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start Guide - RaghimAI Enterprise RAG System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
+    <link rel="apple-touch-icon" href="assets/images/logo192.png">
+    <meta name="description" content="Quick start guide for RaghimAI Enterprise RAG System - get up and running in minutes">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
+                    <span class="brand-text">RaghimAI Enterprise</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="deployment-guide-secure.html" class="nav-link">Deployment</a>
+                    <a href="integration-guide.html" class="nav-link">Integration</a>
+                    <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
+                    <a href="security-guide.html" class="nav-link">Security</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Quick Start Guide</h1>
+                <p class="page-subtitle">Get RaghimAI Enterprise RAG System up and running in minutes</p>
+            </div>
+
+            <div class="content-grid">
+                <nav class="sidebar">
+                    <h3>Quick Start Steps</h3>
+                    <ul class="toc">
+                        <li><a href="#prerequisites">Prerequisites</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#configuration">Configuration</a></li>
+                        <li><a href="#first-steps">First Steps</a></li>
+                        <li><a href="#next-steps">Next Steps</a></li>
+                    </ul>
+                </nav>
+
+                <div class="content">
+                    <section id="prerequisites">
+                        <h2>Prerequisites</h2>
+                        <p>Ensure your system meets the minimum requirements before installation.</p>
+
+                        <div class="prerequisites-grid">
+                            <div class="prereq-card">
+                                <h3>System Requirements</h3>
+                                <ul>
+                                    <li><strong>OS:</strong> Linux (Ubuntu 18.04+, CentOS 7+)</li>
+                                    <li><strong>RAM:</strong> 8GB minimum</li>
+                                    <li><strong>Storage:</strong> 20GB+ free space</li>
+                                    <li><strong>CPU:</strong> 4 cores minimum</li>
+                                </ul>
+                            </div>
+                            <div class="prereq-card">
+                                <h3>Software Requirements</h3>
+                                <ul>
+                                    <li><strong>Docker:</strong> 20.10+</li>
+                                    <li><strong>Docker Compose:</strong> 2.0+</li>
+                                    <li><strong>Python:</strong> 3.7+</li>
+                                    <li><strong>Git:</strong> Latest version</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="installation">
+                        <h2>Installation</h2>
+                        <p>Deploy RaghimAI Enterprise using the offline package.</p>
+
+                        <div class="deployment-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Download Package</h3>
+                                    <p>Download the offline enterprise package from your RaghimAI representative.</p>
+                                    <div class="code-block">
+                                        <pre><code># Extract the package
+tar -xzf rag-enterprise-1.0.26-offline.tar.gz
+cd rag-enterprise-1.0.26-offline</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Run Installer</h3>
+                                    <p>Execute the interactive installer for guided setup.</p>
+                                    <div class="code-block">
+                                        <pre><code># Launch interactive installer
+./INSTALL.sh</code></pre>
+                                    </div>
+                                    <div class="info-box">
+                                        <strong>Note:</strong> The installer will guide you through license acceptance and configuration.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Verify Installation</h3>
+                                    <p>Check that all services are running correctly.</p>
+                                    <div class="code-block">
+                                        <pre><code># Run health check
+./scripts/health_check.sh</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="configuration">
+                        <h2>Configuration</h2>
+                        <p>Configure your RaghimAI Enterprise system for your environment.</p>
+
+                        <div class="integration-section">
+                            <h3>Environment Variables</h3>
+                            <div class="code-block">
+                                <pre><code># Essential configuration
+LICENSE_KEY=your-license-key
+JWT_SECRET_KEY=your-secret-key
+DATABASE_PASSWORD=secure-password
+CACHE_PASSWORD=secure-password
+
+# Optional configuration
+GPU_ENABLED=true
+FRONTEND_URL=http://localhost
+API_URL=http://localhost:8000</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Admin User Setup</h3>
+                            <div class="code-block">
+                                <pre><code># Create admin user
+curl -X POST http://localhost:8000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "admin",
+    "password": "secure-password",
+    "email": "admin@yourcompany.com",
+    "role": "admin"
+  }'</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="first-steps">
+                        <h2>First Steps</h2>
+                        <p>Start using your RaghimAI Enterprise system.</p>
+
+                        <div class="deployment-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Access the System</h3>
+                                    <p>Open your browser and navigate to the frontend URL.</p>
+                                    <div class="url-list">
+                                        <div class="url-item">
+                                            <strong>Frontend:</strong> <code>http://localhost</code>
+                                        </div>
+                                        <div class="url-item">
+                                            <strong>API:</strong> <code>http://localhost:8000</code>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Login</h3>
+                                    <p>Use your admin credentials to log into the system.</p>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Upload Documents</h3>
+                                    <p>Upload your first documents to start building your knowledge base.</p>
+                                    <ul>
+                                        <li>Supported formats: PDF, DOCX, TXT, MD</li>
+                                        <li>OCR support for scanned documents</li>
+                                        <li>Automatic content extraction</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Test AI Queries</h3>
+                                    <p>Send your first AI query to test the system.</p>
+                                    <div class="code-block">
+                                        <pre><code># Example query
+"What is the main topic of the uploaded documents?"</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="next-steps">
+                        <h2>Next Steps</h2>
+                        <p>Explore advanced features and customization options.</p>
+
+                        <div class="integration-section">
+                            <h3>Advanced Configuration</h3>
+                            <ul>
+                                <li><strong>User Management:</strong> Create users and assign roles</li>
+                                <li><strong>Organization Setup:</strong> Configure organizational structure</li>
+                                <li><strong>Security Settings:</strong> Configure authentication and encryption</li>
+                                <li><strong>API Integration:</strong> Set up API access for applications</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Additional Resources</h3>
+                            <ul>
+                                <li><a href="deployment-guide-secure.html">Deployment Guide</a> - Detailed deployment instructions</li>
+                                <li><a href="integration-guide.html">Integration Guide</a> - API and widget integration</li>
+                                <li><a href="security-guide.html">Security Guide</a> - Security configuration and compliance</li>
+                                <li><a href="troubleshooting.html">Troubleshooting</a> - Common issues and solutions</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Support</h3>
+                            <p>Need help? Contact our support team:</p>
+                            <ul>
+                                <li><strong>Email:</strong> contact@raghim.com</li>
+                                <li><strong>Technical Support:</strong> Available for Enterprise customers</li>
+                                <li><strong>Documentation:</strong> Comprehensive guides and references</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
+                    <p>RaghimAI Enterprise RAG System</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="deployment-guide-secure.html">Deployment Guide</a></li>
+                        <li><a href="integration-guide.html">Integration Guide</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Email: contact@raghim.com</li>
+                        <li>Technical Support</li>
+                        <li>Enterprise Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

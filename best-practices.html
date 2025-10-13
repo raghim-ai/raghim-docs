@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Practices - RaghimAI Enterprise RAG System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
+    <link rel="apple-touch-icon" href="assets/images/logo192.png">
+    <meta name="description" content="Best practices for RaghimAI Enterprise RAG System - optimization, security, and deployment guidelines">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
+                    <span class="brand-text">RaghimAI Enterprise</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="deployment-guide-secure.html" class="nav-link">Deployment</a>
+                    <a href="integration-guide.html" class="nav-link">Integration</a>
+                    <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
+                    <a href="security-guide.html" class="nav-link">Security</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Best Practices</h1>
+                <p class="page-subtitle">Optimization, security, and deployment best practices for RaghimAI Enterprise</p>
+            </div>
+
+            <div class="content-grid">
+                <nav class="sidebar">
+                    <h3>Best Practices</h3>
+                    <ul class="toc">
+                        <li><a href="#deployment">Deployment Best Practices</a></li>
+                        <li><a href="#security">Security Best Practices</a></li>
+                        <li><a href="#performance">Performance Optimization</a></li>
+                        <li><a href="#data-management">Data Management</a></li>
+                        <li><a href="#monitoring">Monitoring & Maintenance</a></li>
+                    </ul>
+                </nav>
+
+                <div class="content">
+                    <section id="deployment">
+                        <h2>Deployment Best Practices</h2>
+                        <p>Follow these guidelines for optimal deployment and configuration.</p>
+
+                        <div class="security-grid">
+                            <div class="security-card">
+                                <h3>Environment Setup</h3>
+                                <ul>
+                                    <li>Use dedicated servers for production</li>
+                                    <li>Implement proper network segmentation</li>
+                                    <li>Configure firewall rules appropriately</li>
+                                    <li>Use SSL/TLS certificates</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Resource Planning</h3>
+                                <ul>
+                                    <li>Allocate sufficient RAM (16GB+ recommended)</li>
+                                    <li>Plan for GPU acceleration if available</li>
+                                    <li>Ensure adequate storage space</li>
+                                    <li>Monitor resource utilization</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Backup Strategy</h3>
+                                <ul>
+                                    <li>Regular database backups</li>
+                                    <li>Document storage backups</li>
+                                    <li>Configuration file backups</li>
+                                    <li>Test restore procedures</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Update Management</h3>
+                                <ul>
+                                    <li>Schedule regular updates</li>
+                                    <li>Test updates in staging environment</li>
+                                    <li>Maintain rollback procedures</li>
+                                    <li>Document update procedures</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="security">
+                        <h2>Security Best Practices</h2>
+                        <p>Implement comprehensive security measures for your deployment.</p>
+
+                        <div class="integration-section">
+                            <h3>Authentication & Authorization</h3>
+                            <ul>
+                                <li><strong>Strong Passwords:</strong> Enforce complex password policies</li>
+                                <li><strong>Multi-Factor Authentication:</strong> Enable MFA for all users</li>
+                                <li><strong>Role-Based Access:</strong> Implement least privilege access</li>
+                                <li><strong>Session Management:</strong> Configure appropriate session timeouts</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Data Protection</h3>
+                            <ul>
+                                <li><strong>Encryption:</strong> Enable encryption at rest and in transit</li>
+                                <li><strong>Access Controls:</strong> Implement IP whitelisting</li>
+                                <li><strong>Data Classification:</strong> Classify and protect sensitive data</li>
+                                <li><strong>Retention Policies:</strong> Implement data retention policies</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Network Security</h3>
+                            <ul>
+                                <li><strong>HTTPS Only:</strong> Enforce HTTPS for all communications</li>
+                                <li><strong>Firewall Rules:</strong> Configure restrictive firewall rules</li>
+                                <li><strong>VPN Access:</strong> Use VPN for remote access</li>
+                                <li><strong>DDoS Protection:</strong> Implement DDoS protection</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="performance">
+                        <h2>Performance Optimization</h2>
+                        <p>Optimize system performance for better user experience.</p>
+
+                        <div class="integration-section">
+                            <h3>System Optimization</h3>
+                            <div class="code-block">
+                                <pre><code># Performance tuning parameters
+GPU_ENABLED=true
+GPU_MEMORY_FRACTION=0.85
+WORKER_COUNT=4
+THREAD_POOL_SIZE=16
+BATCH_SIZE=32
+CACHE_TTL=3600</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Database Optimization</h3>
+                            <ul>
+                                <li><strong>Connection Pooling:</strong> Configure appropriate pool sizes</li>
+                                <li><strong>Indexing:</strong> Create proper database indexes</li>
+                                <li><strong>Query Optimization:</strong> Monitor and optimize slow queries</li>
+                                <li><strong>Regular Maintenance:</strong> Schedule database maintenance</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Caching Strategy</h3>
+                            <ul>
+                                <li><strong>Redis Configuration:</strong> Optimize Redis settings</li>
+                                <li><strong>Cache Policies:</strong> Implement appropriate cache TTL</li>
+                                <li><strong>Cache Warming:</strong> Pre-load frequently accessed data</li>
+                                <li><strong>Cache Monitoring:</strong> Monitor cache hit rates</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="data-management">
+                        <h2>Data Management</h2>
+                        <p>Best practices for managing documents and data.</p>
+
+                        <div class="security-grid">
+                            <div class="security-card">
+                                <h3>Document Organization</h3>
+                                <ul>
+                                    <li>Use meaningful collection names</li>
+                                    <li>Implement document tagging</li>
+                                    <li>Create logical folder structures</li>
+                                    <li>Regular cleanup of old documents</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Data Quality</h3>
+                                <ul>
+                                    <li>Validate document formats</li>
+                                    <li>Check OCR accuracy</li>
+                                    <li>Monitor processing quality</li>
+                                    <li>Implement quality controls</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Storage Management</h3>
+                                <ul>
+                                    <li>Monitor storage usage</li>
+                                    <li>Implement compression</li>
+                                    <li>Archive old data</li>
+                                    <li>Plan for growth</li>
+                                </ul>
+                            </div>
+
+                            <div class="security-card">
+                                <h3>Backup & Recovery</h3>
+                                <ul>
+                                    <li>Automated daily backups</li>
+                                    <li>Test restore procedures</li>
+                                    <li>Offsite backup storage</li>
+                                    <li>Disaster recovery planning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="monitoring">
+                        <h2>Monitoring & Maintenance</h2>
+                        <p>Implement comprehensive monitoring and maintenance procedures.</p>
+
+                        <div class="integration-section">
+                            <h3>System Monitoring</h3>
+                            <ul>
+                                <li><strong>Health Checks:</strong> Implement automated health checks</li>
+                                <li><strong>Performance Metrics:</strong> Monitor CPU, memory, and disk usage</li>
+                                <li><strong>Error Tracking:</strong> Set up error monitoring and alerting</li>
+                                <li><strong>Log Analysis:</strong> Regular log review and analysis</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>User Activity Monitoring</h3>
+                            <ul>
+                                <li><strong>Access Logs:</strong> Monitor user access patterns</li>
+                                <li><strong>Usage Analytics:</strong> Track system usage metrics</li>
+                                <li><strong>Security Events:</strong> Monitor for security incidents</li>
+                                <li><strong>Compliance Reporting:</strong> Generate compliance reports</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Maintenance Schedule</h3>
+                            <div class="code-block">
+                                <pre><code># Recommended maintenance schedule
+Daily:
+- Check system health
+- Review error logs
+- Monitor resource usage
+
+Weekly:
+- Update security patches
+- Review user access
+- Clean temporary files
+
+Monthly:
+- Full system backup
+- Performance review
+- Security audit
+- Update documentation
+
+Quarterly:
+- Disaster recovery test
+- Capacity planning review
+- Security assessment
+- Training updates</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Alerting Configuration</h3>
+                            <ul>
+                                <li><strong>System Alerts:</strong> CPU, memory, disk usage thresholds</li>
+                                <li><strong>Service Alerts:</strong> Service availability monitoring</li>
+                                <li><strong>Security Alerts:</strong> Failed login attempts, suspicious activity</li>
+                                <li><strong>Performance Alerts:</strong> Response time thresholds</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
+                    <p>RaghimAI Enterprise RAG System</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="deployment-guide-secure.html">Deployment Guide</a></li>
+                        <li><a href="integration-guide.html">Integration Guide</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Email: contact@raghim.com</li>
+                        <li>Technical Support</li>
+                        <li>Enterprise Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

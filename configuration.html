@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration Guide - RaghimAI Enterprise RAG System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
+    <link rel="apple-touch-icon" href="assets/images/logo192.png">
+    <meta name="description" content="Configuration guide for RaghimAI Enterprise RAG System - system settings and customization">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
+                    <span class="brand-text">RaghimAI Enterprise</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="deployment-guide-secure.html" class="nav-link">Deployment</a>
+                    <a href="integration-guide.html" class="nav-link">Integration</a>
+                    <a href="troubleshooting.html" class="nav-link">Troubleshooting</a>
+                    <a href="security-guide.html" class="nav-link">Security</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Configuration Guide</h1>
+                <p class="page-subtitle">Complete configuration guide for RaghimAI Enterprise RAG System</p>
+            </div>
+
+            <div class="content-grid">
+                <nav class="sidebar">
+                    <h3>Configuration Topics</h3>
+                    <ul class="toc">
+                        <li><a href="#environment">Environment Variables</a></li>
+                        <li><a href="#database">Database Configuration</a></li>
+                        <li><a href="#ai-models">AI Model Settings</a></li>
+                        <li><a href="#security-config">Security Configuration</a></li>
+                        <li><a href="#performance">Performance Tuning</a></li>
+                    </ul>
+                </nav>
+
+                <div class="content">
+                    <section id="environment">
+                        <h2>Environment Variables</h2>
+                        <p>Configure your system using environment variables.</p>
+
+                        <div class="config-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Variable</th>
+                                        <th>Description</th>
+                                        <th>Default</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>LICENSE_KEY</code></td>
+                                        <td>Your enterprise license key</td>
+                                        <td>Required</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>JWT_SECRET_KEY</code></td>
+                                        <td>JWT secret for authentication</td>
+                                        <td>Generated</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>DATABASE_PASSWORD</code></td>
+                                        <td>Database password</td>
+                                        <td>Generated</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>CACHE_PASSWORD</code></td>
+                                        <td>Cache password</td>
+                                        <td>Generated</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>GPU_ENABLED</code></td>
+                                        <td>Enable GPU acceleration</td>
+                                        <td>true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>FRONTEND_URL</code></td>
+                                        <td>Frontend access URL</td>
+                                        <td>http://localhost</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>API_URL</code></td>
+                                        <td>Backend API URL</td>
+                                        <td>http://localhost:8000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section id="database">
+                        <h2>Database Configuration</h2>
+                        <p>Configure database settings for optimal performance.</p>
+
+                        <div class="integration-section">
+                            <h3>PostgreSQL Settings</h3>
+                            <div class="code-block">
+                                <pre><code># Database configuration
+POSTGRES_DB=rag_enterprise
+POSTGRES_USER=rag_user
+POSTGRES_PASSWORD=secure_password
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+
+# Connection pooling
+DB_POOL_SIZE=20
+DB_MAX_OVERFLOW=30
+DB_POOL_TIMEOUT=30</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Redis Cache Settings</h3>
+                            <div class="code-block">
+                                <pre><code># Redis configuration
+REDIS_HOST=redis
+REDIS_PORT=6379
+REDIS_PASSWORD=secure_password
+REDIS_DB=0
+
+# Cache settings
+CACHE_TTL=3600
+SESSION_TTL=86400</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="ai-models">
+                        <h2>AI Model Settings</h2>
+                        <p>Configure AI models and processing parameters.</p>
+
+                        <div class="integration-section">
+                            <h3>Model Configuration</h3>
+                            <div class="code-block">
+                                <pre><code># AI model settings
+EMBEDDING_MODEL=multilingual-embedding-model
+LLM_MODEL=advanced-language-model
+TRANSLATION_MODEL=multilingual-translation-model
+
+# Processing optimization
+GPU_LAYERS=40
+GPU_MEMORY_FRACTION=0.85
+NUM_PARALLEL=8
+MAX_LOADED_MODELS=3</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Performance Settings</h3>
+                            <div class="code-block">
+                                <pre><code># Performance tuning
+BATCH_SIZE=32
+MAX_TOKENS=2048
+TEMPERATURE=0.7
+TOP_P=0.9
+REPETITION_PENALTY=1.1</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="security-config">
+                        <h2>Security Configuration</h2>
+                        <p>Configure security settings and access controls.</p>
+
+                        <div class="integration-section">
+                            <h3>Authentication Settings</h3>
+                            <div class="code-block">
+                                <pre><code># JWT configuration
+JWT_SECRET_KEY=your-secret-key
+JWT_ALGORITHM=HS256
+JWT_EXPIRATION=3600
+JWT_REFRESH_EXPIRATION=86400
+
+# Session settings
+SESSION_SECRET=your-session-secret
+SESSION_TIMEOUT=1800
+MAX_LOGIN_ATTEMPTS=5</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Access Control</h3>
+                            <div class="code-block">
+                                <pre><code># IP restrictions
+ALLOWED_IPS=192.168.1.0/24,10.0.0.0/8
+BLOCKED_COUNTRIES=CN,RU,IR
+
+# Rate limiting
+RATE_LIMIT_REQUESTS=100
+RATE_LIMIT_WINDOW=3600
+RATE_LIMIT_BURST=200</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="performance">
+                        <h2>Performance Tuning</h2>
+                        <p>Optimize system performance for your environment.</p>
+
+                        <div class="integration-section">
+                            <h3>Resource Allocation</h3>
+                            <div class="code-block">
+                                <pre><code># Memory settings
+WORKER_MEMORY_LIMIT=4G
+CACHE_MEMORY_LIMIT=2G
+MODEL_MEMORY_LIMIT=8G
+
+# CPU settings
+WORKER_CPU_LIMIT=4
+WORKER_COUNT=4
+THREAD_POOL_SIZE=16</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Optimization Settings</h3>
+                            <div class="code-block">
+                                <pre><code># Processing optimization
+ENABLE_BATCH_PROCESSING=true
+ENABLE_ASYNC_PROCESSING=true
+ENABLE_CACHING=true
+ENABLE_COMPRESSION=true
+
+# Monitoring
+ENABLE_METRICS=true
+METRICS_PORT=9090
+LOG_LEVEL=INFO</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
+                    <p>RaghimAI Enterprise RAG System</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="deployment-guide-secure.html">Deployment Guide</a></li>
+                        <li><a href="integration-guide.html">Integration Guide</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Email: contact@raghim.com</li>
+                        <li>Technical Support</li>
+                        <li>Enterprise Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
