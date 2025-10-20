@@ -893,12 +893,21 @@ body {
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.2s ease;
+    display: none;
 }
 
 .language-dropdown.active .language-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    display: block;
+}
+
+/* Force display when shown via JavaScript */
+.language-menu[style*="display: block"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
 }
 
 .language-option {

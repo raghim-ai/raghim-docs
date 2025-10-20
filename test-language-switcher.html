@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher Test - RaghimAI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <span class="brand-text">RaghimAI Enterprise</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="deployment-guide.html" class="nav-link">Deployment</a>
+                    <a href="security-guide.html" class="nav-link">Security</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 2rem; max-width: 800px; margin: 0 auto;">
+        <h1>Language Switcher Test</h1>
+        
+        <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+            <h3>Test Instructions:</h3>
+            <ol>
+                <li>Look for the language switcher in the navigation bar (top right)</li>
+                <li>Click on the language button (should show 🇺🇸 English ▼)</li>
+                <li>The dropdown should open showing English and French options</li>
+                <li>Click on either option to switch languages</li>
+                <li>Open browser console (F12) to see debug messages</li>
+            </ol>
+        </div>
+
+        <div style="background: #f0f0f0; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+            <h3>Debug Information:</h3>
+            <p><strong>Current Language:</strong> <span id="current-lang">English</span></p>
+            <p><strong>Language Switcher Status:</strong> <span id="switcher-status">Checking...</span></p>
+            <p><strong>Click Events:</strong> <span id="click-events">0</span></p>
+            <p><strong>Console Messages:</strong> Check browser console (F12) for detailed logs</p>
+        </div>
+
+        <div style="background: #fff3cd; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+            <h3>Expected Behavior:</h3>
+            <ul>
+                <li>Language switcher should appear in navigation</li>
+                <li>Clicking the button should toggle dropdown visibility</li>
+                <li>Selecting a language should update the button text</li>
+                <li>Language preference should be saved in localStorage</li>
+            </ul>
+        </div>
+
+        <div style="background: #d4edda; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+            <h3>If It's Not Working:</h3>
+            <ul>
+                <li>Check browser console for error messages</li>
+                <li>Verify JavaScript is enabled</li>
+                <li>Try refreshing the page</li>
+                <li>Check if translations.json file is loading</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="assets/js/simple-lang-switcher.js"></script>
+    <script>
+        let clickCount = 0;
+        
+        // Monitor clicks
+        document.addEventListener('click', () => {
+            clickCount++;
+            document.getElementById('click-events').textContent = clickCount;
+        });
+
+        // Monitor language switcher creation
+        setTimeout(() => {
+            const switcher = document.querySelector('.language-switcher');
+            const status = document.getElementById('switcher-status');
+            
+            if (switcher) {
+                status.textContent = '✓ Created Successfully';
+                status.style.color = 'green';
+            } else {
+                status.textContent = '✗ Not Found';
+                status.style.color = 'red';
+            }
+        }, 2000);
+
+        // Monitor language changes
+        const originalSwitchLanguage = EnhancedTranslationManager.prototype.switchLanguage;
+        EnhancedTranslationManager.prototype.switchLanguage = function(lang) {
+            console.log('Language switched to:', lang);
+            originalSwitchLanguage.call(this, lang);
+            document.getElementById('current-lang').textContent = lang === 'en' ? 'English' : 'Français';
+        };
+    </script>
+</body>
+</html>
