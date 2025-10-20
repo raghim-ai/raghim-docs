@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="api_reference.meta.title">API Reference - RaghimAI Enterprise RAG System</title>
+    <title>API Reference - RaghimAI Enterprise RAG System</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <meta name="description" content="Complete API reference for RaghimAI Enterprise RAG System - authentication, documents, chat, and live chat endpoints">
@@ -19,7 +19,7 @@
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
                     <a href="deployment-guide.html" class="nav-link" data-translate="nav.deployment">Deployment</a>
-                    <a href="api-reference.html" class="nav-link active" data-translate="nav.api">API Reference</a>
+                    <a href="api-reference.html" class="nav-link active">API Reference</a>
                     <a href="troubleshooting.html" class="nav-link" data-translate="nav.troubleshooting">Troubleshooting</a>
                     <a href="security-guide.html" class="nav-link" data-translate="nav.security">Security</a>
                 </div>
@@ -35,29 +35,29 @@
     <main class="main-content">
         <div class="container">
             <div class="page-header">
-                <h1 data-translate="api_reference.header.title">API Reference</h1>
-                <p class="page-subtitle" data-translate="api_reference.header.subtitle">Complete API documentation for RaghimAI Enterprise RAG System</p>
+                <h1>API Reference</h1>
+                <p class="page-subtitle">Complete API documentation for RaghimAI Enterprise RAG System</p>
             </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
-                    <h3 data-translate="api_reference.toc.title">API Endpoints</h3>
+                    <h3>API Endpoints</h3>
                     <ul class="toc">
-                        <li><a href="#authentication" data-translate="api_reference.toc.authentication">Authentication</a></li>
-                        <li><a href="#documents" data-translate="api_reference.toc.documents">Document Management</a></li>
-                        <li><a href="#chat" data-translate="api_reference.toc.chat">Chat & AI</a></li>
-                        <li><a href="#live-chat" data-translate="api_reference.toc.live_chat">Live Chat</a></li>
-                        <li><a href="#banking" data-translate="api_reference.toc.banking">Banking Integration</a></li>
-                        <li><a href="#admin" data-translate="api_reference.toc.admin">Admin Functions</a></li>
-                        <li><a href="#analytics" data-translate="api_reference.toc.analytics">Analytics</a></li>
-                        <li><a href="#widgets" data-translate="api_reference.toc.widgets">Widgets</a></li>
+                        <li><a href="#authentication">Authentication</a></li>
+                        <li><a href="#documents">Document Management</a></li>
+                        <li><a href="#chat">Chat & AI</a></li>
+                        <li><a href="#live-chat">Live Chat</a></li>
+                        <li><a href="#banking">Banking Integration</a></li>
+                        <li><a href="#admin">Admin Functions</a></li>
+                        <li><a href="#analytics">Analytics</a></li>
+                        <li><a href="#widgets">Widgets</a></li>
                     </ul>
                 </nav>
 
                 <div class="content">
                     <section id="authentication">
-                        <h2 data-translate="api_reference.authentication.title">Authentication</h2>
-                        <p data-translate="api_reference.authentication.subtitle">All API endpoints require authentication except for login and registration.</p>
+                        <h2>Authentication</h2>
+                        <p>All API endpoints require authentication except for login and registration.</p>
 
                         <div class="endpoint-group">
                             <div class="endpoint-card">
@@ -66,17 +66,17 @@
                                     <span class="path">/api/auth/login</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.authentication.login.desc">Authenticate user and receive JWT token</p>
+                                    <p>Authenticate user and receive JWT token</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request_body">Request Body:</h4>
+                                    <h4>Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "username": "string",
   "password": "string"
 }</code></pre>
                                     </div>
-                                    <h4 data-translate="api_reference.common.response">Response:</h4>
+                                    <h4>Response:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "access_token": "string",
@@ -98,10 +98,10 @@
                                     <span class="path">/api/auth/register</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.authentication.register.desc">Register new user account</p>
+                                    <p>Register new user account</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request_body">Request Body:</h4>
+                                    <h4>Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "username": "string",
@@ -119,10 +119,10 @@
                                     <span class="path">/api/auth/me</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.authentication.me.desc">Get current user information</p>
+                                    <p>Get current user information</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.headers">Headers:</h4>
+                                    <h4>Headers:</h4>
                                     <div class="code-block">
                                         <pre><code>Authorization: Bearer &lt;token&gt;</code></pre>
                                     </div>
@@ -132,8 +132,8 @@
                     </section>
 
                     <section id="documents">
-                        <h2 data-translate="api_reference.documents.title">Document Management</h2>
-                        <p data-translate="api_reference.documents.subtitle">Upload, process, and manage documents in collections.</p>
+                        <h2>Document Management</h2>
+                        <p>Upload, process, and manage documents in collections.</p>
 
                         <div class="endpoint-group">
                             <div class="endpoint-card">
@@ -142,10 +142,10 @@
                                     <span class="path">/api/documents/upload</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.documents.upload.desc">Upload documents for processing</p>
+                                    <p>Upload documents for processing</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request">Request:</h4>
+                                    <h4>Request:</h4>
                                     <div class="code-block">
                                         <pre><code>Content-Type: multipart/form-data
 
@@ -154,7 +154,7 @@ FormData:
 - collection_name: string (optional)
 - chunk_strategy: string (optional)</code></pre>
                                     </div>
-                                    <h4 data-translate="api_reference.common.response">Response:</h4>
+                                    <h4>Response:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "task_id": "string",
@@ -171,10 +171,10 @@ FormData:
                                     <span class="path">/api/documents/collections</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.documents.collections.desc">List all document collections</p>
+                                    <p>List all document collections</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.response">Response:</h4>
+                                    <h4>Response:</h4>
                                     <div class="code-block">
                                         <pre><code>[
   {
@@ -195,10 +195,10 @@ FormData:
                                     <span class="path">/api/documents/search</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.documents.search.desc">Search documents using vector similarity</p>
+                                    <p>Search documents using vector similarity</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request_body">Request Body:</h4>
+                                    <h4>Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "query": "string",
@@ -213,8 +213,8 @@ FormData:
                     </section>
 
                     <section id="chat">
-                        <h2 data-translate="api_reference.chat.title">Chat & AI</h2>
-                        <p data-translate="api_reference.chat.subtitle">Interact with AI models for question-answering and document analysis.</p>
+                        <h2>Chat & AI</h2>
+                        <p>Interact with AI models for question-answering and document analysis.</p>
 
                         <div class="endpoint-group">
                             <div class="endpoint-card">
@@ -223,10 +223,10 @@ FormData:
                                     <span class="path">/api/chat</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.chat.chat.desc">Send message to AI chat interface</p>
+                                    <p>Send message to AI chat interface</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request_body">Request Body:</h4>
+                                    <h4>Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "message": "string",
@@ -235,7 +235,7 @@ FormData:
   "stream": true
 }</code></pre>
                                     </div>
-                                    <h4 data-translate="api_reference.chat.streaming_response">Response (Streaming):</h4>
+                                    <h4>Response (Streaming):</h4>
                                     <div class="code-block">
                                         <pre><code>data: {"type": "content", "content": "partial response"}
 data: {"type": "sources", "sources": [...]}
@@ -250,10 +250,10 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <span class="path">/api/chat/history</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.chat.history.desc">Get chat conversation history</p>
+                                    <p>Get chat conversation history</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.query_params">Query Parameters:</h4>
+                                    <h4>Query Parameters:</h4>
                                     <div class="code-block">
                                         <pre><code>?conversation_id=string&limit=50</code></pre>
                                     </div>
@@ -263,8 +263,8 @@ data: {"type": "done", "message": "complete"}</code></pre>
                     </section>
 
                     <section id="live-chat">
-                        <h2 data-translate="api_reference.live_chat.title">Live Chat System</h2>
-                        <p data-translate="api_reference.live_chat.subtitle">Real-time chat with agent handoff capabilities.</p>
+                        <h2>Live Chat System</h2>
+                        <p>Real-time chat with agent handoff capabilities.</p>
 
                         <div class="endpoint-group">
                             <div class="endpoint-card">
@@ -273,10 +273,10 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <span class="path">/api/live-chat/handoff</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.live_chat.handoff.desc">Request handoff to human agent</p>
+                                    <p>Request handoff to human agent</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request_body">Request Body:</h4>
+                                    <h4>Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "conversation_id": "string",
@@ -293,10 +293,10 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <span class="path">/api/live-chat/sessions</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.live_chat.sessions.desc">Get active chat sessions</p>
+                                    <p>Get active chat sessions</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.response">Response:</h4>
+                                    <h4>Response:</h4>
                                     <div class="code-block">
                                         <pre><code>[
   {
@@ -316,10 +316,10 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <span class="path">/api/live-chat/accept</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.live_chat.accept.desc">Accept handoff request</p>
+                                    <p>Accept handoff request</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request_body">Request Body:</h4>
+                                    <h4>Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "conversation_id": "string"
@@ -331,8 +331,8 @@ data: {"type": "done", "message": "complete"}</code></pre>
                     </section>
 
                     <section id="banking">
-                        <h2 data-translate="api_reference.banking.title">Banking Integration</h2>
-                        <p data-translate="api_reference.banking.subtitle">Specialized endpoints for financial document processing.</p>
+                        <h2>Banking Integration</h2>
+                        <p>Specialized endpoints for financial document processing.</p>
 
                         <div class="endpoint-group">
                             <div class="endpoint-card">
@@ -341,10 +341,10 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <span class="path">/api/banking/process</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.banking.process.desc">Process banking documents with encryption</p>
+                                    <p>Process banking documents with encryption</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request_body">Request Body:</h4>
+                                    <h4>Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
   "query": "string",
@@ -361,10 +361,10 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <span class="path">/api/banking/upload</span>
                                 </div>
                                 <div class="endpoint-description">
-                                    <p data-translate="api_reference.banking.upload.desc">Upload encrypted banking documents</p>
+                                    <p>Upload encrypted banking documents</p>
                                 </div>
                                 <div class="endpoint-body">
-                                    <h4 data-translate="api_reference.common.request">Request:</h4>
+                                    <h4>Request:</h4>
                                     <div class="code-block">
                                         <pre><code>Content-Type: multipart/form-data
 
@@ -379,8 +379,8 @@ FormData:
                     </section>
 
                     <section id="admin">
-                        <h2 data-translate="api_reference.admin.title">Admin Functions</h2>
-                        <p data-translate="api_reference.admin.subtitle">Administrative endpoints for system management.</p>
+                        <h2>Admin Functions</h2>
+                        <p>Administrative endpoints for system management.</p>
 
                         <div class="endpoint-group">
                             <div class="endpoint-card">
@@ -416,8 +416,8 @@ FormData:
                     </section>
 
                     <section id="analytics">
-                        <h2 data-translate="api_reference.analytics.title">Analytics</h2>
-                        <p data-translate="api_reference.analytics.subtitle">Analytics and reporting endpoints.</p>
+                        <h2>Analytics</h2>
+                        <p>Analytics and reporting endpoints.</p>
 
                         <div class="endpoint-group">
                             <div class="endpoint-card">
@@ -443,8 +443,8 @@ FormData:
                     </section>
 
                     <section id="widgets">
-                        <h2 data-translate="api_reference.widgets.title">Widgets</h2>
-                        <p data-translate="api_reference.widgets.subtitle">Widget management and embedding endpoints.</p>
+                        <h2>Widgets</h2>
+                        <p>Widget management and embedding endpoints.</p>
 
                         <div class="endpoint-group">
                             <div class="endpoint-card">
@@ -482,46 +482,46 @@ FormData:
                     </section>
 
                     <section id="error-codes">
-                        <h2 data-translate="api_reference.errors.title">Error Codes</h2>
+                        <h2>Error Codes</h2>
                         <div class="error-codes-table">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th data-translate="api_reference.errors.headers.code">Code</th>
-                                        <th data-translate="api_reference.errors.headers.message">Message</th>
-                                        <th data-translate="api_reference.errors.headers.description">Description</th>
+                                        <th>Code</th>
+                                        <th>Message</th>
+                                        <th>Description</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>400</td>
-                                        <td data-translate="api_reference.errors.messages.bad_request">Bad Request</td>
-                                        <td data-translate="api_reference.errors.descriptions.bad_request">Invalid request parameters</td>
+                                        <td>Bad Request</td>
+                                        <td>Invalid request parameters</td>
                                     </tr>
                                     <tr>
                                         <td>401</td>
-                                        <td data-translate="api_reference.errors.messages.unauthorized">Unauthorized</td>
-                                        <td data-translate="api_reference.errors.descriptions.unauthorized">Authentication required</td>
+                                        <td>Unauthorized</td>
+                                        <td>Authentication required</td>
                                     </tr>
                                     <tr>
                                         <td>403</td>
-                                        <td data-translate="api_reference.errors.messages.forbidden">Forbidden</td>
-                                        <td data-translate="api_reference.errors.descriptions.forbidden">Insufficient permissions</td>
+                                        <td>Forbidden</td>
+                                        <td>Insufficient permissions</td>
                                     </tr>
                                     <tr>
                                         <td>404</td>
-                                        <td data-translate="api_reference.errors.messages.not_found">Not Found</td>
-                                        <td data-translate="api_reference.errors.descriptions.not_found">Resource not found</td>
+                                        <td>Not Found</td>
+                                        <td>Resource not found</td>
                                     </tr>
                                     <tr>
                                         <td>429</td>
-                                        <td data-translate="api_reference.errors.messages.too_many">Too Many Requests</td>
-                                        <td data-translate="api_reference.errors.descriptions.too_many">Rate limit exceeded</td>
+                                        <td>Too Many Requests</td>
+                                        <td>Rate limit exceeded</td>
                                     </tr>
                                     <tr>
                                         <td>500</td>
-                                        <td data-translate="api_reference.errors.messages.internal">Internal Server Error</td>
-                                        <td data-translate="api_reference.errors.descriptions.internal">Server error occurred</td>
+                                        <td>Internal Server Error</td>
+                                        <td>Server error occurred</td>
                                     </tr>
                                 </tbody>
                             </table>
