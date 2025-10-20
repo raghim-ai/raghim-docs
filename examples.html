@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integration Examples - RaghimAI Enterprise RAG System</title>
+    <title data-translate="examples.meta.title">Integration Examples - RaghimAI Enterprise RAG System</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
     <link rel="apple-touch-icon" href="assets/images/logo192.png">
-    <meta name="description" content="Integration examples for RaghimAI Enterprise RAG System - practical code samples and use cases">
+    <meta name="description" content="Integration examples for RaghimAI Enterprise RAG System - practical code samples and use cases" data-translate="examples.meta.description">
 </head>
 <body>
     <header class="header">
@@ -17,11 +17,11 @@
             <div class="nav-container">
                 <div class="nav-brand">
                     <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
-                    <span class="brand-text">RaghimAI Enterprise</span>
+                    <span class="brand-text" data-translate="nav.brand">RaghimAI Enterprise</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
-                    <a href="deployment-guide.html" class="nav-link">Deployment</a>
+                    <a href="deployment-guide.html" class="nav-link" data-translate="nav.deployment">Deployment</a>
                     <a href="integration-guide.html" class="nav-link" data-translate="nav.integration">Integration</a>
                     <a href="troubleshooting.html" class="nav-link" data-translate="nav.troubleshooting">Troubleshooting</a>
                     <a href="security-guide.html" class="nav-link" data-translate="nav.security">Security</a>
@@ -38,29 +38,29 @@
     <main class="main-content">
         <div class="container">
             <div class="page-header">
-                <h1>Integration Examples</h1>
-                <p class="page-subtitle">Practical examples and code samples for RaghimAI Enterprise integration</p>
+                <h1 data-translate="examples.header.title">Integration Examples</h1>
+                <p class="page-subtitle" data-translate="examples.header.subtitle">Practical examples and code samples for RaghimAI Enterprise integration</p>
             </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
-                    <h3>Examples</h3>
+                    <h3 data-translate="examples.toc.title">Examples</h3>
                     <ul class="toc">
-                        <li><a href="#javascript">JavaScript Examples</a></li>
-                        <li><a href="#python">Python Examples</a></li>
-                        <li><a href="#curl">cURL Examples</a></li>
-                        <li><a href="#widget">Widget Integration</a></li>
-                        <li><a href="#webhook">Webhook Examples</a></li>
+                        <li><a href="#javascript" data-translate="examples.toc.javascript">JavaScript Examples</a></li>
+                        <li><a href="#python" data-translate="examples.toc.python">Python Examples</a></li>
+                        <li><a href="#curl" data-translate="examples.toc.curl">cURL Examples</a></li>
+                        <li><a href="#widget" data-translate="examples.toc.widget">Widget Integration</a></li>
+                        <li><a href="#webhook" data-translate="examples.toc.webhook">Webhook Examples</a></li>
                     </ul>
                 </nav>
 
                 <div class="content">
                     <section id="javascript">
-                        <h2>JavaScript Examples</h2>
-                        <p>Client-side integration examples using JavaScript.</p>
+                        <h2 data-translate="examples.javascript.title">JavaScript Examples</h2>
+                        <p data-translate="examples.javascript.subtitle">Client-side integration examples using JavaScript.</p>
 
                         <div class="integration-section">
-                            <h3>Basic API Client</h3>
+                            <h3 data-translate="examples.javascript.basic_api_client">Basic API Client</h3>
                             <div class="code-block">
                                 <pre><code>class RaghimAIClient {
   constructor(apiUrl, token) {
@@ -108,7 +108,7 @@
                         </div>
 
                         <div class="integration-section">
-                            <h3>Usage Example</h3>
+                            <h3 data-translate="examples.javascript.usage_example">Usage Example</h3>
                             <div class="code-block">
                                 <pre><code>// Initialize client
 const client = new RaghimAIClient('https://your-domain.com/api', 'your-jwt-token');
@@ -130,11 +130,11 @@ console.log(response.message);</code></pre>
                     </section>
 
                     <section id="python">
-                        <h2>Python Examples</h2>
-                        <p>Server-side integration examples using Python.</p>
+                        <h2 data-translate="examples.python.title">Python Examples</h2>
+                        <p data-translate="examples.python.subtitle">Server-side integration examples using Python.</p>
 
                         <div class="integration-section">
-                            <h3>Python Client</h3>
+                            <h3 data-translate="examples.python.python_client">Python Client</h3>
                             <div class="code-block">
                                 <pre><code>import requests
 import json
@@ -181,7 +181,7 @@ class RaghimAIClient:
                         </div>
 
                         <div class="integration-section">
-                            <h3>Usage Example</h3>
+                            <h3 data-translate="examples.javascript.usage_example">Usage Example</h3>
                             <div class="code-block">
                                 <pre><code># Initialize client
 client = RaghimAIClient('https://your-domain.com/api', 'your-jwt-token')
@@ -206,11 +206,11 @@ for doc in documents:
                     </section>
 
                     <section id="curl">
-                        <h2>cURL Examples</h2>
-                        <p>Command-line integration examples using cURL.</p>
+                        <h2 data-translate="examples.curl.title">cURL Examples</h2>
+                        <p data-translate="examples.curl.subtitle">Command-line integration examples using cURL.</p>
 
                         <div class="integration-section">
-                            <h3>Authentication</h3>
+                            <h3 data-translate="examples.curl.authentication">Authentication</h3>
                             <div class="code-block">
                                 <pre><code># Login to get token
 curl -X POST https://your-domain.com/api/auth/login \
@@ -223,7 +223,7 @@ curl -X POST https://your-domain.com/api/auth/login \
                         </div>
 
                         <div class="integration-section">
-                            <h3>Document Upload</h3>
+                            <h3 data-translate="examples.curl.document_upload">Document Upload</h3>
                             <div class="code-block">
                                 <pre><code># Upload document
 curl -X POST https://your-domain.com/api/documents/upload \
@@ -233,7 +233,7 @@ curl -X POST https://your-domain.com/api/documents/upload \
                         </div>
 
                         <div class="integration-section">
-                            <h3>Send Query</h3>
+                            <h3 data-translate="examples.curl.send_query">Send Query</h3>
                             <div class="code-block">
                                 <pre><code># Send AI query
 curl -X POST https://your-domain.com/api/chat \
@@ -248,11 +248,11 @@ curl -X POST https://your-domain.com/api/chat \
                     </section>
 
                     <section id="widget">
-                        <h2>Widget Integration</h2>
-                        <p>Embed RaghimAI widgets in your applications.</p>
+                        <h2 data-translate="examples.widget.title">Widget Integration</h2>
+                        <p data-translate="examples.widget.subtitle">Embed RaghimAI widgets in your applications.</p>
 
                         <div class="integration-section">
-                            <h3>Basic Widget</h3>
+                            <h3 data-translate="examples.widget.basic_widget">Basic Widget</h3>
                             <div class="code-block">
                                 <pre><code>&lt;!-- Include widget script --&gt;
 &lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;
@@ -270,7 +270,7 @@ curl -X POST https://your-domain.com/api/chat \
                         </div>
 
                         <div class="integration-section">
-                            <h3>Custom Styled Widget</h3>
+                            <h3 data-translate="examples.widget.custom_styled_widget">Custom Styled Widget</h3>
                             <div class="code-block">
                                 <pre><code>&lt;script&gt;
   RaghimAI.init({
@@ -293,11 +293,11 @@ curl -X POST https://your-domain.com/api/chat \
                     </section>
 
                     <section id="webhook">
-                        <h2>Webhook Examples</h2>
-                        <p>Handle real-time events with webhooks.</p>
+                        <h2 data-translate="examples.webhook.title">Webhook Examples</h2>
+                        <p data-translate="examples.webhook.subtitle">Handle real-time events with webhooks.</p>
 
                         <div class="integration-section">
-                            <h3>Webhook Configuration</h3>
+                            <h3 data-translate="examples.webhook.webhook_configuration">Webhook Configuration</h3>
                             <div class="code-block">
                                 <pre><code># Configure webhook
 curl -X POST https://your-domain.com/api/webhooks/configure \
@@ -312,7 +312,7 @@ curl -X POST https://your-domain.com/api/webhooks/configure \
                         </div>
 
                         <div class="integration-section">
-                            <h3>Webhook Handler (Python)</h3>
+                            <h3 data-translate="examples.webhook.webhook_handler">Webhook Handler (Python)</h3>
                             <div class="code-block">
                                 <pre><code>from flask import Flask, request, jsonify
 import hmac
@@ -367,28 +367,28 @@ if __name__ == '__main__':
             <div class="footer-content">
                 <div class="footer-section">
                     <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
-                    <p>RaghimAI Enterprise RAG System</p>
+                    <p data-translate="footer.brand">RaghimAI Enterprise RAG System</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Documentation</h4>
+                    <h4 data-translate="footer.documentation">Documentation</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="deployment-guide.html">Deployment Guide</a></li>
-                        <li><a href="integration-guide.html">Integration Guide</a></li>
-                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="deployment-guide.html" data-translate="footer.documentation_links.deployment_guide">Deployment Guide</a></li>
+                        <li><a href="integration-guide.html" data-translate="footer.documentation_links.integration_guide">Integration Guide</a></li>
+                        <li><a href="troubleshooting.html" data-translate="footer.documentation_links.troubleshooting">Troubleshooting</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Support</h4>
+                    <h4 data-translate="footer.support">Support</h4>
                     <ul>
-                        <li>Email: contact@raghim.com</li>
-                        <li>Technical Support</li>
-                        <li>Enterprise Support</li>
+                        <li data-translate="footer.support_links.contact">Email: contact@raghim.com</li>
+                        <li data-translate="footer.support_links.technical_support">Technical Support</li>
+                        <li data-translate="footer.support_links.enterprise_support">Enterprise Support</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+                <p data-translate="footer.copyright">&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
             </div>
         </div>
     </footer>

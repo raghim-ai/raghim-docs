@@ -1016,6 +1016,319 @@
         "resource_allocation": "Resource Allocation",
         "optimization_settings": "Optimization Settings"
       }
+    },
+    "api_reference": {
+      "meta": { 
+        "title": "API Reference - RaghimAI Enterprise RAG System",
+        "description": "Complete API reference for RaghimAI Enterprise RAG System - authentication, documents, chat, and live chat endpoints"
+      },
+      "header": {
+        "title": "API Reference",
+        "subtitle": "Complete API documentation for RaghimAI Enterprise RAG System"
+      },
+      "toc": {
+        "title": "API Endpoints",
+        "authentication": "Authentication",
+        "documents": "Document Management",
+        "chat": "Chat & AI",
+        "live_chat": "Live Chat",
+        "banking": "Banking Integration",
+        "admin": "Admin Functions",
+        "analytics": "Analytics",
+        "widgets": "Widgets"
+      },
+      "authentication": {
+        "title": "Authentication",
+        "subtitle": "All API endpoints require authentication except for login and registration.",
+        "login_desc": "Authenticate user and receive JWT token",
+        "register_desc": "Register new user account",
+        "me_desc": "Get current user information",
+        "request_body": "Request Body:",
+        "response": "Response:",
+        "headers": "Headers:"
+      },
+      "documents": {
+        "title": "Document Management",
+        "subtitle": "Upload, process, and manage documents in collections.",
+        "upload_desc": "Upload documents for processing",
+        "collections_desc": "List all document collections",
+        "search_desc": "Search documents using vector similarity",
+        "request": "Request:"
+      },
+      "chat": {
+        "title": "Chat & AI",
+        "subtitle": "Interact with AI models for question-answering and document analysis.",
+        "chat_desc": "Send message to AI chat interface",
+        "history_desc": "Get chat conversation history",
+        "response_streaming": "Response (Streaming):",
+        "query_params": "Query Parameters:"
+      },
+      "live_chat": {
+        "title": "Live Chat System",
+        "subtitle": "Real-time chat with agent handoff capabilities.",
+        "handoff_desc": "Request handoff to human agent",
+        "sessions_desc": "Get active chat sessions",
+        "accept_desc": "Accept handoff request"
+      },
+      "banking": {
+        "title": "Banking Integration",
+        "subtitle": "Specialized endpoints for financial document processing.",
+        "process_desc": "Process banking documents with encryption",
+        "upload_desc": "Upload encrypted banking documents"
+      },
+      "admin": {
+        "title": "Admin Functions",
+        "subtitle": "Administrative endpoints for system management.",
+        "users_list_desc": "List all users (admin only)",
+        "users_create_desc": "Create new user (admin only)",
+        "metrics_desc": "Get system metrics and statistics"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "subtitle": "Analytics and reporting endpoints.",
+        "usage_desc": "Get usage analytics",
+        "conversations_desc": "Get conversation analytics"
+      },
+      "widgets": {
+        "title": "Widgets",
+        "subtitle": "Widget management and embedding endpoints.",
+        "create_desc": "Create new chat widget",
+        "embed_desc": "Get widget embed code"
+      },
+      "error_codes": {
+        "title": "Error Codes",
+        "code": "Code",
+        "message": "Message",
+        "description": "Description",
+        "bad_request": "Bad Request",
+        "bad_request_desc": "Invalid request parameters",
+        "unauthorized": "Unauthorized",
+        "unauthorized_desc": "Authentication required",
+        "forbidden": "Forbidden",
+        "forbidden_desc": "Insufficient permissions",
+        "not_found": "Not Found",
+        "not_found_desc": "Resource not found",
+        "too_many_requests": "Too Many Requests",
+        "too_many_requests_desc": "Rate limit exceeded",
+        "internal_server_error": "Internal Server Error",
+        "internal_server_error_desc": "Server error occurred"
+      }
+    },
+    "troubleshooting": {
+      "meta": { 
+        "title": "Troubleshooting - RaghimAI Enterprise RAG System",
+        "description": "Troubleshooting guide for RaghimAI Enterprise RAG System - common issues and solutions"
+      },
+      "header": {
+        "title": "Troubleshooting Guide",
+        "subtitle": "Common issues and solutions for RaghimAI Enterprise RAG System"
+      },
+      "toc": {
+        "title": "Quick Links",
+        "connection_issues": "Connection Issues",
+        "performance_issues": "Performance Issues",
+        "deployment_issues": "Deployment Issues",
+        "database_issues": "Database Issues",
+        "gpu_issues": "GPU Issues",
+        "authentication_issues": "Authentication Issues",
+        "diagnostic_tools": "Diagnostic Tools"
+      },
+      "solutions": "Solutions:",
+      "connection_issues": {
+        "title": "Connection Issues",
+        "site_cant_be_reached": "Site Can't Be Reached",
+        "site_cant_be_reached_symptoms": "Symptoms: \"This site can't be reached\" or \"ERR_CONNECTION_REFUSED\"",
+        "api_not_responding": "API Not Responding",
+        "api_not_responding_symptoms": "Symptoms: Backend API returns timeout or connection errors",
+        "websocket_connection_failed": "WebSocket Connection Failed",
+        "websocket_connection_failed_symptoms": "Symptoms: Live chat or real-time features not working"
+      },
+      "performance_issues": {
+        "title": "Performance Issues",
+        "slow_ai_responses": "Slow AI Responses",
+        "slow_ai_responses_symptoms": "Symptoms: AI responses take 10+ seconds",
+        "high_memory_usage": "High Memory Usage",
+        "high_memory_usage_symptoms": "Symptoms: System running out of memory",
+        "slow_document_processing": "Slow Document Processing",
+        "slow_document_processing_symptoms": "Symptoms: Document upload and processing takes too long"
+      },
+      "deployment_issues": {
+        "title": "Deployment Issues",
+        "docker_compose_fails": "Docker Compose Fails",
+        "docker_compose_fails_symptoms": "Symptoms: Containers fail to start or exit immediately",
+        "image_loading_failed": "Image Loading Failed",
+        "image_loading_failed_symptoms": "Symptoms: Docker images fail to load from tar.gz files",
+        "environment_configuration": "Environment Configuration",
+        "environment_configuration_symptoms": "Symptoms: Services start but behave unexpectedly"
+      },
+      "database_issues": {
+        "title": "Database Issues",
+        "postgresql_connection_failed": "PostgreSQL Connection Failed",
+        "postgresql_connection_failed_symptoms": "Symptoms: Database connection errors in logs",
+        "redis_connection_issues": "Redis Connection Issues",
+        "redis_connection_issues_symptoms": "Symptoms: Cache operations failing",
+        "chromadb_issues": "ChromaDB Issues",
+        "chromadb_issues_symptoms": "Symptoms: Vector search not working"
+      },
+      "gpu_issues": {
+        "title": "GPU Issues",
+        "gpu_not_detected": "GPU Not Detected",
+        "gpu_not_detected_symptoms": "Symptoms: System falls back to CPU processing",
+        "gpu_memory_issues": "GPU Memory Issues",
+        "gpu_memory_issues_symptoms": "Symptoms: CUDA out of memory errors",
+        "external_gpu_connection": "External GPU Connection",
+        "external_gpu_connection_symptoms": "Symptoms: External GPU Ollama not accessible"
+      },
+      "authentication_issues": {
+        "title": "Authentication Issues",
+        "login_failed": "Login Failed",
+        "login_failed_symptoms": "Symptoms: Cannot log in with valid credentials",
+        "token_expired": "Token Expired",
+        "token_expired_symptoms": "Symptoms: \"Token expired\" errors",
+        "permission_denied": "Permission Denied",
+        "permission_denied_symptoms": "Symptoms: Access denied for valid users"
+      },
+      "diagnostic_tools": {
+        "title": "Diagnostic Tools",
+        "subtitle": "Use these built-in tools to diagnose and resolve issues:",
+        "health_check_script": "Health Check Script",
+        "health_check_script_desc": "Checks all services, endpoints, and provides status information.",
+        "quick_health_check": "Quick Health Check",
+        "quick_health_check_desc": "Fast check of critical services and endpoints.",
+        "database_diagnostic": "Database Diagnostic",
+        "database_diagnostic_desc": "Comprehensive database health and performance check.",
+        "comprehensive_diagnostic": "Comprehensive Diagnostic",
+        "comprehensive_diagnostic_desc": "Complete system analysis including logs, resources, and configuration.",
+        "tip_label": "Tip:",
+        "tip_text": "Run diagnostic tools regularly to identify potential issues before they become problems. All tools provide detailed output and recommendations for resolution."
+      },
+      "getting_help": {
+        "title": "Getting Additional Help",
+        "subtitle": "If you're still experiencing issues after trying the solutions above:",
+        "enterprise_support": "Enterprise Support",
+        "enterprise_support_desc": "For Enterprise customers with active support contracts:",
+        "enterprise_support_email": "Email: contact@raghim.com",
+        "enterprise_support_priority": "Priority technical support",
+        "enterprise_support_engineering": "Direct access to engineering team",
+        "enterprise_support_custom": "Custom solutions and configurations",
+        "documentation_resources": "Documentation Resources",
+        "documentation_resources_desc": "Additional resources for troubleshooting:",
+        "deployment_guide": "Deployment Guide",
+        "api_reference": "API Reference",
+        "security_guide": "Security Guide",
+        "error_code_reference": "Error code reference",
+        "community_support": "Community Support",
+        "community_support_desc": "For general questions and community help:",
+        "github_issues": "GitHub Issues (for documentation)",
+        "enterprise_community": "Enterprise user community",
+        "best_practices": "Best practices sharing",
+        "feature_requests": "Feature requests"
+      }
+    },
+    "examples": {
+      "meta": { 
+        "title": "Integration Examples - RaghimAI Enterprise RAG System",
+        "description": "Integration examples for RaghimAI Enterprise RAG System - practical code samples and use cases"
+      },
+      "header": {
+        "title": "Integration Examples",
+        "subtitle": "Practical examples and code samples for RaghimAI Enterprise integration"
+      },
+      "toc": {
+        "title": "Examples",
+        "javascript": "JavaScript Examples",
+        "python": "Python Examples",
+        "curl": "cURL Examples",
+        "widget": "Widget Integration",
+        "webhook": "Webhook Examples"
+      },
+      "javascript": {
+        "title": "JavaScript Examples",
+        "subtitle": "Client-side integration examples using JavaScript.",
+        "basic_api_client": "Basic API Client",
+        "usage_example": "Usage Example"
+      },
+      "python": {
+        "title": "Python Examples",
+        "subtitle": "Server-side integration examples using Python.",
+        "python_client": "Python Client",
+        "usage_example": "Usage Example"
+      },
+      "curl": {
+        "title": "cURL Examples",
+        "subtitle": "Command-line integration examples using cURL.",
+        "authentication": "Authentication",
+        "document_upload": "Document Upload",
+        "send_query": "Send Query"
+      },
+      "widget": {
+        "title": "Widget Integration",
+        "subtitle": "Embed RaghimAI widgets in your applications.",
+        "basic_widget": "Basic Widget",
+        "custom_styled_widget": "Custom Styled Widget"
+      },
+      "webhook": {
+        "title": "Webhook Examples",
+        "subtitle": "Handle real-time events with webhooks.",
+        "webhook_configuration": "Webhook Configuration",
+        "webhook_handler": "Webhook Handler (Python)"
+      }
+    },
+    "best_practices": {
+      "meta": { 
+        "title": "Best Practices - RaghimAI Enterprise RAG System",
+        "description": "Best practices for RaghimAI Enterprise RAG System - optimization, security, and deployment guidelines"
+      },
+      "header": {
+        "title": "Best Practices",
+        "subtitle": "Optimization, security, and deployment best practices for RaghimAI Enterprise"
+      },
+      "toc": {
+        "title": "Best Practices",
+        "deployment": "Deployment Best Practices",
+        "security": "Security Best Practices",
+        "performance": "Performance Optimization",
+        "data_management": "Data Management",
+        "monitoring": "Monitoring & Maintenance"
+      },
+      "deployment": {
+        "title": "Deployment Best Practices",
+        "subtitle": "Follow these guidelines for optimal deployment and configuration.",
+        "environment_setup": "Environment Setup",
+        "resource_planning": "Resource Planning",
+        "backup_strategy": "Backup Strategy",
+        "update_management": "Update Management"
+      },
+      "security": {
+        "title": "Security Best Practices",
+        "subtitle": "Implement comprehensive security measures for your deployment.",
+        "authentication_authorization": "Authentication & Authorization",
+        "data_protection": "Data Protection",
+        "network_security": "Network Security"
+      },
+      "performance": {
+        "title": "Performance Optimization",
+        "subtitle": "Optimize system performance for better user experience.",
+        "system_optimization": "System Optimization",
+        "database_optimization": "Database Optimization",
+        "caching_strategy": "Caching Strategy"
+      },
+      "data_management": {
+        "title": "Data Management",
+        "subtitle": "Best practices for managing documents and data.",
+        "document_organization": "Document Organization",
+        "data_quality": "Data Quality",
+        "storage_management": "Storage Management",
+        "backup_recovery": "Backup & Recovery"
+      },
+      "monitoring": {
+        "title": "Monitoring & Maintenance",
+        "subtitle": "Implement comprehensive monitoring and maintenance procedures.",
+        "system_monitoring": "System Monitoring",
+        "user_activity_monitoring": "User Activity Monitoring",
+        "maintenance_schedule": "Maintenance Schedule",
+        "alerting_configuration": "Alerting Configuration"
+      }
     }
   },
   "fr": {
@@ -2034,6 +2347,319 @@
         "subtitle": "Optimisez les performances système pour votre environnement.",
         "resource_allocation": "Allocation Ressources",
         "optimization_settings": "Paramètres Optimisation"
+      }
+    },
+    "api_reference": {
+      "meta": { 
+        "title": "Référence API - Système RAG Entreprise RaghimAI",
+        "description": "Référence API complète pour le Système RAG Entreprise RaghimAI - authentification, documents, chat et endpoints de chat en direct"
+      },
+      "header": {
+        "title": "Référence API",
+        "subtitle": "Documentation API complète pour le Système RAG Entreprise RaghimAI"
+      },
+      "toc": {
+        "title": "Endpoints API",
+        "authentication": "Authentification",
+        "documents": "Gestion Documents",
+        "chat": "Chat & IA",
+        "live_chat": "Chat en Direct",
+        "banking": "Intégration Bancaire",
+        "admin": "Fonctions Admin",
+        "analytics": "Analytiques",
+        "widgets": "Widgets"
+      },
+      "authentication": {
+        "title": "Authentification",
+        "subtitle": "Tous les endpoints API nécessitent une authentification sauf pour la connexion et l'inscription.",
+        "login_desc": "Authentifier l'utilisateur et recevoir un token JWT",
+        "register_desc": "Inscrire un nouveau compte utilisateur",
+        "me_desc": "Obtenir les informations de l'utilisateur actuel",
+        "request_body": "Corps de Requête :",
+        "response": "Réponse :",
+        "headers": "En-têtes :"
+      },
+      "documents": {
+        "title": "Gestion Documents",
+        "subtitle": "Téléverser, traiter et gérer les documents dans des collections.",
+        "upload_desc": "Téléverser des documents pour traitement",
+        "collections_desc": "Lister toutes les collections de documents",
+        "search_desc": "Rechercher des documents en utilisant la similarité vectorielle",
+        "request": "Requête :"
+      },
+      "chat": {
+        "title": "Chat & IA",
+        "subtitle": "Interagir avec les modèles IA pour les questions-réponses et l'analyse de documents.",
+        "chat_desc": "Envoyer un message à l'interface de chat IA",
+        "history_desc": "Obtenir l'historique des conversations de chat",
+        "response_streaming": "Réponse (Streaming) :",
+        "query_params": "Paramètres de Requête :"
+      },
+      "live_chat": {
+        "title": "Système Chat en Direct",
+        "subtitle": "Chat en temps réel avec capacités de transfert d'agent.",
+        "handoff_desc": "Demander un transfert vers un agent humain",
+        "sessions_desc": "Obtenir les sessions de chat actives",
+        "accept_desc": "Accepter la demande de transfert"
+      },
+      "banking": {
+        "title": "Intégration Bancaire",
+        "subtitle": "Endpoints spécialisés pour le traitement de documents financiers.",
+        "process_desc": "Traiter les documents bancaires avec chiffrement",
+        "upload_desc": "Téléverser des documents bancaires chiffrés"
+      },
+      "admin": {
+        "title": "Fonctions Admin",
+        "subtitle": "Endpoints administratifs pour la gestion du système.",
+        "users_list_desc": "Lister tous les utilisateurs (admin uniquement)",
+        "users_create_desc": "Créer un nouvel utilisateur (admin uniquement)",
+        "metrics_desc": "Obtenir les métriques et statistiques du système"
+      },
+      "analytics": {
+        "title": "Analytiques",
+        "subtitle": "Endpoints d'analytiques et de rapports.",
+        "usage_desc": "Obtenir les analytiques d'utilisation",
+        "conversations_desc": "Obtenir les analytiques de conversations"
+      },
+      "widgets": {
+        "title": "Widgets",
+        "subtitle": "Endpoints de gestion et d'intégration de widgets.",
+        "create_desc": "Créer un nouveau widget de chat",
+        "embed_desc": "Obtenir le code d'intégration du widget"
+      },
+      "error_codes": {
+        "title": "Codes d'Erreur",
+        "code": "Code",
+        "message": "Message",
+        "description": "Description",
+        "bad_request": "Mauvaise Requête",
+        "bad_request_desc": "Paramètres de requête invalides",
+        "unauthorized": "Non Autorisé",
+        "unauthorized_desc": "Authentification requise",
+        "forbidden": "Interdit",
+        "forbidden_desc": "Permissions insuffisantes",
+        "not_found": "Non Trouvé",
+        "not_found_desc": "Ressource non trouvée",
+        "too_many_requests": "Trop de Requêtes",
+        "too_many_requests_desc": "Limite de taux dépassée",
+        "internal_server_error": "Erreur Serveur Interne",
+        "internal_server_error_desc": "Erreur serveur survenue"
+      }
+    },
+    "troubleshooting": {
+      "meta": { 
+        "title": "Dépannage - Système RAG Entreprise RaghimAI",
+        "description": "Guide de dépannage pour le Système RAG Entreprise RaghimAI - problèmes courants et solutions"
+      },
+      "header": {
+        "title": "Guide de Dépannage",
+        "subtitle": "Problèmes courants et solutions pour le Système RAG Entreprise RaghimAI"
+      },
+      "toc": {
+        "title": "Liens Rapides",
+        "connection_issues": "Problèmes de Connexion",
+        "performance_issues": "Problèmes de Performance",
+        "deployment_issues": "Problèmes de Déploiement",
+        "database_issues": "Problèmes de Base de Données",
+        "gpu_issues": "Problèmes GPU",
+        "authentication_issues": "Problèmes d'Authentification",
+        "diagnostic_tools": "Outils de Diagnostic"
+      },
+      "solutions": "Solutions :",
+      "connection_issues": {
+        "title": "Problèmes de Connexion",
+        "site_cant_be_reached": "Site Inaccessible",
+        "site_cant_be_reached_symptoms": "Symptômes : \"Ce site est inaccessible\" ou \"ERR_CONNECTION_REFUSED\"",
+        "api_not_responding": "API Ne Répond Pas",
+        "api_not_responding_symptoms": "Symptômes : L'API backend retourne des erreurs de timeout ou de connexion",
+        "websocket_connection_failed": "Connexion WebSocket Échouée",
+        "websocket_connection_failed_symptoms": "Symptômes : Chat en direct ou fonctionnalités temps réel ne fonctionnent pas"
+      },
+      "performance_issues": {
+        "title": "Problèmes de Performance",
+        "slow_ai_responses": "Réponses IA Lentes",
+        "slow_ai_responses_symptoms": "Symptômes : Les réponses IA prennent plus de 10 secondes",
+        "high_memory_usage": "Utilisation Mémoire Élevée",
+        "high_memory_usage_symptoms": "Symptômes : Le système manque de mémoire",
+        "slow_document_processing": "Traitement Documents Lent",
+        "slow_document_processing_symptoms": "Symptômes : Le téléversement et traitement de documents prend trop de temps"
+      },
+      "deployment_issues": {
+        "title": "Problèmes de Déploiement",
+        "docker_compose_fails": "Docker Compose Échoue",
+        "docker_compose_fails_symptoms": "Symptômes : Les conteneurs échouent au démarrage ou se ferment immédiatement",
+        "image_loading_failed": "Chargement Image Échoué",
+        "image_loading_failed_symptoms": "Symptômes : Les images Docker échouent à charger depuis les fichiers tar.gz",
+        "environment_configuration": "Configuration Environnement",
+        "environment_configuration_symptoms": "Symptômes : Les services démarrent mais se comportent de manière inattendue"
+      },
+      "database_issues": {
+        "title": "Problèmes de Base de Données",
+        "postgresql_connection_failed": "Connexion PostgreSQL Échouée",
+        "postgresql_connection_failed_symptoms": "Symptômes : Erreurs de connexion base de données dans les logs",
+        "redis_connection_issues": "Problèmes Connexion Redis",
+        "redis_connection_issues_symptoms": "Symptômes : Les opérations de cache échouent",
+        "chromadb_issues": "Problèmes ChromaDB",
+        "chromadb_issues_symptoms": "Symptômes : La recherche vectorielle ne fonctionne pas"
+      },
+      "gpu_issues": {
+        "title": "Problèmes GPU",
+        "gpu_not_detected": "GPU Non Détecté",
+        "gpu_not_detected_symptoms": "Symptômes : Le système utilise le traitement CPU",
+        "gpu_memory_issues": "Problèmes Mémoire GPU",
+        "gpu_memory_issues_symptoms": "Symptômes : Erreurs CUDA mémoire insuffisante",
+        "external_gpu_connection": "Connexion GPU Externe",
+        "external_gpu_connection_symptoms": "Symptômes : Ollama GPU externe non accessible"
+      },
+      "authentication_issues": {
+        "title": "Problèmes d'Authentification",
+        "login_failed": "Connexion Échouée",
+        "login_failed_symptoms": "Symptômes : Impossible de se connecter avec des identifiants valides",
+        "token_expired": "Token Expiré",
+        "token_expired_symptoms": "Symptômes : Erreurs \"Token expiré\"",
+        "permission_denied": "Permission Refusée",
+        "permission_denied_symptoms": "Symptômes : Accès refusé pour des utilisateurs valides"
+      },
+      "diagnostic_tools": {
+        "title": "Outils de Diagnostic",
+        "subtitle": "Utilisez ces outils intégrés pour diagnostiquer et résoudre les problèmes :",
+        "health_check_script": "Script Vérification Santé",
+        "health_check_script_desc": "Vérifie tous les services, endpoints et fournit des informations de statut.",
+        "quick_health_check": "Vérification Santé Rapide",
+        "quick_health_check_desc": "Vérification rapide des services et endpoints critiques.",
+        "database_diagnostic": "Diagnostic Base de Données",
+        "database_diagnostic_desc": "Vérification complète de la santé et performance de la base de données.",
+        "comprehensive_diagnostic": "Diagnostic Complet",
+        "comprehensive_diagnostic_desc": "Analyse complète du système incluant logs, ressources et configuration.",
+        "tip_label": "Conseil :",
+        "tip_text": "Exécutez les outils de diagnostic régulièrement pour identifier les problèmes potentiels avant qu'ils ne deviennent problématiques. Tous les outils fournissent une sortie détaillée et des recommandations pour la résolution."
+      },
+      "getting_help": {
+        "title": "Obtenir de l'Aide Supplémentaire",
+        "subtitle": "Si vous rencontrez encore des problèmes après avoir essayé les solutions ci-dessus :",
+        "enterprise_support": "Support Entreprise",
+        "enterprise_support_desc": "Pour les clients Entreprise avec contrats de support actifs :",
+        "enterprise_support_email": "Email : contact@raghim.com",
+        "enterprise_support_priority": "Support technique prioritaire",
+        "enterprise_support_engineering": "Accès direct à l'équipe d'ingénierie",
+        "enterprise_support_custom": "Solutions et configurations personnalisées",
+        "documentation_resources": "Ressources Documentation",
+        "documentation_resources_desc": "Ressources supplémentaires pour le dépannage :",
+        "deployment_guide": "Guide de Déploiement",
+        "api_reference": "Référence API",
+        "security_guide": "Guide de Sécurité",
+        "error_code_reference": "Référence codes d'erreur",
+        "community_support": "Support Communauté",
+        "community_support_desc": "Pour questions générales et aide communautaire :",
+        "github_issues": "Issues GitHub (pour documentation)",
+        "enterprise_community": "Communauté utilisateurs Entreprise",
+        "best_practices": "Partage de bonnes pratiques",
+        "feature_requests": "Demandes de fonctionnalités"
+      }
+    },
+    "examples": {
+      "meta": { 
+        "title": "Exemples d'Intégration - Système RAG Entreprise RaghimAI",
+        "description": "Exemples d'intégration pour le Système RAG Entreprise RaghimAI - échantillons de code pratiques et cas d'usage"
+      },
+      "header": {
+        "title": "Exemples d'Intégration",
+        "subtitle": "Exemples pratiques et échantillons de code pour l'intégration RaghimAI Entreprise"
+      },
+      "toc": {
+        "title": "Exemples",
+        "javascript": "Exemples JavaScript",
+        "python": "Exemples Python",
+        "curl": "Exemples cURL",
+        "widget": "Intégration Widget",
+        "webhook": "Exemples Webhook"
+      },
+      "javascript": {
+        "title": "Exemples JavaScript",
+        "subtitle": "Exemples d'intégration côté client utilisant JavaScript.",
+        "basic_api_client": "Client API Basique",
+        "usage_example": "Exemple d'Utilisation"
+      },
+      "python": {
+        "title": "Exemples Python",
+        "subtitle": "Exemples d'intégration côté serveur utilisant Python.",
+        "python_client": "Client Python",
+        "usage_example": "Exemple d'Utilisation"
+      },
+      "curl": {
+        "title": "Exemples cURL",
+        "subtitle": "Exemples d'intégration en ligne de commande utilisant cURL.",
+        "authentication": "Authentification",
+        "document_upload": "Téléversement Document",
+        "send_query": "Envoyer Requête"
+      },
+      "widget": {
+        "title": "Intégration Widget",
+        "subtitle": "Intégrez les widgets RaghimAI dans vos applications.",
+        "basic_widget": "Widget Basique",
+        "custom_styled_widget": "Widget Style Personnalisé"
+      },
+      "webhook": {
+        "title": "Exemples Webhook",
+        "subtitle": "Gérez les événements temps réel avec les webhooks.",
+        "webhook_configuration": "Configuration Webhook",
+        "webhook_handler": "Gestionnaire Webhook (Python)"
+      }
+    },
+    "best_practices": {
+      "meta": { 
+        "title": "Bonnes Pratiques - Système RAG Entreprise RaghimAI",
+        "description": "Bonnes pratiques pour le Système RAG Entreprise RaghimAI - optimisation, sécurité et directives de déploiement"
+      },
+      "header": {
+        "title": "Bonnes Pratiques",
+        "subtitle": "Bonnes pratiques d'optimisation, sécurité et déploiement pour RaghimAI Entreprise"
+      },
+      "toc": {
+        "title": "Bonnes Pratiques",
+        "deployment": "Bonnes Pratiques Déploiement",
+        "security": "Bonnes Pratiques Sécurité",
+        "performance": "Optimisation Performance",
+        "data_management": "Gestion Données",
+        "monitoring": "Surveillance & Maintenance"
+      },
+      "deployment": {
+        "title": "Bonnes Pratiques Déploiement",
+        "subtitle": "Suivez ces directives pour un déploiement et une configuration optimaux.",
+        "environment_setup": "Configuration Environnement",
+        "resource_planning": "Planification Ressources",
+        "backup_strategy": "Stratégie Sauvegarde",
+        "update_management": "Gestion Mises à Jour"
+      },
+      "security": {
+        "title": "Bonnes Pratiques Sécurité",
+        "subtitle": "Implémentez des mesures de sécurité complètes pour votre déploiement.",
+        "authentication_authorization": "Authentification & Autorisation",
+        "data_protection": "Protection Données",
+        "network_security": "Sécurité Réseau"
+      },
+      "performance": {
+        "title": "Optimisation Performance",
+        "subtitle": "Optimisez les performances système pour une meilleure expérience utilisateur.",
+        "system_optimization": "Optimisation Système",
+        "database_optimization": "Optimisation Base de Données",
+        "caching_strategy": "Stratégie Cache"
+      },
+      "data_management": {
+        "title": "Gestion Données",
+        "subtitle": "Bonnes pratiques pour la gestion des documents et données.",
+        "document_organization": "Organisation Documents",
+        "data_quality": "Qualité Données",
+        "storage_management": "Gestion Stockage",
+        "backup_recovery": "Sauvegarde & Récupération"
+      },
+      "monitoring": {
+        "title": "Surveillance & Maintenance",
+        "subtitle": "Implémentez des procédures complètes de surveillance et maintenance.",
+        "system_monitoring": "Surveillance Système",
+        "user_activity_monitoring": "Surveillance Activité Utilisateur",
+        "maintenance_schedule": "Planning Maintenance",
+        "alerting_configuration": "Configuration Alertes"
       }
     }
   }

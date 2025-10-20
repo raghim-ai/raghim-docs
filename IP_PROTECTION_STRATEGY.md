@@ -46,7 +46,7 @@ I've created two versions of the documentation:
 - **Risk Level**: Higher (reveals implementation details)
 - **Protection**: Requires access control
 
-#### 2. **Secure Version** (`index-secure.html`, `deployment-guide-secure.html`)
+#### 2. **Secure Version** (`index-secure.html`, `deployment-guide.html`)
 - **Purpose**: Public-facing marketing and basic usage
 - **Use Case**: GitHub Pages, public documentation
 - **Risk Level**: Lower (high-level descriptions only)
@@ -80,7 +80,7 @@ Hide proprietary deployment mechanisms:
 
 **Use the Secure Version:**
 - `index-secure.html` - Main landing page
-- `deployment-guide-secure.html` - Basic deployment info
+- `deployment-guide.html` - Basic deployment info
 - Generic integration guides
 - High-level troubleshooting
 
