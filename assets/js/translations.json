@@ -1,0 +1,140 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "deployment": "Deployment",
+      "integration": "Integration",
+      "security": "Security",
+      "support": "Support",
+      "api": "API Reference",
+      "troubleshooting": "Troubleshooting",
+      "best_practices": "Best Practices",
+      "quick_start": "Quick Start",
+      "configuration": "Configuration",
+      "examples": "Examples"
+    },
+    "hero": {
+      "title": "Enterprise RAG System",
+      "subtitle": "Secure AI-Powered Document Intelligence & Knowledge Management",
+      "get_started": "Get Started",
+      "learn_more": "Learn More"
+    },
+    "overview": {
+      "title": "System Overview",
+      "document_intelligence": "Document Intelligence",
+      "document_intelligence_desc": "Advanced AI-powered document processing supporting PDF, DOCX, TXT, and MD formats with OCR capabilities.",
+      "knowledge_management": "Knowledge Management",
+      "knowledge_management_desc": "Advanced search and retrieval system for enterprise knowledge bases with intelligent content discovery.",
+      "multilingual": "Multi-Language Support",
+      "multilingual_desc": "Built-in multilingual capabilities with advanced translation and cross-language processing.",
+      "enterprise_security": "Enterprise Security",
+      "enterprise_security_desc": "Multi-layered security with RLS, threat detection, banking-grade encryption, and comprehensive compliance."
+    },
+    "capabilities": {
+      "title": "Core Capabilities",
+      "document_processing": "Document Processing",
+      "intelligent_search": "Intelligent Search",
+      "ai_integration": "AI Integration",
+      "user_management": "User Management",
+      "communication": "Communication System",
+      "banking_solutions": "Banking & Financial Solutions"
+    },
+    "security": {
+      "title": "Security & Compliance",
+      "advanced_auth": "Advanced Authentication",
+      "data_protection": "Enterprise Data Protection",
+      "threat_detection": "Threat Detection & Monitoring",
+      "compliance": "Compliance & Standards"
+    },
+    "deployment": {
+      "title": "Deployment Options",
+      "offline_package": "Offline Enterprise Package",
+      "cloud_deployment": "Cloud Deployment"
+    },
+    "integration": {
+      "title": "Integration & API",
+      "api_capabilities": "API Capabilities",
+      "integration_methods": "Integration Methods"
+    },
+    "support": {
+      "title": "Support & Resources",
+      "documentation": "Documentation",
+      "quick_start": "Quick Start",
+      "contact": "Contact"
+    },
+    "footer": {
+      "product": "Product",
+      "documentation": "Documentation",
+      "support": "Support"
+    }
+  },
+  "fr": {
+    "nav": {
+      "home": "Accueil",
+      "deployment": "Déploiement",
+      "integration": "Intégration",
+      "security": "Sécurité",
+      "support": "Support",
+      "api": "Référence API",
+      "troubleshooting": "Dépannage",
+      "best_practices": "Meilleures Pratiques",
+      "quick_start": "Démarrage Rapide",
+      "configuration": "Configuration",
+      "examples": "Exemples"
+    },
+    "hero": {
+      "title": "Système RAG Entreprise",
+      "subtitle": "Intelligence Documentaire Sécurisée et Gestion des Connaissances",
+      "get_started": "Commencer",
+      "learn_more": "En Savoir Plus"
+    },
+    "overview": {
+      "title": "Aperçu du Système",
+      "document_intelligence": "Intelligence Documentaire",
+      "document_intelligence_desc": "Traitement avancé de documents alimenté par l'IA prenant en charge les formats PDF, DOCX, TXT et MD avec capacités OCR.",
+      "knowledge_management": "Gestion des Connaissances",
+      "knowledge_management_desc": "Système de recherche et récupération avancé pour les bases de connaissances d'entreprise avec découverte intelligente de contenu.",
+      "multilingual": "Support Multilingue",
+      "multilingual_desc": "Capacités multilingues intégrées avec traduction avancée et traitement interlangues.",
+      "enterprise_security": "Sécurité Entreprise",
+      "enterprise_security_desc": "Sécurité multicouche avec RLS, détection de menaces, chiffrement de niveau bancaire et conformité complète."
+    },
+    "capabilities": {
+      "title": "Capacités Principales",
+      "document_processing": "Traitement de Documents",
+      "intelligent_search": "Recherche Intelligente",
+      "ai_integration": "Intégration IA",
+      "user_management": "Gestion des Utilisateurs",
+      "communication": "Système de Communication",
+      "banking_solutions": "Solutions Bancaires et Financières"
+    },
+    "security": {
+      "title": "Sécurité et Conformité",
+      "advanced_auth": "Authentification Avancée",
+      "data_protection": "Protection des Données Entreprise",
+      "threat_detection": "Détection et Surveillance des Menaces",
+      "compliance": "Conformité et Standards"
+    },
+    "deployment": {
+      "title": "Options de Déploiement",
+      "offline_package": "Package Entreprise Hors Ligne",
+      "cloud_deployment": "Déploiement Cloud"
+    },
+    "integration": {
+      "title": "Intégration et API",
+      "api_capabilities": "Capacités API",
+      "integration_methods": "Méthodes d'Intégration"
+    },
+    "support": {
+      "title": "Support et Ressources",
+      "documentation": "Documentation",
+      "quick_start": "Démarrage Rapide",
+      "contact": "Contact"
+    },
+    "footer": {
+      "product": "Produit",
+      "documentation": "Documentation",
+      "support": "Support"
+    }
+  }
+}

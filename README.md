@@ -118,10 +118,10 @@ The documentation covers all major API endpoints:
 
 1. **View Documentation**: Open `index.html` in your browser
 2. **Deploy to GitHub Pages**: 
-   - Create a new repository
+   - Create a new repository (e.g., `docs-raghimai`)
    - Upload all files to the repository
    - Enable GitHub Pages in repository settings
-   - Set custom domain to `doc.raghim.com`
+   - The `CNAME` file automatically configures `doc.raghim.com`
 
 3. **Local Development**:
    ```bash
@@ -129,6 +129,25 @@ The documentation covers all major API endpoints:
    python -m http.server 8000
    # Open http://localhost:8000
    ```
+
+4. **GitHub Pages Setup**:
+   ```bash
+   # Clone and setup repository
+   git clone https://github.com/yourusername/docs-raghimai.git
+   cd docs-raghimai
+   
+   # Copy documentation files
+   cp -r /path/to/docs-github-pages/* .
+   
+   # Commit and push
+   git add .
+   git commit -m "Initial RaghimAI documentation"
+   git push origin main
+   ```
+
+5. **DNS Configuration**:
+   - Add CNAME record: `doc.raghim.com` → `yourusername.github.io`
+   - Or A records pointing to GitHub Pages IPs
 
 ## Customization
 
