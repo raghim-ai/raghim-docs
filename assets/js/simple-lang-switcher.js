@@ -119,6 +119,9 @@ function createSimpleLanguageSwitcher() {
                 // Save preference
                 localStorage.setItem('raghim-language', lang);
                 console.log('Language switched to:', lang);
+                
+                // Apply translations
+                applyTranslations(lang);
             });
         });
 
@@ -149,5 +152,60 @@ setTimeout(() => {
         createSimpleLanguageSwitcher();
     }
 }, 1000);
+
+// Translation application function
+async function applyTranslations(lang) {
+    console.log('Applying translations for language:', lang);
+    
+    try {
+        const response = await fetch('assets/js/translations.json');
+        const translations = await response.json();
+        
+        const elements = document.querySelectorAll('[data-translate]');
+        console.log('Found', elements.length, 'elements to translate');
+        
+        elements.forEach(element => {
+            const key = element.dataset.translate;
+            const translation = getTranslation(translations[lang], key);
+            
+            if (translation) {
+                if (element.tagName === 'INPUT' && element.type === 'submit') {
+                    element.value = translation;
+                } else {
+                    element.textContent = translation;
+                }
+                console.log('Translated', key, 'to', translation);
+            } else {
+                console.log('No translation found for', key);
+            }
+        });
+        
+        console.log('Translation application complete');
+    } catch (error) {
+        console.error('Failed to apply translations:', error);
+    }
+}
+
+function getTranslation(obj, key) {
+    const keys = key.split('.');
+    let result = obj;
+    
+    for (const k of keys) {
+        if (result && result[k]) {
+            result = result[k];
+        } else {
+            return null;
+        }
+    }
+    
+    return result;
+}
+
+// Apply translations on page load
+const savedLang = localStorage.getItem('raghim-language');
+if (savedLang && savedLang !== 'en') {
+    console.log('Applying saved language:', savedLang);
+    applyTranslations(savedLang);
+}
 
 console.log('Simple Language Switcher: Loaded');

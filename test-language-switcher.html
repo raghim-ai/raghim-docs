@@ -90,12 +90,12 @@
         }, 2000);
 
         // Monitor language changes
-        const originalSwitchLanguage = EnhancedTranslationManager.prototype.switchLanguage;
-        EnhancedTranslationManager.prototype.switchLanguage = function(lang) {
-            console.log('Language switched to:', lang);
-            originalSwitchLanguage.call(this, lang);
-            document.getElementById('current-lang').textContent = lang === 'en' ? 'English' : 'Français';
-        };
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('[data-lang]')) {
+                const lang = e.target.closest('[data-lang]').dataset.lang;
+                document.getElementById('current-lang').textContent = lang === 'en' ? 'English' : 'Français';
+            }
+        });
     </script>
 </body>
 </html>
