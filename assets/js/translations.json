@@ -947,28 +947,7 @@
         }
       }
     },
-    "integration_guide": {
-      "meta": { "title": "Integration Guide - RaghimAI Enterprise RAG System" },
-      "header": { "title": "Integration Guide", "subtitle": "Complete integration guide for RaghimAI Enterprise RAG System" },
-      "toc": { "title": "Integration Topics", "api": "API Integration", "widget": "Widget Embedding", "webhook": "Webhook Integration", "auth": "Authentication", "examples": "Code Examples" },
-      "api": {
-        "title": "API Integration",
-        "subtitle": "Integrate RaghimAI Enterprise RAG System with your existing applications using our comprehensive REST API.",
-        "base_url": { "title": "Base URL" },
-        "auth": { "title": "Authentication", "desc": "All API requests require authentication using JWT tokens." },
-        "common": {
-          "title": "Common Endpoints",
-          "documents": { "title": "Document Management", "desc": "Upload and manage documents" },
-          "ai": { "title": "AI Processing", "desc": "Send queries and get AI responses" },
-          "users": { "title": "User Management", "desc": "Manage users and permissions" },
-          "analytics": { "title": "Analytics", "desc": "Access usage and performance data" }
-        }
-      },
-      "widget": { "title": "Widget Embedding", "subtitle": "Embed RaghimAI chat widgets directly into your existing applications.", "basic": { "title": "Basic Widget Embedding" }, "custom": { "title": "Custom Styling" } },
-      "webhook": { "title": "Webhook Integration", "subtitle": "Receive real-time notifications about system events.", "config": { "title": "Webhook Configuration" }, "events": { "title": "Event Types", "document": "document.processed - Document processing completed", "user": "user.created - New user registered", "query": "query.processed - AI query completed", "error": "error.occurred - System error occurred" } },
-      "auth": { "title": "Authentication", "subtitle": "Secure authentication methods for API access.", "jwt": { "title": "JWT Token Authentication" }, "apikey": { "title": "API Key Authentication" } },
-      "examples": { "title": "Code Examples", "subtitle": "Practical examples for common integration scenarios.", "js": { "title": "JavaScript Integration" }, "py": { "title": "Python Integration" } }
-    },
+    
     "nav": {
       "home": "Accueil",
       "capabilities": "Capacités",
@@ -1184,103 +1163,7 @@
       },
       "copyright": "© 2024 RaghimAI. Tous droits réservés. Système RAG Entreprise v1.0.26"
     },
-    "troubleshooting": {
-      "meta": { "title": "Troubleshooting - RaghimAI Enterprise RAG System" },
-      "header": { "title": "Troubleshooting Guide", "subtitle": "Common issues and solutions for RaghimAI Enterprise RAG System" },
-      "toc": { "title": "Quick Links", "connection": "Connection Issues", "performance": "Performance Issues", "deployment": "Deployment Issues", "database": "Database Issues", "gpu": "GPU Issues", "auth": "Authentication Issues", "tools": "Diagnostic Tools" },
-      "common": { "symptoms": "Symptoms:", "solutions": "Solutions:" },
-      "connection": {
-        "title": "Connection Issues",
-        "site_unreachable": {
-          "title": "Site Can't Be Reached",
-          "symptoms": "\"This site can't be reached\" or \"ERR_CONNECTION_REFUSED\"",
-          "containers": "Check if containers are running: ",
-          "firewall": "Verify firewall settings (ports 80, 443)",
-          "external_ip": "Use external IP for VM deployments",
-          "curl": "Test from server: ",
-          "binding": "Check Docker binding: ensure containers bind to 0.0.0.0"
-        },
-        "api_down": {
-          "title": "API Not Responding",
-          "symptoms": "Backend API returns timeout or connection errors",
-          "logs": "Check backend container status: ",
-          "db": "Verify database connections",
-          "resources": "Check resource limits (CPU/Memory)",
-          "restart": "Restart backend service",
-          "network": "Check network connectivity between containers"
-        },
-        "ws_failed": {
-          "title": "WebSocket Connection Failed",
-          "symptoms": "Live chat or real-time features not working",
-          "endpoint": "Check WebSocket endpoint: ",
-          "proxy": "Verify proxy configuration in Nginx",
-          "console": "Check browser console for WebSocket errors",
-          "support": "Ensure WebSocket support in browser",
-          "firewall": "Check firewall for WebSocket ports"
-        }
-      },
-      "performance": {
-        "title": "Performance Issues",
-        "slow_ai": {
-          "title": "Slow AI Responses",
-          "symptoms": "AI responses take 10+ seconds",
-          "gpu": "Enable GPU acceleration: ",
-          "smi": "Check GPU availability: ",
-          "model": "Reduce model size or use quantized models",
-          "fraction": "Increase OLLAMA_GPU_MEMORY_FRACTION",
-          "preload": "Pre-load models: "
-        },
-        "memory": {
-          "title": "High Memory Usage",
-          "symptoms": "System running out of memory",
-          "reduce_models": "Reduce OLLAMA_MAX_LOADED_MODELS",
-          "lower_fraction": "Lower OLLAMA_GPU_MEMORY_FRACTION",
-          "smaller": "Use smaller models (3B instead of 7B)",
-          "ram": "Increase system RAM",
-          "cleanup": "Enable memory cleanup: "
-        }
-      },
-      "deployment": {
-        "title": "Deployment Issues",
-        "compose": { "title": "Docker Compose Fails" },
-        "image": { "title": "Image Loading Failed" },
-        "env": { "title": "Environment Configuration" }
-      },
-      "database": {
-        "title": "Database Issues",
-        "pg": { "title": "PostgreSQL Connection Failed" },
-        "redis": { "title": "Redis Connection Issues" },
-        "chroma": { "title": "ChromaDB Issues" }
-      },
-      "gpu": {
-        "title": "GPU Issues",
-        "not_detected": { "title": "GPU Not Detected" },
-        "memory": { "title": "GPU Memory Issues" },
-        "external": { "title": "External GPU Connection" }
-      },
-      "auth": {
-        "title": "Authentication Issues",
-        "login": { "title": "Login Failed" },
-        "expired": { "title": "Token Expired" },
-        "denied": { "title": "Permission Denied" }
-      },
-      "tools": {
-        "title": "Diagnostic Tools",
-        "subtitle": "Use these built-in tools to diagnose and resolve issues:",
-        "health": { "title": "Health Check Script", "desc": "Checks all services, endpoints, and provides status information." },
-        "quick": { "title": "Quick Health Check", "desc": "Fast check of critical services and endpoints." },
-        "database": { "title": "Database Diagnostic", "desc": "Comprehensive database health and performance check." },
-        "comprehensive": { "title": "Comprehensive Diagnostic", "desc": "Complete system analysis including logs, resources, and configuration." },
-        "tip": { "label": "Tip:", "text": "Run diagnostic tools regularly to identify potential issues before they become problems. All tools provide detailed output and recommendations for resolution." }
-      },
-      "help": {
-        "title": "Getting Additional Help",
-        "subtitle": "If you're still experiencing issues after trying the solutions above:",
-        "enterprise": { "title": "Enterprise Support", "subtitle": "For Enterprise customers with active support contracts:" },
-        "docs": { "title": "Documentation Resources", "subtitle": "Additional resources for troubleshooting:" },
-        "community": { "title": "Community Support", "subtitle": "For general questions and community help:" }
-      }
-    },
+    
     "troubleshooting": {
       "meta": { "title": "Dépannage - Système RAG Entreprise RaghimAI" },
       "header": { "title": "Guide de Dépannage", "subtitle": "Problèmes courants et solutions pour le Système RAG Entreprise RaghimAI" },
