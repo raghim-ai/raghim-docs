@@ -456,6 +456,317 @@
         "advanced_security": "Advanced Security",
         "compliance": "Compliance & Standards",
         "security_certifications": "Security Testing"
+      },
+      "authentication": {
+        "title": "Authentication",
+        "subtitle": "Secure authentication mechanisms to protect access to your RaghimAI Enterprise system.",
+        "jwt": {
+          "title": "JWT Token Authentication",
+          "items": {
+            "secure": "Secure token-based authentication",
+            "expiration": "Configurable token expiration",
+            "refresh": "Refresh token support",
+            "revocation": "Token revocation capabilities"
+          }
+        },
+        "mfa": {
+          "title": "Multi-Factor Authentication",
+          "items": {
+            "totp": "TOTP-based MFA support",
+            "sms": "SMS verification options",
+            "email": "Email-based authentication",
+            "hardware": "Hardware token compatibility"
+          }
+        },
+        "sso": {
+          "title": "Single Sign-On (SSO)",
+          "items": {
+            "saml": "SAML 2.0 integration",
+            "oauth": "OAuth 2.0 support",
+            "ldap": "LDAP/Active Directory",
+            "custom": "Custom SSO providers"
+          }
+        },
+        "session": {
+          "title": "Session Management",
+          "items": {
+            "secure_handling": "Secure session handling",
+            "timeout": "Automatic session timeout",
+            "concurrent": "Concurrent session limits",
+            "invalidation": "Session invalidation"
+          }
+        }
+      },
+      "authorization": {
+        "title": "Authorization",
+        "subtitle": "Role-based access control and permission management.",
+        "rbac": { "title": "Role-Based Access Control (RBAC)" },
+        "org_perms": {
+          "title": "Organization-Level Permissions",
+          "admin": "Organization Admin: Full organization control",
+          "manager": "Department Manager: Department-level access",
+          "lead": "Team Lead: Team management",
+          "member": "Member: Basic user access"
+        }
+      },
+      "encryption": {
+        "title": "Data Encryption",
+        "subtitle": "Comprehensive encryption for data protection at rest and in transit.",
+        "rest": {
+          "title": "Data at Rest",
+          "items": {
+            "aes": "AES-256 encryption for databases",
+            "storage": "Encrypted file storage",
+            "keymgmt": "Secure key management",
+            "hsm": "Hardware security modules"
+          }
+        },
+        "transit": {
+          "title": "Data in Transit",
+          "items": {
+            "tls": "TLS 1.3 encryption",
+            "https": "HTTPS enforcement",
+            "pinning": "Certificate pinning",
+            "api": "Secure API communication"
+          }
+        },
+        "client": {
+          "title": "Client-Side Encryption",
+          "items": {
+            "browser": "Browser-based encryption",
+            "e2e": "End-to-end encryption",
+            "zero": "Zero-knowledge architecture",
+            "keys": "Client key management"
+          }
+        },
+        "keys": {
+          "title": "Key Management",
+          "items": {
+            "rotation": "Automated key rotation",
+            "storage": "Secure key storage",
+            "escrow": "Key escrow services",
+            "recovery": "Backup key recovery"
+          }
+        }
+      },
+      "network": {
+        "title": "Network Security",
+        "subtitle": "Network-level security controls and protection mechanisms.",
+        "firewall": { "title": "Firewall Configuration" },
+        "ip_controls": {
+          "title": "IP Access Controls",
+          "whitelist": "IP Whitelisting: Restrict access to specific IP ranges",
+          "geo": "Geographic Restrictions: Block access from certain countries",
+          "vpn": "VPN Detection: Detect and block VPN traffic",
+          "rate": "Rate Limiting: Prevent abuse and DDoS attacks"
+        },
+        "cors": { "title": "CORS Configuration" }
+      },
+      "audit": {
+        "title": "Audit Logging",
+        "subtitle": "Comprehensive logging and monitoring for security compliance.",
+        "security_events": {
+          "title": "Security Events",
+          "items": {
+            "logins": "Login attempts and failures",
+            "permissions": "Permission changes",
+            "data_access": "Data access events",
+            "config": "System configuration changes"
+          }
+        },
+        "user_activity": {
+          "title": "User Activity",
+          "items": {
+            "docs": "Document uploads and downloads",
+            "search": "Query and search activities",
+            "management": "User management actions",
+            "api": "API usage patterns"
+          }
+        },
+        "system_events": {
+          "title": "System Events",
+          "items": {
+            "lifecycle": "System startup and shutdown",
+            "errors": "Error and exception logs",
+            "metrics": "Performance metrics",
+            "resources": "Resource utilization"
+          }
+        },
+        "compliance": {
+          "title": "Compliance Reporting",
+          "items": {
+            "reports": "Automated compliance reports",
+            "retention": "Data retention tracking",
+            "trails": "Access audit trails",
+            "regulatory": "Regulatory compliance"
+          }
+        }
+      },
+      "architecture": {
+        "title": "Security Architecture",
+        "subtitle": "Multi-layered security approach ensuring comprehensive protection.",
+        "layers": {
+          "external": {
+            "title": "External Access Layer",
+            "items": {
+              "tls": "• HTTPS/TLS 1.3 Encryption",
+              "ip": "• IP Whitelisting & Rate Limiting",
+              "ddos": "• DDoS Protection & Firewall",
+              "cors": "• CORS Configuration",
+              "vpn": "• VPN Detection",
+              "geo": "• Geographic Restrictions"
+            }
+          },
+          "auth": {
+            "title": "Authentication & Authorization",
+            "items": {
+              "jwt": "• JWT Token Authentication",
+              "mfa": "• Multi-Factor Authentication (MFA)",
+              "sso": "• Single Sign-On (SSO)",
+              "rbac": "• Role-Based Access Control (RBAC)",
+              "rls": "• Row-Level Security (RLS)",
+              "session": "• Session Management"
+            }
+          },
+          "app": {
+            "title": "Application Security Layer",
+            "items": {
+              "validation": "• Input Validation & Sanitization",
+              "threat": "• Advanced Threat Detection",
+              "struggle": "• AI Struggle Detection",
+              "suspicious": "• Suspicious Activity Monitoring",
+              "client_encryption": "• Client-Side Encryption",
+              "zero_knowledge": "• Zero-Knowledge Architecture",
+              "pii": "• PII Detection & Anonymization",
+              "banking": "• Banking Privacy Integration"
+            }
+          },
+          "data": {
+            "title": "Data Protection Layer",
+            "items": {
+              "aes": "• AES-256 Encryption at Rest",
+              "policies": "• Database Security Policies",
+              "isolation": "• Multi-Tenant Data Isolation",
+              "backup": "• Automated Backup & Recovery",
+              "audit": "• Audit Logging & Compliance",
+              "retention": "• Data Retention Policies",
+              "regulatory": "• Regulatory Compliance (GDPR, HIPAA)",
+              "monitoring": "• Security Event Monitoring"
+            }
+          },
+          "compliance": { "title": "Compliance & Standards" }
+        },
+        "overview": {
+          "title": "Security Layer Overview",
+          "external": "External Access Layer: Network security, DDoS protection, and access controls",
+          "auth": "Authentication & Authorization: Multi-factor authentication, RBAC, and RLS",
+          "app": "Application Security: Threat detection, encryption, and PII protection",
+          "data": "Data Protection: Encryption at rest, audit logging, and compliance",
+          "compliance": "Compliance Standards: Regulatory compliance and industry standards"
+        }
+      },
+      "advanced": {
+        "title": "Advanced Security Features",
+        "subtitle": "Enterprise-grade security capabilities for regulated industries.",
+        "rls": {
+          "title": "Row-Level Security (RLS)",
+          "items": {
+            "isolation": "Multi-tenant data isolation",
+            "policies": "Dynamic access control policies",
+            "filtering": "Tenant-specific data filtering",
+            "boundaries": "E-commerce security boundaries"
+          }
+        },
+        "threat": {
+          "title": "Advanced Threat Detection",
+          "items": {
+            "ai": "AI struggle detection algorithms",
+            "suspicious": "Suspicious activity monitoring",
+            "escalation": "Automated escalation triggers",
+            "realtime": "Real-time security event analysis"
+          }
+        },
+        "banking": {
+          "title": "Banking-Grade Encryption",
+          "items": {
+            "client": "Client-side encryption for PII",
+            "zero": "Zero-knowledge architecture",
+            "anonymized": "Anonymized data storage",
+            "privacy": "Banking privacy integration"
+          }
+        },
+        "database": {
+          "title": "Database Security",
+          "items": {
+            "permissions": "Multi-level permission systems",
+            "logging": "Security event logging",
+            "access": "Team-based access control",
+            "suspicious": "Suspicious activity detection"
+          }
+        }
+      },
+      "compliance": {
+        "title": "Compliance & Standards",
+        "subtitle": "Comprehensive compliance framework for regulated industries.",
+        "matrix": {
+          "title": "Regulatory Compliance Matrix",
+          "headers": {
+            "standard": "Standard",
+            "coverage": "Coverage",
+            "features": "Features",
+            "status": "Status"
+          },
+          "values": { "full": "Full" },
+          "features": {
+            "gdpr": "Data anonymization, consent management, right to be forgotten",
+            "ccpa": "Consumer data rights, opt-out mechanisms, data transparency",
+            "hipaa": "Healthcare data encryption, access controls, audit trails",
+            "sox": "Financial reporting controls, audit logging, data integrity",
+            "pci": "Payment data protection, network security, monitoring",
+            "iso": "Information security management, risk assessment"
+          },
+          "status": { "compliant": "✅ Compliant" }
+        }
+      },
+      "testing": {
+        "title": "Security Testing & Certifications",
+        "subtitle": "Comprehensive security validation and testing procedures.",
+        "pen": {
+          "title": "Penetration Testing",
+          "items": {
+            "quarterly": "Quarterly security assessments",
+            "scans": "Automated vulnerability scanning",
+            "manual": "Manual penetration testing",
+            "thirdparty": "Third-party security audits"
+          }
+        },
+        "monitoring": {
+          "title": "Security Monitoring",
+          "items": {
+            "realtime": "Real-time threat detection",
+            "correlation": "Security event correlation",
+            "response": "Automated incident response",
+            "alwayson": "24/7 security monitoring"
+          }
+        },
+        "vuln": {
+          "title": "Vulnerability Management",
+          "items": {
+            "updates": "Regular security updates",
+            "patch": "Patch management system",
+            "advisories": "Security advisory notifications",
+            "zero": "Zero-day vulnerability response"
+          }
+        },
+        "training": {
+          "title": "Security Training",
+          "items": {
+            "developer": "Developer security training",
+            "awareness": "Security awareness programs",
+            "incident": "Incident response training",
+            "compliance": "Compliance training modules"
+          }
+        }
       }
     }
   },
@@ -916,6 +1227,317 @@
         "advanced_security": "Sécurité Avancée",
         "compliance": "Conformité et Standards",
         "security_certifications": "Tests de Sécurité"
+      },
+      "authentication": {
+        "title": "Authentification",
+        "subtitle": "Mécanismes d'authentification sécurisés pour protéger l'accès à votre système RaghimAI Entreprise.",
+        "jwt": {
+          "title": "Authentification par jeton JWT",
+          "items": {
+            "secure": "Authentification basée sur jeton sécurisée",
+            "expiration": "Expiration de jeton configurable",
+            "refresh": "Prise en charge des jetons d'actualisation",
+            "revocation": "Capacités de révocation de jeton"
+          }
+        },
+        "mfa": {
+          "title": "Authentification Multi-Facteurs",
+          "items": {
+            "totp": "Prise en charge MFA basée sur TOTP",
+            "sms": "Options de vérification par SMS",
+            "email": "Authentification par email",
+            "hardware": "Compatibilité des jetons matériels"
+          }
+        },
+        "sso": {
+          "title": "Single Sign-On (SSO)",
+          "items": {
+            "saml": "Intégration SAML 2.0",
+            "oauth": "Support OAuth 2.0",
+            "ldap": "LDAP/Active Directory",
+            "custom": "Fournisseurs SSO personnalisés"
+          }
+        },
+        "session": {
+          "title": "Gestion de Session",
+          "items": {
+            "secure_handling": "Gestion sécurisée des sessions",
+            "timeout": "Expiration automatique de session",
+            "concurrent": "Limites de sessions simultanées",
+            "invalidation": "Invalidation de session"
+          }
+        }
+      },
+      "authorization": {
+        "title": "Autorisation",
+        "subtitle": "Contrôle d'accès basé sur les rôles et gestion des permissions.",
+        "rbac": { "title": "Contrôle d'Accès Basé sur les Rôles (RBAC)" },
+        "org_perms": {
+          "title": "Permissions au Niveau de l'Organisation",
+          "admin": "Administrateur d'Organisation : Contrôle complet de l'organisation",
+          "manager": "Responsable de Département : Accès au niveau du département",
+          "lead": "Chef d'Équipe : Gestion d'équipe",
+          "member": "Membre : Accès utilisateur de base"
+        }
+      },
+      "encryption": {
+        "title": "Chiffrement des Données",
+        "subtitle": "Chiffrement complet pour la protection des données au repos et en transit.",
+        "rest": {
+          "title": "Données au Repos",
+          "items": {
+            "aes": "Chiffrement AES-256 pour les bases de données",
+            "storage": "Stockage de fichiers chiffrés",
+            "keymgmt": "Gestion sécurisée des clés",
+            "hsm": "Modules matériels de sécurité"
+          }
+        },
+        "transit": {
+          "title": "Données en Transit",
+          "items": {
+            "tls": "Chiffrement TLS 1.3",
+            "https": "Application de HTTPS",
+            "pinning": "Épinglage de certificats",
+            "api": "Communication API sécurisée"
+          }
+        },
+        "client": {
+          "title": "Chiffrement Côté Client",
+          "items": {
+            "browser": "Chiffrement côté navigateur",
+            "e2e": "Chiffrement de bout en bout",
+            "zero": "Architecture zéro connaissance",
+            "keys": "Gestion des clés côté client"
+          }
+        },
+        "keys": {
+          "title": "Gestion des Clés",
+          "items": {
+            "rotation": "Rotation automatique des clés",
+            "storage": "Stockage sécurisé des clés",
+            "escrow": "Services d'entiercement de clés",
+            "recovery": "Récupération des clés de sauvegarde"
+          }
+        }
+      },
+      "network": {
+        "title": "Sécurité Réseau",
+        "subtitle": "Contrôles de sécurité réseau et mécanismes de protection.",
+        "firewall": { "title": "Configuration du Pare-feu" },
+        "ip_controls": {
+          "title": "Contrôles d'Accès IP",
+          "whitelist": "Liste blanche IP : Restreindre l'accès à des plages IP spécifiques",
+          "geo": "Restrictions Géographiques : Bloquer l'accès depuis certains pays",
+          "vpn": "Détection VPN : Détecter et bloquer le trafic VPN",
+          "rate": "Limitation de Débit : Prévenir les abus et attaques DDoS"
+        },
+        "cors": { "title": "Configuration CORS" }
+      },
+      "audit": {
+        "title": "Journalisation d'Audit",
+        "subtitle": "Journalisation et surveillance complètes pour la conformité de sécurité.",
+        "security_events": {
+          "title": "Événements de Sécurité",
+          "items": {
+            "logins": "Tentatives et échecs de connexion",
+            "permissions": "Changements de permissions",
+            "data_access": "Événements d'accès aux données",
+            "config": "Changements de configuration système"
+          }
+        },
+        "user_activity": {
+          "title": "Activité Utilisateur",
+          "items": {
+            "docs": "Téléversements et téléchargements de documents",
+            "search": "Requêtes et activités de recherche",
+            "management": "Actions de gestion des utilisateurs",
+            "api": "Modèles d'utilisation de l'API"
+          }
+        },
+        "system_events": {
+          "title": "Événements Système",
+          "items": {
+            "lifecycle": "Démarrage et arrêt du système",
+            "errors": "Journaux d'erreurs et d'exceptions",
+            "metrics": "Métriques de performance",
+            "resources": "Utilisation des ressources"
+          }
+        },
+        "compliance": {
+          "title": "Rapports de Conformité",
+          "items": {
+            "reports": "Rapports de conformité automatisés",
+            "retention": "Suivi de rétention des données",
+            "trails": "Pistes d'audit d'accès",
+            "regulatory": "Conformité réglementaire"
+          }
+        }
+      },
+      "architecture": {
+        "title": "Architecture de Sécurité",
+        "subtitle": "Approche de sécurité multi-couches assurant une protection complète.",
+        "layers": {
+          "external": {
+            "title": "Couche d'Accès Externe",
+            "items": {
+              "tls": "• Chiffrement HTTPS/TLS 1.3",
+              "ip": "• Liste blanche d'IP et limitation de débit",
+              "ddos": "• Protection DDoS et pare-feu",
+              "cors": "• Configuration CORS",
+              "vpn": "• Détection VPN",
+              "geo": "• Restrictions géographiques"
+            }
+          },
+          "auth": {
+            "title": "Authentification et Autorisation",
+            "items": {
+              "jwt": "• Authentification par jeton JWT",
+              "mfa": "• Authentification multi-facteurs (MFA)",
+              "sso": "• Single Sign-On (SSO)",
+              "rbac": "• Contrôle d'accès basé sur les rôles (RBAC)",
+              "rls": "• Sécurité au niveau des lignes (RLS)",
+              "session": "• Gestion de session"
+            }
+          },
+          "app": {
+            "title": "Couche de Sécurité Applicative",
+            "items": {
+              "validation": "• Validation et assainissement des entrées",
+              "threat": "• Détection avancée des menaces",
+              "struggle": "• Détection de lutte de l'IA",
+              "suspicious": "• Surveillance des activités suspectes",
+              "client_encryption": "• Chiffrement côté client",
+              "zero_knowledge": "• Architecture zéro connaissance",
+              "pii": "• Détection et anonymisation des PII",
+              "banking": "• Intégration de confidentialité bancaire"
+            }
+          },
+          "data": {
+            "title": "Couche de Protection des Données",
+            "items": {
+              "aes": "• Chiffrement AES-256 au repos",
+              "policies": "• Politiques de sécurité de base de données",
+              "isolation": "• Isolation des données multi-locataires",
+              "backup": "• Sauvegarde et restauration automatisées",
+              "audit": "• Journalisation d'audit et conformité",
+              "retention": "• Politiques de rétention des données",
+              "regulatory": "• Conformité réglementaire (GDPR, HIPAA)",
+              "monitoring": "• Surveillance des événements de sécurité"
+            }
+          },
+          "compliance": { "title": "Conformité et Standards" }
+        },
+        "overview": {
+          "title": "Aperçu de la Couche de Sécurité",
+          "external": "Couche d'Accès Externe : Sécurité réseau, protection DDoS et contrôles d'accès",
+          "auth": "Authentification et Autorisation : MFA, RBAC et RLS",
+          "app": "Sécurité Applicative : Détection des menaces, chiffrement et protection PII",
+          "data": "Protection des Données : Chiffrement au repos, audit et conformité",
+          "compliance": "Standards de Conformité : Conformité réglementaire et normes industrielles"
+        }
+      },
+      "advanced": {
+        "title": "Fonctionnalités de Sécurité Avancée",
+        "subtitle": "Capacités de sécurité de niveau entreprise pour les industries réglementées.",
+        "rls": {
+          "title": "Sécurité au Niveau des Lignes (RLS)",
+          "items": {
+            "isolation": "Isolation des données multi-locataires",
+            "policies": "Politiques de contrôle d'accès dynamiques",
+            "filtering": "Filtrage des données spécifique aux locataires",
+            "boundaries": "Frontières de sécurité e-commerce"
+          }
+        },
+        "threat": {
+          "title": "Détection Avancée des Menaces",
+          "items": {
+            "ai": "Algorithmes de détection de lutte IA",
+            "suspicious": "Surveillance des activités suspectes",
+            "escalation": "Déclencheurs d'escalade automatisés",
+            "realtime": "Analyse en temps réel des événements de sécurité"
+          }
+        },
+        "banking": {
+          "title": "Chiffrement de Niveau Bancaire",
+          "items": {
+            "client": "Chiffrement côté client pour les PII",
+            "zero": "Architecture zéro connaissance",
+            "anonymized": "Stockage de données anonymisées",
+            "privacy": "Intégration de confidentialité bancaire"
+          }
+        },
+        "database": {
+          "title": "Sécurité de Base de Données",
+          "items": {
+            "permissions": "Systèmes d'autorisations multi-niveaux",
+            "logging": "Journalisation des événements de sécurité",
+            "access": "Contrôle d'accès basé sur l'équipe",
+            "suspicious": "Détection d'activités suspectes"
+          }
+        }
+      },
+      "compliance": {
+        "title": "Conformité et Standards",
+        "subtitle": "Cadre de conformité complet pour les industries réglementées.",
+        "matrix": {
+          "title": "Matrice de Conformité Réglementaire",
+          "headers": {
+            "standard": "Standard",
+            "coverage": "Couverture",
+            "features": "Fonctionnalités",
+            "status": "Statut"
+          },
+          "values": { "full": "Complet" },
+          "features": {
+            "gdpr": "Anonymisation des données, gestion du consentement, droit à l'oubli",
+            "ccpa": "Droits des consommateurs, mécanismes d'opt-out, transparence des données",
+            "hipaa": "Chiffrement des données de santé, contrôles d'accès, pistes d'audit",
+            "sox": "Contrôles des rapports financiers, journalisation d'audit, intégrité des données",
+            "pci": "Protection des données de paiement, sécurité réseau, surveillance",
+            "iso": "Gestion de la sécurité de l'information, évaluation des risques"
+          },
+          "status": { "compliant": "✅ Conforme" }
+        }
+      },
+      "testing": {
+        "title": "Tests et Certifications de Sécurité",
+        "subtitle": "Validation et procédures de test de sécurité complètes.",
+        "pen": {
+          "title": "Tests d'Intrusion",
+          "items": {
+            "quarterly": "Évaluations de sécurité trimestrielles",
+            "scans": "Analyse automatisée des vulnérabilités",
+            "manual": "Tests d'intrusion manuels",
+            "thirdparty": "Audits de sécurité tiers"
+          }
+        },
+        "monitoring": {
+          "title": "Surveillance de Sécurité",
+          "items": {
+            "realtime": "Détection des menaces en temps réel",
+            "correlation": "Corrélation des événements de sécurité",
+            "response": "Réponse automatisée aux incidents",
+            "alwayson": "Surveillance 24/7"
+          }
+        },
+        "vuln": {
+          "title": "Gestion des Vulnérabilités",
+          "items": {
+            "updates": "Mises à jour de sécurité régulières",
+            "patch": "Système de gestion des correctifs",
+            "advisories": "Notifications de conseils de sécurité",
+            "zero": "Réponse aux vulnérabilités zero-day"
+          }
+        },
+        "training": {
+          "title": "Formation à la Sécurité",
+          "items": {
+            "developer": "Formation sécurité des développeurs",
+            "awareness": "Programmes de sensibilisation à la sécurité",
+            "incident": "Formation à la réponse aux incidents",
+            "compliance": "Modules de formation conformité"
+          }
+        }
       }
     }
   }
