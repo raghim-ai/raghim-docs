@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troubleshooting - RaghimAI Enterprise RAG System</title>
+    <title data-translate="troubleshooting.meta.title">Troubleshooting - RaghimAI Enterprise RAG System</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <meta name="description" content="Troubleshooting guide for RaghimAI Enterprise RAG System - common issues and solutions">
@@ -35,70 +35,70 @@
     <main class="main-content">
         <div class="container">
             <div class="page-header">
-                <h1>Troubleshooting Guide</h1>
-                <p class="page-subtitle">Common issues and solutions for RaghimAI Enterprise RAG System</p>
+                <h1 data-translate="troubleshooting.header.title">Troubleshooting Guide</h1>
+                <p class="page-subtitle" data-translate="troubleshooting.header.subtitle">Common issues and solutions for RaghimAI Enterprise RAG System</p>
             </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
-                    <h3>Quick Links</h3>
+                    <h3 data-translate="troubleshooting.toc.title">Quick Links</h3>
                     <ul class="toc">
-                        <li><a href="#connection-issues">Connection Issues</a></li>
-                        <li><a href="#performance-issues">Performance Issues</a></li>
-                        <li><a href="#deployment-issues">Deployment Issues</a></li>
-                        <li><a href="#database-issues">Database Issues</a></li>
-                        <li><a href="#gpu-issues">GPU Issues</a></li>
-                        <li><a href="#authentication-issues">Authentication Issues</a></li>
-                        <li><a href="#diagnostic-tools">Diagnostic Tools</a></li>
+                        <li><a href="#connection-issues" data-translate="troubleshooting.toc.connection">Connection Issues</a></li>
+                        <li><a href="#performance-issues" data-translate="troubleshooting.toc.performance">Performance Issues</a></li>
+                        <li><a href="#deployment-issues" data-translate="troubleshooting.toc.deployment">Deployment Issues</a></li>
+                        <li><a href="#database-issues" data-translate="troubleshooting.toc.database">Database Issues</a></li>
+                        <li><a href="#gpu-issues" data-translate="troubleshooting.toc.gpu">GPU Issues</a></li>
+                        <li><a href="#authentication-issues" data-translate="troubleshooting.toc.auth">Authentication Issues</a></li>
+                        <li><a href="#diagnostic-tools" data-translate="troubleshooting.toc.tools">Diagnostic Tools</a></li>
                     </ul>
                 </nav>
 
                 <div class="content">
                     <section id="connection-issues">
-                        <h2>Connection Issues</h2>
+                        <h2 data-translate="troubleshooting.connection.title">Connection Issues</h2>
                         
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
-                                <h3>Site Can't Be Reached</h3>
-                                <p><strong>Symptoms:</strong> "This site can't be reached" or "ERR_CONNECTION_REFUSED"</p>
+                                <h3 data-translate="troubleshooting.connection.site_unreachable.title">Site Can't Be Reached</h3>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.connection.site_unreachable.symptoms">"This site can't be reached" or "ERR_CONNECTION_REFUSED"</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Check if containers are running: <code>docker ps</code></li>
-                                        <li>Verify firewall settings (ports 80, 443)</li>
-                                        <li>Use external IP for VM deployments</li>
-                                        <li>Test from server: <code>curl http://localhost</code></li>
-                                        <li>Check Docker binding: ensure containers bind to 0.0.0.0</li>
+                                        <li data-translate="troubleshooting.connection.site_unreachable.containers">Check if containers are running: <code>docker ps</code></li>
+                                        <li data-translate="troubleshooting.connection.site_unreachable.firewall">Verify firewall settings (ports 80, 443)</li>
+                                        <li data-translate="troubleshooting.connection.site_unreachable.external_ip">Use external IP for VM deployments</li>
+                                        <li data-translate="troubleshooting.connection.site_unreachable.curl">Test from server: <code>curl http://localhost</code></li>
+                                        <li data-translate="troubleshooting.connection.site_unreachable.binding">Check Docker binding: ensure containers bind to 0.0.0.0</li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="issue-card">
-                                <h3>API Not Responding</h3>
-                                <p><strong>Symptoms:</strong> Backend API returns timeout or connection errors</p>
+                                <h3 data-translate="troubleshooting.connection.api_down.title">API Not Responding</h3>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.connection.api_down.symptoms">Backend API returns timeout or connection errors</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Check backend container status: <code>docker logs rag-backend</code></li>
-                                        <li>Verify database connections</li>
-                                        <li>Check resource limits (CPU/Memory)</li>
-                                        <li>Restart backend service</li>
-                                        <li>Check network connectivity between containers</li>
+                                        <li data-translate="troubleshooting.connection.api_down.logs">Check backend container status: <code>docker logs rag-backend</code></li>
+                                        <li data-translate="troubleshooting.connection.api_down.db">Verify database connections</li>
+                                        <li data-translate="troubleshooting.connection.api_down.resources">Check resource limits (CPU/Memory)</li>
+                                        <li data-translate="troubleshooting.connection.api_down.restart">Restart backend service</li>
+                                        <li data-translate="troubleshooting.connection.api_down.network">Check network connectivity between containers</li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="issue-card">
-                                <h3>WebSocket Connection Failed</h3>
-                                <p><strong>Symptoms:</strong> Live chat or real-time features not working</p>
+                                <h3 data-translate="troubleshooting.connection.ws_failed.title">WebSocket Connection Failed</h3>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.connection.ws_failed.symptoms">Live chat or real-time features not working</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Check WebSocket endpoint: <code>ws://localhost:8000/ws</code></li>
-                                        <li>Verify proxy configuration in Nginx</li>
-                                        <li>Check browser console for WebSocket errors</li>
-                                        <li>Ensure WebSocket support in browser</li>
-                                        <li>Check firewall for WebSocket ports</li>
+                                        <li data-translate="troubleshooting.connection.ws_failed.endpoint">Check WebSocket endpoint: <code>ws://localhost:8000/ws</code></li>
+                                        <li data-translate="troubleshooting.connection.ws_failed.proxy">Verify proxy configuration in Nginx</li>
+                                        <li data-translate="troubleshooting.connection.ws_failed.console">Check browser console for WebSocket errors</li>
+                                        <li data-translate="troubleshooting.connection.ws_failed.support">Ensure WebSocket support in browser</li>
+                                        <li data-translate="troubleshooting.connection.ws_failed.firewall">Check firewall for WebSocket ports</li>
                                     </ul>
                                 </div>
                             </div>
@@ -106,35 +106,35 @@
                     </section>
 
                     <section id="performance-issues">
-                        <h2>Performance Issues</h2>
+                        <h2 data-translate="troubleshooting.performance.title">Performance Issues</h2>
                         
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
-                                <h3>Slow AI Responses</h3>
-                                <p><strong>Symptoms:</strong> AI responses take 10+ seconds</p>
+                                <h3 data-translate="troubleshooting.performance.slow_ai.title">Slow AI Responses</h3>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.performance.slow_ai.symptoms">AI responses take 10+ seconds</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Enable GPU acceleration: <code>GPU_ENABLED=true</code></li>
-                                        <li>Check GPU availability: <code>nvidia-smi</code></li>
-                                        <li>Reduce model size or use quantized models</li>
-                                        <li>Increase <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
-                                        <li>Pre-load models: <code>ollama pull model-name</code></li>
+                                        <li data-translate="troubleshooting.performance.slow_ai.gpu">Enable GPU acceleration: <code>GPU_ENABLED=true</code></li>
+                                        <li data-translate="troubleshooting.performance.slow_ai.smi">Check GPU availability: <code>nvidia-smi</code></li>
+                                        <li data-translate="troubleshooting.performance.slow_ai.model">Reduce model size or use quantized models</li>
+                                        <li data-translate="troubleshooting.performance.slow_ai.fraction">Increase <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
+                                        <li data-translate="troubleshooting.performance.slow_ai.preload">Pre-load models: <code>ollama pull model-name</code></li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="issue-card">
-                                <h3>High Memory Usage</h3>
-                                <p><strong>Symptoms:</strong> System running out of memory</p>
+                                <h3 data-translate="troubleshooting.performance.memory.title">High Memory Usage</h3>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.performance.memory.symptoms">System running out of memory</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Reduce <code>OLLAMA_MAX_LOADED_MODELS</code></li>
-                                        <li>Lower <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
-                                        <li>Use smaller models (3B instead of 7B)</li>
-                                        <li>Increase system RAM</li>
-                                        <li>Enable memory cleanup: <code>./scripts/health_check.sh</code></li>
+                                        <li data-translate="troubleshooting.performance.memory.reduce_models">Reduce <code>OLLAMA_MAX_LOADED_MODELS</code></li>
+                                        <li data-translate="troubleshooting.performance.memory.lower_fraction">Lower <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
+                                        <li data-translate="troubleshooting.performance.memory.smaller">Use smaller models (3B instead of 7B)</li>
+                                        <li data-translate="troubleshooting.performance.memory.ram">Increase system RAM</li>
+                                        <li data-translate="troubleshooting.performance.memory.cleanup">Enable memory cleanup: <code>./scripts/health_check.sh</code></li>
                                     </ul>
                                 </div>
                             </div>
@@ -157,11 +157,11 @@
                     </section>
 
                     <section id="deployment-issues">
-                        <h2>Deployment Issues</h2>
+                        <h2 data-translate="troubleshooting.deployment.title">Deployment Issues</h2>
                         
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
-                                <h3>Docker Compose Fails</h3>
+                                <h3 data-translate="troubleshooting.deployment.compose.title">Docker Compose Fails</h3>
                                 <p><strong>Symptoms:</strong> Containers fail to start or exit immediately</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -176,7 +176,7 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>Image Loading Failed</h3>
+                                <h3 data-translate="troubleshooting.deployment.image.title">Image Loading Failed</h3>
                                 <p><strong>Symptoms:</strong> Docker images fail to load from tar.gz files</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -191,7 +191,7 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>Environment Configuration</h3>
+                                <h3 data-translate="troubleshooting.deployment.env.title">Environment Configuration</h3>
                                 <p><strong>Symptoms:</strong> Services start but behave unexpectedly</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -208,11 +208,11 @@
                     </section>
 
                     <section id="database-issues">
-                        <h2>Database Issues</h2>
+                        <h2 data-translate="troubleshooting.database.title">Database Issues</h2>
                         
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
-                                <h3>PostgreSQL Connection Failed</h3>
+                                <h3 data-translate="troubleshooting.database.pg.title">PostgreSQL Connection Failed</h3>
                                 <p><strong>Symptoms:</strong> Database connection errors in logs</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -227,7 +227,7 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>Redis Connection Issues</h3>
+                                <h3 data-translate="troubleshooting.database.redis.title">Redis Connection Issues</h3>
                                 <p><strong>Symptoms:</strong> Cache operations failing</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -242,7 +242,7 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>ChromaDB Issues</h3>
+                                <h3 data-translate="troubleshooting.database.chroma.title">ChromaDB Issues</h3>
                                 <p><strong>Symptoms:</strong> Vector search not working</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -259,11 +259,11 @@
                     </section>
 
                     <section id="gpu-issues">
-                        <h2>GPU Issues</h2>
+                        <h2 data-translate="troubleshooting.gpu.title">GPU Issues</h2>
                         
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
-                                <h3>GPU Not Detected</h3>
+                                <h3 data-translate="troubleshooting.gpu.not_detected.title">GPU Not Detected</h3>
                                 <p><strong>Symptoms:</strong> System falls back to CPU processing</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -278,7 +278,7 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>GPU Memory Issues</h3>
+                                <h3 data-translate="troubleshooting.gpu.memory.title">GPU Memory Issues</h3>
                                 <p><strong>Symptoms:</strong> CUDA out of memory errors</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -293,7 +293,7 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>External GPU Connection</h3>
+                                <h3 data-translate="troubleshooting.gpu.external.title">External GPU Connection</h3>
                                 <p><strong>Symptoms:</strong> External GPU Ollama not accessible</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -310,11 +310,11 @@
                     </section>
 
                     <section id="authentication-issues">
-                        <h2>Authentication Issues</h2>
+                        <h2 data-translate="troubleshooting.auth.title">Authentication Issues</h2>
                         
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
-                                <h3>Login Failed</h3>
+                                <h3 data-translate="troubleshooting.auth.login.title">Login Failed</h3>
                                 <p><strong>Symptoms:</strong> Cannot log in with valid credentials</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -329,7 +329,7 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>Token Expired</h3>
+                                <h3 data-translate="troubleshooting.auth.expired.title">Token Expired</h3>
                                 <p><strong>Symptoms:</strong> "Token expired" errors</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -344,7 +344,7 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>Permission Denied</h3>
+                                <h3 data-translate="troubleshooting.auth.denied.title">Permission Denied</h3>
                                 <p><strong>Symptoms:</strong> Access denied for valid users</p>
                                 <div class="solution">
                                     <h4>Solutions:</h4>
@@ -361,60 +361,60 @@
                     </section>
 
                     <section id="diagnostic-tools">
-                        <h2>Diagnostic Tools</h2>
-                        <p>Use these built-in tools to diagnose and resolve issues:</p>
+                        <h2 data-translate="troubleshooting.tools.title">Diagnostic Tools</h2>
+                        <p data-translate="troubleshooting.tools.subtitle">Use these built-in tools to diagnose and resolve issues:</p>
 
                         <div class="verification-steps">
                             <div class="verification-step">
-                                <h3>Health Check Script</h3>
+                                <h3 data-translate="troubleshooting.tools.health.title">Health Check Script</h3>
                                 <div class="code-block">
                                     <pre><code># Run comprehensive health check
 ./scripts/health_check.sh</code></pre>
                                 </div>
-                                <p>Checks all services, endpoints, and provides status information.</p>
+                                <p data-translate="troubleshooting.tools.health.desc">Checks all services, endpoints, and provides status information.</p>
                             </div>
 
                             <div class="verification-step">
-                                <h3>Quick Health Check</h3>
+                                <h3 data-translate="troubleshooting.tools.quick.title">Quick Health Check</h3>
                                 <div class="code-block">
                                     <pre><code># Quick system status
 ./scripts/quick_health_check.sh</code></pre>
                                 </div>
-                                <p>Fast check of critical services and endpoints.</p>
+                                <p data-translate="troubleshooting.tools.quick.desc">Fast check of critical services and endpoints.</p>
                             </div>
 
                             <div class="verification-step">
-                                <h3>Database Diagnostic</h3>
+                                <h3 data-translate="troubleshooting.tools.database.title">Database Diagnostic</h3>
                                 <div class="code-block">
                                     <pre><code># Database-specific diagnostics
 ./scripts/database_diagnostic.sh</code></pre>
                                 </div>
-                                <p>Comprehensive database health and performance check.</p>
+                                <p data-translate="troubleshooting.tools.database.desc">Comprehensive database health and performance check.</p>
                             </div>
 
                             <div class="verification-step">
-                                <h3>Comprehensive Diagnostic</h3>
+                                <h3 data-translate="troubleshooting.tools.comprehensive.title">Comprehensive Diagnostic</h3>
                                 <div class="code-block">
                                     <pre><code># Full system diagnostic
 ./scripts/comprehensive_diagnostic.sh</code></pre>
                                 </div>
-                                <p>Complete system analysis including logs, resources, and configuration.</p>
+                                <p data-translate="troubleshooting.tools.comprehensive.desc">Complete system analysis including logs, resources, and configuration.</p>
                             </div>
                         </div>
 
                         <div class="info-box">
-                            <strong>Tip:</strong> Run diagnostic tools regularly to identify potential issues before they become problems. All tools provide detailed output and recommendations for resolution.
+                            <strong data-translate="troubleshooting.tools.tip.label">Tip:</strong> <span data-translate="troubleshooting.tools.tip.text">Run diagnostic tools regularly to identify potential issues before they become problems. All tools provide detailed output and recommendations for resolution.</span>
                         </div>
                     </section>
 
                     <section id="getting-help">
-                        <h2>Getting Additional Help</h2>
-                        <p>If you're still experiencing issues after trying the solutions above:</p>
+                        <h2 data-translate="troubleshooting.help.title">Getting Additional Help</h2>
+                        <p data-translate="troubleshooting.help.subtitle">If you're still experiencing issues after trying the solutions above:</p>
 
                         <div class="support-options">
                             <div class="support-card">
-                                <h3>Enterprise Support</h3>
-                                <p>For Enterprise customers with active support contracts:</p>
+                                <h3 data-translate="troubleshooting.help.enterprise.title">Enterprise Support</h3>
+                                <p data-translate="troubleshooting.help.enterprise.subtitle">For Enterprise customers with active support contracts:</p>
                                 <ul>
                                     <li>Email: contact@raghim.com</li>
                                     <li>Priority technical support</li>
@@ -424,8 +424,8 @@
                             </div>
 
                             <div class="support-card">
-                                <h3>Documentation Resources</h3>
-                                <p>Additional resources for troubleshooting:</p>
+                                <h3 data-translate="troubleshooting.help.docs.title">Documentation Resources</h3>
+                                <p data-translate="troubleshooting.help.docs.subtitle">Additional resources for troubleshooting:</p>
                                 <ul>
                                     <li><a href="deployment-guide.html">Deployment Guide</a></li>
                                     <li><a href="api-reference.html">API Reference</a></li>
@@ -435,8 +435,8 @@
                             </div>
 
                             <div class="support-card">
-                                <h3>Community Support</h3>
-                                <p>For general questions and community help:</p>
+                                <h3 data-translate="troubleshooting.help.community.title">Community Support</h3>
+                                <p data-translate="troubleshooting.help.community.subtitle">For general questions and community help:</p>
                                 <ul>
                                     <li>GitHub Issues (for documentation)</li>
                                     <li>Enterprise user community</li>

@@ -1,5 +1,87 @@
 {
   "en": {
+    "api_reference": {
+      "meta": { "title": "API Reference - RaghimAI Enterprise RAG System" },
+      "header": { "title": "API Reference", "subtitle": "Complete API documentation for RaghimAI Enterprise RAG System" },
+      "toc": {
+        "title": "API Endpoints",
+        "authentication": "Authentication",
+        "documents": "Document Management",
+        "chat": "Chat & AI",
+        "live_chat": "Live Chat",
+        "banking": "Banking Integration",
+        "admin": "Admin Functions",
+        "analytics": "Analytics",
+        "widgets": "Widgets"
+      },
+      "common": {
+        "request": "Request:",
+        "request_body": "Request Body:",
+        "response": "Response:",
+        "headers": "Headers:",
+        "query_params": "Query Parameters:"
+      },
+      "authentication": {
+        "title": "Authentication",
+        "subtitle": "All API endpoints require authentication except for login and registration.",
+        "login": { "desc": "Authenticate user and receive JWT token" },
+        "register": { "desc": "Register new user account" },
+        "me": { "desc": "Get current user information" }
+      },
+      "documents": {
+        "title": "Document Management",
+        "subtitle": "Upload, process, and manage documents in collections.",
+        "upload": { "desc": "Upload documents for processing" },
+        "collections": { "desc": "List all document collections" },
+        "search": { "desc": "Search documents using vector similarity" }
+      },
+      "chat": {
+        "title": "Chat & AI",
+        "subtitle": "Interact with AI models for question-answering and document analysis.",
+        "chat": { "desc": "Send message to AI chat interface" },
+        "history": { "desc": "Get chat conversation history" },
+        "streaming_response": "Response (Streaming):"
+      },
+      "live_chat": {
+        "title": "Live Chat System",
+        "subtitle": "Real-time chat with agent handoff capabilities.",
+        "handoff": { "desc": "Request handoff to human agent" },
+        "sessions": { "desc": "Get active chat sessions" },
+        "accept": { "desc": "Accept handoff request" }
+      },
+      "banking": {
+        "title": "Banking Integration",
+        "subtitle": "Specialized endpoints for financial document processing.",
+        "process": { "desc": "Process banking documents with encryption" },
+        "upload": { "desc": "Upload encrypted banking documents" }
+      },
+      "admin": {
+        "title": "Admin Functions",
+        "subtitle": "Administrative endpoints for system management."
+      },
+      "analytics": { "title": "Analytics", "subtitle": "Analytics and reporting endpoints." },
+      "widgets": { "title": "Widgets", "subtitle": "Widget management and embedding endpoints." },
+      "errors": {
+        "title": "Error Codes",
+        "headers": { "code": "Code", "message": "Message", "description": "Description" },
+        "messages": {
+          "bad_request": "Bad Request",
+          "unauthorized": "Unauthorized",
+          "forbidden": "Forbidden",
+          "not_found": "Not Found",
+          "too_many": "Too Many Requests",
+          "internal": "Internal Server Error"
+        },
+        "descriptions": {
+          "bad_request": "Invalid request parameters",
+          "unauthorized": "Authentication required",
+          "forbidden": "Insufficient permissions",
+          "not_found": "Resource not found",
+          "too_many": "Rate limit exceeded",
+          "internal": "Server error occurred"
+        }
+      }
+    },
     "nav": {
       "home": "Home",
       "capabilities": "Capabilities",
@@ -726,6 +808,21 @@
             "iso": "Information security management, risk assessment"
           },
           "status": { "compliant": "✅ Compliant" }
+        },
+        "banking_financial": {
+          "title": "Banking & Financial Compliance",
+          "basel": "Basel III: Risk management and capital adequacy",
+          "mifid": "MiFID II: Financial instruments and market transparency",
+          "fatca": "FATCA: Foreign account tax compliance",
+          "amlkvc": "AML/KYC: Anti-money laundering and know-your-customer"
+        },
+        "pii": {
+          "title": "PII Detection & Handling",
+          "block": "# Automated PII detection\n- Credit card numbers\n- Social security numbers\n- Bank account numbers\n- Email addresses\n- Phone numbers\n- Names and addresses\n\n# Handling mechanisms\n- Automatic anonymization\n- Encryption at rest\n- Access logging\n- Consent tracking"
+        },
+        "retention": {
+          "title": "Data Retention & Governance",
+          "block": "# Configurable retention policies\n- User data: 7 years (configurable)\n- Audit logs: 3 years (regulatory minimum)\n- Document data: Per organization policy\n- Temporary files: 30 days\n- PII data: Per consent agreement\n- Banking data: Per regulatory requirements"
         }
       },
       "testing": {
@@ -771,6 +868,107 @@
     }
   },
   "fr": {
+    "api_reference": {
+      "meta": { "title": "Référence API - Système RAG Entreprise RaghimAI" },
+      "header": { "title": "Référence API", "subtitle": "Documentation API complète pour le Système RAG Entreprise RaghimAI" },
+      "toc": {
+        "title": "Points de Terminaison API",
+        "authentication": "Authentification",
+        "documents": "Gestion de Documents",
+        "chat": "Chat & IA",
+        "live_chat": "Chat en Direct",
+        "banking": "Intégration Bancaire",
+        "admin": "Fonctions Admin",
+        "analytics": "Analytique",
+        "widgets": "Widgets"
+      },
+      "common": {
+        "request": "Requête :",
+        "request_body": "Corps de Requête :",
+        "response": "Réponse :",
+        "headers": "En-têtes :",
+        "query_params": "Paramètres de Requête :"
+      },
+      "authentication": {
+        "title": "Authentification",
+        "subtitle": "Tous les points d'API nécessitent une authentification sauf connexion et inscription.",
+        "login": { "desc": "Authentifier l'utilisateur et recevoir un jeton JWT" },
+        "register": { "desc": "Créer un nouveau compte utilisateur" },
+        "me": { "desc": "Obtenir les informations de l'utilisateur courant" }
+      },
+      "documents": {
+        "title": "Gestion de Documents",
+        "subtitle": "Télécharger, traiter et gérer les documents dans des collections.",
+        "upload": { "desc": "Télécharger des documents pour traitement" },
+        "collections": { "desc": "Lister toutes les collections de documents" },
+        "search": { "desc": "Rechercher des documents via similarité vectorielle" }
+      },
+      "chat": {
+        "title": "Chat & IA",
+        "subtitle": "Interagir avec des modèles IA pour questions-réponses et analyse de documents.",
+        "chat": { "desc": "Envoyer un message à l'interface de chat IA" },
+        "history": { "desc": "Obtenir l'historique des conversations" },
+        "streaming_response": "Réponse (Streaming) :"
+      },
+      "live_chat": {
+        "title": "Chat en Direct",
+        "subtitle": "Chat en temps réel avec transfert vers un agent.",
+        "handoff": { "desc": "Demander un transfert vers un agent humain" },
+        "sessions": { "desc": "Obtenir les sessions de chat actives" },
+        "accept": { "desc": "Accepter une demande de transfert" }
+      },
+      "banking": {
+        "title": "Intégration Bancaire",
+        "subtitle": "Points d'API spécialisés pour le traitement de documents financiers.",
+        "process": { "desc": "Traiter des documents bancaires avec chiffrement" },
+        "upload": { "desc": "Téléverser des documents bancaires chiffrés" }
+      },
+      "admin": { "title": "Fonctions Admin", "subtitle": "Points d'API d'administration pour la gestion du système." },
+      "analytics": { "title": "Analytique", "subtitle": "Points d'API d'analyse et de rapports." },
+      "widgets": { "title": "Widgets", "subtitle": "Gestion des widgets et intégration." },
+      "errors": {
+        "title": "Codes d'Erreur",
+        "headers": { "code": "Code", "message": "Message", "description": "Description" },
+        "messages": {
+          "bad_request": "Mauvaise Requête",
+          "unauthorized": "Non Autorisé",
+          "forbidden": "Interdit",
+          "not_found": "Introuvable",
+          "too_many": "Trop de Requêtes",
+          "internal": "Erreur Interne du Serveur"
+        },
+        "descriptions": {
+          "bad_request": "Paramètres de requête invalides",
+          "unauthorized": "Authentification requise",
+          "forbidden": "Permissions insuffisantes",
+          "not_found": "Ressource introuvable",
+          "too_many": "Limite de requêtes dépassée",
+          "internal": "Erreur serveur survenue"
+        }
+      }
+    },
+    "integration_guide": {
+      "meta": { "title": "Integration Guide - RaghimAI Enterprise RAG System" },
+      "header": { "title": "Integration Guide", "subtitle": "Complete integration guide for RaghimAI Enterprise RAG System" },
+      "toc": { "title": "Integration Topics", "api": "API Integration", "widget": "Widget Embedding", "webhook": "Webhook Integration", "auth": "Authentication", "examples": "Code Examples" },
+      "api": {
+        "title": "API Integration",
+        "subtitle": "Integrate RaghimAI Enterprise RAG System with your existing applications using our comprehensive REST API.",
+        "base_url": { "title": "Base URL" },
+        "auth": { "title": "Authentication", "desc": "All API requests require authentication using JWT tokens." },
+        "common": {
+          "title": "Common Endpoints",
+          "documents": { "title": "Document Management", "desc": "Upload and manage documents" },
+          "ai": { "title": "AI Processing", "desc": "Send queries and get AI responses" },
+          "users": { "title": "User Management", "desc": "Manage users and permissions" },
+          "analytics": { "title": "Analytics", "desc": "Access usage and performance data" }
+        }
+      },
+      "widget": { "title": "Widget Embedding", "subtitle": "Embed RaghimAI chat widgets directly into your existing applications.", "basic": { "title": "Basic Widget Embedding" }, "custom": { "title": "Custom Styling" } },
+      "webhook": { "title": "Webhook Integration", "subtitle": "Receive real-time notifications about system events.", "config": { "title": "Webhook Configuration" }, "events": { "title": "Event Types", "document": "document.processed - Document processing completed", "user": "user.created - New user registered", "query": "query.processed - AI query completed", "error": "error.occurred - System error occurred" } },
+      "auth": { "title": "Authentication", "subtitle": "Secure authentication methods for API access.", "jwt": { "title": "JWT Token Authentication" }, "apikey": { "title": "API Key Authentication" } },
+      "examples": { "title": "Code Examples", "subtitle": "Practical examples for common integration scenarios.", "js": { "title": "JavaScript Integration" }, "py": { "title": "Python Integration" } }
+    },
     "nav": {
       "home": "Accueil",
       "capabilities": "Capacités",
@@ -985,6 +1183,166 @@
         "best_practices": "Meilleures Pratiques"
       },
       "copyright": "© 2024 RaghimAI. Tous droits réservés. Système RAG Entreprise v1.0.26"
+    },
+    "troubleshooting": {
+      "meta": { "title": "Troubleshooting - RaghimAI Enterprise RAG System" },
+      "header": { "title": "Troubleshooting Guide", "subtitle": "Common issues and solutions for RaghimAI Enterprise RAG System" },
+      "toc": { "title": "Quick Links", "connection": "Connection Issues", "performance": "Performance Issues", "deployment": "Deployment Issues", "database": "Database Issues", "gpu": "GPU Issues", "auth": "Authentication Issues", "tools": "Diagnostic Tools" },
+      "common": { "symptoms": "Symptoms:", "solutions": "Solutions:" },
+      "connection": {
+        "title": "Connection Issues",
+        "site_unreachable": {
+          "title": "Site Can't Be Reached",
+          "symptoms": "\"This site can't be reached\" or \"ERR_CONNECTION_REFUSED\"",
+          "containers": "Check if containers are running: ",
+          "firewall": "Verify firewall settings (ports 80, 443)",
+          "external_ip": "Use external IP for VM deployments",
+          "curl": "Test from server: ",
+          "binding": "Check Docker binding: ensure containers bind to 0.0.0.0"
+        },
+        "api_down": {
+          "title": "API Not Responding",
+          "symptoms": "Backend API returns timeout or connection errors",
+          "logs": "Check backend container status: ",
+          "db": "Verify database connections",
+          "resources": "Check resource limits (CPU/Memory)",
+          "restart": "Restart backend service",
+          "network": "Check network connectivity between containers"
+        },
+        "ws_failed": {
+          "title": "WebSocket Connection Failed",
+          "symptoms": "Live chat or real-time features not working",
+          "endpoint": "Check WebSocket endpoint: ",
+          "proxy": "Verify proxy configuration in Nginx",
+          "console": "Check browser console for WebSocket errors",
+          "support": "Ensure WebSocket support in browser",
+          "firewall": "Check firewall for WebSocket ports"
+        }
+      },
+      "performance": {
+        "title": "Performance Issues",
+        "slow_ai": {
+          "title": "Slow AI Responses",
+          "symptoms": "AI responses take 10+ seconds",
+          "gpu": "Enable GPU acceleration: ",
+          "smi": "Check GPU availability: ",
+          "model": "Reduce model size or use quantized models",
+          "fraction": "Increase OLLAMA_GPU_MEMORY_FRACTION",
+          "preload": "Pre-load models: "
+        },
+        "memory": {
+          "title": "High Memory Usage",
+          "symptoms": "System running out of memory",
+          "reduce_models": "Reduce OLLAMA_MAX_LOADED_MODELS",
+          "lower_fraction": "Lower OLLAMA_GPU_MEMORY_FRACTION",
+          "smaller": "Use smaller models (3B instead of 7B)",
+          "ram": "Increase system RAM",
+          "cleanup": "Enable memory cleanup: "
+        }
+      },
+      "deployment": {
+        "title": "Deployment Issues",
+        "compose": { "title": "Docker Compose Fails" },
+        "image": { "title": "Image Loading Failed" },
+        "env": { "title": "Environment Configuration" }
+      },
+      "database": {
+        "title": "Database Issues",
+        "pg": { "title": "PostgreSQL Connection Failed" },
+        "redis": { "title": "Redis Connection Issues" },
+        "chroma": { "title": "ChromaDB Issues" }
+      },
+      "gpu": {
+        "title": "GPU Issues",
+        "not_detected": { "title": "GPU Not Detected" },
+        "memory": { "title": "GPU Memory Issues" },
+        "external": { "title": "External GPU Connection" }
+      },
+      "auth": {
+        "title": "Authentication Issues",
+        "login": { "title": "Login Failed" },
+        "expired": { "title": "Token Expired" },
+        "denied": { "title": "Permission Denied" }
+      },
+      "tools": {
+        "title": "Diagnostic Tools",
+        "subtitle": "Use these built-in tools to diagnose and resolve issues:",
+        "health": { "title": "Health Check Script", "desc": "Checks all services, endpoints, and provides status information." },
+        "quick": { "title": "Quick Health Check", "desc": "Fast check of critical services and endpoints." },
+        "database": { "title": "Database Diagnostic", "desc": "Comprehensive database health and performance check." },
+        "comprehensive": { "title": "Comprehensive Diagnostic", "desc": "Complete system analysis including logs, resources, and configuration." },
+        "tip": { "label": "Tip:", "text": "Run diagnostic tools regularly to identify potential issues before they become problems. All tools provide detailed output and recommendations for resolution." }
+      },
+      "help": {
+        "title": "Getting Additional Help",
+        "subtitle": "If you're still experiencing issues after trying the solutions above:",
+        "enterprise": { "title": "Enterprise Support", "subtitle": "For Enterprise customers with active support contracts:" },
+        "docs": { "title": "Documentation Resources", "subtitle": "Additional resources for troubleshooting:" },
+        "community": { "title": "Community Support", "subtitle": "For general questions and community help:" }
+      }
+    },
+    "troubleshooting": {
+      "meta": { "title": "Dépannage - Système RAG Entreprise RaghimAI" },
+      "header": { "title": "Guide de Dépannage", "subtitle": "Problèmes courants et solutions pour le Système RAG Entreprise RaghimAI" },
+      "toc": { "title": "Liens Rapides", "connection": "Problèmes de Connexion", "performance": "Problèmes de Performance", "deployment": "Problèmes de Déploiement", "database": "Problèmes de Base de Données", "gpu": "Problèmes GPU", "auth": "Problèmes d'Authentification", "tools": "Outils de Diagnostic" },
+      "common": { "symptoms": "Symptômes :", "solutions": "Solutions :" },
+      "connection": {
+        "title": "Problèmes de Connexion",
+        "site_unreachable": {
+          "title": "Site Inaccessible",
+          "symptoms": "\"Ce site est inaccessible\" ou \"ERR_CONNECTION_REFUSED\"",
+          "containers": "Vérifiez si les conteneurs sont en cours d'exécution : ",
+          "firewall": "Vérifiez les paramètres du pare-feu (ports 80, 443)",
+          "external_ip": "Utilisez l'IP externe pour les déploiements VM",
+          "curl": "Testez depuis le serveur : ",
+          "binding": "Vérifiez le binding Docker : assurez-vous que les conteneurs écoutent sur 0.0.0.0"
+        },
+        "api_down": {
+          "title": "API Non Répondante",
+          "symptoms": "L'API backend renvoie des délais d'attente ou des erreurs de connexion",
+          "logs": "Vérifiez l'état du conteneur backend : ",
+          "db": "Vérifiez les connexions à la base de données",
+          "resources": "Vérifiez les limites de ressources (CPU/Mémoire)",
+          "restart": "Redémarrez le service backend",
+          "network": "Vérifiez la connectivité réseau entre les conteneurs"
+        },
+        "ws_failed": {
+          "title": "Échec de Connexion WebSocket",
+          "symptoms": "Le chat en direct ou les fonctionnalités temps réel ne fonctionnent pas",
+          "endpoint": "Vérifiez l'endpoint WebSocket : ",
+          "proxy": "Vérifiez la configuration proxy dans Nginx",
+          "console": "Vérifiez la console du navigateur pour les erreurs WebSocket",
+          "support": "Assurez-vous du support WebSocket dans le navigateur",
+          "firewall": "Vérifiez le pare-feu pour les ports WebSocket"
+        }
+      },
+      "performance": {
+        "title": "Problèmes de Performance",
+        "slow_ai": {
+          "title": "Réponses IA Lentes",
+          "symptoms": "Les réponses IA prennent plus de 10 secondes",
+          "gpu": "Activer l'accélération GPU : ",
+          "smi": "Vérifier la disponibilité du GPU : ",
+          "model": "Réduire la taille du modèle ou utiliser des modèles quantifiés",
+          "fraction": "Augmenter OLLAMA_GPU_MEMORY_FRACTION",
+          "preload": "Précharger les modèles : "
+        },
+        "memory": {
+          "title": "Utilisation Mémoire Élevée",
+          "symptoms": "Le système manque de mémoire",
+          "reduce_models": "Réduire OLLAMA_MAX_LOADED_MODELS",
+          "lower_fraction": "Diminuer OLLAMA_GPU_MEMORY_FRACTION",
+          "smaller": "Utiliser des modèles plus petits (3B au lieu de 7B)",
+          "ram": "Augmenter la RAM du système",
+          "cleanup": "Activer le nettoyage mémoire : "
+        }
+      },
+      "deployment": { "title": "Problèmes de Déploiement", "compose": { "title": "Échec Docker Compose" }, "image": { "title": "Échec du Chargement d'Image" }, "env": { "title": "Configuration de l'Environnement" } },
+      "database": { "title": "Problèmes de Base de Données", "pg": { "title": "Échec de Connexion PostgreSQL" }, "redis": { "title": "Problèmes de Connexion Redis" }, "chroma": { "title": "Problèmes ChromaDB" } },
+      "gpu": { "title": "Problèmes GPU", "not_detected": { "title": "GPU Non Détecté" }, "memory": { "title": "Problèmes de Mémoire GPU" }, "external": { "title": "Connexion GPU Externe" } },
+      "auth": { "title": "Problèmes d'Authentification", "login": { "title": "Échec de Connexion" }, "expired": { "title": "Jeton Expiré" }, "denied": { "title": "Permission Refusée" } },
+      "tools": { "title": "Outils de Diagnostic", "subtitle": "Utilisez ces outils intégrés pour diagnostiquer et résoudre les problèmes :", "health": { "title": "Script de Vérification", "desc": "Vérifie tous les services, points de terminaison et fournit des informations d'état." }, "quick": { "title": "Vérification Rapide", "desc": "Vérification rapide des services et points critiques." }, "database": { "title": "Diagnostic Base de Données", "desc": "Vérification complète de la santé et des performances de la base." }, "comprehensive": { "title": "Diagnostic Complet", "desc": "Analyse complète du système incluant journaux, ressources et configuration." }, "tip": { "label": "Astuce :", "text": "Exécutez régulièrement les outils de diagnostic pour identifier les problèmes potentiels avant qu'ils ne deviennent critiques. Tous les outils fournissent des recommandations détaillées." } },
+      "help": { "title": "Obtenir de l'Aide Supplémentaire", "subtitle": "Si vous rencontrez encore des problèmes après avoir essayé les solutions ci-dessus :", "enterprise": { "title": "Support Entreprise", "subtitle": "Pour les clients Entreprise avec contrats de support actifs :" }, "docs": { "title": "Ressources de Documentation", "subtitle": "Ressources supplémentaires pour le dépannage :" }, "community": { "title": "Support Communautaire", "subtitle": "Pour les questions générales et l'aide de la communauté :" } }
     }
     ,
     "deployment_guide": {
@@ -1216,6 +1574,28 @@
         "title": "Guide de Sécurité",
         "subtitle": "Guide de sécurité complet pour le Système RAG Entreprise RaghimAI"
       },
+    "integration_guide": {
+      "meta": { "title": "Guide d'Intégration - Système RAG Entreprise RaghimAI" },
+      "header": { "title": "Guide d'Intégration", "subtitle": "Guide d'intégration complet pour le Système RAG Entreprise RaghimAI" },
+      "toc": { "title": "Sujets d'Intégration", "api": "Intégration API", "widget": "Intégration de Widget", "webhook": "Intégration Webhook", "auth": "Authentification", "examples": "Exemples de Code" },
+      "api": {
+        "title": "Intégration API",
+        "subtitle": "Intégrez le Système RAG Entreprise RaghimAI à vos applications via notre API REST complète.",
+        "base_url": { "title": "URL de Base" },
+        "auth": { "title": "Authentification", "desc": "Toutes les requêtes API nécessitent une authentification via jetons JWT." },
+        "common": {
+          "title": "Points de Terminaison Communs",
+          "documents": { "title": "Gestion de Documents", "desc": "Téléverser et gérer des documents" },
+          "ai": { "title": "Traitement IA", "desc": "Envoyer des requêtes et obtenir des réponses IA" },
+          "users": { "title": "Gestion des Utilisateurs", "desc": "Gérer les utilisateurs et permissions" },
+          "analytics": { "title": "Analytique", "desc": "Accéder aux données d'usage et de performance" }
+        }
+      },
+      "widget": { "title": "Intégration de Widget", "subtitle": "Intégrez des widgets de chat RaghimAI dans vos applications.", "basic": { "title": "Intégration de Base" }, "custom": { "title": "Style Personnalisé" } },
+      "webhook": { "title": "Intégration Webhook", "subtitle": "Recevez des notifications en temps réel sur les événements système.", "config": { "title": "Configuration Webhook" }, "events": { "title": "Types d'Événements", "document": "document.processed - Traitement de document terminé", "user": "user.created - Nouvel utilisateur enregistré", "query": "query.processed - Requête IA terminée", "error": "error.occurred - Erreur système" } },
+      "auth": { "title": "Authentification", "subtitle": "Méthodes d'authentification sécurisées pour l'accès API.", "jwt": { "title": "Authentification par Jeton JWT" }, "apikey": { "title": "Authentification par Clé API" } },
+      "examples": { "title": "Exemples de Code", "subtitle": "Exemples pratiques pour des scénarios d'intégration courants.", "js": { "title": "Intégration JavaScript" }, "py": { "title": "Intégration Python" } }
+    },
       "toc": {
         "title": "Sujets de Sécurité",
         "authentication": "Authentification",
@@ -1537,6 +1917,21 @@
             "incident": "Formation à la réponse aux incidents",
             "compliance": "Modules de formation conformité"
           }
+        },
+        "banking_financial": {
+          "title": "Conformité Bancaire et Financière",
+          "basel": "Bâle III : Gestion des risques et adéquation des fonds propres",
+          "mifid": "MiFID II : Instruments financiers et transparence des marchés",
+          "fatca": "FATCA : Conformité fiscale des comptes étrangers",
+          "amlkvc": "AML/KYC : Lutte contre le blanchiment et connaissance du client"
+        },
+        "pii": {
+          "title": "Détection et Traitement des PII",
+          "block": "# Détection automatisée des PII\n- Numéros de carte bancaire\n- Numéros de sécurité sociale\n- Numéros de compte bancaire\n- Adresses email\n- Numéros de téléphone\n- Noms et adresses\n\n# Mécanismes de traitement\n- Anonymisation automatique\n- Chiffrement au repos\n- Journalisation des accès\n- Suivi du consentement"
+        },
+        "retention": {
+          "title": "Rétention des Données et Gouvernance",
+          "block": "# Politiques de rétention configurables\n- Données utilisateurs : 7 ans (configurable)\n- Journaux d'audit : 3 ans (minimum réglementaire)\n- Données documentaires : Selon la politique de l'organisation\n- Fichiers temporaires : 30 jours\n- Données PII : Selon l'accord de consentement\n- Données bancaires : Selon les exigences réglementaires"
         }
       }
     }
