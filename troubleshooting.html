@@ -140,10 +140,10 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3>Slow Document Processing</h3>
-                                <p><strong>Symptoms:</strong> Document upload and processing takes too long</p>
+                                <h3 data-translate="troubleshooting.performance.slow_doc.title">Slow Document Processing</h3>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.performance.slow_doc.symptoms">Document upload and processing takes too long</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check ChromaDB container status</li>
                                         <li>Verify embedding model is loaded</li>
@@ -162,9 +162,9 @@
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.deployment.compose.title">Docker Compose Fails</h3>
-                                <p><strong>Symptoms:</strong> Containers fail to start or exit immediately</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.deployment.compose.symptoms">Containers fail to start or exit immediately</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check Docker version: <code>docker --version</code></li>
                                         <li>Verify Docker Compose version: <code>docker-compose --version</code></li>
@@ -177,9 +177,9 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.deployment.image.title">Image Loading Failed</h3>
-                                <p><strong>Symptoms:</strong> Docker images fail to load from tar.gz files</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.deployment.image.symptoms">Docker images fail to load from tar.gz files</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Verify tar.gz file integrity</li>
                                         <li>Check available disk space</li>
@@ -192,9 +192,9 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.deployment.env.title">Environment Configuration</h3>
-                                <p><strong>Symptoms:</strong> Services start but behave unexpectedly</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.deployment.env.symptoms">Services start but behave unexpectedly</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check .env file syntax</li>
                                         <li>Verify all required variables are set</li>
@@ -213,9 +213,9 @@
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.database.pg.title">PostgreSQL Connection Failed</h3>
-                                <p><strong>Symptoms:</strong> Database connection errors in logs</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.database.pg.symptoms">Database connection errors in logs</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check PostgreSQL container: <code>docker logs rag-postgres</code></li>
                                         <li>Verify database credentials in .env</li>
@@ -228,9 +228,9 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.database.redis.title">Redis Connection Issues</h3>
-                                <p><strong>Symptoms:</strong> Cache operations failing</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.database.redis.symptoms">Cache operations failing</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check Redis container: <code>docker logs rag-redis</code></li>
                                         <li>Verify Redis password configuration</li>
@@ -243,9 +243,9 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.database.chroma.title">ChromaDB Issues</h3>
-                                <p><strong>Symptoms:</strong> Vector search not working</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.database.chroma.symptoms">Vector search not working</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check ChromaDB container: <code>docker logs rag-chroma</code></li>
                                         <li>Verify ChromaDB API endpoint</li>
@@ -264,9 +264,9 @@
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.gpu.not_detected.title">GPU Not Detected</h3>
-                                <p><strong>Symptoms:</strong> System falls back to CPU processing</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.gpu.not_detected.symptoms">System falls back to CPU processing</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Install NVIDIA Docker runtime</li>
                                         <li>Check GPU availability: <code>nvidia-smi</code></li>
@@ -279,9 +279,9 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.gpu.memory.title">GPU Memory Issues</h3>
-                                <p><strong>Symptoms:</strong> CUDA out of memory errors</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.gpu.memory.symptoms">CUDA out of memory errors</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Reduce <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
                                         <li>Use smaller models</li>
@@ -294,9 +294,9 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.gpu.external.title">External GPU Connection</h3>
-                                <p><strong>Symptoms:</strong> External GPU Ollama not accessible</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.gpu.external.symptoms">External GPU Ollama not accessible</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check SSH tunnel status</li>
                                         <li>Verify external GPU endpoint</li>
@@ -315,9 +315,9 @@
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.auth.login.title">Login Failed</h3>
-                                <p><strong>Symptoms:</strong> Cannot log in with valid credentials</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.auth.login.symptoms">Cannot log in with valid credentials</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check user account status in database</li>
                                         <li>Verify password hashing</li>
@@ -330,9 +330,9 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.auth.expired.title">Token Expired</h3>
-                                <p><strong>Symptoms:</strong> "Token expired" errors</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.auth.expired.symptoms">"Token expired" errors</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check JWT expiration settings</li>
                                         <li>Refresh token or re-login</li>
@@ -345,9 +345,9 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.auth.denied.title">Permission Denied</h3>
-                                <p><strong>Symptoms:</strong> Access denied for valid users</p>
+                                <p><strong data-translate="troubleshooting.common.symptoms">Symptoms:</strong> <span data-translate="troubleshooting.auth.denied.symptoms">Access denied for valid users</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="troubleshooting.common.solutions">Solutions:</h4>
                                     <ul>
                                         <li>Check user role and permissions</li>
                                         <li>Verify organization membership</li>
@@ -486,11 +486,6 @@
     <script src="assets/js/simple-lang-switcher.js"></script>
 </body>
 </html>
-
-
-
-
-
 
 
 
