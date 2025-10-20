@@ -82,9 +82,33 @@
     "security": {
       "title": "Security & Compliance",
       "advanced_auth": "Advanced Authentication",
+      "advanced_auth_items": {
+        "jwt": "JWT token authentication",
+        "mfa": "Multi-factor authentication (MFA)",
+        "sso": "Single Sign-On (SSO) integration",
+        "rls": "Row-Level Security (RLS)"
+      },
       "data_protection": "Enterprise Data Protection",
+      "data_protection_items": {
+        "client_encryption": "Client-side encryption for PII",
+        "zero_knowledge": "Zero-knowledge architecture",
+        "aes256": "AES-256 encryption at rest",
+        "banking_privacy": "Banking-grade privacy controls"
+      },
       "threat_detection": "Threat Detection & Monitoring",
-      "compliance": "Compliance & Standards"
+      "threat_detection_items": {
+        "ai_detection": "AI struggle detection algorithms",
+        "suspicious_activity": "Suspicious activity monitoring",
+        "real_time_analysis": "Real-time security event analysis",
+        "incident_response": "Automated incident response"
+      },
+      "compliance": "Compliance & Standards",
+      "compliance_items": {
+        "regulations": "GDPR, CCPA, HIPAA, SOX compliance",
+        "standards": "PCI DSS, ISO 27001, SOC 2",
+        "banking_regs": "Banking regulations (Basel III, MiFID II)",
+        "automated_reporting": "Automated compliance reporting"
+      }
     },
     "deployment": {
       "title": "Deployment Options",
@@ -191,6 +215,249 @@
       },
       "copyright": "© 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26"
     }
+    ,
+    "deployment_guide": {
+      "meta": { "title": "Deployment Guide - RaghimAI Enterprise RAG System" },
+      "header": {
+        "title": "Deployment Guide",
+        "subtitle": "Complete guide for deploying RaghimAI Enterprise RAG System"
+      },
+      "toc": {
+        "title": "Table of Contents",
+        "prerequisites": "Prerequisites",
+        "architecture": "System Architecture",
+        "offline": "Offline Deployment",
+        "cloud": "Cloud Deployment",
+        "configuration": "Configuration",
+        "verification": "Verification",
+        "troubleshooting": "Troubleshooting"
+      },
+      "prerequisites": {
+        "title": "Prerequisites",
+        "system_requirements": "System Requirements",
+        "software_requirements": "Software Requirements",
+        "items": {
+          "os": "OS: Linux (Ubuntu 18.04+, CentOS 7+, Alpine 3.10+)",
+          "ram": "RAM: 8GB minimum, 16GB recommended",
+          "storage": "Storage: 20GB+ free disk space",
+          "cpu": "CPU: 4 cores minimum, 8 cores recommended",
+          "gpu": "GPU: NVIDIA GPU with CUDA support (optional)"
+        },
+        "software": {
+          "docker": "Docker: 20.10+",
+          "compose": "Docker Compose: 2.0+",
+          "python": "Python: 3.7+ (for installer)",
+          "git": "Git: Latest version"
+        }
+      },
+      "architecture": {
+        "title": "System Architecture",
+        "subtitle": "Understanding the RaghimAI Enterprise system architecture for optimal deployment.",
+        "layers": {
+          "external": {
+            "title": "External Access Layer",
+            "items": {
+              "tls": "• HTTPS/TLS 1.3 Encryption",
+              "ip": "• IP Whitelisting & Rate Limiting",
+              "ddos": "• DDoS Protection & Firewall",
+              "cors": "• CORS Configuration",
+              "vpn": "• VPN Detection",
+              "geo": "• Geographic Restrictions"
+            }
+          },
+          "auth": {
+            "title": "Authentication & Authorization",
+            "items": {
+              "jwt": "• JWT Token Authentication",
+              "mfa": "• Multi-Factor Authentication (MFA)",
+              "sso": "• Single Sign-On (SSO)",
+              "rbac": "• Role-Based Access Control (RBAC)",
+              "rls": "• Row-Level Security (RLS)",
+              "session": "• Session Management"
+            }
+          },
+          "app": {
+            "title": "Application Security Layer",
+            "items": {
+              "validation": "• Input Validation & Sanitization",
+              "threat": "• Advanced Threat Detection",
+              "struggle": "• AI Struggle Detection",
+              "suspicious": "• Suspicious Activity Monitoring",
+              "client_encryption": "• Client-Side Encryption",
+              "zero_knowledge": "• Zero-Knowledge Architecture",
+              "pii": "• PII Detection & Anonymization",
+              "banking": "• Banking Privacy Integration"
+            }
+          },
+          "data": {
+            "title": "Data Protection Layer",
+            "items": {
+              "aes": "• AES-256 Encryption at Rest",
+              "policies": "• Database Security Policies",
+              "isolation": "• Multi-Tenant Data Isolation",
+              "backup": "• Automated Backup & Recovery",
+              "audit": "• Audit Logging & Compliance",
+              "retention": "• Data Retention Policies",
+              "regulatory": "• Regulatory Compliance (GDPR, HIPAA)",
+              "monitoring": "• Security Event Monitoring"
+            }
+          },
+          "compliance": { "title": "Compliance & Standards" }
+        },
+        "overview": {
+          "title": "Architecture Overview",
+          "frontend": "Frontend Layer: React application with Nginx proxy",
+          "backend": "Backend Layer: FastAPI-based Python application",
+          "database": "Database Layer: PostgreSQL + Redis + ChromaDB",
+          "ai": "AI Layer: Ollama integration with GPU acceleration",
+          "security": "Security Layer: Multi-layered security with encryption and access controls"
+        }
+      },
+      "offline": {
+        "title": "Offline Enterprise Deployment",
+        "subtitle": "The offline package provides a complete, self-contained deployment solution with all dependencies included.",
+        "steps": {
+          "download": {
+            "title": "Download Package",
+            "desc": "Download the offline enterprise package from your RaghimAI representative."
+          },
+          "installer": {
+            "title": "Run Interactive Installer",
+            "desc": "Use the interactive installer for guided setup and configuration.",
+            "note_label": "Note:",
+            "note": "The installer will guide you through license acceptance, environment configuration, and deployment options."
+          },
+          "noninteractive": {
+            "title": "Non-Interactive Deployment",
+            "desc": "For automated deployments or CI/CD pipelines.",
+            "warning_label": "Warning:",
+            "warning": "Non-interactive deployment uses default configuration. Update the .env file for production use."
+          }
+        }
+      },
+      "cloud": {
+        "title": "Cloud Deployment",
+        "subtitle": "Deploy on cloud platforms with external GPU support for enhanced performance.",
+        "vastai": {
+          "title": "VastAI Deployment",
+          "steps": {
+            "instance": {
+              "title": "Create VastAI Instance",
+              "gpu": "Select GPU-enabled instance (RTX 4090 recommended)",
+              "image": "Choose Ubuntu 20.04+ image",
+              "ssh": "Configure SSH access"
+            },
+            "ssh": { "title": "Setup SSH Tunnel" }
+          }
+        },
+        "runpod": {
+          "title": "RunPod Deployment",
+          "steps": {
+            "instance": {
+              "title": "Create RunPod Instance",
+              "gpu": "Select GPU-enabled pod",
+              "template": "Use RunPod PyTorch template",
+              "network": "Configure network access"
+            },
+            "deploy": { "title": "Deploy with RunPod Config" }
+          }
+        }
+      },
+      "configuration": {
+        "title": "Configuration",
+        "subtitle": "Configure your deployment using environment variables and configuration files.",
+        "env": {
+          "title": "Environment Variables",
+          "table": {
+            "variable": "Variable",
+            "description": "Description",
+            "default": "Default"
+          },
+          "license": { "desc": "Your enterprise license key" },
+          "jwt": { "desc": "JWT secret for authentication" },
+          "postgres": { "desc": "Database password" },
+          "redis": { "desc": "Redis cache password" },
+          "gpu": { "desc": "Enable GPU acceleration" },
+          "frontend": { "desc": "Frontend access URL" },
+          "api": { "desc": "Backend API URL" },
+          "widget": { "desc": "Widget embedding domains" },
+          "generated": "Generated",
+          "required": "Required",
+          "true": "true",
+          "empty": "Empty"
+        },
+        "models": { "title": "Model Configuration" }
+      },
+      "verification": {
+        "title": "Deployment Verification",
+        "subtitle": "Verify your deployment is working correctly using the provided health checks.",
+        "health": { "title": "Health Check", "desc": "This will check all services and provide status information." },
+        "status": { "title": "Service Status" },
+        "urls": {
+          "title": "Access URLs",
+          "frontend": { "label": "Frontend:" },
+          "api": { "label": "Backend API:" },
+          "health": { "label": "Health Check:" },
+          "chromadb": { "label": "ChromaDB:" }
+        }
+      },
+      "troubleshooting": {
+        "title": "Common Issues",
+        "symptoms": "Symptoms:",
+        "solutions": "Solutions:",
+        "connection": {
+          "title": "Connection Refused",
+          "symptoms": "\"This site can't be reached\" or \"ERR_CONNECTION_REFUSED\"",
+          "check_containers": "Check if containers are running:",
+          "firewall": "Verify firewall settings (ports 80, 443)",
+          "external_ip": "Use external IP for VM deployments",
+          "curl": "Test from server:"
+        },
+        "gpu": {
+          "title": "GPU Not Detected",
+          "symptoms": "Slow AI responses, GPU not utilized",
+          "nvidia": "Install NVIDIA Docker runtime",
+          "env": "Set GPU_ENABLED=true in .env",
+          "cuda": "Check CUDA installation",
+          "smi": "Verify GPU availability: nvidia-smi"
+        },
+        "memory": {
+          "title": "Memory Issues",
+          "symptoms": "Out of memory errors, slow performance",
+          "increase_ram": "Increase system RAM",
+          "reduce_models": "Reduce OLLAMA_MAX_LOADED_MODELS",
+          "lower_fraction": "Lower OLLAMA_GPU_MEMORY_FRACTION",
+          "smaller_models": "Use smaller models"
+        },
+        "db": {
+          "title": "Database Connection",
+          "symptoms": "Database connection errors",
+          "status": "Check PostgreSQL container status",
+          "credentials": "Verify database credentials",
+          "network": "Check network connectivity",
+          "logs": "Review database logs"
+        }
+      }
+    },
+    "security_guide": {
+      "meta": { "title": "Security Guide - RaghimAI Enterprise RAG System" },
+      "header": {
+        "title": "Security Guide",
+        "subtitle": "Comprehensive security guide for RaghimAI Enterprise RAG System"
+      },
+      "toc": {
+        "title": "Security Topics",
+        "authentication": "Authentication",
+        "authorization": "Authorization",
+        "encryption": "Data Encryption",
+        "network_security": "Network Security",
+        "audit_logging": "Audit Logging",
+        "architecture": "Security Architecture",
+        "advanced_security": "Advanced Security",
+        "compliance": "Compliance & Standards",
+        "security_certifications": "Security Testing"
+      }
+    }
   },
   "fr": {
     "nav": {
@@ -275,9 +542,33 @@
     "security": {
       "title": "Sécurité et Conformité",
       "advanced_auth": "Authentification Avancée",
+      "advanced_auth_items": {
+        "jwt": "Authentification par token JWT",
+        "mfa": "Authentification multi-facteurs (MFA)",
+        "sso": "Intégration Single Sign-On (SSO)",
+        "rls": "Sécurité au niveau des lignes (RLS)"
+      },
       "data_protection": "Protection des Données Entreprise",
+      "data_protection_items": {
+        "client_encryption": "Chiffrement côté client pour les PII",
+        "zero_knowledge": "Architecture zéro connaissance",
+        "aes256": "Chiffrement AES-256 au repos",
+        "banking_privacy": "Contrôles de confidentialité de niveau bancaire"
+      },
       "threat_detection": "Détection et Surveillance des Menaces",
-      "compliance": "Conformité et Standards"
+      "threat_detection_items": {
+        "ai_detection": "Algorithmes de détection de lutte IA",
+        "suspicious_activity": "Surveillance des activités suspectes",
+        "real_time_analysis": "Analyse des événements de sécurité en temps réel",
+        "incident_response": "Réponse automatisée aux incidents"
+      },
+      "compliance": "Conformité et Standards",
+      "compliance_items": {
+        "regulations": "Conformité GDPR, CCPA, HIPAA, SOX",
+        "standards": "PCI DSS, ISO 27001, SOC 2",
+        "banking_regs": "Réglementations bancaires (Basel III, MiFID II)",
+        "automated_reporting": "Rapports de conformité automatisés"
+      }
     },
     "deployment": {
       "title": "Options de Déploiement",
@@ -383,6 +674,249 @@
         "best_practices": "Meilleures Pratiques"
       },
       "copyright": "© 2024 RaghimAI. Tous droits réservés. Système RAG Entreprise v1.0.26"
+    }
+    ,
+    "deployment_guide": {
+      "meta": { "title": "Guide de Déploiement - Système RAG Entreprise RaghimAI" },
+      "header": {
+        "title": "Guide de Déploiement",
+        "subtitle": "Guide complet pour déployer le Système RAG Entreprise RaghimAI"
+      },
+      "toc": {
+        "title": "Table des Matières",
+        "prerequisites": "Prérequis",
+        "architecture": "Architecture du Système",
+        "offline": "Déploiement Hors Ligne",
+        "cloud": "Déploiement Cloud",
+        "configuration": "Configuration",
+        "verification": "Vérification",
+        "troubleshooting": "Dépannage"
+      },
+      "prerequisites": {
+        "title": "Prérequis",
+        "system_requirements": "Exigences Système",
+        "software_requirements": "Exigences Logiciels",
+        "items": {
+          "os": "OS : Linux (Ubuntu 18.04+, CentOS 7+, Alpine 3.10+)",
+          "ram": "RAM : 8GB minimum, 16GB recommandé",
+          "storage": "Stockage : 20GB+ d'espace disque libre",
+          "cpu": "CPU : 4 cœurs minimum, 8 cœurs recommandés",
+          "gpu": "GPU : GPU NVIDIA avec support CUDA (optionnel)"
+        },
+        "software": {
+          "docker": "Docker : 20.10+",
+          "compose": "Docker Compose : 2.0+",
+          "python": "Python : 3.7+ (pour l'installeur)",
+          "git": "Git : Dernière version"
+        }
+      },
+      "architecture": {
+        "title": "Architecture du Système",
+        "subtitle": "Comprendre l'architecture du système RaghimAI Entreprise pour un déploiement optimal.",
+        "layers": {
+          "external": {
+            "title": "Couche d'Accès Externe",
+            "items": {
+              "tls": "• Chiffrement HTTPS/TLS 1.3",
+              "ip": "• Liste blanche d'IP et limitation de débit",
+              "ddos": "• Protection DDoS et pare-feu",
+              "cors": "• Configuration CORS",
+              "vpn": "• Détection VPN",
+              "geo": "• Restrictions géographiques"
+            }
+          },
+          "auth": {
+            "title": "Authentification et Autorisation",
+            "items": {
+              "jwt": "• Authentification par jeton JWT",
+              "mfa": "• Authentification multi-facteurs (MFA)",
+              "sso": "• Single Sign-On (SSO)",
+              "rbac": "• Contrôle d'accès basé sur les rôles (RBAC)",
+              "rls": "• Sécurité au niveau des lignes (RLS)",
+              "session": "• Gestion de session"
+            }
+          },
+          "app": {
+            "title": "Couche de Sécurité Applicative",
+            "items": {
+              "validation": "• Validation et assainissement des entrées",
+              "threat": "• Détection avancée des menaces",
+              "struggle": "• Détection de lutte de l'IA",
+              "suspicious": "• Surveillance des activités suspectes",
+              "client_encryption": "• Chiffrement côté client",
+              "zero_knowledge": "• Architecture zéro connaissance",
+              "pii": "• Détection et anonymisation des PII",
+              "banking": "• Intégration de confidentialité bancaire"
+            }
+          },
+          "data": {
+            "title": "Couche de Protection des Données",
+            "items": {
+              "aes": "• Chiffrement AES-256 au repos",
+              "policies": "• Politiques de sécurité de base de données",
+              "isolation": "• Isolation des données multi-locataires",
+              "backup": "• Sauvegarde et restauration automatisées",
+              "audit": "• Journalisation d'audit et conformité",
+              "retention": "• Politiques de rétention des données",
+              "regulatory": "• Conformité réglementaire (GDPR, HIPAA)",
+              "monitoring": "• Surveillance des événements de sécurité"
+            }
+          },
+          "compliance": { "title": "Conformité et Standards" }
+        },
+        "overview": {
+          "title": "Aperçu de l'Architecture",
+          "frontend": "Couche Frontend : Application React avec proxy Nginx",
+          "backend": "Couche Backend : Application Python basée sur FastAPI",
+          "database": "Couche Base de Données : PostgreSQL + Redis + ChromaDB",
+          "ai": "Couche IA : Intégration Ollama avec accélération GPU",
+          "security": "Couche Sécurité : Sécurité multi-couches avec chiffrement et contrôles d'accès"
+        }
+      },
+      "offline": {
+        "title": "Déploiement Entreprise Hors Ligne",
+        "subtitle": "Le package hors ligne fournit une solution de déploiement autonome complète avec toutes les dépendances incluses.",
+        "steps": {
+          "download": {
+            "title": "Télécharger le Package",
+            "desc": "Téléchargez le package entreprise hors ligne auprès de votre représentant RaghimAI."
+          },
+          "installer": {
+            "title": "Exécuter l'Installeur Interactif",
+            "desc": "Utilisez l'installeur interactif pour une configuration guidée.",
+            "note_label": "Remarque :",
+            "note": "L'installeur vous guidera dans l'acceptation de la licence, la configuration de l'environnement et les options de déploiement."
+          },
+          "noninteractive": {
+            "title": "Déploiement Non-Interactif",
+            "desc": "Pour les déploiements automatisés ou les pipelines CI/CD.",
+            "warning_label": "Avertissement :",
+            "warning": "Le déploiement non-interactif utilise la configuration par défaut. Mettez à jour le fichier .env pour la production."
+          }
+        }
+      },
+      "cloud": {
+        "title": "Déploiement Cloud",
+        "subtitle": "Déployez sur des plateformes cloud avec support GPU externe pour des performances accrues.",
+        "vastai": {
+          "title": "Déploiement VastAI",
+          "steps": {
+            "instance": {
+              "title": "Créer une Instance VastAI",
+              "gpu": "Sélectionnez une instance compatible GPU (RTX 4090 recommandée)",
+              "image": "Choisissez une image Ubuntu 20.04+",
+              "ssh": "Configurez l'accès SSH"
+            },
+            "ssh": { "title": "Configurer un Tunnel SSH" }
+          }
+        },
+        "runpod": {
+          "title": "Déploiement RunPod",
+          "steps": {
+            "instance": {
+              "title": "Créer une Instance RunPod",
+              "gpu": "Sélectionnez un pod compatible GPU",
+              "template": "Utilisez le modèle RunPod PyTorch",
+              "network": "Configurez l'accès réseau"
+            },
+            "deploy": { "title": "Déployer avec la Config RunPod" }
+          }
+        }
+      },
+      "configuration": {
+        "title": "Configuration",
+        "subtitle": "Configurez votre déploiement à l'aide de variables d'environnement et de fichiers de configuration.",
+        "env": {
+          "title": "Variables d'Environnement",
+          "table": {
+            "variable": "Variable",
+            "description": "Description",
+            "default": "Valeur par défaut"
+          },
+          "license": { "desc": "Votre clé de licence entreprise" },
+          "jwt": { "desc": "Secret JWT pour l'authentification" },
+          "postgres": { "desc": "Mot de passe de la base de données" },
+          "redis": { "desc": "Mot de passe du cache Redis" },
+          "gpu": { "desc": "Activer l'accélération GPU" },
+          "frontend": { "desc": "URL d'accès Frontend" },
+          "api": { "desc": "URL de l'API Backend" },
+          "widget": { "desc": "Domaines d'intégration du widget" },
+          "generated": "Généré",
+          "required": "Requis",
+          "true": "true",
+          "empty": "Vide"
+        },
+        "models": { "title": "Configuration des Modèles" }
+      },
+      "verification": {
+        "title": "Vérification du Déploiement",
+        "subtitle": "Vérifiez que votre déploiement fonctionne correctement en utilisant les contrôles d'état fournis.",
+        "health": { "title": "Contrôle d'État", "desc": "Ceci vérifiera tous les services et fournira des informations d'état." },
+        "status": { "title": "État des Services" },
+        "urls": {
+          "title": "URLs d'Accès",
+          "frontend": { "label": "Frontend :" },
+          "api": { "label": "API Backend :" },
+          "health": { "label": "Contrôle d'État :" },
+          "chromadb": { "label": "ChromaDB :" }
+        }
+      },
+      "troubleshooting": {
+        "title": "Problèmes Courants",
+        "symptoms": "Symptômes :",
+        "solutions": "Solutions :",
+        "connection": {
+          "title": "Connexion Refusée",
+          "symptoms": "\"Ce site est inaccessible\" ou \"ERR_CONNECTION_REFUSED\"",
+          "check_containers": "Vérifiez si les conteneurs sont en cours d'exécution :",
+          "firewall": "Vérifiez les paramètres du pare-feu (ports 80, 443)",
+          "external_ip": "Utilisez l'IP externe pour les déploiements VM",
+          "curl": "Testez depuis le serveur :"
+        },
+        "gpu": {
+          "title": "GPU Non Détecté",
+          "symptoms": "Réponses IA lentes, GPU non utilisé",
+          "nvidia": "Installez le runtime NVIDIA Docker",
+          "env": "Définissez GPU_ENABLED=true dans .env",
+          "cuda": "Vérifiez l'installation CUDA",
+          "smi": "Vérifiez la disponibilité du GPU : nvidia-smi"
+        },
+        "memory": {
+          "title": "Problèmes de Mémoire",
+          "symptoms": "Erreurs de mémoire insuffisante, performances lentes",
+          "increase_ram": "Augmentez la RAM du système",
+          "reduce_models": "Réduisez OLLAMA_MAX_LOADED_MODELS",
+          "lower_fraction": "Diminuez OLLAMA_GPU_MEMORY_FRACTION",
+          "smaller_models": "Utilisez des modèles plus petits"
+        },
+        "db": {
+          "title": "Connexion Base de Données",
+          "symptoms": "Erreurs de connexion à la base de données",
+          "status": "Vérifiez l'état du conteneur PostgreSQL",
+          "credentials": "Vérifiez les identifiants de la base",
+          "network": "Vérifiez la connectivité réseau",
+          "logs": "Consultez les journaux de la base de données"
+        }
+      }
+    },
+    "security_guide": {
+      "meta": { "title": "Guide de Sécurité - Système RAG Entreprise RaghimAI" },
+      "header": {
+        "title": "Guide de Sécurité",
+        "subtitle": "Guide de sécurité complet pour le Système RAG Entreprise RaghimAI"
+      },
+      "toc": {
+        "title": "Sujets de Sécurité",
+        "authentication": "Authentification",
+        "authorization": "Autorisation",
+        "encryption": "Chiffrement des Données",
+        "network_security": "Sécurité Réseau",
+        "audit_logging": "Journalisation d'Audit",
+        "architecture": "Architecture de Sécurité",
+        "advanced_security": "Sécurité Avancée",
+        "compliance": "Conformité et Standards",
+        "security_certifications": "Tests de Sécurité"
+      }
     }
   }
 }

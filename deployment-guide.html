@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deployment Guide - RaghimAI Enterprise RAG System</title>
+    <title data-translate="deployment_guide.meta.title">Deployment Guide - RaghimAI Enterprise RAG System</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <meta name="description" content="Complete deployment guide for RaghimAI Enterprise RAG System - offline and cloud deployment options">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
-                    <a href="deployment-guide.html" class="nav-link active">Deployment</a>
+                    <a href="deployment-guide.html" class="nav-link active" data-translate="nav.deployment">Deployment</a>
                     <a href="api-reference.html" class="nav-link" data-translate="nav.api">API Reference</a>
                     <a href="troubleshooting.html" class="nav-link" data-translate="nav.troubleshooting">Troubleshooting</a>
                     <a href="security-guide.html" class="nav-link" data-translate="nav.security">Security</a>
@@ -35,126 +35,126 @@
     <main class="main-content">
         <div class="container">
             <div class="page-header">
-                <h1>Deployment Guide</h1>
-                <p class="page-subtitle">Complete guide for deploying RaghimAI Enterprise RAG System</p>
+                <h1 data-translate="deployment_guide.header.title">Deployment Guide</h1>
+                <p class="page-subtitle" data-translate="deployment_guide.header.subtitle">Complete guide for deploying RaghimAI Enterprise RAG System</p>
             </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
-                    <h3>Table of Contents</h3>
+                    <h3 data-translate="deployment_guide.toc.title">Table of Contents</h3>
                     <ul class="toc">
-                        <li><a href="#prerequisites">Prerequisites</a></li>
-                        <li><a href="#architecture">System Architecture</a></li>
-                        <li><a href="#offline-deployment">Offline Deployment</a></li>
-                        <li><a href="#cloud-deployment">Cloud Deployment</a></li>
-                        <li><a href="#configuration">Configuration</a></li>
-                        <li><a href="#verification">Verification</a></li>
-                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#prerequisites" data-translate="deployment_guide.toc.prerequisites">Prerequisites</a></li>
+                        <li><a href="#architecture" data-translate="deployment_guide.toc.architecture">System Architecture</a></li>
+                        <li><a href="#offline-deployment" data-translate="deployment_guide.toc.offline">Offline Deployment</a></li>
+                        <li><a href="#cloud-deployment" data-translate="deployment_guide.toc.cloud">Cloud Deployment</a></li>
+                        <li><a href="#configuration" data-translate="deployment_guide.toc.configuration">Configuration</a></li>
+                        <li><a href="#verification" data-translate="deployment_guide.toc.verification">Verification</a></li>
+                        <li><a href="#troubleshooting" data-translate="deployment_guide.toc.troubleshooting">Troubleshooting</a></li>
                     </ul>
                 </nav>
 
                 <div class="content">
                     <section id="prerequisites">
-                        <h2>Prerequisites</h2>
+                        <h2 data-translate="deployment_guide.prerequisites.title">Prerequisites</h2>
                         <div class="prerequisites-grid">
                             <div class="prereq-card">
-                                <h3>System Requirements</h3>
+                                <h3 data-translate="deployment_guide.prerequisites.system_requirements">System Requirements</h3>
                                 <ul>
-                                    <li><strong>OS:</strong> Linux (Ubuntu 18.04+, CentOS 7+, Alpine 3.10+)</li>
-                                    <li><strong>RAM:</strong> 8GB minimum, 16GB recommended</li>
-                                    <li><strong>Storage:</strong> 20GB+ free disk space</li>
-                                    <li><strong>CPU:</strong> 4 cores minimum, 8 cores recommended</li>
-                                    <li><strong>GPU:</strong> NVIDIA GPU with CUDA support (optional)</li>
+                                    <li data-translate="deployment_guide.prerequisites.items.os"><strong>OS:</strong> Linux (Ubuntu 18.04+, CentOS 7+, Alpine 3.10+)</li>
+                                    <li data-translate="deployment_guide.prerequisites.items.ram"><strong>RAM:</strong> 8GB minimum, 16GB recommended</li>
+                                    <li data-translate="deployment_guide.prerequisites.items.storage"><strong>Storage:</strong> 20GB+ free disk space</li>
+                                    <li data-translate="deployment_guide.prerequisites.items.cpu"><strong>CPU:</strong> 4 cores minimum, 8 cores recommended</li>
+                                    <li data-translate="deployment_guide.prerequisites.items.gpu"><strong>GPU:</strong> NVIDIA GPU with CUDA support (optional)</li>
                                 </ul>
                             </div>
                             <div class="prereq-card">
-                                <h3>Software Requirements</h3>
+                                <h3 data-translate="deployment_guide.prerequisites.software_requirements">Software Requirements</h3>
                                 <ul>
-                                    <li><strong>Docker:</strong> 20.10+</li>
-                                    <li><strong>Docker Compose:</strong> 2.0+</li>
-                                    <li><strong>Python:</strong> 3.7+ (for installer)</li>
-                                    <li><strong>Git:</strong> Latest version</li>
+                                    <li data-translate="deployment_guide.prerequisites.software.docker"><strong>Docker:</strong> 20.10+</li>
+                                    <li data-translate="deployment_guide.prerequisites.software.compose"><strong>Docker Compose:</strong> 2.0+</li>
+                                    <li data-translate="deployment_guide.prerequisites.software.python"><strong>Python:</strong> 3.7+ (for installer)</li>
+                                    <li data-translate="deployment_guide.prerequisites.software.git"><strong>Git:</strong> Latest version</li>
                                 </ul>
                             </div>
                         </div>
                     </section>
 
                     <section id="architecture">
-                        <h2>System Architecture</h2>
-                        <p>Understanding the RaghimAI Enterprise system architecture for optimal deployment.</p>
+                        <h2 data-translate="deployment_guide.architecture.title">System Architecture</h2>
+                        <p data-translate="deployment_guide.architecture.subtitle">Understanding the RaghimAI Enterprise system architecture for optimal deployment.</p>
                         
                         <div class="architecture-diagram">
                             <div class="architecture-visual">
                                 <div class="arch-layer external-layer">
-                                    <h4>External Access Layer</h4>
+                                    <h4 data-translate="deployment_guide.architecture.layers.external.title">External Access Layer</h4>
                                     <div class="arch-content">
                                         <div class="arch-left">
-                                            <p>• HTTPS/TLS 1.3 Encryption</p>
-                                            <p>• IP Whitelisting & Rate Limiting</p>
-                                            <p>• DDoS Protection & Firewall</p>
+                                            <p data-translate="deployment_guide.architecture.layers.external.items.tls">• HTTPS/TLS 1.3 Encryption</p>
+                                            <p data-translate="deployment_guide.architecture.layers.external.items.ip">• IP Whitelisting & Rate Limiting</p>
+                                            <p data-translate="deployment_guide.architecture.layers.external.items.ddos">• DDoS Protection & Firewall</p>
                                         </div>
                                         <div class="arch-right">
-                                            <p>• CORS Configuration</p>
-                                            <p>• VPN Detection</p>
-                                            <p>• Geographic Restrictions</p>
+                                            <p data-translate="deployment_guide.architecture.layers.external.items.cors">• CORS Configuration</p>
+                                            <p data-translate="deployment_guide.architecture.layers.external.items.vpn">• VPN Detection</p>
+                                            <p data-translate="deployment_guide.architecture.layers.external.items.geo">• Geographic Restrictions</p>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="arch-layer auth-layer">
-                                    <h4>Authentication & Authorization</h4>
+                                    <h4 data-translate="deployment_guide.architecture.layers.auth.title">Authentication & Authorization</h4>
                                     <div class="arch-content">
                                         <div class="arch-left">
-                                            <p>• JWT Token Authentication</p>
-                                            <p>• Multi-Factor Authentication (MFA)</p>
-                                            <p>• Single Sign-On (SSO)</p>
+                                            <p data-translate="deployment_guide.architecture.layers.auth.items.jwt">• JWT Token Authentication</p>
+                                            <p data-translate="deployment_guide.architecture.layers.auth.items.mfa">• Multi-Factor Authentication (MFA)</p>
+                                            <p data-translate="deployment_guide.architecture.layers.auth.items.sso">• Single Sign-On (SSO)</p>
                                         </div>
                                         <div class="arch-right">
-                                            <p>• Role-Based Access Control (RBAC)</p>
-                                            <p>• Row-Level Security (RLS)</p>
-                                            <p>• Session Management</p>
+                                            <p data-translate="deployment_guide.architecture.layers.auth.items.rbac">• Role-Based Access Control (RBAC)</p>
+                                            <p data-translate="deployment_guide.architecture.layers.auth.items.rls">• Row-Level Security (RLS)</p>
+                                            <p data-translate="deployment_guide.architecture.layers.auth.items.session">• Session Management</p>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="arch-layer app-layer">
-                                    <h4>Application Security Layer</h4>
+                                    <h4 data-translate="deployment_guide.architecture.layers.app.title">Application Security Layer</h4>
                                     <div class="arch-content">
                                         <div class="arch-left">
-                                            <p>• Input Validation & Sanitization</p>
-                                            <p>• Advanced Threat Detection</p>
-                                            <p>• AI Struggle Detection</p>
-                                            <p>• Suspicious Activity Monitoring</p>
+                                            <p data-translate="deployment_guide.architecture.layers.app.items.validation">• Input Validation & Sanitization</p>
+                                            <p data-translate="deployment_guide.architecture.layers.app.items.threat">• Advanced Threat Detection</p>
+                                            <p data-translate="deployment_guide.architecture.layers.app.items.struggle">• AI Struggle Detection</p>
+                                            <p data-translate="deployment_guide.architecture.layers.app.items.suspicious">• Suspicious Activity Monitoring</p>
                                         </div>
                                         <div class="arch-right">
-                                            <p>• Client-Side Encryption</p>
-                                            <p>• Zero-Knowledge Architecture</p>
-                                            <p>• PII Detection & Anonymization</p>
-                                            <p>• Banking Privacy Integration</p>
+                                            <p data-translate="deployment_guide.architecture.layers.app.items.client_encryption">• Client-Side Encryption</p>
+                                            <p data-translate="deployment_guide.architecture.layers.app.items.zero_knowledge">• Zero-Knowledge Architecture</p>
+                                            <p data-translate="deployment_guide.architecture.layers.app.items.pii">• PII Detection & Anonymization</p>
+                                            <p data-translate="deployment_guide.architecture.layers.app.items.banking">• Banking Privacy Integration</p>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="arch-layer data-layer">
-                                    <h4>Data Protection Layer</h4>
+                                    <h4 data-translate="deployment_guide.architecture.layers.data.title">Data Protection Layer</h4>
                                     <div class="arch-content">
                                         <div class="arch-left">
-                                            <p>• AES-256 Encryption at Rest</p>
-                                            <p>• Database Security Policies</p>
-                                            <p>• Multi-Tenant Data Isolation</p>
-                                            <p>• Automated Backup & Recovery</p>
+                                            <p data-translate="deployment_guide.architecture.layers.data.items.aes">• AES-256 Encryption at Rest</p>
+                                            <p data-translate="deployment_guide.architecture.layers.data.items.policies">• Database Security Policies</p>
+                                            <p data-translate="deployment_guide.architecture.layers.data.items.isolation">• Multi-Tenant Data Isolation</p>
+                                            <p data-translate="deployment_guide.architecture.layers.data.items.backup">• Automated Backup & Recovery</p>
                                         </div>
                                         <div class="arch-right">
-                                            <p>• Audit Logging & Compliance</p>
-                                            <p>• Data Retention Policies</p>
-                                            <p>• Regulatory Compliance (GDPR, HIPAA)</p>
-                                            <p>• Security Event Monitoring</p>
+                                            <p data-translate="deployment_guide.architecture.layers.data.items.audit">• Audit Logging & Compliance</p>
+                                            <p data-translate="deployment_guide.architecture.layers.data.items.retention">• Data Retention Policies</p>
+                                            <p data-translate="deployment_guide.architecture.layers.data.items.regulatory">• Regulatory Compliance (GDPR, HIPAA)</p>
+                                            <p data-translate="deployment_guide.architecture.layers.data.items.monitoring">• Security Event Monitoring</p>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="arch-layer compliance-layer">
-                                    <h4>Compliance & Standards</h4>
+                                    <h4 data-translate="deployment_guide.architecture.layers.compliance.title">Compliance & Standards</h4>
                                     <div class="arch-content">
                                         <p>GDPR • CCPA • HIPAA • SOX • PCI DSS • ISO 27001 • SOC 2 • NIST • Basel III • MiFID II • FATCA • AML/KYC</p>
                                     </div>
@@ -163,27 +163,27 @@
                         </div>
                         
                         <div class="integration-section">
-                            <h3>Architecture Overview</h3>
+                            <h3 data-translate="deployment_guide.architecture.overview.title">Architecture Overview</h3>
                             <ul>
-                                <li><strong>Frontend Layer:</strong> React application with Nginx proxy</li>
-                                <li><strong>Backend Layer:</strong> FastAPI-based Python application</li>
-                                <li><strong>Database Layer:</strong> PostgreSQL + Redis + ChromaDB</li>
-                                <li><strong>AI Layer:</strong> Ollama integration with GPU acceleration</li>
-                                <li><strong>Security Layer:</strong> Multi-layered security with encryption and access controls</li>
+                                <li data-translate="deployment_guide.architecture.overview.frontend"><strong>Frontend Layer:</strong> React application with Nginx proxy</li>
+                                <li data-translate="deployment_guide.architecture.overview.backend"><strong>Backend Layer:</strong> FastAPI-based Python application</li>
+                                <li data-translate="deployment_guide.architecture.overview.database"><strong>Database Layer:</strong> PostgreSQL + Redis + ChromaDB</li>
+                                <li data-translate="deployment_guide.architecture.overview.ai"><strong>AI Layer:</strong> Ollama integration with GPU acceleration</li>
+                                <li data-translate="deployment_guide.architecture.overview.security"><strong>Security Layer:</strong> Multi-layered security with encryption and access controls</li>
                             </ul>
                         </div>
                     </section>
 
                     <section id="offline-deployment">
-                        <h2>Offline Enterprise Deployment</h2>
-                        <p>The offline package provides a complete, self-contained deployment solution with all dependencies included.</p>
+                        <h2 data-translate="deployment_guide.offline.title">Offline Enterprise Deployment</h2>
+                        <p data-translate="deployment_guide.offline.subtitle">The offline package provides a complete, self-contained deployment solution with all dependencies included.</p>
                         
                         <div class="deployment-steps">
                             <div class="step">
                                 <div class="step-number">1</div>
                                 <div class="step-content">
-                                    <h3>Download Package</h3>
-                                    <p>Download the offline enterprise package from your RaghimAI representative.</p>
+                                    <h3 data-translate="deployment_guide.offline.steps.download.title">Download Package</h3>
+                                    <p data-translate="deployment_guide.offline.steps.download.desc">Download the offline enterprise package from your RaghimAI representative.</p>
                                     <div class="code-block">
                                         <pre><code># Extract the package
 tar -xzf rag-enterprise-1.0.26-offline.tar.gz
@@ -195,8 +195,8 @@ cd rag-enterprise-1.0.26-offline</code></pre>
                             <div class="step">
                                 <div class="step-number">2</div>
                                 <div class="step-content">
-                                    <h3>Run Interactive Installer</h3>
-                                    <p>Use the interactive installer for guided setup and configuration.</p>
+                                    <h3 data-translate="deployment_guide.offline.steps.installer.title">Run Interactive Installer</h3>
+                                    <p data-translate="deployment_guide.offline.steps.installer.desc">Use the interactive installer for guided setup and configuration.</p>
                                     <div class="code-block">
                                         <pre><code># Launch interactive installer
 ./INSTALL.sh
@@ -205,7 +205,7 @@ cd rag-enterprise-1.0.26-offline</code></pre>
 ./installer/installer.sh</code></pre>
                                     </div>
                                     <div class="info-box">
-                                        <strong>Note:</strong> The installer will guide you through license acceptance, environment configuration, and deployment options.
+                                        <strong data-translate="deployment_guide.offline.steps.installer.note_label">Note:</strong> <span data-translate="deployment_guide.offline.steps.installer.note">The installer will guide you through license acceptance, environment configuration, and deployment options.</span>
                                     </div>
                                 </div>
                             </div>
@@ -213,14 +213,14 @@ cd rag-enterprise-1.0.26-offline</code></pre>
                             <div class="step">
                                 <div class="step-number">3</div>
                                 <div class="step-content">
-                                    <h3>Non-Interactive Deployment</h3>
-                                    <p>For automated deployments or CI/CD pipelines.</p>
+                                    <h3 data-translate="deployment_guide.offline.steps.noninteractive.title">Non-Interactive Deployment</h3>
+                                    <p data-translate="deployment_guide.offline.steps.noninteractive.desc">For automated deployments or CI/CD pipelines.</p>
                                     <div class="code-block">
                                         <pre><code># Automated deployment
 ./DEPLOY.sh</code></pre>
                                     </div>
                                     <div class="warning-box">
-                                        <strong>Warning:</strong> Non-interactive deployment uses default configuration. Update the .env file for production use.
+                                        <strong data-translate="deployment_guide.offline.steps.noninteractive.warning_label">Warning:</strong> <span data-translate="deployment_guide.offline.steps.noninteractive.warning">Non-interactive deployment uses default configuration. Update the .env file for production use.</span>
                                     </div>
                                 </div>
                             </div>
@@ -228,28 +228,28 @@ cd rag-enterprise-1.0.26-offline</code></pre>
                     </section>
 
                     <section id="cloud-deployment">
-                        <h2>Cloud Deployment</h2>
-                        <p>Deploy on cloud platforms with external GPU support for enhanced performance.</p>
+                        <h2 data-translate="deployment_guide.cloud.title">Cloud Deployment</h2>
+                        <p data-translate="deployment_guide.cloud.subtitle">Deploy on cloud platforms with external GPU support for enhanced performance.</p>
 
                         <div class="cloud-options">
                             <div class="cloud-card">
-                                <h3>VastAI Deployment</h3>
+                                <h3 data-translate="deployment_guide.cloud.vastai.title">VastAI Deployment</h3>
                                 <div class="deployment-steps">
                                     <div class="step">
                                         <div class="step-number">1</div>
                                         <div class="step-content">
-                                            <h4>Create VastAI Instance</h4>
+                                            <h4 data-translate="deployment_guide.cloud.vastai.steps.instance.title">Create VastAI Instance</h4>
                                             <ul>
-                                                <li>Select GPU-enabled instance (RTX 4090 recommended)</li>
-                                                <li>Choose Ubuntu 20.04+ image</li>
-                                                <li>Configure SSH access</li>
+                                                <li data-translate="deployment_guide.cloud.vastai.steps.instance.gpu">Select GPU-enabled instance (RTX 4090 recommended)</li>
+                                                <li data-translate="deployment_guide.cloud.vastai.steps.instance.image">Choose Ubuntu 20.04+ image</li>
+                                                <li data-translate="deployment_guide.cloud.vastai.steps.instance.ssh">Configure SSH access</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <div class="step-number">2</div>
                                         <div class="step-content">
-                                            <h4>Setup SSH Tunnel</h4>
+                                            <h4 data-translate="deployment_guide.cloud.vastai.steps.ssh.title">Setup SSH Tunnel</h4>
                                             <div class="code-block">
                                                 <pre><code># Setup SSH tunnel for Ollama access
 ./setup_ssh_env.sh
@@ -261,23 +261,23 @@ cd rag-enterprise-1.0.26-offline</code></pre>
                             </div>
 
                             <div class="cloud-card">
-                                <h3>RunPod Deployment</h3>
+                                <h3 data-translate="deployment_guide.cloud.runpod.title">RunPod Deployment</h3>
                                 <div class="deployment-steps">
                                     <div class="step">
                                         <div class="step-number">1</div>
                                         <div class="step-content">
-                                            <h4>Create RunPod Instance</h4>
+                                            <h4 data-translate="deployment_guide.cloud.runpod.steps.instance.title">Create RunPod Instance</h4>
                                             <ul>
-                                                <li>Select GPU-enabled pod</li>
-                                                <li>Use RunPod PyTorch template</li>
-                                                <li>Configure network access</li>
+                                                <li data-translate="deployment_guide.cloud.runpod.steps.instance.gpu">Select GPU-enabled pod</li>
+                                                <li data-translate="deployment_guide.cloud.runpod.steps.instance.template">Use RunPod PyTorch template</li>
+                                                <li data-translate="deployment_guide.cloud.runpod.steps.instance.network">Configure network access</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <div class="step-number">2</div>
                                         <div class="step-content">
-                                            <h4>Deploy with RunPod Config</h4>
+                                            <h4 data-translate="deployment_guide.cloud.runpod.steps.deploy.title">Deploy with RunPod Config</h4>
                                             <div class="code-block">
                                                 <pre><code># Use RunPod-specific configuration
 docker-compose -f runpod-docker-compose.yml up -d</code></pre>
@@ -290,60 +290,60 @@ docker-compose -f runpod-docker-compose.yml up -d</code></pre>
                     </section>
 
                     <section id="configuration">
-                        <h2>Configuration</h2>
-                        <p>Configure your deployment using environment variables and configuration files.</p>
+                        <h2 data-translate="deployment_guide.configuration.title">Configuration</h2>
+                        <p data-translate="deployment_guide.configuration.subtitle">Configure your deployment using environment variables and configuration files.</p>
 
                         <div class="config-section">
-                            <h3>Environment Variables</h3>
+                            <h3 data-translate="deployment_guide.configuration.env.title">Environment Variables</h3>
                             <div class="config-table">
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>Variable</th>
-                                            <th>Description</th>
-                                            <th>Default</th>
+                                            <th data-translate="deployment_guide.configuration.env.table.variable">Variable</th>
+                                            <th data-translate="deployment_guide.configuration.env.table.description">Description</th>
+                                            <th data-translate="deployment_guide.configuration.env.table.default">Default</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td><code>LICENSE_KEY</code></td>
-                                            <td>Your enterprise license key</td>
-                                            <td>Required</td>
+                                            <td data-translate="deployment_guide.configuration.env.license.desc">Your enterprise license key</td>
+                                            <td data-translate="deployment_guide.configuration.env.required">Required</td>
                                         </tr>
                                         <tr>
                                             <td><code>JWT_SECRET_KEY</code></td>
-                                            <td>JWT secret for authentication</td>
-                                            <td>Generated</td>
+                                            <td data-translate="deployment_guide.configuration.env.jwt.desc">JWT secret for authentication</td>
+                                            <td data-translate="deployment_guide.configuration.env.generated">Generated</td>
                                         </tr>
                                         <tr>
                                             <td><code>POSTGRES_PASSWORD</code></td>
-                                            <td>Database password</td>
-                                            <td>Generated</td>
+                                            <td data-translate="deployment_guide.configuration.env.postgres.desc">Database password</td>
+                                            <td data-translate="deployment_guide.configuration.env.generated">Generated</td>
                                         </tr>
                                         <tr>
                                             <td><code>REDIS_PASSWORD</code></td>
-                                            <td>Redis cache password</td>
-                                            <td>Generated</td>
+                                            <td data-translate="deployment_guide.configuration.env.redis.desc">Redis cache password</td>
+                                            <td data-translate="deployment_guide.configuration.env.generated">Generated</td>
                                         </tr>
                                         <tr>
                                             <td><code>GPU_ENABLED</code></td>
-                                            <td>Enable GPU acceleration</td>
-                                            <td>true</td>
+                                            <td data-translate="deployment_guide.configuration.env.gpu.desc">Enable GPU acceleration</td>
+                                            <td data-translate="deployment_guide.configuration.env.true">true</td>
                                         </tr>
                                         <tr>
                                             <td><code>FRONTEND_URL</code></td>
-                                            <td>Frontend access URL</td>
-                                            <td>http://localhost</td>
+                                            <td data-translate="deployment_guide.configuration.env.frontend.desc">Frontend access URL</td>
+                                            <td><code>http://localhost</code></td>
                                         </tr>
                                         <tr>
                                             <td><code>API_URL</code></td>
-                                            <td>Backend API URL</td>
-                                            <td>http://localhost:8000</td>
+                                            <td data-translate="deployment_guide.configuration.env.api.desc">Backend API URL</td>
+                                            <td><code>http://localhost:8000</code></td>
                                         </tr>
                                         <tr>
                                             <td><code>WIDGET_DOMAINS</code></td>
-                                            <td>Widget embedding domains</td>
-                                            <td>Empty</td>
+                                            <td data-translate="deployment_guide.configuration.env.widget.desc">Widget embedding domains</td>
+                                            <td data-translate="deployment_guide.configuration.env.empty">Empty</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -351,7 +351,7 @@ docker-compose -f runpod-docker-compose.yml up -d</code></pre>
                         </div>
 
                         <div class="config-section">
-                            <h3>Model Configuration</h3>
+                            <h3 data-translate="deployment_guide.configuration.models.title">Model Configuration</h3>
                             <div class="code-block">
                                 <pre><code># Default models (can be overridden)
 EMBEDDING_MODEL=paraphrase-multilingual:278m-mpnet-base-v2-fp16
@@ -368,21 +368,21 @@ OLLAMA_MAX_LOADED_MODELS=3</code></pre>
                     </section>
 
                     <section id="verification">
-                        <h2>Deployment Verification</h2>
-                        <p>Verify your deployment is working correctly using the provided health checks.</p>
+                        <h2 data-translate="deployment_guide.verification.title">Deployment Verification</h2>
+                        <p data-translate="deployment_guide.verification.subtitle">Verify your deployment is working correctly using the provided health checks.</p>
 
                         <div class="verification-steps">
                             <div class="verification-step">
-                                <h3>Health Check</h3>
+                                <h3 data-translate="deployment_guide.verification.health.title">Health Check</h3>
                                 <div class="code-block">
                                     <pre><code># Run comprehensive health check
 ./scripts/health_check.sh</code></pre>
                                 </div>
-                                <p>This will check all services and provide status information.</p>
+                                <p data-translate="deployment_guide.verification.health.desc">This will check all services and provide status information.</p>
                             </div>
 
                             <div class="verification-step">
-                                <h3>Service Status</h3>
+                                <h3 data-translate="deployment_guide.verification.status.title">Service Status</h3>
                                 <div class="code-block">
                                     <pre><code># Check running containers
 docker-compose -f docker-compose/docker-compose.yml ps
@@ -393,19 +393,19 @@ docker-compose -f docker-compose/docker-compose.yml logs -f</code></pre>
                             </div>
 
                             <div class="verification-step">
-                                <h3>Access URLs</h3>
+                                <h3 data-translate="deployment_guide.verification.urls.title">Access URLs</h3>
                                 <div class="url-list">
                                     <div class="url-item">
-                                        <strong>Frontend:</strong> <code>http://localhost</code>
+                                        <strong data-translate="deployment_guide.verification.urls.frontend.label">Frontend:</strong> <code>http://localhost</code>
                                     </div>
                                     <div class="url-item">
-                                        <strong>Backend API:</strong> <code>http://localhost:8000</code>
+                                        <strong data-translate="deployment_guide.verification.urls.api.label">Backend API:</strong> <code>http://localhost:8000</code>
                                     </div>
                                     <div class="url-item">
-                                        <strong>Health Check:</strong> <code>http://localhost:8000/health</code>
+                                        <strong data-translate="deployment_guide.verification.urls.health.label">Health Check:</strong> <code>http://localhost:8000/health</code>
                                     </div>
                                     <div class="url-item">
-                                        <strong>ChromaDB:</strong> <code>http://localhost:8001</code>
+                                        <strong data-translate="deployment_guide.verification.urls.chromadb.label">ChromaDB:</strong> <code>http://localhost:8001</code>
                                     </div>
                                 </div>
                             </div>
@@ -413,60 +413,60 @@ docker-compose -f docker-compose/docker-compose.yml logs -f</code></pre>
                     </section>
 
                     <section id="troubleshooting">
-                        <h2>Common Issues</h2>
+                        <h2 data-translate="deployment_guide.troubleshooting.title">Common Issues</h2>
                         <div class="troubleshooting-grid">
                             <div class="issue-card">
-                                <h3>Connection Refused</h3>
-                                <p><strong>Symptoms:</strong> "This site can't be reached" or "ERR_CONNECTION_REFUSED"</p>
+                                <h3 data-translate="deployment_guide.troubleshooting.connection.title">Connection Refused</h3>
+                                <p><strong data-translate="deployment_guide.troubleshooting.symptoms">Symptoms:</strong> <span data-translate="deployment_guide.troubleshooting.connection.symptoms">"This site can't be reached" or "ERR_CONNECTION_REFUSED"</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="deployment_guide.troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Check if containers are running: <code>docker ps</code></li>
-                                        <li>Verify firewall settings (ports 80, 443)</li>
-                                        <li>Use external IP for VM deployments</li>
-                                        <li>Test from server: <code>curl http://localhost</code></li>
+                                        <li data-translate="deployment_guide.troubleshooting.connection.check_containers">Check if containers are running:</li>
+                                        <li data-translate="deployment_guide.troubleshooting.connection.firewall">Verify firewall settings (ports 80, 443)</li>
+                                        <li data-translate="deployment_guide.troubleshooting.connection.external_ip">Use external IP for VM deployments</li>
+                                        <li data-translate="deployment_guide.troubleshooting.connection.curl">Test from server:</li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="issue-card">
-                                <h3>GPU Not Detected</h3>
-                                <p><strong>Symptoms:</strong> Slow AI responses, GPU not utilized</p>
+                                <h3 data-translate="deployment_guide.troubleshooting.gpu.title">GPU Not Detected</h3>
+                                <p><strong data-translate="deployment_guide.troubleshooting.symptoms">Symptoms:</strong> <span data-translate="deployment_guide.troubleshooting.gpu.symptoms">Slow AI responses, GPU not utilized</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="deployment_guide.troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Install NVIDIA Docker runtime</li>
-                                        <li>Set <code>GPU_ENABLED=true</code> in .env</li>
-                                        <li>Check CUDA installation</li>
-                                        <li>Verify GPU availability: <code>nvidia-smi</code></li>
+                                        <li data-translate="deployment_guide.troubleshooting.gpu.nvidia">Install NVIDIA Docker runtime</li>
+                                        <li data-translate="deployment_guide.troubleshooting.gpu.env">Set GPU_ENABLED=true in .env</li>
+                                        <li data-translate="deployment_guide.troubleshooting.gpu.cuda">Check CUDA installation</li>
+                                        <li data-translate="deployment_guide.troubleshooting.gpu.smi">Verify GPU availability: nvidia-smi</li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="issue-card">
-                                <h3>Memory Issues</h3>
-                                <p><strong>Symptoms:</strong> Out of memory errors, slow performance</p>
+                                <h3 data-translate="deployment_guide.troubleshooting.memory.title">Memory Issues</h3>
+                                <p><strong data-translate="deployment_guide.troubleshooting.symptoms">Symptoms:</strong> <span data-translate="deployment_guide.troubleshooting.memory.symptoms">Out of memory errors, slow performance</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="deployment_guide.troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Increase system RAM</li>
-                                        <li>Reduce <code>OLLAMA_MAX_LOADED_MODELS</code></li>
-                                        <li>Lower <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
-                                        <li>Use smaller models</li>
+                                        <li data-translate="deployment_guide.troubleshooting.memory.increase_ram">Increase system RAM</li>
+                                        <li data-translate="deployment_guide.troubleshooting.memory.reduce_models">Reduce OLLAMA_MAX_LOADED_MODELS</li>
+                                        <li data-translate="deployment_guide.troubleshooting.memory.lower_fraction">Lower OLLAMA_GPU_MEMORY_FRACTION</li>
+                                        <li data-translate="deployment_guide.troubleshooting.memory.smaller_models">Use smaller models</li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="issue-card">
-                                <h3>Database Connection</h3>
-                                <p><strong>Symptoms:</strong> Database connection errors</p>
+                                <h3 data-translate="deployment_guide.troubleshooting.db.title">Database Connection</h3>
+                                <p><strong data-translate="deployment_guide.troubleshooting.symptoms">Symptoms:</strong> <span data-translate="deployment_guide.troubleshooting.db.symptoms">Database connection errors</span></p>
                                 <div class="solution">
-                                    <h4>Solutions:</h4>
+                                    <h4 data-translate="deployment_guide.troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Check PostgreSQL container status</li>
-                                        <li>Verify database credentials</li>
-                                        <li>Check network connectivity</li>
-                                        <li>Review database logs</li>
+                                        <li data-translate="deployment_guide.troubleshooting.db.status">Check PostgreSQL container status</li>
+                                        <li data-translate="deployment_guide.troubleshooting.db.credentials">Verify database credentials</li>
+                                        <li data-translate="deployment_guide.troubleshooting.db.network">Check network connectivity</li>
+                                        <li data-translate="deployment_guide.troubleshooting.db.logs">Review database logs</li>
                                     </ul>
                                 </div>
                             </div>
