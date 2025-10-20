@@ -1294,40 +1294,168 @@
       "deployment": {
         "title": "Deployment Best Practices",
         "subtitle": "Follow these guidelines for optimal deployment and configuration.",
-        "environment_setup": "Environment Setup",
-        "resource_planning": "Resource Planning",
-        "backup_strategy": "Backup Strategy",
-        "update_management": "Update Management"
+        "environment_setup": {
+          "title": "Environment Setup",
+          "dedicated_servers": "Use dedicated servers for production",
+          "network_segmentation": "Implement proper network segmentation",
+          "firewall_rules": "Configure firewall rules appropriately",
+          "ssl_certificates": "Use SSL/TLS certificates"
+        },
+        "resource_planning": {
+          "title": "Resource Planning",
+          "ram_allocation": "Allocate sufficient RAM (16GB+ recommended)",
+          "gpu_acceleration": "Plan for GPU acceleration if available",
+          "storage_space": "Ensure adequate storage space",
+          "resource_monitoring": "Monitor resource utilization"
+        },
+        "backup_strategy": {
+          "title": "Backup Strategy",
+          "database_backups": "Regular database backups",
+          "document_backups": "Document storage backups",
+          "config_backups": "Configuration file backups",
+          "restore_procedures": "Test restore procedures"
+        },
+        "update_management": {
+          "title": "Update Management",
+          "schedule_updates": "Schedule regular updates",
+          "test_staging": "Test updates in staging environment",
+          "rollback_procedures": "Maintain rollback procedures",
+          "document_procedures": "Document update procedures"
+        }
       },
       "security": {
         "title": "Security Best Practices",
         "subtitle": "Implement comprehensive security measures for your deployment.",
         "authentication_authorization": "Authentication & Authorization",
+        "auth": {
+          "strong_passwords_label": "Strong Passwords:",
+          "strong_passwords": "Enforce complex password policies",
+          "mfa_label": "Multi-Factor Authentication:",
+          "mfa": "Enable MFA for all users",
+          "rbac_label": "Role-Based Access:",
+          "rbac": "Implement least privilege access",
+          "session_label": "Session Management:",
+          "session": "Configure appropriate session timeouts"
+        },
         "data_protection": "Data Protection",
-        "network_security": "Network Security"
+        "data": {
+          "encryption_label": "Encryption:",
+          "encryption": "Enable encryption at rest and in transit",
+          "access_controls_label": "Access Controls:",
+          "access_controls": "Implement IP whitelisting",
+          "classification_label": "Data Classification:",
+          "classification": "Classify and protect sensitive data",
+          "retention_label": "Retention Policies:",
+          "retention": "Implement data retention policies"
+        },
+        "network_security": "Network Security",
+        "network": {
+          "https_label": "HTTPS Only:",
+          "https": "Enforce HTTPS for all communications",
+          "firewall_label": "Firewall Rules:",
+          "firewall": "Configure restrictive firewall rules",
+          "vpn_label": "VPN Access:",
+          "vpn": "Use VPN for remote access",
+          "ddos_label": "DDoS Protection:",
+          "ddos": "Implement DDoS protection"
+        }
       },
       "performance": {
         "title": "Performance Optimization",
         "subtitle": "Optimize system performance for better user experience.",
         "system_optimization": "System Optimization",
         "database_optimization": "Database Optimization",
-        "caching_strategy": "Caching Strategy"
+        "db": {
+          "connection_pooling_label": "Connection Pooling:",
+          "connection_pooling": "Configure appropriate pool sizes",
+          "indexing_label": "Indexing:",
+          "indexing": "Create proper database indexes",
+          "query_optimization_label": "Query Optimization:",
+          "query_optimization": "Monitor and optimize slow queries",
+          "maintenance_label": "Regular Maintenance:",
+          "maintenance": "Schedule database maintenance"
+        },
+        "caching_strategy": "Caching Strategy",
+        "cache": {
+          "redis_config_label": "Redis Configuration:",
+          "redis_config": "Optimize Redis settings",
+          "policies_label": "Cache Policies:",
+          "policies": "Implement appropriate cache TTL",
+          "warming_label": "Cache Warming:",
+          "warming": "Pre-load frequently accessed data",
+          "monitoring_label": "Cache Monitoring:",
+          "monitoring": "Monitor cache hit rates"
+        }
       },
       "data_management": {
         "title": "Data Management",
         "subtitle": "Best practices for managing documents and data.",
-        "document_organization": "Document Organization",
-        "data_quality": "Data Quality",
-        "storage_management": "Storage Management",
-        "backup_recovery": "Backup & Recovery"
+        "document_organization": {
+          "title": "Document Organization",
+          "collection_names": "Use meaningful collection names",
+          "document_tagging": "Implement document tagging",
+          "folder_structures": "Create logical folder structures",
+          "cleanup": "Regular cleanup of old documents"
+        },
+        "data_quality": {
+          "title": "Data Quality",
+          "validate_formats": "Validate document formats",
+          "check_ocr": "Check OCR accuracy",
+          "monitor_processing": "Monitor processing quality",
+          "quality_controls": "Implement quality controls"
+        },
+        "storage_management": {
+          "title": "Storage Management",
+          "monitor_usage": "Monitor storage usage",
+          "implement_compression": "Implement compression",
+          "archive_old_data": "Archive old data",
+          "plan_growth": "Plan for growth"
+        },
+        "backup_recovery": {
+          "title": "Backup & Recovery",
+          "automated_backups": "Automated daily backups",
+          "test_restore": "Test restore procedures",
+          "offsite_storage": "Offsite backup storage",
+          "disaster_recovery": "Disaster recovery planning"
+        }
       },
       "monitoring": {
         "title": "Monitoring & Maintenance",
         "subtitle": "Implement comprehensive monitoring and maintenance procedures.",
         "system_monitoring": "System Monitoring",
+        "system": {
+          "health_checks_label": "Health Checks:",
+          "health_checks": "Implement automated health checks",
+          "performance_metrics_label": "Performance Metrics:",
+          "performance_metrics": "Monitor CPU, memory, and disk usage",
+          "error_tracking_label": "Error Tracking:",
+          "error_tracking": "Set up error monitoring and alerting",
+          "log_analysis_label": "Log Analysis:",
+          "log_analysis": "Regular log review and analysis"
+        },
         "user_activity_monitoring": "User Activity Monitoring",
+        "user": {
+          "access_logs_label": "Access Logs:",
+          "access_logs": "Monitor user access patterns",
+          "usage_analytics_label": "Usage Analytics:",
+          "usage_analytics": "Track system usage metrics",
+          "security_events_label": "Security Events:",
+          "security_events": "Monitor for security incidents",
+          "compliance_reporting_label": "Compliance Reporting:",
+          "compliance_reporting": "Generate compliance reports"
+        },
         "maintenance_schedule": "Maintenance Schedule",
-        "alerting_configuration": "Alerting Configuration"
+        "alerting_configuration": "Alerting Configuration",
+        "alerts": {
+          "system_alerts_label": "System Alerts:",
+          "system_alerts": "CPU, memory, disk usage thresholds",
+          "service_alerts_label": "Service Alerts:",
+          "service_alerts": "Service availability monitoring",
+          "security_alerts_label": "Security Alerts:",
+          "security_alerts": "Failed login attempts, suspicious activity",
+          "performance_alerts_label": "Performance Alerts:",
+          "performance_alerts": "Response time thresholds"
+        }
       }
     }
   },
@@ -2626,40 +2754,168 @@
       "deployment": {
         "title": "Bonnes Pratiques Déploiement",
         "subtitle": "Suivez ces directives pour un déploiement et une configuration optimaux.",
-        "environment_setup": "Configuration Environnement",
-        "resource_planning": "Planification Ressources",
-        "backup_strategy": "Stratégie Sauvegarde",
-        "update_management": "Gestion Mises à Jour"
+        "environment_setup": {
+          "title": "Configuration Environnement",
+          "dedicated_servers": "Utilisez des serveurs dédiés pour la production",
+          "network_segmentation": "Implémentez une segmentation réseau appropriée",
+          "firewall_rules": "Configurez les règles de pare-feu de manière appropriée",
+          "ssl_certificates": "Utilisez des certificats SSL/TLS"
+        },
+        "resource_planning": {
+          "title": "Planification Ressources",
+          "ram_allocation": "Allouez suffisamment de RAM (16GB+ recommandé)",
+          "gpu_acceleration": "Planifiez l'accélération GPU si disponible",
+          "storage_space": "Assurez-vous d'un espace de stockage adéquat",
+          "resource_monitoring": "Surveillez l'utilisation des ressources"
+        },
+        "backup_strategy": {
+          "title": "Stratégie Sauvegarde",
+          "database_backups": "Sauvegardes régulières de base de données",
+          "document_backups": "Sauvegardes de stockage de documents",
+          "config_backups": "Sauvegardes de fichiers de configuration",
+          "restore_procedures": "Testez les procédures de restauration"
+        },
+        "update_management": {
+          "title": "Gestion Mises à Jour",
+          "schedule_updates": "Planifiez des mises à jour régulières",
+          "test_staging": "Testez les mises à jour dans l'environnement de staging",
+          "rollback_procedures": "Maintenez les procédures de retour en arrière",
+          "document_procedures": "Documentez les procédures de mise à jour"
+        }
       },
       "security": {
         "title": "Bonnes Pratiques Sécurité",
         "subtitle": "Implémentez des mesures de sécurité complètes pour votre déploiement.",
         "authentication_authorization": "Authentification & Autorisation",
+        "auth": {
+          "strong_passwords_label": "Mots de Passe Forts :",
+          "strong_passwords": "Appliquez des politiques de mots de passe complexes",
+          "mfa_label": "Authentification Multi-Facteurs :",
+          "mfa": "Activez l'MFA pour tous les utilisateurs",
+          "rbac_label": "Accès Basé sur les Rôles :",
+          "rbac": "Implémentez l'accès au moindre privilège",
+          "session_label": "Gestion de Session :",
+          "session": "Configurez des délais d'expiration de session appropriés"
+        },
         "data_protection": "Protection Données",
-        "network_security": "Sécurité Réseau"
+        "data": {
+          "encryption_label": "Chiffrement :",
+          "encryption": "Activez le chiffrement au repos et en transit",
+          "access_controls_label": "Contrôles d'Accès :",
+          "access_controls": "Implémentez la liste blanche IP",
+          "classification_label": "Classification des Données :",
+          "classification": "Classifiez et protégez les données sensibles",
+          "retention_label": "Politiques de Rétention :",
+          "retention": "Implémentez des politiques de rétention des données"
+        },
+        "network_security": "Sécurité Réseau",
+        "network": {
+          "https_label": "HTTPS Uniquement :",
+          "https": "Appliquez HTTPS pour toutes les communications",
+          "firewall_label": "Règles de Pare-feu :",
+          "firewall": "Configurez des règles de pare-feu restrictives",
+          "vpn_label": "Accès VPN :",
+          "vpn": "Utilisez VPN pour l'accès distant",
+          "ddos_label": "Protection DDoS :",
+          "ddos": "Implémentez la protection DDoS"
+        }
       },
       "performance": {
         "title": "Optimisation Performance",
         "subtitle": "Optimisez les performances système pour une meilleure expérience utilisateur.",
         "system_optimization": "Optimisation Système",
         "database_optimization": "Optimisation Base de Données",
-        "caching_strategy": "Stratégie Cache"
+        "db": {
+          "connection_pooling_label": "Pool de Connexions :",
+          "connection_pooling": "Configurez des tailles de pool appropriées",
+          "indexing_label": "Indexation :",
+          "indexing": "Créez des index de base de données appropriés",
+          "query_optimization_label": "Optimisation des Requêtes :",
+          "query_optimization": "Surveillez et optimisez les requêtes lentes",
+          "maintenance_label": "Maintenance Régulière :",
+          "maintenance": "Planifiez la maintenance de base de données"
+        },
+        "caching_strategy": "Stratégie Cache",
+        "cache": {
+          "redis_config_label": "Configuration Redis :",
+          "redis_config": "Optimisez les paramètres Redis",
+          "policies_label": "Politiques de Cache :",
+          "policies": "Implémentez un TTL de cache approprié",
+          "warming_label": "Préchauffage du Cache :",
+          "warming": "Préchargez les données fréquemment accédées",
+          "monitoring_label": "Surveillance du Cache :",
+          "monitoring": "Surveillez les taux de réussite du cache"
+        }
       },
       "data_management": {
         "title": "Gestion Données",
         "subtitle": "Bonnes pratiques pour la gestion des documents et données.",
-        "document_organization": "Organisation Documents",
-        "data_quality": "Qualité Données",
-        "storage_management": "Gestion Stockage",
-        "backup_recovery": "Sauvegarde & Récupération"
+        "document_organization": {
+          "title": "Organisation Documents",
+          "collection_names": "Utilisez des noms de collection significatifs",
+          "document_tagging": "Implémentez l'étiquetage de documents",
+          "folder_structures": "Créez des structures de dossiers logiques",
+          "cleanup": "Nettoyage régulier des anciens documents"
+        },
+        "data_quality": {
+          "title": "Qualité Données",
+          "validate_formats": "Validez les formats de documents",
+          "check_ocr": "Vérifiez la précision OCR",
+          "monitor_processing": "Surveillez la qualité du traitement",
+          "quality_controls": "Implémentez des contrôles de qualité"
+        },
+        "storage_management": {
+          "title": "Gestion Stockage",
+          "monitor_usage": "Surveillez l'utilisation du stockage",
+          "implement_compression": "Implémentez la compression",
+          "archive_old_data": "Archivez les anciennes données",
+          "plan_growth": "Planifiez la croissance"
+        },
+        "backup_recovery": {
+          "title": "Sauvegarde & Récupération",
+          "automated_backups": "Sauvegardes quotidiennes automatisées",
+          "test_restore": "Testez les procédures de restauration",
+          "offsite_storage": "Stockage de sauvegarde hors site",
+          "disaster_recovery": "Planification de récupération d'urgence"
+        }
       },
       "monitoring": {
         "title": "Surveillance & Maintenance",
         "subtitle": "Implémentez des procédures complètes de surveillance et maintenance.",
         "system_monitoring": "Surveillance Système",
+        "system": {
+          "health_checks_label": "Contrôles de Santé :",
+          "health_checks": "Implémentez des contrôles de santé automatisés",
+          "performance_metrics_label": "Métriques de Performance :",
+          "performance_metrics": "Surveillez l'utilisation CPU, mémoire et disque",
+          "error_tracking_label": "Suivi des Erreurs :",
+          "error_tracking": "Configurez la surveillance et l'alerte d'erreurs",
+          "log_analysis_label": "Analyse des Logs :",
+          "log_analysis": "Révision et analyse régulières des logs"
+        },
         "user_activity_monitoring": "Surveillance Activité Utilisateur",
+        "user": {
+          "access_logs_label": "Logs d'Accès :",
+          "access_logs": "Surveillez les modèles d'accès utilisateur",
+          "usage_analytics_label": "Analytiques d'Utilisation :",
+          "usage_analytics": "Suivez les métriques d'utilisation du système",
+          "security_events_label": "Événements de Sécurité :",
+          "security_events": "Surveillez les incidents de sécurité",
+          "compliance_reporting_label": "Rapports de Conformité :",
+          "compliance_reporting": "Générez des rapports de conformité"
+        },
         "maintenance_schedule": "Planning Maintenance",
-        "alerting_configuration": "Configuration Alertes"
+        "alerting_configuration": "Configuration Alertes",
+        "alerts": {
+          "system_alerts_label": "Alertes Système :",
+          "system_alerts": "Seuils d'utilisation CPU, mémoire, disque",
+          "service_alerts_label": "Alertes de Service :",
+          "service_alerts": "Surveillance de disponibilité des services",
+          "security_alerts_label": "Alertes de Sécurité :",
+          "security_alerts": "Tentatives de connexion échouées, activité suspecte",
+          "performance_alerts_label": "Alertes de Performance :",
+          "performance_alerts": "Seuils de temps de réponse"
+        }
       }
     }
   }
