@@ -2,6 +2,7 @@
   "en": {
     "nav": {
       "home": "Home",
+      "capabilities": "Capabilities",
       "deployment": "Deployment",
       "integration": "Integration",
       "security": "Security",
@@ -33,11 +34,47 @@
     "capabilities": {
       "title": "Core Capabilities",
       "document_processing": "Document Processing",
+      "document_processing_items": {
+        "multi_format": "Multi-format document support (PDF, DOCX, TXT, MD)",
+        "ocr": "OCR capabilities for scanned documents",
+        "extraction": "Intelligent content extraction",
+        "analysis": "Advanced document analysis"
+      },
       "intelligent_search": "Intelligent Search",
+      "intelligent_search_items": {
+        "semantic": "Semantic search capabilities",
+        "context": "Context-aware retrieval",
+        "similarity": "Advanced similarity matching",
+        "collection": "Collection management"
+      },
       "ai_integration": "AI Integration",
+      "ai_integration_items": {
+        "model": "Advanced AI model integration",
+        "gpu": "GPU acceleration support",
+        "response": "Intelligent response generation",
+        "processing": "Real-time processing"
+      },
       "user_management": "User Management",
+      "user_management_items": {
+        "auth": "Secure authentication system",
+        "rbac": "Role-based access control",
+        "organization": "Organization management",
+        "session": "Session management"
+      },
       "communication": "Communication System",
-      "banking_solutions": "Banking & Financial Solutions"
+      "communication_items": {
+        "messaging": "Real-time messaging capabilities",
+        "handoff": "Advanced handoff mechanisms",
+        "queue": "Queue management system",
+        "coordination": "Multi-agent coordination"
+      },
+      "banking_solutions": "Banking & Financial Solutions",
+      "banking_solutions_items": {
+        "processing": "Banking document processing with encryption",
+        "compliance": "Basel III, MiFID II, FATCA compliance",
+        "aml": "AML/KYC integration capabilities",
+        "encryption": "Client-side encryption for PII"
+      }
     },
     "security": {
       "title": "Security & Compliance",
@@ -71,6 +108,7 @@
   "fr": {
     "nav": {
       "home": "Accueil",
+      "capabilities": "Capacités",
       "deployment": "Déploiement",
       "integration": "Intégration",
       "security": "Sécurité",
@@ -102,11 +140,47 @@
     "capabilities": {
       "title": "Capacités Principales",
       "document_processing": "Traitement de Documents",
+      "document_processing_items": {
+        "multi_format": "Support multi-format de documents (PDF, DOCX, TXT, MD)",
+        "ocr": "Capacités OCR pour documents scannés",
+        "extraction": "Extraction intelligente de contenu",
+        "analysis": "Analyse avancée de documents"
+      },
       "intelligent_search": "Recherche Intelligente",
+      "intelligent_search_items": {
+        "semantic": "Capacités de recherche sémantique",
+        "context": "Récupération contextuelle",
+        "similarity": "Correspondance de similarité avancée",
+        "collection": "Gestion de collections"
+      },
       "ai_integration": "Intégration IA",
+      "ai_integration_items": {
+        "model": "Intégration avancée de modèles IA",
+        "gpu": "Support d'accélération GPU",
+        "response": "Génération de réponses intelligentes",
+        "processing": "Traitement en temps réel"
+      },
       "user_management": "Gestion des Utilisateurs",
+      "user_management_items": {
+        "auth": "Système d'authentification sécurisé",
+        "rbac": "Contrôle d'accès basé sur les rôles",
+        "organization": "Gestion d'organisation",
+        "session": "Gestion de session"
+      },
       "communication": "Système de Communication",
-      "banking_solutions": "Solutions Bancaires et Financières"
+      "communication_items": {
+        "messaging": "Capacités de messagerie en temps réel",
+        "handoff": "Mécanismes de transfert avancés",
+        "queue": "Système de gestion de files",
+        "coordination": "Coordination multi-agents"
+      },
+      "banking_solutions": "Solutions Bancaires et Financières",
+      "banking_solutions_items": {
+        "processing": "Traitement de documents bancaires avec chiffrement",
+        "compliance": "Conformité Basel III, MiFID II, FATCA",
+        "aml": "Capacités d'intégration AML/KYC",
+        "encryption": "Chiffrement côté client pour les PII"
+      }
     },
     "security": {
       "title": "Sécurité et Conformité",
