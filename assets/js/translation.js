@@ -7,10 +7,12 @@ class TranslationManager {
     }
 
     async init() {
+        console.log('Initializing TranslationManager...');
         await this.loadTranslations();
         this.createLanguageSwitcher();
-        this.applyTranslations();
         this.bindEvents();
+        this.applyTranslations();
+        console.log('TranslationManager initialized successfully');
     }
 
     async loadTranslations() {
@@ -26,14 +28,23 @@ class TranslationManager {
     createLanguageSwitcher() {
         // Find the navbar container
         const navbar = document.querySelector('.nav-menu');
-        if (!navbar) return;
+        if (!navbar) {
+            console.warn('Navigation menu not found, language switcher not created');
+            return;
+        }
+
+        // Check if language switcher already exists
+        if (document.querySelector('.language-switcher')) {
+            console.log('Language switcher already exists');
+            return;
+        }
 
         // Create language switcher
         const languageSwitcher = document.createElement('div');
         languageSwitcher.className = 'language-switcher';
         languageSwitcher.innerHTML = `
             <div class="language-dropdown">
-                <button class="language-btn" id="language-btn">
+                <button class="language-btn" id="language-btn" type="button">
                     <span class="flag">${this.currentLanguage === 'en' ? '🇺🇸' : '🇫🇷'}</span>
                     <span class="lang-text">${this.currentLanguage === 'en' ? 'English' : 'Français'}</span>
                     <span class="dropdown-arrow">▼</span>
@@ -51,37 +62,62 @@ class TranslationManager {
             </div>
         `;
 
-        // Insert before the last nav item
+        // Insert at the end of the navbar
         navbar.appendChild(languageSwitcher);
+        console.log('Language switcher created successfully');
     }
 
     bindEvents() {
-        const languageBtn = document.getElementById('language-btn');
-        const languageMenu = document.getElementById('language-menu');
-        const languageOptions = document.querySelectorAll('.language-option');
-
-        if (languageBtn && languageMenu) {
-            languageBtn.addEventListener('click', (e) => {
+        console.log('Binding events...');
+        
+        // Use event delegation for better reliability
+        document.addEventListener('click', (e) => {
+            console.log('Click event detected on:', e.target);
+            
+            // Handle language button click
+            if (e.target.closest('#language-btn')) {
+                console.log('Language button clicked');
                 e.preventDefault();
-                languageMenu.classList.toggle('active');
-            });
+                e.stopPropagation();
+                const languageMenu = document.getElementById('language-menu');
+                if (languageMenu) {
+                    console.log('Toggling language menu');
+                    languageMenu.classList.toggle('active');
+                } else {
+                    console.error('Language menu not found');
+                }
+                return;
+            }
+
+            // Handle language option clicks
+            if (e.target.closest('.language-option')) {
+                console.log('Language option clicked');
+                e.preventDefault();
+                e.stopPropagation();
+                const option = e.target.closest('.language-option');
+                const lang = option.dataset.lang;
+                console.log('Selected language:', lang);
+                if (lang) {
+                    this.switchLanguage(lang);
+                    const languageMenu = document.getElementById('language-menu');
+                    if (languageMenu) {
+                        languageMenu.classList.remove('active');
+                    }
+                }
+                return;
+            }
 
             // Close dropdown when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.language-switcher')) {
+            if (!e.target.closest('.language-switcher')) {
+                const languageMenu = document.getElementById('language-menu');
+                if (languageMenu && languageMenu.classList.contains('active')) {
+                    console.log('Closing language menu');
                     languageMenu.classList.remove('active');
                 }
-            });
-        }
-
-        languageOptions.forEach(option => {
-            option.addEventListener('click', (e) => {
-                e.preventDefault();
-                const lang = e.currentTarget.dataset.lang;
-                this.switchLanguage(lang);
-                languageMenu.classList.remove('active');
-            });
+            }
         });
+        
+        console.log('Events bound successfully');
     }
 
     switchLanguage(lang) {
@@ -163,3 +199,11 @@ class TranslationManager {
 document.addEventListener('DOMContentLoaded', () => {
     new TranslationManager();
 });
+
+// Fallback initialization in case DOMContentLoaded has already fired
+if (document.readyState === 'loading') {
+    // DOM is still loading, wait for DOMContentLoaded
+} else {
+    // DOM is already loaded, initialize immediately
+    new TranslationManager();
+}
