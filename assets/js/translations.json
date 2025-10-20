@@ -18,7 +18,10 @@
       "title": "Enterprise RAG System",
       "subtitle": "Secure AI-Powered Document Intelligence & Knowledge Management",
       "get_started": "Get Started",
-      "learn_more": "Learn More"
+      "learn_more": "Learn More",
+      "version": "Version 1.0.26",
+      "enterprise_ready": "Enterprise Ready",
+      "offline_deployment": "Offline Deployment"
     },
     "overview": {
       "title": "System Overview",
@@ -86,23 +89,107 @@
     "deployment": {
       "title": "Deployment Options",
       "offline_package": "Offline Enterprise Package",
-      "cloud_deployment": "Cloud Deployment"
+      "offline_package_desc": "Complete self-contained deployment solution with all dependencies included.",
+      "offline_features": {
+        "self_contained": "Self-contained deployment package",
+        "pre_configured": "Pre-configured environment",
+        "interactive": "Interactive installation process",
+        "documentation": "Comprehensive documentation"
+      },
+      "offline_requirements": {
+        "title": "Requirements:",
+        "docker": "Docker 20.10+",
+        "compose": "Docker Compose 2.0+",
+        "disk_space": "20GB+ free disk space",
+        "ram": "8GB+ RAM recommended",
+        "gpu": "GPU support (optional)"
+      },
+      "cloud_deployment": "Cloud Deployment",
+      "cloud_deployment_desc": "Scalable cloud deployment with external processing capabilities.",
+      "cloud_features": {
+        "scalable": "Scalable architecture",
+        "load_balancing": "Load balancing capabilities",
+        "external_processing": "External processing integration",
+        "auto_scaling": "Auto-scaling features"
+      },
+      "cloud_platforms": {
+        "title": "Supported Platforms:",
+        "providers": "Major cloud providers",
+        "gpu_platforms": "GPU-enabled platforms",
+        "custom_servers": "Custom server configurations",
+        "hybrid": "Hybrid deployment options"
+      }
     },
     "integration": {
       "title": "Integration & API",
       "api_capabilities": "API Capabilities",
-      "integration_methods": "Integration Methods"
+      "api_capabilities_desc": "The system provides comprehensive API endpoints for seamless integration with existing enterprise systems.",
+      "api_categories": {
+        "auth": "Authentication & Authorization",
+        "auth_desc": "Secure user management and access control",
+        "documents": "Document Management",
+        "documents_desc": "Upload, process, and manage document collections",
+        "ai": "AI Processing",
+        "ai_desc": "Intelligent document analysis and response generation",
+        "communication": "Communication",
+        "communication_desc": "Real-time messaging and collaboration features"
+      },
+      "integration_methods": "Integration Methods",
+      "methods": {
+        "restful": "RESTful API",
+        "restful_desc": "Standard HTTP-based API for system integration",
+        "websocket": "WebSocket Support",
+        "websocket_desc": "Real-time communication capabilities",
+        "widget": "Widget Embedding",
+        "widget_desc": "Embeddable components for existing applications",
+        "webhook": "Webhook Integration",
+        "webhook_desc": "Event-driven integration capabilities"
+      }
     },
     "support": {
       "title": "Support & Resources",
       "documentation": "Documentation",
+      "documentation_links": {
+        "deployment": "Deployment Guide",
+        "integration": "Integration Guide",
+        "troubleshooting": "Troubleshooting",
+        "security": "Security Guide"
+      },
       "quick_start": "Quick Start",
-      "contact": "Contact"
+      "quick_start_links": {
+        "guide": "Quick Start Guide",
+        "configuration": "Configuration",
+        "examples": "Integration Examples",
+        "best_practices": "Best Practices"
+      },
+      "contact": "Contact",
+      "contact_info": {
+        "email": "Email: contact@raghim.com",
+        "support": "Technical Support: Available for Enterprise customers",
+        "documentation": "Documentation: Comprehensive guides and references",
+        "community": "Community: Enterprise user community"
+      }
     },
     "footer": {
       "product": "Product",
+      "product_links": {
+        "capabilities": "Capabilities",
+        "deployment": "Deployment",
+        "integration": "Integration"
+      },
       "documentation": "Documentation",
-      "support": "Support"
+      "documentation_links": {
+        "integration_guide": "Integration Guide",
+        "deployment_guide": "Deployment Guide",
+        "troubleshooting": "Troubleshooting"
+      },
+      "support": "Support",
+      "support_links": {
+        "contact": "Contact",
+        "security": "Security",
+        "best_practices": "Best Practices"
+      },
+      "copyright": "© 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26"
     }
   },
   "fr": {
@@ -124,7 +211,10 @@
       "title": "Système RAG Entreprise",
       "subtitle": "Intelligence Documentaire Sécurisée et Gestion des Connaissances",
       "get_started": "Commencer",
-      "learn_more": "En Savoir Plus"
+      "learn_more": "En Savoir Plus",
+      "version": "Version 1.0.26",
+      "enterprise_ready": "Prêt pour l'Entreprise",
+      "offline_deployment": "Déploiement Hors Ligne"
     },
     "overview": {
       "title": "Aperçu du Système",
@@ -192,23 +282,107 @@
     "deployment": {
       "title": "Options de Déploiement",
       "offline_package": "Package Entreprise Hors Ligne",
-      "cloud_deployment": "Déploiement Cloud"
+      "offline_package_desc": "Solution de déploiement autonome complète avec toutes les dépendances incluses.",
+      "offline_features": {
+        "self_contained": "Package de déploiement autonome",
+        "pre_configured": "Environnement pré-configuré",
+        "interactive": "Processus d'installation interactif",
+        "documentation": "Documentation complète"
+      },
+      "offline_requirements": {
+        "title": "Exigences :",
+        "docker": "Docker 20.10+",
+        "compose": "Docker Compose 2.0+",
+        "disk_space": "20GB+ d'espace disque libre",
+        "ram": "8GB+ RAM recommandé",
+        "gpu": "Support GPU (optionnel)"
+      },
+      "cloud_deployment": "Déploiement Cloud",
+      "cloud_deployment_desc": "Déploiement cloud évolutif avec capacités de traitement externe.",
+      "cloud_features": {
+        "scalable": "Architecture évolutive",
+        "load_balancing": "Capacités d'équilibrage de charge",
+        "external_processing": "Intégration de traitement externe",
+        "auto_scaling": "Fonctionnalités de mise à l'échelle automatique"
+      },
+      "cloud_platforms": {
+        "title": "Plateformes Prises en Charge :",
+        "providers": "Principaux fournisseurs cloud",
+        "gpu_platforms": "Plateformes compatibles GPU",
+        "custom_servers": "Configurations de serveurs personnalisées",
+        "hybrid": "Options de déploiement hybride"
+      }
     },
     "integration": {
       "title": "Intégration et API",
       "api_capabilities": "Capacités API",
-      "integration_methods": "Méthodes d'Intégration"
+      "api_capabilities_desc": "Le système fournit des points de terminaison API complets pour une intégration transparente avec les systèmes d'entreprise existants.",
+      "api_categories": {
+        "auth": "Authentification et Autorisation",
+        "auth_desc": "Gestion sécurisée des utilisateurs et contrôle d'accès",
+        "documents": "Gestion de Documents",
+        "documents_desc": "Télécharger, traiter et gérer les collections de documents",
+        "ai": "Traitement IA",
+        "ai_desc": "Analyse intelligente de documents et génération de réponses",
+        "communication": "Communication",
+        "communication_desc": "Messagerie en temps réel et fonctionnalités de collaboration"
+      },
+      "integration_methods": "Méthodes d'Intégration",
+      "methods": {
+        "restful": "API RESTful",
+        "restful_desc": "API standard basée sur HTTP pour l'intégration système",
+        "websocket": "Support WebSocket",
+        "websocket_desc": "Capacités de communication en temps réel",
+        "widget": "Intégration de Widget",
+        "widget_desc": "Composants intégrables pour les applications existantes",
+        "webhook": "Intégration Webhook",
+        "webhook_desc": "Capacités d'intégration basées sur les événements"
+      }
     },
     "support": {
       "title": "Support et Ressources",
       "documentation": "Documentation",
+      "documentation_links": {
+        "deployment": "Guide de Déploiement",
+        "integration": "Guide d'Intégration",
+        "troubleshooting": "Dépannage",
+        "security": "Guide de Sécurité"
+      },
       "quick_start": "Démarrage Rapide",
-      "contact": "Contact"
+      "quick_start_links": {
+        "guide": "Guide de Démarrage Rapide",
+        "configuration": "Configuration",
+        "examples": "Exemples d'Intégration",
+        "best_practices": "Meilleures Pratiques"
+      },
+      "contact": "Contact",
+      "contact_info": {
+        "email": "Email : contact@raghim.com",
+        "support": "Support Technique : Disponible pour les clients Entreprise",
+        "documentation": "Documentation : Guides et références complets",
+        "community": "Communauté : Communauté d'utilisateurs Entreprise"
+      }
     },
     "footer": {
       "product": "Produit",
+      "product_links": {
+        "capabilities": "Capacités",
+        "deployment": "Déploiement",
+        "integration": "Intégration"
+      },
       "documentation": "Documentation",
-      "support": "Support"
+      "documentation_links": {
+        "integration_guide": "Guide d'Intégration",
+        "deployment_guide": "Guide de Déploiement",
+        "troubleshooting": "Dépannage"
+      },
+      "support": "Support",
+      "support_links": {
+        "contact": "Contact",
+        "security": "Sécurité",
+        "best_practices": "Meilleures Pratiques"
+      },
+      "copyright": "© 2024 RaghimAI. Tous droits réservés. Système RAG Entreprise v1.0.26"
     }
   }
 }
