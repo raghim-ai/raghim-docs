@@ -44,6 +44,7 @@
                     <h3>Table of Contents</h3>
                     <ul class="toc">
                         <li><a href="#prerequisites">Prerequisites</a></li>
+                        <li><a href="#architecture">System Architecture</a></li>
                         <li><a href="#offline-deployment">Offline Deployment</a></li>
                         <li><a href="#cloud-deployment">Cloud Deployment</a></li>
                         <li><a href="#configuration">Configuration</a></li>
@@ -75,6 +76,101 @@
                                     <li><strong>Git:</strong> Latest version</li>
                                 </ul>
                             </div>
+                        </div>
+                    </section>
+
+                    <section id="architecture">
+                        <h2>System Architecture</h2>
+                        <p>Understanding the RaghimAI Enterprise system architecture for optimal deployment.</p>
+                        
+                        <div class="architecture-diagram">
+                            <div class="architecture-visual">
+                                <div class="arch-layer external-layer">
+                                    <h4>External Access Layer</h4>
+                                    <div class="arch-content">
+                                        <div class="arch-left">
+                                            <p>• HTTPS/TLS 1.3 Encryption</p>
+                                            <p>• IP Whitelisting & Rate Limiting</p>
+                                            <p>• DDoS Protection & Firewall</p>
+                                        </div>
+                                        <div class="arch-right">
+                                            <p>• CORS Configuration</p>
+                                            <p>• VPN Detection</p>
+                                            <p>• Geographic Restrictions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="arch-layer auth-layer">
+                                    <h4>Authentication & Authorization</h4>
+                                    <div class="arch-content">
+                                        <div class="arch-left">
+                                            <p>• JWT Token Authentication</p>
+                                            <p>• Multi-Factor Authentication (MFA)</p>
+                                            <p>• Single Sign-On (SSO)</p>
+                                        </div>
+                                        <div class="arch-right">
+                                            <p>• Role-Based Access Control (RBAC)</p>
+                                            <p>• Row-Level Security (RLS)</p>
+                                            <p>• Session Management</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="arch-layer app-layer">
+                                    <h4>Application Security Layer</h4>
+                                    <div class="arch-content">
+                                        <div class="arch-left">
+                                            <p>• Input Validation & Sanitization</p>
+                                            <p>• Advanced Threat Detection</p>
+                                            <p>• AI Struggle Detection</p>
+                                            <p>• Suspicious Activity Monitoring</p>
+                                        </div>
+                                        <div class="arch-right">
+                                            <p>• Client-Side Encryption</p>
+                                            <p>• Zero-Knowledge Architecture</p>
+                                            <p>• PII Detection & Anonymization</p>
+                                            <p>• Banking Privacy Integration</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="arch-layer data-layer">
+                                    <h4>Data Protection Layer</h4>
+                                    <div class="arch-content">
+                                        <div class="arch-left">
+                                            <p>• AES-256 Encryption at Rest</p>
+                                            <p>• Database Security Policies</p>
+                                            <p>• Multi-Tenant Data Isolation</p>
+                                            <p>• Automated Backup & Recovery</p>
+                                        </div>
+                                        <div class="arch-right">
+                                            <p>• Audit Logging & Compliance</p>
+                                            <p>• Data Retention Policies</p>
+                                            <p>• Regulatory Compliance (GDPR, HIPAA)</p>
+                                            <p>• Security Event Monitoring</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="arch-layer compliance-layer">
+                                    <h4>Compliance & Standards</h4>
+                                    <div class="arch-content">
+                                        <p>GDPR • CCPA • HIPAA • SOX • PCI DSS • ISO 27001 • SOC 2 • NIST • Basel III • MiFID II • FATCA • AML/KYC</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-section">
+                            <h3>Architecture Overview</h3>
+                            <ul>
+                                <li><strong>Frontend Layer:</strong> React application with Nginx proxy</li>
+                                <li><strong>Backend Layer:</strong> FastAPI-based Python application</li>
+                                <li><strong>Database Layer:</strong> PostgreSQL + Redis + ChromaDB</li>
+                                <li><strong>AI Layer:</strong> Ollama integration with GPU acceleration</li>
+                                <li><strong>Security Layer:</strong> Multi-layered security with encryption and access controls</li>
+                            </ul>
                         </div>
                     </section>
 
