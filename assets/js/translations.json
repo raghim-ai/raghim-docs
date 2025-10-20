@@ -783,6 +783,239 @@
           }
         }
       }
+    },
+    "integration_guide": {
+      "meta": { 
+        "title": "Integration Guide - RaghimAI Enterprise RAG System",
+        "description": "Integration guide for RaghimAI Enterprise RAG System - API integration and embedding"
+      },
+      "header": {
+        "title": "Integration Guide",
+        "subtitle": "Complete integration guide for RaghimAI Enterprise RAG System"
+      },
+      "toc": {
+        "title": "Integration Topics",
+        "api_integration": "API Integration",
+        "widget_embedding": "Widget Embedding",
+        "webhook_integration": "Webhook Integration",
+        "authentication": "Authentication",
+        "examples": "Code Examples"
+      },
+      "api_integration": {
+        "title": "API Integration",
+        "subtitle": "Integrate RaghimAI Enterprise RAG System with your existing applications using our comprehensive REST API.",
+        "base_url": "Base URL",
+        "authentication": "Authentication",
+        "auth_desc": "All API requests require authentication using JWT tokens.",
+        "endpoints": "Common Endpoints",
+        "documents": "Document Management",
+        "documents_desc": "Upload and manage documents",
+        "ai_processing": "AI Processing",
+        "ai_processing_desc": "Send queries and get AI responses",
+        "user_management": "User Management",
+        "user_management_desc": "Manage users and permissions",
+        "analytics": "Analytics",
+        "analytics_desc": "Access usage and performance data"
+      },
+      "widget_embedding": {
+        "title": "Widget Embedding",
+        "subtitle": "Embed RaghimAI chat widgets directly into your existing applications.",
+        "basic": "Basic Widget Embedding",
+        "custom_styling": "Custom Styling"
+      },
+      "webhook_integration": {
+        "title": "Webhook Integration",
+        "subtitle": "Receive real-time notifications about system events.",
+        "configuration": "Webhook Configuration",
+        "event_types": "Event Types",
+        "document_processed": "document.processed",
+        "document_processed_desc": "Document processing completed",
+        "user_created": "user.created",
+        "user_created_desc": "New user registered",
+        "query_processed": "query.processed",
+        "query_processed_desc": "AI query completed",
+        "error_occurred": "error.occurred",
+        "error_occurred_desc": "System error occurred"
+      },
+      "authentication": {
+        "title": "Authentication",
+        "subtitle": "Secure authentication methods for API access.",
+        "jwt": "JWT Token Authentication",
+        "api_key": "API Key Authentication"
+      },
+      "examples": {
+        "title": "Code Examples",
+        "subtitle": "Practical examples for common integration scenarios.",
+        "javascript": "JavaScript Integration",
+        "python": "Python Integration"
+      }
+    },
+    "quick_start": {
+      "meta": { 
+        "title": "Quick Start Guide - RaghimAI Enterprise RAG System",
+        "description": "Quick start guide for RaghimAI Enterprise RAG System - get up and running in minutes"
+      },
+      "header": {
+        "title": "Quick Start Guide",
+        "subtitle": "Get RaghimAI Enterprise RAG System up and running in minutes"
+      },
+      "toc": {
+        "title": "Quick Start Steps",
+        "prerequisites": "Prerequisites",
+        "installation": "Installation",
+        "configuration": "Configuration",
+        "first_steps": "First Steps",
+        "next_steps": "Next Steps"
+      },
+      "prerequisites": {
+        "title": "Prerequisites",
+        "subtitle": "Ensure your system meets the minimum requirements before installation.",
+        "system_requirements": "System Requirements",
+        "os": "OS:",
+        "os_value": "Linux (Ubuntu 18.04+, CentOS 7+)",
+        "ram": "RAM:",
+        "ram_value": "8GB minimum",
+        "storage": "Storage:",
+        "storage_value": "20GB+ free space",
+        "cpu": "CPU:",
+        "cpu_value": "4 cores minimum",
+        "software_requirements": "Software Requirements",
+        "docker": "Docker:",
+        "docker_value": "20.10+",
+        "docker_compose": "Docker Compose:",
+        "docker_compose_value": "2.0+",
+        "python": "Python:",
+        "python_value": "3.7+",
+        "git": "Git:",
+        "git_value": "Latest version"
+      },
+      "installation": {
+        "title": "Installation",
+        "subtitle": "Deploy RaghimAI Enterprise using the offline package.",
+        "download": "Download Package",
+        "download_desc": "Download the offline enterprise package from your RaghimAI representative.",
+        "run_installer": "Run Installer",
+        "run_installer_desc": "Execute the interactive installer for guided setup.",
+        "note_label": "Note:",
+        "note": "The installer will guide you through license acceptance and configuration.",
+        "verify": "Verify Installation",
+        "verify_desc": "Check that all services are running correctly."
+      },
+      "configuration": {
+        "title": "Configuration",
+        "subtitle": "Configure your RaghimAI Enterprise system for your environment.",
+        "env_vars": "Environment Variables",
+        "admin_setup": "Admin User Setup"
+      },
+      "first_steps": {
+        "title": "First Steps",
+        "subtitle": "Start using your RaghimAI Enterprise system.",
+        "access": "Access the System",
+        "access_desc": "Open your browser and navigate to the frontend URL.",
+        "frontend": "Frontend:",
+        "api": "API:",
+        "login": "Login",
+        "login_desc": "Use your admin credentials to log into the system.",
+        "upload": "Upload Documents",
+        "upload_desc": "Upload your first documents to start building your knowledge base.",
+        "supported_formats": "Supported formats: PDF, DOCX, TXT, MD",
+        "ocr_support": "OCR support for scanned documents",
+        "auto_extraction": "Automatic content extraction",
+        "test_queries": "Test AI Queries",
+        "test_queries_desc": "Send your first AI query to test the system."
+      },
+      "next_steps": {
+        "title": "Next Steps",
+        "subtitle": "Explore advanced features and customization options.",
+        "advanced_config": "Advanced Configuration",
+        "user_management": "User Management:",
+        "user_management_desc": "Create users and assign roles",
+        "organization": "Organization Setup:",
+        "organization_desc": "Configure organizational structure",
+        "security": "Security Settings:",
+        "security_desc": "Configure authentication and encryption",
+        "api_integration": "API Integration:",
+        "api_integration_desc": "Set up API access for applications",
+        "additional_resources": "Additional Resources",
+        "deployment_guide": "Deployment Guide",
+        "deployment_guide_desc": "Detailed deployment instructions",
+        "integration_guide": "Integration Guide",
+        "integration_guide_desc": "API and widget integration",
+        "security_guide": "Security Guide",
+        "security_guide_desc": "Security configuration and compliance",
+        "troubleshooting": "Troubleshooting",
+        "troubleshooting_desc": "Common issues and solutions",
+        "support": "Support",
+        "support_desc": "Need help? Contact our support team:",
+        "email": "Email:",
+        "email_value": "contact@raghim.com",
+        "technical_support": "Technical Support:",
+        "technical_support_desc": "Available for Enterprise customers",
+        "documentation": "Documentation:",
+        "documentation_desc": "Comprehensive guides and references"
+      }
+    },
+    "configuration": {
+      "meta": { 
+        "title": "Configuration Guide - RaghimAI Enterprise RAG System",
+        "description": "Configuration guide for RaghimAI Enterprise RAG System - system settings and customization"
+      },
+      "header": {
+        "title": "Configuration Guide",
+        "subtitle": "Complete configuration guide for RaghimAI Enterprise RAG System"
+      },
+      "toc": {
+        "title": "Configuration Topics",
+        "environment": "Environment Variables",
+        "database": "Database Configuration",
+        "ai_models": "AI Model Settings",
+        "security_config": "Security Configuration",
+        "performance": "Performance Tuning"
+      },
+      "environment": {
+        "title": "Environment Variables",
+        "subtitle": "Configure your system using environment variables.",
+        "table": {
+          "variable": "Variable",
+          "description": "Description",
+          "default": "Default"
+        },
+        "license_key_desc": "Your enterprise license key",
+        "license_key_default": "Required",
+        "jwt_secret_desc": "JWT secret for authentication",
+        "jwt_secret_default": "Generated",
+        "db_password_desc": "Database password",
+        "db_password_default": "Generated",
+        "cache_password_desc": "Cache password",
+        "cache_password_default": "Generated",
+        "gpu_enabled_desc": "Enable GPU acceleration",
+        "frontend_url_desc": "Frontend access URL",
+        "api_url_desc": "Backend API URL"
+      },
+      "database": {
+        "title": "Database Configuration",
+        "subtitle": "Configure database settings for optimal performance.",
+        "postgresql": "PostgreSQL Settings",
+        "redis": "Redis Cache Settings"
+      },
+      "ai_models": {
+        "title": "AI Model Settings",
+        "subtitle": "Configure AI models and processing parameters.",
+        "model_config": "Model Configuration",
+        "performance_settings": "Performance Settings"
+      },
+      "security": {
+        "title": "Security Configuration",
+        "subtitle": "Configure security settings and access controls.",
+        "auth_settings": "Authentication Settings",
+        "access_control": "Access Control"
+      },
+      "performance": {
+        "title": "Performance Tuning",
+        "subtitle": "Optimize system performance for your environment.",
+        "resource_allocation": "Resource Allocation",
+        "optimization_settings": "Optimization Settings"
+      }
     }
   },
   "fr": {
@@ -1568,6 +1801,239 @@
           "title": "Rétention des Données et Gouvernance",
           "block": "# Politiques de rétention configurables\n- Données utilisateurs : 7 ans (configurable)\n- Journaux d'audit : 3 ans (minimum réglementaire)\n- Données documentaires : Selon la politique de l'organisation\n- Fichiers temporaires : 30 jours\n- Données PII : Selon l'accord de consentement\n- Données bancaires : Selon les exigences réglementaires"
         }
+      }
+    },
+    "integration_guide": {
+      "meta": { 
+        "title": "Guide d'Intégration - Système RAG Entreprise RaghimAI",
+        "description": "Guide d'intégration pour le Système RAG Entreprise RaghimAI - Intégration API et intégration"
+      },
+      "header": {
+        "title": "Guide d'Intégration",
+        "subtitle": "Guide d'intégration complet pour le Système RAG Entreprise RaghimAI"
+      },
+      "toc": {
+        "title": "Sujets d'Intégration",
+        "api_integration": "Intégration API",
+        "widget_embedding": "Intégration de Widget",
+        "webhook_integration": "Intégration Webhook",
+        "authentication": "Authentification",
+        "examples": "Exemples de Code"
+      },
+      "api_integration": {
+        "title": "Intégration API",
+        "subtitle": "Intégrez le Système RAG Entreprise RaghimAI avec vos applications existantes en utilisant notre API REST complète.",
+        "base_url": "URL de Base",
+        "authentication": "Authentification",
+        "auth_desc": "Toutes les requêtes API nécessitent une authentification à l'aide de jetons JWT.",
+        "endpoints": "Points de Terminaison Communs",
+        "documents": "Gestion de Documents",
+        "documents_desc": "Télécharger et gérer les documents",
+        "ai_processing": "Traitement IA",
+        "ai_processing_desc": "Envoyer des requêtes et obtenir des réponses IA",
+        "user_management": "Gestion des Utilisateurs",
+        "user_management_desc": "Gérer les utilisateurs et les permissions",
+        "analytics": "Analytiques",
+        "analytics_desc": "Accéder aux données d'utilisation et de performance"
+      },
+      "widget_embedding": {
+        "title": "Intégration de Widget",
+        "subtitle": "Intégrez les widgets de chat RaghimAI directement dans vos applications existantes.",
+        "basic": "Intégration de Widget de Base",
+        "custom_styling": "Style Personnalisé"
+      },
+      "webhook_integration": {
+        "title": "Intégration Webhook",
+        "subtitle": "Recevez des notifications en temps réel sur les événements du système.",
+        "configuration": "Configuration Webhook",
+        "event_types": "Types d'Événements",
+        "document_processed": "document.processed",
+        "document_processed_desc": "Traitement de document terminé",
+        "user_created": "user.created",
+        "user_created_desc": "Nouvel utilisateur enregistré",
+        "query_processed": "query.processed",
+        "query_processed_desc": "Requête IA terminée",
+        "error_occurred": "error.occurred",
+        "error_occurred_desc": "Erreur système survenue"
+      },
+      "authentication": {
+        "title": "Authentification",
+        "subtitle": "Méthodes d'authentification sécurisées pour l'accès API.",
+        "jwt": "Authentification par Jeton JWT",
+        "api_key": "Authentification par Clé API"
+      },
+      "examples": {
+        "title": "Exemples de Code",
+        "subtitle": "Exemples pratiques pour les scénarios d'intégration courants.",
+        "javascript": "Intégration JavaScript",
+        "python": "Intégration Python"
+      }
+    },
+    "quick_start": {
+      "meta": { 
+        "title": "Guide de Démarrage Rapide - Système RAG Entreprise RaghimAI",
+        "description": "Guide de démarrage rapide pour le Système RAG Entreprise RaghimAI - opérationnel en quelques minutes"
+      },
+      "header": {
+        "title": "Guide de Démarrage Rapide",
+        "subtitle": "Mettez le Système RAG Entreprise RaghimAI en marche en quelques minutes"
+      },
+      "toc": {
+        "title": "Étapes de Démarrage Rapide",
+        "prerequisites": "Prérequis",
+        "installation": "Installation",
+        "configuration": "Configuration",
+        "first_steps": "Premiers Pas",
+        "next_steps": "Prochaines Étapes"
+      },
+      "prerequisites": {
+        "title": "Prérequis",
+        "subtitle": "Assurez-vous que votre système répond aux exigences minimales avant l'installation.",
+        "system_requirements": "Exigences Système",
+        "os": "OS :",
+        "os_value": "Linux (Ubuntu 18.04+, CentOS 7+)",
+        "ram": "RAM :",
+        "ram_value": "8GB minimum",
+        "storage": "Stockage :",
+        "storage_value": "20GB+ d'espace libre",
+        "cpu": "CPU :",
+        "cpu_value": "4 cœurs minimum",
+        "software_requirements": "Exigences Logiciels",
+        "docker": "Docker :",
+        "docker_value": "20.10+",
+        "docker_compose": "Docker Compose :",
+        "docker_compose_value": "2.0+",
+        "python": "Python :",
+        "python_value": "3.7+",
+        "git": "Git :",
+        "git_value": "Dernière version"
+      },
+      "installation": {
+        "title": "Installation",
+        "subtitle": "Déployez RaghimAI Entreprise en utilisant le package hors ligne.",
+        "download": "Télécharger le Package",
+        "download_desc": "Téléchargez le package entreprise hors ligne auprès de votre représentant RaghimAI.",
+        "run_installer": "Exécuter l'Installeur",
+        "run_installer_desc": "Exécutez l'installeur interactif pour une configuration guidée.",
+        "note_label": "Remarque :",
+        "note": "L'installeur vous guidera dans l'acceptation de la licence et la configuration.",
+        "verify": "Vérifier l'Installation",
+        "verify_desc": "Vérifiez que tous les services fonctionnent correctement."
+      },
+      "configuration": {
+        "title": "Configuration",
+        "subtitle": "Configurez votre système RaghimAI Entreprise pour votre environnement.",
+        "env_vars": "Variables d'Environnement",
+        "admin_setup": "Configuration Utilisateur Admin"
+      },
+      "first_steps": {
+        "title": "Premiers Pas",
+        "subtitle": "Commencez à utiliser votre système RaghimAI Entreprise.",
+        "access": "Accéder au Système",
+        "access_desc": "Ouvrez votre navigateur et naviguez vers l'URL frontend.",
+        "frontend": "Frontend :",
+        "api": "API :",
+        "login": "Connexion",
+        "login_desc": "Utilisez vos identifiants admin pour vous connecter au système.",
+        "upload": "Téléverser des Documents",
+        "upload_desc": "Téléversez vos premiers documents pour commencer à construire votre base de connaissances.",
+        "supported_formats": "Formats pris en charge : PDF, DOCX, TXT, MD",
+        "ocr_support": "Support OCR pour documents scannés",
+        "auto_extraction": "Extraction automatique de contenu",
+        "test_queries": "Tester les Requêtes IA",
+        "test_queries_desc": "Envoyez votre première requête IA pour tester le système."
+      },
+      "next_steps": {
+        "title": "Prochaines Étapes",
+        "subtitle": "Explorez les fonctionnalités avancées et les options de personnalisation.",
+        "advanced_config": "Configuration Avancée",
+        "user_management": "Gestion des Utilisateurs :",
+        "user_management_desc": "Créer des utilisateurs et assigner des rôles",
+        "organization": "Configuration Organisation :",
+        "organization_desc": "Configurer la structure organisationnelle",
+        "security": "Paramètres de Sécurité :",
+        "security_desc": "Configurer l'authentification et le chiffrement",
+        "api_integration": "Intégration API :",
+        "api_integration_desc": "Configurer l'accès API pour les applications",
+        "additional_resources": "Ressources Supplémentaires",
+        "deployment_guide": "Guide de Déploiement",
+        "deployment_guide_desc": "Instructions de déploiement détaillées",
+        "integration_guide": "Guide d'Intégration",
+        "integration_guide_desc": "Intégration API et widget",
+        "security_guide": "Guide de Sécurité",
+        "security_guide_desc": "Configuration de sécurité et conformité",
+        "troubleshooting": "Dépannage",
+        "troubleshooting_desc": "Problèmes courants et solutions",
+        "support": "Support",
+        "support_desc": "Besoin d'aide ? Contactez notre équipe de support :",
+        "email": "Email :",
+        "email_value": "contact@raghim.com",
+        "technical_support": "Support Technique :",
+        "technical_support_desc": "Disponible pour les clients Entreprise",
+        "documentation": "Documentation :",
+        "documentation_desc": "Guides et références complets"
+      }
+    },
+    "configuration": {
+      "meta": { 
+        "title": "Guide de Configuration - Système RAG Entreprise RaghimAI",
+        "description": "Guide de configuration pour le Système RAG Entreprise RaghimAI - paramètres système et personnalisation"
+      },
+      "header": {
+        "title": "Guide de Configuration",
+        "subtitle": "Guide de configuration complet pour le Système RAG Entreprise RaghimAI"
+      },
+      "toc": {
+        "title": "Sujets de Configuration",
+        "environment": "Variables d'Environnement",
+        "database": "Configuration Base de Données",
+        "ai_models": "Paramètres Modèles IA",
+        "security_config": "Configuration Sécurité",
+        "performance": "Optimisation Performance"
+      },
+      "environment": {
+        "title": "Variables d'Environnement",
+        "subtitle": "Configurez votre système en utilisant les variables d'environnement.",
+        "table": {
+          "variable": "Variable",
+          "description": "Description",
+          "default": "Valeur par défaut"
+        },
+        "license_key_desc": "Votre clé de licence entreprise",
+        "license_key_default": "Requis",
+        "jwt_secret_desc": "Secret JWT pour l'authentification",
+        "jwt_secret_default": "Généré",
+        "db_password_desc": "Mot de passe de la base de données",
+        "db_password_default": "Généré",
+        "cache_password_desc": "Mot de passe du cache",
+        "cache_password_default": "Généré",
+        "gpu_enabled_desc": "Activer l'accélération GPU",
+        "frontend_url_desc": "URL d'accès Frontend",
+        "api_url_desc": "URL de l'API Backend"
+      },
+      "database": {
+        "title": "Configuration Base de Données",
+        "subtitle": "Configurez les paramètres de base de données pour des performances optimales.",
+        "postgresql": "Paramètres PostgreSQL",
+        "redis": "Paramètres Cache Redis"
+      },
+      "ai_models": {
+        "title": "Paramètres Modèles IA",
+        "subtitle": "Configurez les modèles IA et les paramètres de traitement.",
+        "model_config": "Configuration Modèle",
+        "performance_settings": "Paramètres Performance"
+      },
+      "security": {
+        "title": "Configuration Sécurité",
+        "subtitle": "Configurez les paramètres de sécurité et les contrôles d'accès.",
+        "auth_settings": "Paramètres Authentification",
+        "access_control": "Contrôle d'Accès"
+      },
+      "performance": {
+        "title": "Optimisation Performance",
+        "subtitle": "Optimisez les performances système pour votre environnement.",
+        "resource_allocation": "Allocation Ressources",
+        "optimization_settings": "Paramètres Optimisation"
       }
     }
   }

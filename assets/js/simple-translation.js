@@ -147,3 +147,4 @@ if (document.readyState === 'loading') {
 } else {
     new SimpleTranslationManager();
 }
+

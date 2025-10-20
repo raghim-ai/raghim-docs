@@ -7,7 +7,7 @@ HTML_FILES=(
     "api-reference.html"
     "best-practices.html"
     "configuration.html"
-    "deployment-guide-secure.html"
+    "deployment-guide.html"
     "deployment-guide.html"
     "examples.html"
     "integration-guide.html"
@@ -47,3 +47,4 @@ echo "3. Click to switch between English and French"
 echo ""
 echo "Note: You may need to add more data-translate attributes to specific content"
 echo "as needed for complete translation coverage."
+

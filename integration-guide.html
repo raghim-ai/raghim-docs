@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integration Guide - RaghimAI Enterprise RAG System</title>
+    <title data-translate="integration_guide.meta.title">Integration Guide - RaghimAI Enterprise RAG System</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
     <link rel="apple-touch-icon" href="assets/images/logo192.png">
-    <meta name="description" content="Integration guide for RaghimAI Enterprise RAG System - API integration and embedding">
+    <meta name="description" content="Integration guide for RaghimAI Enterprise RAG System - API integration and embedding" data-translate="integration_guide.meta.description">
 </head>
 <body>
     <header class="header">
@@ -17,12 +17,12 @@
             <div class="nav-container">
                 <div class="nav-brand">
                     <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
-                    <span class="brand-text">RaghimAI Enterprise</span>
+                    <span class="brand-text" data-translate="nav.brand">RaghimAI Enterprise</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
-                    <a href="deployment-guide-secure.html" class="nav-link">Deployment</a>
-                    <a href="integration-guide.html" class="nav-link active">Integration</a>
+                    <a href="deployment-guide.html" class="nav-link" data-translate="nav.deployment">Deployment</a>
+                    <a href="integration-guide.html" class="nav-link active" data-translate="nav.integration">Integration</a>
                     <a href="troubleshooting.html" class="nav-link" data-translate="nav.troubleshooting">Troubleshooting</a>
                     <a href="security-guide.html" class="nav-link" data-translate="nav.security">Security</a>
                 </div>
@@ -38,71 +38,71 @@
     <main class="main-content">
         <div class="container">
             <div class="page-header">
-                <h1>Integration Guide</h1>
-                <p class="page-subtitle">Complete integration guide for RaghimAI Enterprise RAG System</p>
+                <h1 data-translate="integration_guide.header.title">Integration Guide</h1>
+                <p class="page-subtitle" data-translate="integration_guide.header.subtitle">Complete integration guide for RaghimAI Enterprise RAG System</p>
             </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
-                    <h3>Integration Topics</h3>
+                    <h3 data-translate="integration_guide.toc.title">Integration Topics</h3>
                     <ul class="toc">
-                        <li><a href="#api-integration">API Integration</a></li>
-                        <li><a href="#widget-embedding">Widget Embedding</a></li>
-                        <li><a href="#webhook-integration">Webhook Integration</a></li>
-                        <li><a href="#authentication">Authentication</a></li>
-                        <li><a href="#examples">Code Examples</a></li>
+                        <li><a href="#api-integration" data-translate="integration_guide.toc.api_integration">API Integration</a></li>
+                        <li><a href="#widget-embedding" data-translate="integration_guide.toc.widget_embedding">Widget Embedding</a></li>
+                        <li><a href="#webhook-integration" data-translate="integration_guide.toc.webhook_integration">Webhook Integration</a></li>
+                        <li><a href="#authentication" data-translate="integration_guide.toc.authentication">Authentication</a></li>
+                        <li><a href="#examples" data-translate="integration_guide.toc.examples">Code Examples</a></li>
                     </ul>
                 </nav>
 
                 <div class="content">
                     <section id="api-integration">
-                        <h2>API Integration</h2>
-                        <p>Integrate RaghimAI Enterprise RAG System with your existing applications using our comprehensive REST API.</p>
+                        <h2 data-translate="integration_guide.api_integration.title">API Integration</h2>
+                        <p data-translate="integration_guide.api_integration.subtitle">Integrate RaghimAI Enterprise RAG System with your existing applications using our comprehensive REST API.</p>
 
                         <div class="integration-section">
-                            <h3>Base URL</h3>
+                            <h3 data-translate="integration_guide.api_integration.base_url">Base URL</h3>
                             <div class="code-block">
                                 <pre><code>https://your-domain.com/api</code></pre>
                             </div>
                         </div>
 
                         <div class="integration-section">
-                            <h3>Authentication</h3>
-                            <p>All API requests require authentication using JWT tokens.</p>
+                            <h3 data-translate="integration_guide.api_integration.authentication">Authentication</h3>
+                            <p data-translate="integration_guide.api_integration.auth_desc">All API requests require authentication using JWT tokens.</p>
                             <div class="code-block">
                                 <pre><code>Authorization: Bearer YOUR_JWT_TOKEN</code></pre>
                             </div>
                         </div>
 
                         <div class="integration-section">
-                            <h3>Common Endpoints</h3>
+                            <h3 data-translate="integration_guide.api_integration.endpoints">Common Endpoints</h3>
                             <div class="api-categories">
                                 <div class="api-category">
-                                    <h4>Document Management</h4>
-                                    <p>Upload and manage documents</p>
+                                    <h4 data-translate="integration_guide.api_integration.documents">Document Management</h4>
+                                    <p data-translate="integration_guide.api_integration.documents_desc">Upload and manage documents</p>
                                 </div>
                                 <div class="api-category">
-                                    <h4>AI Processing</h4>
-                                    <p>Send queries and get AI responses</p>
+                                    <h4 data-translate="integration_guide.api_integration.ai_processing">AI Processing</h4>
+                                    <p data-translate="integration_guide.api_integration.ai_processing_desc">Send queries and get AI responses</p>
                                 </div>
                                 <div class="api-category">
-                                    <h4>User Management</h4>
-                                    <p>Manage users and permissions</p>
+                                    <h4 data-translate="integration_guide.api_integration.user_management">User Management</h4>
+                                    <p data-translate="integration_guide.api_integration.user_management_desc">Manage users and permissions</p>
                                 </div>
                                 <div class="api-category">
-                                    <h4>Analytics</h4>
-                                    <p>Access usage and performance data</p>
+                                    <h4 data-translate="integration_guide.api_integration.analytics">Analytics</h4>
+                                    <p data-translate="integration_guide.api_integration.analytics_desc">Access usage and performance data</p>
                                 </div>
                             </div>
                         </div>
                     </section>
 
                     <section id="widget-embedding">
-                        <h2>Widget Embedding</h2>
-                        <p>Embed RaghimAI chat widgets directly into your existing applications.</p>
+                        <h2 data-translate="integration_guide.widget_embedding.title">Widget Embedding</h2>
+                        <p data-translate="integration_guide.widget_embedding.subtitle">Embed RaghimAI chat widgets directly into your existing applications.</p>
 
                         <div class="integration-section">
-                            <h3>Basic Widget Embedding</h3>
+                            <h3 data-translate="integration_guide.widget_embedding.basic">Basic Widget Embedding</h3>
                             <div class="code-block">
                                 <pre><code>&lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;
 &lt;script&gt;
@@ -115,7 +115,7 @@
                         </div>
 
                         <div class="integration-section">
-                            <h3>Custom Styling</h3>
+                            <h3 data-translate="integration_guide.widget_embedding.custom_styling">Custom Styling</h3>
                             <div class="code-block">
                                 <pre><code>&lt;script&gt;
   RaghimAI.init({
@@ -134,11 +134,11 @@
                     </section>
 
                     <section id="webhook-integration">
-                        <h2>Webhook Integration</h2>
-                        <p>Receive real-time notifications about system events.</p>
+                        <h2 data-translate="integration_guide.webhook_integration.title">Webhook Integration</h2>
+                        <p data-translate="integration_guide.webhook_integration.subtitle">Receive real-time notifications about system events.</p>
 
                         <div class="integration-section">
-                            <h3>Webhook Configuration</h3>
+                            <h3 data-translate="integration_guide.webhook_integration.configuration">Webhook Configuration</h3>
                             <div class="code-block">
                                 <pre><code>POST /api/webhooks/configure
 {
@@ -150,22 +150,22 @@
                         </div>
 
                         <div class="integration-section">
-                            <h3>Event Types</h3>
+                            <h3 data-translate="integration_guide.webhook_integration.event_types">Event Types</h3>
                             <ul>
-                                <li><strong>document.processed</strong> - Document processing completed</li>
-                                <li><strong>user.created</strong> - New user registered</li>
-                                <li><strong>query.processed</strong> - AI query completed</li>
-                                <li><strong>error.occurred</strong> - System error occurred</li>
+                                <li><strong data-translate="integration_guide.webhook_integration.document_processed">document.processed</strong> - <span data-translate="integration_guide.webhook_integration.document_processed_desc">Document processing completed</span></li>
+                                <li><strong data-translate="integration_guide.webhook_integration.user_created">user.created</strong> - <span data-translate="integration_guide.webhook_integration.user_created_desc">New user registered</span></li>
+                                <li><strong data-translate="integration_guide.webhook_integration.query_processed">query.processed</strong> - <span data-translate="integration_guide.webhook_integration.query_processed_desc">AI query completed</span></li>
+                                <li><strong data-translate="integration_guide.webhook_integration.error_occurred">error.occurred</strong> - <span data-translate="integration_guide.webhook_integration.error_occurred_desc">System error occurred</span></li>
                             </ul>
                         </div>
                     </section>
 
                     <section id="authentication">
-                        <h2>Authentication</h2>
-                        <p>Secure authentication methods for API access.</p>
+                        <h2 data-translate="integration_guide.authentication.title">Authentication</h2>
+                        <p data-translate="integration_guide.authentication.subtitle">Secure authentication methods for API access.</p>
 
                         <div class="integration-section">
-                            <h3>JWT Token Authentication</h3>
+                            <h3 data-translate="integration_guide.authentication.jwt">JWT Token Authentication</h3>
                             <div class="code-block">
                                 <pre><code># Login to get token
 curl -X POST https://your-domain.com/api/auth/login \
@@ -179,7 +179,7 @@ curl -X GET https://your-domain.com/api/documents \
                         </div>
 
                         <div class="integration-section">
-                            <h3>API Key Authentication</h3>
+                            <h3 data-translate="integration_guide.authentication.api_key">API Key Authentication</h3>
                             <div class="code-block">
                                 <pre><code>curl -X GET https://your-domain.com/api/documents \
   -H "X-API-Key: YOUR_API_KEY"</code></pre>
@@ -188,11 +188,11 @@ curl -X GET https://your-domain.com/api/documents \
                     </section>
 
                     <section id="examples">
-                        <h2>Code Examples</h2>
-                        <p>Practical examples for common integration scenarios.</p>
+                        <h2 data-translate="integration_guide.examples.title">Code Examples</h2>
+                        <p data-translate="integration_guide.examples.subtitle">Practical examples for common integration scenarios.</p>
 
                         <div class="integration-section">
-                            <h3>JavaScript Integration</h3>
+                            <h3 data-translate="integration_guide.examples.javascript">JavaScript Integration</h3>
                             <div class="code-block">
                                 <pre><code>// Initialize RaghimAI client
 const raghimAI = new RaghimAIClient({
@@ -212,7 +212,7 @@ const response = await raghimAI.chat.send({
                         </div>
 
                         <div class="integration-section">
-                            <h3>Python Integration</h3>
+                            <h3 data-translate="integration_guide.examples.python">Python Integration</h3>
                             <div class="code-block">
                                 <pre><code>import requests
 
@@ -246,28 +246,28 @@ response = requests.post(f'{api_url}/chat',
             <div class="footer-content">
                 <div class="footer-section">
                     <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
-                    <p>RaghimAI Enterprise RAG System</p>
+                    <p data-translate="footer.brand">RaghimAI Enterprise RAG System</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Documentation</h4>
+                    <h4 data-translate="footer.documentation">Documentation</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="deployment-guide-secure.html">Deployment Guide</a></li>
-                        <li><a href="integration-guide.html">Integration Guide</a></li>
-                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="deployment-guide.html" data-translate="footer.documentation_links.deployment_guide">Deployment Guide</a></li>
+                        <li><a href="integration-guide.html" data-translate="footer.documentation_links.integration_guide">Integration Guide</a></li>
+                        <li><a href="troubleshooting.html" data-translate="footer.documentation_links.troubleshooting">Troubleshooting</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Support</h4>
+                    <h4 data-translate="footer.support">Support</h4>
                     <ul>
-                        <li>Email: contact@raghim.com</li>
-                        <li>Technical Support</li>
-                        <li>Enterprise Support</li>
+                        <li data-translate="footer.support_links.contact">Email: contact@raghim.com</li>
+                        <li data-translate="footer.support_links.technical_support">Technical Support</li>
+                        <li data-translate="footer.support_links.enterprise_support">Enterprise Support</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+                <p data-translate="footer.copyright">&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
             </div>
         </div>
     </footer>
