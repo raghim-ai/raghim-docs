@@ -1,10 +1,10 @@
 #!/bin/bash
-# RaghimAI Documentation Deployment Script
+# Raghim AI Documentation Deployment Script
 # This script helps deploy the documentation to GitHub Pages
 
 set -e
 
-echo "🚀 RaghimAI Documentation Deployment Script"
+echo "🚀 Raghim AI Documentation Deployment Script"
 echo "============================================="
 
 # Check if git is available
@@ -49,11 +49,11 @@ if git ls-remote "$REPO_URL" &> /dev/null; then
     git add .
     
     echo "💾 Committing changes..."
-    git commit -m "Deploy RaghimAI Enterprise Documentation
+    git commit -m "Deploy Raghim AI Enterprise Documentation
 
-- Professional documentation for RaghimAI Enterprise RAG System
+- Professional documentation for Raghim AI Enterprise Agent Platform
 - IP-protected content with secure technology descriptions
-- Responsive design with RaghimAI branding
+- Responsive design with Raghim AI branding
 - Complete deployment and integration guides
 - Custom domain: doc.raghim.com"
     
@@ -97,7 +97,7 @@ else
 fi
 
 echo "📞 Support: contact@raghim.com"
-echo "🎯 RaghimAI Enterprise RAG System v1.0.26"
+echo "🎯 Raghim AI Enterprise Agent Platform v2.0.5"
 
 
 

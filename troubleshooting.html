@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="troubleshooting.meta.title">Troubleshooting - RaghimAI Enterprise RAG System</title>
+    <title data-translate="troubleshooting.meta.title">Troubleshooting - Raghim AI Enterprise Agent Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
-    <meta name="description" content="Troubleshooting guide for RaghimAI Enterprise RAG System - common issues and solutions" data-translate="troubleshooting.meta.description">
+    <meta name="description" content="Troubleshooting guide for Raghim AI Enterprise Agent Platform - common issues and solutions" data-translate="troubleshooting.meta.description">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
-                    <span class="brand-text" data-translate="nav.brand">RaghimAI Enterprise</span>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="logo">
+                    <span class="brand-text" data-translate="nav.brand">Raghim AI Enterprise</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
@@ -36,8 +36,12 @@
         <div class="container">
             <div class="page-header">
                 <h1 data-translate="troubleshooting.header.title">Troubleshooting Guide</h1>
-                <p class="page-subtitle" data-translate="troubleshooting.header.subtitle">Common issues and solutions for RaghimAI Enterprise RAG System</p>
+                <p class="page-subtitle" data-translate="troubleshooting.header.subtitle">Common issues and solutions for Raghim AI Enterprise Agent Platform</p>
             </div>
+
+            <div class="warning-box" style="margin-top:1.5rem;">
+                            <strong>Triage Flow:</strong> Reproduce -> check health -> isolate service -> apply fix -> re-verify endpoint behavior.
+                        </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
@@ -67,10 +71,11 @@
                                         <li>Check if containers are running: <code>docker ps</code></li>
                                         <li>Verify firewall settings (ports 80, 443)</li>
                                         <li>Use external IP for VM deployments</li>
-                                        <li>Test from server: <code>curl http://localhost</code></li>
+                                        <li>Test from server: <code>curl https://&lt;app-domain&gt;</code></li>
                                         <li>Check Docker binding: ensure containers bind to 0.0.0.0</li>
                                     </ul>
                                 </div>
+
                             </div>
 
                             <div class="issue-card">
@@ -115,10 +120,10 @@
                                 <div class="solution">
                                     <h4 data-translate="troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Enable GPU acceleration: <code>GPU_ENABLED=true</code></li>
+                                        <li>Enable GPU acceleration: <code>LLM_PROVIDER=&lt;approved-provider&gt;</code></li>
                                         <li>Check GPU availability: <code>nvidia-smi</code></li>
                                         <li>Reduce model size or use quantized models</li>
-                                        <li>Increase <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
+                                        <li>Increase <code>OPENAI_RAG_REASONING_EFFORT</code></li>
                                         <li>Pre-load models: <code>ollama pull model-name</code></li>
                                     </ul>
                                 </div>
@@ -130,8 +135,8 @@
                                 <div class="solution">
                                     <h4 data-translate="troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Reduce <code>OLLAMA_MAX_LOADED_MODELS</code></li>
-                                        <li>Lower <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
+                                        <li>Reduce <code>OPENAI_TIER_HYBRID_TOKENS</code></li>
+                                        <li>Lower <code>OPENAI_RAG_REASONING_EFFORT</code></li>
                                         <li>Use smaller models (3B instead of 7B)</li>
                                         <li>Increase system RAM</li>
                                         <li>Enable memory cleanup: <code>./scripts/health_check.sh</code></li>
@@ -145,7 +150,7 @@
                                 <div class="solution">
                                     <h4 data-translate="troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Check ChromaDB container status</li>
+                                        <li>Check pgvector container status</li>
                                         <li>Verify embedding model is loaded</li>
                                         <li>Use faster embedding models</li>
                                         <li>Check disk I/O performance</li>
@@ -242,16 +247,16 @@
                             </div>
 
                             <div class="issue-card">
-                                <h3 data-translate="troubleshooting.database_issues.chromadb_issues">ChromaDB Issues</h3>
+                                <h3 data-translate="troubleshooting.database_issues.chromadb_issues">pgvector Issues</h3>
                                 <p data-translate="troubleshooting.database_issues.chromadb_issues_symptoms"><strong>Symptoms:</strong> Vector search not working</p>
                                 <div class="solution">
                                     <h4 data-translate="troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Check ChromaDB container: <code>docker logs rag-chroma</code></li>
-                                        <li>Verify ChromaDB API endpoint</li>
+                                        <li>Check pgvector container: <code>docker logs rag-chroma</code></li>
+                                        <li>Verify pgvector API endpoint</li>
                                         <li>Check collection initialization</li>
                                         <li>Verify embedding model compatibility</li>
-                                        <li>Check ChromaDB disk space</li>
+                                        <li>Check pgvector disk space</li>
                                     </ul>
                                 </div>
                             </div>
@@ -271,7 +276,7 @@
                                         <li>Install NVIDIA Docker runtime</li>
                                         <li>Check GPU availability: <code>nvidia-smi</code></li>
                                         <li>Verify CUDA installation</li>
-                                        <li>Set <code>GPU_ENABLED=true</code> in .env</li>
+                                        <li>Set <code>LLM_PROVIDER=&lt;approved-provider&gt;</code> in .env</li>
                                         <li>Check Docker GPU support: <code>docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi</code></li>
                                     </ul>
                                 </div>
@@ -283,9 +288,9 @@
                                 <div class="solution">
                                     <h4 data-translate="troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li>Reduce <code>OLLAMA_GPU_MEMORY_FRACTION</code></li>
+                                        <li>Reduce <code>OPENAI_RAG_REASONING_EFFORT</code></li>
                                         <li>Use smaller models</li>
-                                        <li>Reduce <code>OLLAMA_MAX_LOADED_MODELS</code></li>
+                                        <li>Reduce <code>OPENAI_TIER_HYBRID_TOKENS</code></li>
                                         <li>Check GPU memory usage: <code>nvidia-smi</code></li>
                                         <li>Restart containers to clear GPU memory</li>
                                     </ul>
@@ -294,7 +299,7 @@
 
                             <div class="issue-card">
                                 <h3 data-translate="troubleshooting.gpu_issues.external_gpu_connection">External GPU Connection</h3>
-                                <p data-translate="troubleshooting.gpu_issues.external_gpu_connection_symptoms"><strong>Symptoms:</strong> External GPU Ollama not accessible</p>
+                                <p data-translate="troubleshooting.gpu_issues.external_gpu_connection_symptoms"><strong>Symptoms:</strong> External GPU model provider not accessible</p>
                                 <div class="solution">
                                     <h4 data-translate="troubleshooting.solutions">Solutions:</h4>
                                     <ul>
@@ -302,7 +307,7 @@
                                         <li>Verify external GPU endpoint</li>
                                         <li>Test connection: <code>curl http://external-gpu:11434/api/tags</code></li>
                                         <li>Check firewall settings</li>
-                                        <li>Verify Ollama is running on external GPU</li>
+                                        <li>Verify model provider is running on external GPU</li>
                                     </ul>
                                 </div>
                             </div>
@@ -398,7 +403,7 @@
                                     <pre><code># Full system diagnostic
 ./scripts/comprehensive_diagnostic.sh</code></pre>
                                 </div>
-                                <p data-translate="troubleshooting.diagnostic_tools.comprehensive_diagnostic_desc">Complete system analysis including logs, resources, and configuration.</p>
+                                <p data-translate="troubleshooting.diagnostic_tools.comprehensive_diagnostic_desc">Enterprise system analysis including logs, resources, and configuration.</p>
                             </div>
                         </div>
 
@@ -455,8 +460,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
-                    <p data-translate="footer.brand">RaghimAI Enterprise RAG System</p>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="footer-logo">
+                    <p data-translate="footer.brand">Raghim AI Enterprise Agent Platform</p>
                 </div>
                 <div class="footer-section">
                     <h4 data-translate="footer.documentation">Documentation</h4>
@@ -477,7 +482,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-translate="footer.copyright">&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+                <p data-translate="footer.copyright">&copy; 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5</p>
             </div>
         </div>
     </footer>

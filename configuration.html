@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="configuration.meta.title">Configuration Guide - RaghimAI Enterprise RAG System</title>
+    <title data-translate="configuration.meta.title">Configuration Guide - Raghim AI Enterprise Agent Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
     <link rel="apple-touch-icon" href="assets/images/logo192.png">
-    <meta name="description" content="Configuration guide for RaghimAI Enterprise RAG System - system settings and customization" data-translate="configuration.meta.description">
+    <meta name="description" content="Configuration guide for Raghim AI Enterprise Agent Platform - system settings and customization" data-translate="configuration.meta.description">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
-                    <span class="brand-text" data-translate="nav.brand">RaghimAI Enterprise</span>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="logo">
+                    <span class="brand-text" data-translate="nav.brand">Raghim AI Enterprise</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
@@ -39,8 +39,12 @@
         <div class="container">
             <div class="page-header">
                 <h1 data-translate="configuration.header.title">Configuration Guide</h1>
-                <p class="page-subtitle" data-translate="configuration.header.subtitle">Complete configuration guide for RaghimAI Enterprise RAG System</p>
+                <p class="page-subtitle" data-translate="configuration.header.subtitle">Enterprise configuration guide for Raghim AI Enterprise Agent Platform</p>
             </div>
+
+            <div class="info-box" style="margin-top:1.5rem;">
+                            <strong>Configuration Flow:</strong> Set required env vars -> tune provider/model settings -> enforce security controls -> validate with health checks.
+                        </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
@@ -97,16 +101,17 @@
                                     <tr>
                                         <td><code>FRONTEND_URL</code></td>
                                         <td data-translate="configuration.environment.frontend_url_desc">Frontend access URL</td>
-                                        <td>http://localhost</td>
+                                        <td>https://&lt;app-domain&gt;</td>
                                     </tr>
                                     <tr>
                                         <td><code>API_URL</code></td>
                                         <td data-translate="configuration.environment.api_url_desc">Backend API URL</td>
-                                        <td>http://localhost:8000</td>
+                                        <td>https://&lt;api-domain&gt;</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+
                     </section>
 
                     <section id="database">
@@ -258,8 +263,8 @@ LOG_LEVEL=INFO</code></pre>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
-                    <p data-translate="footer.brand">RaghimAI Enterprise RAG System</p>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="footer-logo">
+                    <p data-translate="footer.brand">Raghim AI Enterprise Agent Platform</p>
                 </div>
                 <div class="footer-section">
                     <h4 data-translate="footer.documentation">Documentation</h4>
@@ -280,7 +285,7 @@ LOG_LEVEL=INFO</code></pre>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-translate="footer.copyright">&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+                <p data-translate="footer.copyright">&copy; 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5</p>
             </div>
         </div>
     </footer>

@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="integration_guide.meta.title">Integration Guide - RaghimAI Enterprise RAG System</title>
+    <title data-translate="integration_guide.meta.title">Integration Guide - Raghim AI Enterprise Agent Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
     <link rel="apple-touch-icon" href="assets/images/logo192.png">
-    <meta name="description" content="Integration guide for RaghimAI Enterprise RAG System - API integration and embedding" data-translate="integration_guide.meta.description">
+    <meta name="description" content="Integration guide for Raghim AI Enterprise Agent Platform - API integration and embedding" data-translate="integration_guide.meta.description">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
-                    <span class="brand-text" data-translate="nav.brand">RaghimAI Enterprise</span>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="logo">
+                    <span class="brand-text" data-translate="nav.brand">Raghim AI Enterprise</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
@@ -39,8 +39,12 @@
         <div class="container">
             <div class="page-header">
                 <h1 data-translate="integration_guide.header.title">Integration Guide</h1>
-                <p class="page-subtitle" data-translate="integration_guide.header.subtitle">Complete integration guide for RaghimAI Enterprise RAG System</p>
+                <p class="page-subtitle" data-translate="integration_guide.header.subtitle">Enterprise integration guide for Raghim AI Enterprise Agent Platform</p>
             </div>
+
+            <div class="info-box" style="margin-top:1.5rem;">
+                            <strong>Integration Flow:</strong> Auth first -> API test -> Embed/automation integration -> Event/webhook validation -> Production hardening.
+                        </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
@@ -57,13 +61,14 @@
                 <div class="content">
                     <section id="api-integration">
                         <h2 data-translate="integration_guide.api_integration.title">API Integration</h2>
-                        <p data-translate="integration_guide.api_integration.subtitle">Integrate RaghimAI Enterprise RAG System with your existing applications using our comprehensive REST API.</p>
+                        <p data-translate="integration_guide.api_integration.subtitle">Integrate Raghim AI Enterprise Agent Platform with your existing applications using our comprehensive REST API.</p>
 
                         <div class="integration-section">
                             <h3 data-translate="integration_guide.api_integration.base_url">Base URL</h3>
                             <div class="code-block">
-                                <pre><code>https://your-domain.com/api</code></pre>
+                                <pre><code>https://&lt;your-domain&gt;/api</code></pre>
                             </div>
+
                         </div>
 
                         <div class="integration-section">
@@ -99,15 +104,15 @@
 
                     <section id="widget-embedding">
                         <h2 data-translate="integration_guide.widget_embedding.title">Widget Embedding</h2>
-                        <p data-translate="integration_guide.widget_embedding.subtitle">Embed RaghimAI chat widgets directly into your existing applications.</p>
+                        <p data-translate="integration_guide.widget_embedding.subtitle">Embed Raghim AI chat widgets directly into your existing applications.</p>
 
                         <div class="integration-section">
                             <h3 data-translate="integration_guide.widget_embedding.basic">Basic Widget Embedding</h3>
                             <div class="code-block">
-                                <pre><code>&lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;
+                                <pre><code>&lt;script src="https://&lt;your-domain&gt;/widget.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   RaghimAI.init({
-    apiUrl: 'https://your-domain.com/api',
+    apiUrl: 'https://&lt;your-domain&gt;/api',
     widgetId: 'your-widget-id'
   });
 &lt;/script&gt;</code></pre>
@@ -119,7 +124,7 @@
                             <div class="code-block">
                                 <pre><code>&lt;script&gt;
   RaghimAI.init({
-    apiUrl: 'https://your-domain.com/api',
+    apiUrl: 'https://&lt;your-domain&gt;/api',
     widgetId: 'your-widget-id',
     theme: 'dark',
     position: 'bottom-right',
@@ -168,12 +173,12 @@
                             <h3 data-translate="integration_guide.authentication.jwt">JWT Token Authentication</h3>
                             <div class="code-block">
                                 <pre><code># Login to get token
-curl -X POST https://your-domain.com/api/auth/login \
+curl -X POST https://&lt;your-domain&gt;/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username": "your-username", "password": "your-password"}'
 
 # Use token in subsequent requests
-curl -X GET https://your-domain.com/api/documents \
+curl -X GET https://&lt;your-domain&gt;/api/documents \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"</code></pre>
                             </div>
                         </div>
@@ -181,10 +186,22 @@ curl -X GET https://your-domain.com/api/documents \
                         <div class="integration-section">
                             <h3 data-translate="integration_guide.authentication.api_key">API Key Authentication</h3>
                             <div class="code-block">
-                                <pre><code>curl -X GET https://your-domain.com/api/documents \
+                                <pre><code>curl -X GET https://&lt;your-domain&gt;/api/documents \
   -H "X-API-Key: YOUR_API_KEY"</code></pre>
                             </div>
                         </div>
+                    </section>
+
+                    
+                    <section id="integration-verification">
+                        <h2>Integration Verification</h2>
+                        <p>Validate your integration in this order:</p>
+                        <ul>
+                            <li>Authenticate and verify token/cookie behavior.</li>
+                            <li>Call one read endpoint and one write endpoint.</li>
+                            <li>Validate error handling and retry strategy.</li>
+                            <li>Confirm audit/trace visibility for key actions.</li>
+                        </ul>
                     </section>
 
                     <section id="examples">
@@ -194,9 +211,9 @@ curl -X GET https://your-domain.com/api/documents \
                         <div class="integration-section">
                             <h3 data-translate="integration_guide.examples.javascript">JavaScript Integration</h3>
                             <div class="code-block">
-                                <pre><code>// Initialize RaghimAI client
+                                <pre><code>// Initialize Raghim AI client
 const raghimAI = new RaghimAIClient({
-  apiUrl: 'https://your-domain.com/api',
+  apiUrl: 'https://&lt;your-domain&gt;/api',
   token: 'your-jwt-token'
 });
 
@@ -217,7 +234,7 @@ const response = await raghimAI.chat.send({
                                 <pre><code>import requests
 
 # Initialize client
-api_url = 'https://your-domain.com/api'
+api_url = 'https://&lt;your-domain&gt;/api'
 headers = {'Authorization': 'Bearer your-jwt-token'}
 
 # Upload document
@@ -245,8 +262,8 @@ response = requests.post(f'{api_url}/chat',
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
-                    <p data-translate="footer.brand">RaghimAI Enterprise RAG System</p>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="footer-logo">
+                    <p data-translate="footer.brand">Raghim AI Enterprise Agent Platform</p>
                 </div>
                 <div class="footer-section">
                     <h4 data-translate="footer.documentation">Documentation</h4>
@@ -267,7 +284,7 @@ response = requests.post(f'{api_url}/chat',
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-translate="footer.copyright">&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+                <p data-translate="footer.copyright">&copy; 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5</p>
             </div>
         </div>
     </footer>

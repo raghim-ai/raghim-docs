@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="api_reference.meta.title">API Reference - RaghimAI Enterprise RAG System</title>
+    <title data-translate="api_reference.meta.title">API Reference - Raghim AI Enterprise Agent Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
-    <meta name="description" content="Complete API reference for RaghimAI Enterprise RAG System - authentication, documents, chat, and live chat endpoints" data-translate="api_reference.meta.description">
+    <meta name="description" content="Enterprise API reference for Raghim AI Enterprise Agent Platform - authentication, documents, chat, and live chat endpoints" data-translate="api_reference.meta.description">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
-                    <span class="brand-text" data-translate="nav.brand">RaghimAI Enterprise</span>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="logo">
+                    <span class="brand-text" data-translate="nav.brand">Raghim AI Enterprise</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
@@ -36,7 +36,17 @@
         <div class="container">
             <div class="page-header">
                 <h1 data-translate="api_reference.header.title">API Reference</h1>
-                <p class="page-subtitle" data-translate="api_reference.header.subtitle">Complete API documentation for RaghimAI Enterprise RAG System</p>
+                <p class="page-subtitle" data-translate="api_reference.header.subtitle">Enterprise API documentation for Raghim AI Enterprise Agent Platform</p>
+            </div>
+
+            <div class="warning-box" style="margin-top:1.5rem;">
+                            <strong>API Accuracy Note:</strong> Treat this page as an implementation guide.
+                            For strict route truth, validate against backend OpenAPI and runtime responses in your environment.
+                        </div>
+
+            <div class="warning-box" style="margin-top:1rem;">
+                <strong>Confidentiality Notice:</strong> Documentation intentionally abstracts implementation specifics
+                to protect proprietary architecture and reduce direct reproducibility risk.
             </div>
 
             <div class="content-grid">
@@ -63,8 +73,9 @@
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/auth/login</span>
+                                    <span class="path">/api/auth/&lt;login-operation&gt;</span>
                                 </div>
+
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.authentication.login_desc">Authenticate user and receive JWT token</p>
                                 </div>
@@ -72,21 +83,15 @@
                                     <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "username": "string",
-  "password": "string"
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                     <h4 data-translate="api_reference.authentication.response">Response:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "access_token": "string",
-  "token_type": "bearer",
-  "user": {
-    "id": 1,
-    "username": "string",
-    "email": "string",
-    "tier": "FREE"
-  }
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                 </div>
@@ -95,7 +100,7 @@
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/auth/register</span>
+                                    <span class="path">/api/auth/&lt;register-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.authentication.register_desc">Register new user account</p>
@@ -104,10 +109,8 @@
                                     <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "username": "string",
-  "email": "string",
-  "password": "string",
-  "full_name": "string"
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                 </div>
@@ -116,7 +119,7 @@
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/auth/me</span>
+                                    <span class="path">/api/auth/&lt;current-user-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.authentication.me_desc">Get current user information</p>
@@ -139,7 +142,7 @@
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/documents/upload</span>
+                                    <span class="path">/api/documents/&lt;upload-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.documents.upload_desc">Upload documents for processing</p>
@@ -157,9 +160,8 @@ FormData:
                                     <h4 data-translate="api_reference.authentication.response">Response:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "task_id": "string",
-  "status": "processing",
-  "message": "Documents uploaded successfully"
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                 </div>
@@ -168,7 +170,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/documents/collections</span>
+                                    <span class="path">/api/documents/&lt;collection-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.documents.collections_desc">List all document collections</p>
@@ -178,11 +180,8 @@ FormData:
                                     <div class="code-block">
                                         <pre><code>[
   {
-    "id": 1,
-    "name": "string",
-    "description": "string",
-    "document_count": 10,
-    "created_at": "2024-01-01T00:00:00Z"
+    "note": "Representative structure only",
+    "details": "Field-level contracts are shared with approved integrators"
   }
 ]</code></pre>
                                     </div>
@@ -192,7 +191,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/documents/search</span>
+                                    <span class="path">/api/documents/&lt;search-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.documents.search_desc">Search documents using vector similarity</p>
@@ -201,10 +200,8 @@ FormData:
                                     <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "query": "string",
-  "collection_name": "string",
-  "limit": 10,
-  "threshold": 0.7
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                 </div>
@@ -220,7 +217,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/chat</span>
+                                    <span class="path">/api/chat/&lt;message-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.chat.chat_desc">Send message to AI chat interface</p>
@@ -229,10 +226,8 @@ FormData:
                                     <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "message": "string",
-  "prompt_id": "string (optional)",
-  "collection_name": "string (optional)",
-  "stream": true
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                     <h4 data-translate="api_reference.chat.response_streaming">Response (Streaming):</h4>
@@ -247,7 +242,7 @@ data: {"type": "done", "message": "complete"}</code></pre>
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/chat/history</span>
+                                    <span class="path">/api/chat/&lt;message-operation&gt;/history</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.chat.history_desc">Get chat conversation history</p>
@@ -255,7 +250,7 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                 <div class="endpoint-body">
                                     <h4 data-translate="api_reference.chat.query_params">Query Parameters:</h4>
                                     <div class="code-block">
-                                        <pre><code>?conversation_id=string&limit=50</code></pre>
+                                        <pre><code>?<filter>=<value>&<pagination>=<value></code></pre>
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +265,7 @@ data: {"type": "done", "message": "complete"}</code></pre>
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/live-chat/handoff</span>
+                                    <span class="path">/api/live-chat/&lt;handoff-request-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.live_chat.handoff_desc">Request handoff to human agent</p>
@@ -279,9 +274,8 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "conversation_id": "string",
-  "reason": "string",
-  "severity": "low|medium|high|critical"
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                 </div>
@@ -290,7 +284,7 @@ data: {"type": "done", "message": "complete"}</code></pre>
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/live-chat/sessions</span>
+                                    <span class="path">/api/live-chat/&lt;conversation-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.live_chat.sessions_desc">Get active chat sessions</p>
@@ -300,10 +294,8 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <div class="code-block">
                                         <pre><code>[
   {
-    "conversation_id": "string",
-    "status": "active|queued|handoff_requested",
-    "user_id": 1,
-    "created_at": "2024-01-01T00:00:00Z"
+    "note": "Representative structure only",
+    "details": "Field-level contracts are shared with approved integrators"
   }
 ]</code></pre>
                                     </div>
@@ -313,7 +305,7 @@ data: {"type": "done", "message": "complete"}</code></pre>
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/live-chat/accept</span>
+                                    <span class="path">/api/live-chat/&lt;handoff-accept-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.live_chat.accept_desc">Accept handoff request</p>
@@ -322,7 +314,8 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "conversation_id": "string"
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                 </div>
@@ -338,7 +331,7 @@ data: {"type": "done", "message": "complete"}</code></pre>
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/banking/process</span>
+                                    <span class="path">/api/banking/&lt;workflow-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.banking.process_desc">Process banking documents with encryption</p>
@@ -347,9 +340,8 @@ data: {"type": "done", "message": "complete"}</code></pre>
                                     <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "query": "string",
-  "document_type": "statement|transaction|report",
-  "encryption_key": "string (optional)"
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                 </div>
@@ -358,7 +350,7 @@ data: {"type": "done", "message": "complete"}</code></pre>
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/banking/upload</span>
+                                    <span class="path">/api/banking/&lt;upload-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.banking.upload_desc">Upload encrypted banking documents</p>
@@ -386,7 +378,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/admin/users</span>
+                                    <span class="path">/api/admin/&lt;user-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.admin.users_list_desc">List all users (admin only)</p>
@@ -396,7 +388,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/admin/users</span>
+                                    <span class="path">/api/admin/&lt;user-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.admin.users_create_desc">Create new user (admin only)</p>
@@ -406,7 +398,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/admin/metrics</span>
+                                    <span class="path">/api/admin/&lt;metrics-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.admin.metrics_desc">Get system metrics and statistics</p>
@@ -423,7 +415,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/analytics/usage</span>
+                                    <span class="path">/api/analytics/&lt;usage-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.analytics.usage_desc">Get usage analytics</p>
@@ -433,7 +425,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/analytics/conversations</span>
+                                    <span class="path">/api/analytics/&lt;conversation-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.analytics.conversations_desc">Get conversation analytics</p>
@@ -450,7 +442,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method post">POST</span>
-                                    <span class="path">/api/widgets/create</span>
+                                    <span class="path">/api/widgets/&lt;create-or-manage-operation&gt;</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.widgets.create_desc">Create new chat widget</p>
@@ -459,11 +451,8 @@ FormData:
                                     <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
                                     <div class="code-block">
                                         <pre><code>{
-  "name": "string",
-  "description": "string",
-  "collection_id": 1,
-  "theme": "light|dark",
-  "position": "bottom-right|bottom-left"
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
 }</code></pre>
                                     </div>
                                 </div>
@@ -472,7 +461,7 @@ FormData:
                             <div class="endpoint-card">
                                 <div class="endpoint-header">
                                     <span class="method get">GET</span>
-                                    <span class="path">/api/widgets/embed/{widget_id}</span>
+                                    <span class="path">/api/widgets/&lt;create-or-manage-operation&gt;/{widget_id}/embed</span>
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.widgets.embed_desc">Get widget embed code</p>
@@ -536,8 +525,8 @@ FormData:
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
-                    <p data-translate="footer.brand">RaghimAI Enterprise RAG System</p>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="footer-logo">
+                    <p data-translate="footer.brand">Raghim AI Enterprise Agent Platform</p>
                 </div>
                 <div class="footer-section">
                     <h4 data-translate="footer.documentation">Documentation</h4>
@@ -558,7 +547,7 @@ FormData:
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-translate="footer.copyright">&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+                <p data-translate="footer.copyright">&copy; 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5</p>
             </div>
         </div>
     </footer>

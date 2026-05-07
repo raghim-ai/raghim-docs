@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="quick_start.meta.title">Quick Start Guide - RaghimAI Enterprise RAG System</title>
+    <title data-translate="quick_start.meta.title">Quick Start Guide - Raghim AI Enterprise Agent Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
     <link rel="apple-touch-icon" href="assets/images/logo192.png">
-    <meta name="description" content="Quick start guide for RaghimAI Enterprise RAG System - get up and running in minutes" data-translate="quick_start.meta.description">
+    <meta name="description" content="Quick start guide for Raghim AI Enterprise Agent Platform - get up and running in minutes" data-translate="quick_start.meta.description">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
-                    <span class="brand-text" data-translate="nav.brand">RaghimAI Enterprise</span>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="logo">
+                    <span class="brand-text" data-translate="nav.brand">Raghim AI Enterprise</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
@@ -39,8 +39,13 @@
         <div class="container">
             <div class="page-header">
                 <h1 data-translate="quick_start.header.title">Quick Start Guide</h1>
-                <p class="page-subtitle" data-translate="quick_start.header.subtitle">Get RaghimAI Enterprise RAG System up and running in minutes</p>
+                <p class="page-subtitle" data-translate="quick_start.header.subtitle">Get Raghim AI Enterprise Agent Platform up and running in minutes</p>
             </div>
+
+            <div class="info-box" style="margin-top:1.5rem;">
+                            <strong>Execution Flow:</strong> What this page does -> Prerequisites -> Steps -> Verify -> Common fixes.
+                            Use the commands exactly as shown for a copy-tested path.
+                        </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
@@ -69,6 +74,7 @@
                                     <li><strong data-translate="quick_start.prerequisites.cpu">CPU:</strong> <span data-translate="quick_start.prerequisites.cpu_value">4 cores minimum</span></li>
                                 </ul>
                             </div>
+
                             <div class="prereq-card">
                                 <h3 data-translate="quick_start.prerequisites.software_requirements">Software Requirements</h3>
                                 <ul>
@@ -83,18 +89,18 @@
 
                     <section id="installation">
                         <h2 data-translate="quick_start.installation.title">Installation</h2>
-                        <p data-translate="quick_start.installation.subtitle">Deploy RaghimAI Enterprise using the offline package.</p>
+                        <p data-translate="quick_start.installation.subtitle">Deploy Raghim AI Enterprise using the offline package.</p>
 
                         <div class="deployment-steps">
                             <div class="step">
                                 <div class="step-number">1</div>
                                 <div class="step-content">
                                     <h3 data-translate="quick_start.installation.download">Download Package</h3>
-                                    <p data-translate="quick_start.installation.download_desc">Download the offline enterprise package from your RaghimAI representative.</p>
+                                    <p data-translate="quick_start.installation.download_desc">Download the offline enterprise package from your Raghim AI representative.</p>
                                     <div class="code-block">
                                         <pre><code># Extract the package
-tar -xzf rag-enterprise-1.0.26-offline.tar.gz
-cd rag-enterprise-1.0.26-offline</code></pre>
+tar -xzf rag-enterprise-2.0.5-offline-managed-local.tar.gz
+cd rag-enterprise-2.0.5-offline-managed-local</code></pre>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +112,7 @@ cd rag-enterprise-1.0.26-offline</code></pre>
                                     <p data-translate="quick_start.installation.run_installer_desc">Execute the interactive installer for guided setup.</p>
                                     <div class="code-block">
                                         <pre><code># Launch interactive installer
-./INSTALL.sh</code></pre>
+./deploy.sh</code></pre>
                                     </div>
                                     <div class="info-box">
                                         <strong data-translate="quick_start.installation.note_label">Note:</strong> <span data-translate="quick_start.installation.note">The installer will guide you through license acceptance and configuration.</span>
@@ -130,7 +136,7 @@ cd rag-enterprise-1.0.26-offline</code></pre>
 
                     <section id="configuration">
                         <h2 data-translate="quick_start.configuration.title">Configuration</h2>
-                        <p data-translate="quick_start.configuration.subtitle">Configure your RaghimAI Enterprise system for your environment.</p>
+                        <p data-translate="quick_start.configuration.subtitle">Configure your Raghim AI Enterprise system for your environment.</p>
 
                         <div class="integration-section">
                             <h3 data-translate="quick_start.configuration.env_vars">Environment Variables</h3>
@@ -142,9 +148,9 @@ DATABASE_PASSWORD=secure-password
 CACHE_PASSWORD=secure-password
 
 # Optional configuration
-GPU_ENABLED=true
-FRONTEND_URL=http://localhost
-API_URL=http://localhost:8000</code></pre>
+LLM_PROVIDER=&lt;approved-provider&gt;
+FRONTEND_URL=https://&lt;app-domain&gt;
+API_URL=https://&lt;api-domain&gt;</code></pre>
                             </div>
                         </div>
 
@@ -152,7 +158,7 @@ API_URL=http://localhost:8000</code></pre>
                             <h3 data-translate="quick_start.configuration.admin_setup">Admin User Setup</h3>
                             <div class="code-block">
                                 <pre><code># Create admin user
-curl -X POST http://localhost:8000/api/auth/register \
+curl -X POST https://&lt;api-domain&gt;/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{
     "username": "admin",
@@ -166,7 +172,7 @@ curl -X POST http://localhost:8000/api/auth/register \
 
                     <section id="first-steps">
                         <h2 data-translate="quick_start.first_steps.title">First Steps</h2>
-                        <p data-translate="quick_start.first_steps.subtitle">Start using your RaghimAI Enterprise system.</p>
+                        <p data-translate="quick_start.first_steps.subtitle">Start using your Raghim AI Enterprise system.</p>
 
                         <div class="deployment-steps">
                             <div class="step">
@@ -176,10 +182,10 @@ curl -X POST http://localhost:8000/api/auth/register \
                                     <p data-translate="quick_start.first_steps.access_desc">Open your browser and navigate to the frontend URL.</p>
                                     <div class="url-list">
                                         <div class="url-item">
-                                            <strong data-translate="quick_start.first_steps.frontend">Frontend:</strong> <code>http://localhost</code>
+                                            <strong data-translate="quick_start.first_steps.frontend">Frontend:</strong> <code>https://&lt;app-domain&gt;</code>
                                         </div>
                                         <div class="url-item">
-                                            <strong data-translate="quick_start.first_steps.api">API:</strong> <code>http://localhost:8000</code>
+                                            <strong data-translate="quick_start.first_steps.api">API:</strong> <code>https://&lt;api-domain&gt;</code>
                                         </div>
                                     </div>
                                 </div>
@@ -217,6 +223,23 @@ curl -X POST http://localhost:8000/api/auth/register \
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </section>
+
+                    
+                    <section id="verify-checklist">
+                        <h2>Verify Checklist</h2>
+                        <p>Run these copy-tested checks after initial setup:</p>
+                        <div class="code-block">
+                            <pre><code># 1) Containers and health
+docker compose ps
+curl -s https://&lt;api-domain&gt;/&lt;health-endpoint&gt;
+
+# 2) API docs availability
+curl -I https://&lt;api-domain&gt;/docs
+
+# 3) Frontend reachability
+curl -I https://&lt;app-domain&gt;</code></pre>
                         </div>
                     </section>
 
@@ -263,8 +286,8 @@ curl -X POST http://localhost:8000/api/auth/register \
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
-                    <p data-translate="footer.brand">RaghimAI Enterprise RAG System</p>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="footer-logo">
+                    <p data-translate="footer.brand">Raghim AI Enterprise Agent Platform</p>
                 </div>
                 <div class="footer-section">
                     <h4 data-translate="footer.documentation">Documentation</h4>
@@ -285,7 +308,7 @@ curl -X POST http://localhost:8000/api/auth/register \
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-translate="footer.copyright">&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+                <p data-translate="footer.copyright">&copy; 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5</p>
             </div>
         </div>
     </footer>

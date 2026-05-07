@@ -1,10 +1,10 @@
-# RaghimAI Enterprise RAG System Documentation
+# Raghim AI Enterprise Agent Platform Documentation
 
-This repository contains the complete documentation for the RaghimAI Enterprise RAG System, designed to be deployed as GitHub Pages at `doc.raghim.com`.
+This repository contains the complete documentation for the Raghim AI Enterprise Agent Platform, designed to be deployed as GitHub Pages at `doc.raghim.com`.
 
 ## Overview
 
-The RaghimAI Enterprise RAG System is a comprehensive AI-powered platform for document processing, knowledge management, and intelligent question-answering. This documentation provides complete guides for deployment, API usage, troubleshooting, and system administration.
+The Raghim AI Enterprise Agent Platform is a comprehensive AI-powered platform for document processing, knowledge management, and intelligent question-answering. This documentation provides complete guides for deployment, API usage, troubleshooting, and system administration.
 
 ## Documentation Structure
 
@@ -21,8 +21,8 @@ docs-github-pages/
 │   ├── js/
 │   │   └── script.js         # Interactive functionality
 │   └── images/
-│       ├── logo192.png        # RaghimAI logo (192x192)
-│       └── logo512.png        # RaghimAI logo (512x512)
+│       ├── logo192.png        # Raghim AI logo (192x192)
+│       └── logo512.png        # Raghim AI logo (512x512)
 └── README.md                  # This file
 ```
 
@@ -31,7 +31,7 @@ docs-github-pages/
 ### Professional Design
 - Clean, modern interface with professional styling
 - Responsive design for all devices
-- RaghimAI branding and logos integrated
+- Raghim AI branding and logos integrated
 - Smooth navigation and user experience
 
 ### Comprehensive Content
@@ -50,12 +50,12 @@ docs-github-pages/
 
 ## System Architecture
 
-The Enterprise RAG System consists of:
+The Enterprise Agent Platform consists of:
 
 - **Frontend**: React application with Nginx proxy
 - **Backend**: FastAPI-based Python application
-- **Database**: PostgreSQL + Redis + ChromaDB
-- **AI Models**: Ollama integration with GPU acceleration
+- **Database**: PostgreSQL + Redis + pgvector
+- **AI Models**: OpenAI-compatible model provider integration
 - **Deployment**: Docker containerized with offline packages
 
 ## Key Features Documented
@@ -67,8 +67,8 @@ The Enterprise RAG System consists of:
 - Metadata extraction and management
 
 ### AI Integration
-- Ollama LLM integration with GPU acceleration
-- ChromaDB vector database for similarity search
+- LLM provider integration for managed and self-hosted deployments
+- pgvector vector database for similarity search
 - Multi-language support and translation
 - Streaming responses and real-time processing
 
@@ -141,7 +141,7 @@ The documentation covers all major API endpoints:
    
    # Commit and push
    git add .
-   git commit -m "Initial RaghimAI documentation"
+   git commit -m "Initial Raghim AI documentation"
    git push origin main
    ```
 
@@ -203,9 +203,9 @@ For technical support or questions about the documentation:
 
 ## License
 
-This documentation is part of the RaghimAI Enterprise RAG System and is licensed under your enterprise agreement.
+This documentation is part of the Raghim AI Enterprise Agent Platform and is licensed under your enterprise agreement.
 
 ---
 
-**RaghimAI Enterprise RAG System v1.0.26**  
+**Raghim AI Enterprise Agent Platform v2.0.5**  
 *Professional AI-powered document processing and knowledge management platform*

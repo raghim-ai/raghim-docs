@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="examples.meta.title">Integration Examples - RaghimAI Enterprise RAG System</title>
+    <title data-translate="examples.meta.title">Integration Examples - Raghim AI Enterprise Agent Platform</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo512.png">
     <link rel="apple-touch-icon" href="assets/images/logo192.png">
-    <meta name="description" content="Integration examples for RaghimAI Enterprise RAG System - practical code samples and use cases" data-translate="examples.meta.description">
+    <meta name="description" content="Integration examples for Raghim AI Enterprise Agent Platform - practical code samples and use cases" data-translate="examples.meta.description">
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="logo">
-                    <span class="brand-text" data-translate="nav.brand">RaghimAI Enterprise</span>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="logo">
+                    <span class="brand-text" data-translate="nav.brand">Raghim AI Enterprise</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
                     <a href="index.html" class="nav-link" data-translate="nav.home">Home</a>
@@ -39,8 +39,12 @@
         <div class="container">
             <div class="page-header">
                 <h1 data-translate="examples.header.title">Integration Examples</h1>
-                <p class="page-subtitle" data-translate="examples.header.subtitle">Practical examples and code samples for RaghimAI Enterprise integration</p>
+                <p class="page-subtitle" data-translate="examples.header.subtitle">Practical examples and code samples for Raghim AI Enterprise integration</p>
             </div>
+
+            <div class="info-box" style="margin-top:1.5rem;">
+                            <strong>Implementation Flow:</strong> Start with cURL -> move to SDK/client wrappers -> add retries/timeouts -> add observability.
+                        </div>
 
             <div class="content-grid">
                 <nav class="sidebar">
@@ -105,13 +109,14 @@
   }
 }</code></pre>
                             </div>
+
                         </div>
 
                         <div class="integration-section">
                             <h3 data-translate="examples.javascript.usage_example">Usage Example</h3>
                             <div class="code-block">
                                 <pre><code>// Initialize client
-const client = new RaghimAIClient('https://your-domain.com/api', 'your-jwt-token');
+const client = new RaghimAIClient('https://&lt;your-domain&gt;/api', 'your-jwt-token');
 
 // Upload document
 const fileInput = document.getElementById('file-input');
@@ -184,7 +189,7 @@ class RaghimAIClient:
                             <h3 data-translate="examples.javascript.usage_example">Usage Example</h3>
                             <div class="code-block">
                                 <pre><code># Initialize client
-client = RaghimAIClient('https://your-domain.com/api', 'your-jwt-token')
+client = RaghimAIClient('https://&lt;your-domain&gt;/api', 'your-jwt-token')
 
 # Upload document
 result = client.upload_document('document.pdf')
@@ -213,7 +218,7 @@ for doc in documents:
                             <h3 data-translate="examples.curl.authentication">Authentication</h3>
                             <div class="code-block">
                                 <pre><code># Login to get token
-curl -X POST https://your-domain.com/api/auth/login \
+curl -X POST https://&lt;your-domain&gt;/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "username": "your-username",
@@ -226,7 +231,7 @@ curl -X POST https://your-domain.com/api/auth/login \
                             <h3 data-translate="examples.curl.document_upload">Document Upload</h3>
                             <div class="code-block">
                                 <pre><code># Upload document
-curl -X POST https://your-domain.com/api/documents/upload \
+curl -X POST https://&lt;your-domain&gt;/api/documents/upload \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -F "file=@document.pdf"</code></pre>
                             </div>
@@ -236,7 +241,7 @@ curl -X POST https://your-domain.com/api/documents/upload \
                             <h3 data-translate="examples.curl.send_query">Send Query</h3>
                             <div class="code-block">
                                 <pre><code># Send AI query
-curl -X POST https://your-domain.com/api/chat \
+curl -X POST https://&lt;your-domain&gt;/api/chat \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -249,18 +254,18 @@ curl -X POST https://your-domain.com/api/chat \
 
                     <section id="widget">
                         <h2 data-translate="examples.widget.title">Widget Integration</h2>
-                        <p data-translate="examples.widget.subtitle">Embed RaghimAI widgets in your applications.</p>
+                        <p data-translate="examples.widget.subtitle">Embed Raghim AI widgets in your applications.</p>
 
                         <div class="integration-section">
                             <h3 data-translate="examples.widget.basic_widget">Basic Widget</h3>
                             <div class="code-block">
                                 <pre><code>&lt;!-- Include widget script --&gt;
-&lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;
+&lt;script src="https://&lt;your-domain&gt;/widget.js"&gt;&lt;/script&gt;
 
 &lt;!-- Initialize widget --&gt;
 &lt;script&gt;
   RaghimAI.init({
-    apiUrl: 'https://your-domain.com/api',
+    apiUrl: 'https://&lt;your-domain&gt;/api',
     widgetId: 'your-widget-id',
     theme: 'light',
     position: 'bottom-right'
@@ -274,7 +279,7 @@ curl -X POST https://your-domain.com/api/chat \
                             <div class="code-block">
                                 <pre><code>&lt;script&gt;
   RaghimAI.init({
-    apiUrl: 'https://your-domain.com/api',
+    apiUrl: 'https://&lt;your-domain&gt;/api',
     widgetId: 'your-widget-id',
     theme: 'dark',
     position: 'bottom-left',
@@ -300,7 +305,7 @@ curl -X POST https://your-domain.com/api/chat \
                             <h3 data-translate="examples.webhook.webhook_configuration">Webhook Configuration</h3>
                             <div class="code-block">
                                 <pre><code># Configure webhook
-curl -X POST https://your-domain.com/api/webhooks/configure \
+curl -X POST https://&lt;your-domain&gt;/api/webhooks/configure \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -366,8 +371,8 @@ if __name__ == '__main__':
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <img src="assets/images/logo192.png" alt="RaghimAI Logo" class="footer-logo">
-                    <p data-translate="footer.brand">RaghimAI Enterprise RAG System</p>
+                    <img src="assets/images/logo192.png" alt="Raghim AI Logo" class="footer-logo">
+                    <p data-translate="footer.brand">Raghim AI Enterprise Agent Platform</p>
                 </div>
                 <div class="footer-section">
                     <h4 data-translate="footer.documentation">Documentation</h4>
@@ -388,7 +393,7 @@ if __name__ == '__main__':
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-translate="footer.copyright">&copy; 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26</p>
+                <p data-translate="footer.copyright">&copy; 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5</p>
             </div>
         </div>
     </footer>
