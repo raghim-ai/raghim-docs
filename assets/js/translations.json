@@ -15,11 +15,11 @@
       "examples": "Examples"
     },
     "hero": {
-      "title": "Enterprise RAG System",
+      "title": "Enterprise Agent Platform",
       "subtitle": "Secure AI-Powered Document Intelligence & Knowledge Management",
       "get_started": "Get Started",
       "learn_more": "Learn More",
-      "version": "Version 1.0.26",
+      "version": "Version 2.0.5",
       "enterprise_ready": "Enterprise Ready",
       "offline_deployment": "Offline Deployment"
     },
@@ -74,8 +74,8 @@
       "banking_solutions": "Banking & Financial Solutions",
       "banking_solutions_items": {
         "processing": "Banking document processing with encryption",
-        "compliance": "Basel III, MiFID II, FATCA compliance",
-        "aml": "AML/KYC integration capabilities",
+        "compliance": "financial compliance workflow support",
+        "aml": "regulated workflow integration capabilities",
         "encryption": "Client-side encryption for PII"
       }
     },
@@ -106,7 +106,7 @@
       "compliance_items": {
         "regulations": "GDPR, CCPA, HIPAA, SOX compliance",
         "standards": "PCI DSS, ISO 27001, SOC 2",
-        "banking_regs": "Banking regulations (Basel III, MiFID II)",
+        "banking_regs": "industry and regional regulatory controls",
         "automated_reporting": "Automated compliance reporting"
       }
     },
@@ -213,14 +213,14 @@
         "security": "Security",
         "best_practices": "Best Practices"
       },
-      "copyright": "© 2024 RaghimAI. All rights reserved. Enterprise RAG System v1.0.26"
+      "copyright": "© 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5"
     }
     ,
     "deployment_guide": {
-      "meta": { "title": "Deployment Guide - RaghimAI Enterprise RAG System" },
+      "meta": { "title": "Deployment Guide - Raghim AI Enterprise Agent Platform" },
       "header": {
         "title": "Deployment Guide",
-        "subtitle": "Complete guide for deploying RaghimAI Enterprise RAG System"
+        "subtitle": "Complete guide for deploying Raghim AI Enterprise Agent Platform"
       },
       "toc": {
         "title": "Table of Contents",
@@ -252,7 +252,7 @@
       },
       "architecture": {
         "title": "System Architecture",
-        "subtitle": "Understanding the RaghimAI Enterprise system architecture for optimal deployment.",
+        "subtitle": "Understanding the Raghim AI Enterprise system architecture for optimal deployment.",
         "layers": {
           "external": {
             "title": "External Access Layer",
@@ -308,8 +308,8 @@
           "title": "Architecture Overview",
           "frontend": "Frontend Layer: React application with Nginx proxy",
           "backend": "Backend Layer: FastAPI-based Python application",
-          "database": "Database Layer: PostgreSQL + Redis + ChromaDB",
-          "ai": "AI Layer: Ollama integration with GPU acceleration",
+          "database": "Database Layer: PostgreSQL + Redis + pgvector",
+          "ai": "AI Layer: OpenAI-compatible model provider integration",
           "security": "Security Layer: Multi-layered security with encryption and access controls"
         }
       },
@@ -319,7 +319,7 @@
         "steps": {
           "download": {
             "title": "Download Package",
-            "desc": "Download the offline enterprise package from your RaghimAI representative."
+            "desc": "Download the offline enterprise package from your Raghim AI representative."
           },
           "installer": {
             "title": "Run Interactive Installer",
@@ -398,7 +398,7 @@
           "frontend": { "label": "Frontend:" },
           "api": { "label": "Backend API:" },
           "health": { "label": "Health Check:" },
-          "chromadb": { "label": "ChromaDB:" }
+          "chromadb": { "label": "pgvector:" }
         }
       },
       "troubleshooting": {
@@ -417,7 +417,7 @@
           "title": "GPU Not Detected",
           "symptoms": "Slow AI responses, GPU not utilized",
           "nvidia": "Install NVIDIA Docker runtime",
-          "env": "Set GPU_ENABLED=true in .env",
+          "env": "Set LLM_PROVIDER=openai in .env",
           "cuda": "Check CUDA installation",
           "smi": "Verify GPU availability: nvidia-smi"
         },
@@ -425,8 +425,8 @@
           "title": "Memory Issues",
           "symptoms": "Out of memory errors, slow performance",
           "increase_ram": "Increase system RAM",
-          "reduce_models": "Reduce OLLAMA_MAX_LOADED_MODELS",
-          "lower_fraction": "Lower OLLAMA_GPU_MEMORY_FRACTION",
+          "reduce_models": "Reduce OPENAI_TIER_HYBRID_TOKENS",
+          "lower_fraction": "Set OPENAI_RAG_REASONING_EFFORT to none or low",
           "smaller_models": "Use smaller models"
         },
         "db": {
@@ -440,10 +440,10 @@
       }
     },
     "security_guide": {
-      "meta": { "title": "Security Guide - RaghimAI Enterprise RAG System" },
+      "meta": { "title": "Security Guide - Raghim AI Enterprise Agent Platform" },
       "header": {
         "title": "Security Guide",
-        "subtitle": "Comprehensive security guide for RaghimAI Enterprise RAG System"
+        "subtitle": "Comprehensive security guide for Raghim AI Enterprise Agent Platform"
       },
       "toc": {
         "title": "Security Topics",
@@ -459,7 +459,7 @@
       },
       "authentication": {
         "title": "Authentication",
-        "subtitle": "Secure authentication mechanisms to protect access to your RaghimAI Enterprise system.",
+        "subtitle": "Secure authentication mechanisms to protect access to your Raghim AI Enterprise system.",
         "jwt": {
           "title": "JWT Token Authentication",
           "items": {
@@ -786,12 +786,12 @@
     },
     "integration_guide": {
       "meta": { 
-        "title": "Integration Guide - RaghimAI Enterprise RAG System",
-        "description": "Integration guide for RaghimAI Enterprise RAG System - API integration and embedding"
+        "title": "Integration Guide - Raghim AI Enterprise Agent Platform",
+        "description": "Integration guide for Raghim AI Enterprise Agent Platform - API integration and embedding"
       },
       "header": {
         "title": "Integration Guide",
-        "subtitle": "Complete integration guide for RaghimAI Enterprise RAG System"
+        "subtitle": "Complete integration guide for Raghim AI Enterprise Agent Platform"
       },
       "toc": {
         "title": "Integration Topics",
@@ -803,7 +803,7 @@
       },
       "api_integration": {
         "title": "API Integration",
-        "subtitle": "Integrate RaghimAI Enterprise RAG System with your existing applications using our comprehensive REST API.",
+        "subtitle": "Integrate Raghim AI Enterprise Agent Platform with your existing applications using our comprehensive REST API.",
         "base_url": "Base URL",
         "authentication": "Authentication",
         "auth_desc": "All API requests require authentication using JWT tokens.",
@@ -819,7 +819,7 @@
       },
       "widget_embedding": {
         "title": "Widget Embedding",
-        "subtitle": "Embed RaghimAI chat widgets directly into your existing applications.",
+        "subtitle": "Embed Raghim AI chat widgets directly into your existing applications.",
         "basic": "Basic Widget Embedding",
         "custom_styling": "Custom Styling"
       },
@@ -852,12 +852,12 @@
     },
     "quick_start": {
       "meta": { 
-        "title": "Quick Start Guide - RaghimAI Enterprise RAG System",
-        "description": "Quick start guide for RaghimAI Enterprise RAG System - get up and running in minutes"
+        "title": "Quick Start Guide - Raghim AI Enterprise Agent Platform",
+        "description": "Quick start guide for Raghim AI Enterprise Agent Platform - get up and running in minutes"
       },
       "header": {
         "title": "Quick Start Guide",
-        "subtitle": "Get RaghimAI Enterprise RAG System up and running in minutes"
+        "subtitle": "Get Raghim AI Enterprise Agent Platform up and running in minutes"
       },
       "toc": {
         "title": "Quick Start Steps",
@@ -891,9 +891,9 @@
       },
       "installation": {
         "title": "Installation",
-        "subtitle": "Deploy RaghimAI Enterprise using the offline package.",
+        "subtitle": "Deploy Raghim AI Enterprise using the offline package.",
         "download": "Download Package",
-        "download_desc": "Download the offline enterprise package from your RaghimAI representative.",
+        "download_desc": "Download the offline enterprise package from your Raghim AI representative.",
         "run_installer": "Run Installer",
         "run_installer_desc": "Execute the interactive installer for guided setup.",
         "note_label": "Note:",
@@ -903,13 +903,13 @@
       },
       "configuration": {
         "title": "Configuration",
-        "subtitle": "Configure your RaghimAI Enterprise system for your environment.",
+        "subtitle": "Configure your Raghim AI Enterprise system for your environment.",
         "env_vars": "Environment Variables",
         "admin_setup": "Admin User Setup"
       },
       "first_steps": {
         "title": "First Steps",
-        "subtitle": "Start using your RaghimAI Enterprise system.",
+        "subtitle": "Start using your Raghim AI Enterprise system.",
         "access": "Access the System",
         "access_desc": "Open your browser and navigate to the frontend URL.",
         "frontend": "Frontend:",
@@ -957,12 +957,12 @@
     },
     "configuration": {
       "meta": { 
-        "title": "Configuration Guide - RaghimAI Enterprise RAG System",
-        "description": "Configuration guide for RaghimAI Enterprise RAG System - system settings and customization"
+        "title": "Configuration Guide - Raghim AI Enterprise Agent Platform",
+        "description": "Configuration guide for Raghim AI Enterprise Agent Platform - system settings and customization"
       },
       "header": {
         "title": "Configuration Guide",
-        "subtitle": "Complete configuration guide for RaghimAI Enterprise RAG System"
+        "subtitle": "Complete configuration guide for Raghim AI Enterprise Agent Platform"
       },
       "toc": {
         "title": "Configuration Topics",
@@ -1019,12 +1019,12 @@
     },
     "api_reference": {
       "meta": { 
-        "title": "API Reference - RaghimAI Enterprise RAG System",
-        "description": "Complete API reference for RaghimAI Enterprise RAG System - authentication, documents, chat, and live chat endpoints"
+        "title": "API Reference - Raghim AI Enterprise Agent Platform",
+        "description": "Complete API reference for Raghim AI Enterprise Agent Platform - authentication, documents, chat, and live chat endpoints"
       },
       "header": {
         "title": "API Reference",
-        "subtitle": "Complete API documentation for RaghimAI Enterprise RAG System"
+        "subtitle": "Complete API documentation for Raghim AI Enterprise Agent Platform"
       },
       "toc": {
         "title": "API Endpoints",
@@ -1116,12 +1116,12 @@
     },
     "troubleshooting": {
       "meta": { 
-        "title": "Troubleshooting - RaghimAI Enterprise RAG System",
-        "description": "Troubleshooting guide for RaghimAI Enterprise RAG System - common issues and solutions"
+        "title": "Troubleshooting - Raghim AI Enterprise Agent Platform",
+        "description": "Troubleshooting guide for Raghim AI Enterprise Agent Platform - common issues and solutions"
       },
       "header": {
         "title": "Troubleshooting Guide",
-        "subtitle": "Common issues and solutions for RaghimAI Enterprise RAG System"
+        "subtitle": "Common issues and solutions for Raghim AI Enterprise Agent Platform"
       },
       "toc": {
         "title": "Quick Links",
@@ -1167,7 +1167,7 @@
         "postgresql_connection_failed_symptoms": "Symptoms: Database connection errors in logs",
         "redis_connection_issues": "Redis Connection Issues",
         "redis_connection_issues_symptoms": "Symptoms: Cache operations failing",
-        "chromadb_issues": "ChromaDB Issues",
+        "chromadb_issues": "pgvector Issues",
         "chromadb_issues_symptoms": "Symptoms: Vector search not working"
       },
       "gpu_issues": {
@@ -1177,7 +1177,7 @@
         "gpu_memory_issues": "GPU Memory Issues",
         "gpu_memory_issues_symptoms": "Symptoms: CUDA out of memory errors",
         "external_gpu_connection": "External GPU Connection",
-        "external_gpu_connection_symptoms": "Symptoms: External GPU Ollama not accessible"
+        "external_gpu_connection_symptoms": "Symptoms: External GPU model provider not accessible"
       },
       "authentication_issues": {
         "title": "Authentication Issues",
@@ -1227,12 +1227,12 @@
     },
     "examples": {
       "meta": { 
-        "title": "Integration Examples - RaghimAI Enterprise RAG System",
-        "description": "Integration examples for RaghimAI Enterprise RAG System - practical code samples and use cases"
+        "title": "Integration Examples - Raghim AI Enterprise Agent Platform",
+        "description": "Integration examples for Raghim AI Enterprise Agent Platform - practical code samples and use cases"
       },
       "header": {
         "title": "Integration Examples",
-        "subtitle": "Practical examples and code samples for RaghimAI Enterprise integration"
+        "subtitle": "Practical examples and code samples for Raghim AI Enterprise integration"
       },
       "toc": {
         "title": "Examples",
@@ -1263,7 +1263,7 @@
       },
       "widget": {
         "title": "Widget Integration",
-        "subtitle": "Embed RaghimAI widgets in your applications.",
+        "subtitle": "Embed Raghim AI widgets in your applications.",
         "basic_widget": "Basic Widget",
         "custom_styled_widget": "Custom Styled Widget"
       },
@@ -1276,12 +1276,12 @@
     },
     "best_practices": {
       "meta": { 
-        "title": "Best Practices - RaghimAI Enterprise RAG System",
-        "description": "Best practices for RaghimAI Enterprise RAG System - optimization, security, and deployment guidelines"
+        "title": "Best Practices - Raghim AI Enterprise Agent Platform",
+        "description": "Best practices for Raghim AI Enterprise Agent Platform - optimization, security, and deployment guidelines"
       },
       "header": {
         "title": "Best Practices",
-        "subtitle": "Optimization, security, and deployment best practices for RaghimAI Enterprise"
+        "subtitle": "Optimization, security, and deployment best practices for Raghim AI Enterprise"
       },
       "toc": {
         "title": "Best Practices",
@@ -1475,11 +1475,11 @@
       "examples": "Exemples"
     },
     "hero": {
-      "title": "Système RAG Entreprise",
+      "title": "Plateforme d'agents IA entreprise",
       "subtitle": "Intelligence Documentaire Sécurisée et Gestion des Connaissances",
       "get_started": "Commencer",
       "learn_more": "En Savoir Plus",
-      "version": "Version 1.0.26",
+      "version": "Version 2.0.5",
       "enterprise_ready": "Prêt pour l'Entreprise",
       "offline_deployment": "Déploiement Hors Ligne"
     },
@@ -1673,14 +1673,14 @@
         "security": "Sécurité",
         "best_practices": "Meilleures Pratiques"
       },
-      "copyright": "© 2024 RaghimAI. Tous droits réservés. Système RAG Entreprise v1.0.26"
+      "copyright": "© 2026 Raghim AI. Tous droits réservés. Plateforme d'agents IA entreprise v2.0.5"
     }
     ,
     "deployment_guide": {
-      "meta": { "title": "Guide de Déploiement - Système RAG Entreprise RaghimAI" },
+      "meta": { "title": "Guide de Déploiement - Plateforme d'agents IA entreprise Raghim AI" },
       "header": {
         "title": "Guide de Déploiement",
-        "subtitle": "Guide complet pour déployer le Système RAG Entreprise RaghimAI"
+        "subtitle": "Guide complet pour déployer le Plateforme d'agents IA entreprise Raghim AI"
       },
       "toc": {
         "title": "Table des Matières",
@@ -1712,7 +1712,7 @@
       },
       "architecture": {
         "title": "Architecture du Système",
-        "subtitle": "Comprendre l'architecture du système RaghimAI Entreprise pour un déploiement optimal.",
+        "subtitle": "Comprendre l'architecture du système Raghim AI Entreprise pour un déploiement optimal.",
         "layers": {
           "external": {
             "title": "Couche d'Accès Externe",
@@ -1768,8 +1768,8 @@
           "title": "Aperçu de l'Architecture",
           "frontend": "Couche Frontend : Application React avec proxy Nginx",
           "backend": "Couche Backend : Application Python basée sur FastAPI",
-          "database": "Couche Base de Données : PostgreSQL + Redis + ChromaDB",
-          "ai": "Couche IA : Intégration Ollama avec accélération GPU",
+          "database": "Couche Base de Données : PostgreSQL + Redis + pgvector",
+          "ai": "Couche IA : Intégration model provider avec accélération GPU",
           "security": "Couche Sécurité : Sécurité multi-couches avec chiffrement et contrôles d'accès"
         }
       },
@@ -1779,7 +1779,7 @@
         "steps": {
           "download": {
             "title": "Télécharger le Package",
-            "desc": "Téléchargez le package entreprise hors ligne auprès de votre représentant RaghimAI."
+            "desc": "Téléchargez le package entreprise hors ligne auprès de votre représentant Raghim AI."
           },
           "installer": {
             "title": "Exécuter l'Installeur Interactif",
@@ -1858,7 +1858,7 @@
           "frontend": { "label": "Frontend :" },
           "api": { "label": "API Backend :" },
           "health": { "label": "Contrôle d'État :" },
-          "chromadb": { "label": "ChromaDB :" }
+          "chromadb": { "label": "pgvector :" }
         }
       },
       "troubleshooting": {
@@ -1877,7 +1877,7 @@
           "title": "GPU Non Détecté",
           "symptoms": "Réponses IA lentes, GPU non utilisé",
           "nvidia": "Installez le runtime NVIDIA Docker",
-          "env": "Définissez GPU_ENABLED=true dans .env",
+          "env": "Définissez LLM_PROVIDER=openai dans .env",
           "cuda": "Vérifiez l'installation CUDA",
           "smi": "Vérifiez la disponibilité du GPU : nvidia-smi"
         },
@@ -1885,8 +1885,8 @@
           "title": "Problèmes de Mémoire",
           "symptoms": "Erreurs de mémoire insuffisante, performances lentes",
           "increase_ram": "Augmentez la RAM du système",
-          "reduce_models": "Réduisez OLLAMA_MAX_LOADED_MODELS",
-          "lower_fraction": "Diminuez OLLAMA_GPU_MEMORY_FRACTION",
+          "reduce_models": "Réduisez OPENAI_TIER_HYBRID_TOKENS",
+          "lower_fraction": "Diminuez OPENAI_RAG_REASONING_EFFORT",
           "smaller_models": "Utilisez des modèles plus petits"
         },
         "db": {
@@ -1900,10 +1900,10 @@
       }
     },
     "security_guide": {
-      "meta": { "title": "Guide de Sécurité - Système RAG Entreprise RaghimAI" },
+      "meta": { "title": "Guide de Sécurité - Plateforme d'agents IA entreprise Raghim AI" },
       "header": {
         "title": "Guide de Sécurité",
-        "subtitle": "Guide de sécurité complet pour le Système RAG Entreprise RaghimAI"
+        "subtitle": "Guide de sécurité complet pour le Plateforme d'agents IA entreprise Raghim AI"
       },
       "toc": {
         "title": "Sujets de Sécurité",
@@ -1919,7 +1919,7 @@
       },
       "authentication": {
         "title": "Authentification",
-        "subtitle": "Mécanismes d'authentification sécurisés pour protéger l'accès à votre système RaghimAI Entreprise.",
+        "subtitle": "Mécanismes d'authentification sécurisés pour protéger l'accès à votre système Raghim AI Entreprise.",
         "jwt": {
           "title": "Authentification par jeton JWT",
           "items": {
@@ -2246,12 +2246,12 @@
     },
     "integration_guide": {
       "meta": { 
-        "title": "Guide d'Intégration - Système RAG Entreprise RaghimAI",
-        "description": "Guide d'intégration pour le Système RAG Entreprise RaghimAI - Intégration API et intégration"
+        "title": "Guide d'Intégration - Plateforme d'agents IA entreprise Raghim AI",
+        "description": "Guide d'intégration pour le Plateforme d'agents IA entreprise Raghim AI - Intégration API et intégration"
       },
       "header": {
         "title": "Guide d'Intégration",
-        "subtitle": "Guide d'intégration complet pour le Système RAG Entreprise RaghimAI"
+        "subtitle": "Guide d'intégration complet pour le Plateforme d'agents IA entreprise Raghim AI"
       },
       "toc": {
         "title": "Sujets d'Intégration",
@@ -2263,7 +2263,7 @@
       },
       "api_integration": {
         "title": "Intégration API",
-        "subtitle": "Intégrez le Système RAG Entreprise RaghimAI avec vos applications existantes en utilisant notre API REST complète.",
+        "subtitle": "Intégrez le Plateforme d'agents IA entreprise Raghim AI avec vos applications existantes en utilisant notre API REST complète.",
         "base_url": "URL de Base",
         "authentication": "Authentification",
         "auth_desc": "Toutes les requêtes API nécessitent une authentification à l'aide de jetons JWT.",
@@ -2279,7 +2279,7 @@
       },
       "widget_embedding": {
         "title": "Intégration de Widget",
-        "subtitle": "Intégrez les widgets de chat RaghimAI directement dans vos applications existantes.",
+        "subtitle": "Intégrez les widgets de chat Raghim AI directement dans vos applications existantes.",
         "basic": "Intégration de Widget de Base",
         "custom_styling": "Style Personnalisé"
       },
@@ -2312,12 +2312,12 @@
     },
     "quick_start": {
       "meta": { 
-        "title": "Guide de Démarrage Rapide - Système RAG Entreprise RaghimAI",
-        "description": "Guide de démarrage rapide pour le Système RAG Entreprise RaghimAI - opérationnel en quelques minutes"
+        "title": "Guide de Démarrage Rapide - Plateforme d'agents IA entreprise Raghim AI",
+        "description": "Guide de démarrage rapide pour le Plateforme d'agents IA entreprise Raghim AI - opérationnel en quelques minutes"
       },
       "header": {
         "title": "Guide de Démarrage Rapide",
-        "subtitle": "Mettez le Système RAG Entreprise RaghimAI en marche en quelques minutes"
+        "subtitle": "Mettez le Plateforme d'agents IA entreprise Raghim AI en marche en quelques minutes"
       },
       "toc": {
         "title": "Étapes de Démarrage Rapide",
@@ -2351,9 +2351,9 @@
       },
       "installation": {
         "title": "Installation",
-        "subtitle": "Déployez RaghimAI Entreprise en utilisant le package hors ligne.",
+        "subtitle": "Déployez Raghim AI Entreprise en utilisant le package hors ligne.",
         "download": "Télécharger le Package",
-        "download_desc": "Téléchargez le package entreprise hors ligne auprès de votre représentant RaghimAI.",
+        "download_desc": "Téléchargez le package entreprise hors ligne auprès de votre représentant Raghim AI.",
         "run_installer": "Exécuter l'Installeur",
         "run_installer_desc": "Exécutez l'installeur interactif pour une configuration guidée.",
         "note_label": "Remarque :",
@@ -2363,13 +2363,13 @@
       },
       "configuration": {
         "title": "Configuration",
-        "subtitle": "Configurez votre système RaghimAI Entreprise pour votre environnement.",
+        "subtitle": "Configurez votre système Raghim AI Entreprise pour votre environnement.",
         "env_vars": "Variables d'Environnement",
         "admin_setup": "Configuration Utilisateur Admin"
       },
       "first_steps": {
         "title": "Premiers Pas",
-        "subtitle": "Commencez à utiliser votre système RaghimAI Entreprise.",
+        "subtitle": "Commencez à utiliser votre système Raghim AI Entreprise.",
         "access": "Accéder au Système",
         "access_desc": "Ouvrez votre navigateur et naviguez vers l'URL frontend.",
         "frontend": "Frontend :",
@@ -2417,12 +2417,12 @@
     },
     "configuration": {
       "meta": { 
-        "title": "Guide de Configuration - Système RAG Entreprise RaghimAI",
-        "description": "Guide de configuration pour le Système RAG Entreprise RaghimAI - paramètres système et personnalisation"
+        "title": "Guide de Configuration - Plateforme d'agents IA entreprise Raghim AI",
+        "description": "Guide de configuration pour le Plateforme d'agents IA entreprise Raghim AI - paramètres système et personnalisation"
       },
       "header": {
         "title": "Guide de Configuration",
-        "subtitle": "Guide de configuration complet pour le Système RAG Entreprise RaghimAI"
+        "subtitle": "Guide de configuration complet pour le Plateforme d'agents IA entreprise Raghim AI"
       },
       "toc": {
         "title": "Sujets de Configuration",
@@ -2479,12 +2479,12 @@
     },
     "api_reference": {
       "meta": { 
-        "title": "Référence API - Système RAG Entreprise RaghimAI",
-        "description": "Référence API complète pour le Système RAG Entreprise RaghimAI - authentification, documents, chat et endpoints de chat en direct"
+        "title": "Référence API - Plateforme d'agents IA entreprise Raghim AI",
+        "description": "Référence API complète pour le Plateforme d'agents IA entreprise Raghim AI - authentification, documents, chat et endpoints de chat en direct"
       },
       "header": {
         "title": "Référence API",
-        "subtitle": "Documentation API complète pour le Système RAG Entreprise RaghimAI"
+        "subtitle": "Documentation API complète pour le Plateforme d'agents IA entreprise Raghim AI"
       },
       "toc": {
         "title": "Endpoints API",
@@ -2576,12 +2576,12 @@
     },
     "troubleshooting": {
       "meta": { 
-        "title": "Dépannage - Système RAG Entreprise RaghimAI",
-        "description": "Guide de dépannage pour le Système RAG Entreprise RaghimAI - problèmes courants et solutions"
+        "title": "Dépannage - Plateforme d'agents IA entreprise Raghim AI",
+        "description": "Guide de dépannage pour le Plateforme d'agents IA entreprise Raghim AI - problèmes courants et solutions"
       },
       "header": {
         "title": "Guide de Dépannage",
-        "subtitle": "Problèmes courants et solutions pour le Système RAG Entreprise RaghimAI"
+        "subtitle": "Problèmes courants et solutions pour le Plateforme d'agents IA entreprise Raghim AI"
       },
       "toc": {
         "title": "Liens Rapides",
@@ -2627,7 +2627,7 @@
         "postgresql_connection_failed_symptoms": "Symptômes : Erreurs de connexion base de données dans les logs",
         "redis_connection_issues": "Problèmes Connexion Redis",
         "redis_connection_issues_symptoms": "Symptômes : Les opérations de cache échouent",
-        "chromadb_issues": "Problèmes ChromaDB",
+        "chromadb_issues": "Problèmes pgvector",
         "chromadb_issues_symptoms": "Symptômes : La recherche vectorielle ne fonctionne pas"
       },
       "gpu_issues": {
@@ -2637,7 +2637,7 @@
         "gpu_memory_issues": "Problèmes Mémoire GPU",
         "gpu_memory_issues_symptoms": "Symptômes : Erreurs CUDA mémoire insuffisante",
         "external_gpu_connection": "Connexion GPU Externe",
-        "external_gpu_connection_symptoms": "Symptômes : Ollama GPU externe non accessible"
+        "external_gpu_connection_symptoms": "Symptômes : model provider GPU externe non accessible"
       },
       "authentication_issues": {
         "title": "Problèmes d'Authentification",
@@ -2687,12 +2687,12 @@
     },
     "examples": {
       "meta": { 
-        "title": "Exemples d'Intégration - Système RAG Entreprise RaghimAI",
-        "description": "Exemples d'intégration pour le Système RAG Entreprise RaghimAI - échantillons de code pratiques et cas d'usage"
+        "title": "Exemples d'Intégration - Plateforme d'agents IA entreprise Raghim AI",
+        "description": "Exemples d'intégration pour le Plateforme d'agents IA entreprise Raghim AI - échantillons de code pratiques et cas d'usage"
       },
       "header": {
         "title": "Exemples d'Intégration",
-        "subtitle": "Exemples pratiques et échantillons de code pour l'intégration RaghimAI Entreprise"
+        "subtitle": "Exemples pratiques et échantillons de code pour l'intégration Raghim AI Entreprise"
       },
       "toc": {
         "title": "Exemples",
@@ -2723,7 +2723,7 @@
       },
       "widget": {
         "title": "Intégration Widget",
-        "subtitle": "Intégrez les widgets RaghimAI dans vos applications.",
+        "subtitle": "Intégrez les widgets Raghim AI dans vos applications.",
         "basic_widget": "Widget Basique",
         "custom_styled_widget": "Widget Style Personnalisé"
       },
@@ -2736,12 +2736,12 @@
     },
     "best_practices": {
       "meta": { 
-        "title": "Bonnes Pratiques - Système RAG Entreprise RaghimAI",
-        "description": "Bonnes pratiques pour le Système RAG Entreprise RaghimAI - optimisation, sécurité et directives de déploiement"
+        "title": "Bonnes Pratiques - Plateforme d'agents IA entreprise Raghim AI",
+        "description": "Bonnes pratiques pour le Plateforme d'agents IA entreprise Raghim AI - optimisation, sécurité et directives de déploiement"
       },
       "header": {
         "title": "Bonnes Pratiques",
-        "subtitle": "Bonnes pratiques d'optimisation, sécurité et déploiement pour RaghimAI Entreprise"
+        "subtitle": "Bonnes pratiques d'optimisation, sécurité et déploiement pour Raghim AI Entreprise"
       },
       "toc": {
         "title": "Bonnes Pratiques",

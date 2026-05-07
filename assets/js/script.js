@@ -1,6 +1,19 @@
-// RaghimAI Enterprise Documentation JavaScript
+// Raghim AI Enterprise Documentation JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Add lightweight docs metadata chips for stronger trust framing.
+    const pageHeader = document.querySelector('.page-header');
+    if (pageHeader && !document.querySelector('.doc-meta')) {
+        const meta = document.createElement('div');
+        meta.className = 'doc-meta';
+        meta.innerHTML = [
+            '<span class="doc-chip">Platform v2.0.5</span>',
+            '<span class="doc-chip">Enterprise Docs</span>',
+            '<span class="doc-chip">Updated 2026</span>'
+        ].join('');
+        pageHeader.appendChild(meta);
+    }
+
     // Mobile navigation toggle
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -76,14 +89,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Sidebar TOC active highlighting for docs pages.
+    function updateActiveToc() {
+        const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+        if (!tocLinks.length) return;
+        const sections = Array.from(document.querySelectorAll('section[id]'));
+        const scrollPos = window.scrollY + 160;
+        let activeId = null;
+        sections.forEach(section => {
+            if (scrollPos >= section.offsetTop) activeId = section.id;
+        });
+        tocLinks.forEach(link => {
+            const isActive = activeId && link.getAttribute('href') === `#${activeId}`;
+            link.classList.toggle('active', Boolean(isActive));
+        });
+    }
+
     // Throttled scroll event for performance
     let scrollTimeout;
     window.addEventListener('scroll', function() {
         if (scrollTimeout) {
             clearTimeout(scrollTimeout);
         }
-        scrollTimeout = setTimeout(updateActiveNav, 10);
+        scrollTimeout = setTimeout(() => {
+            updateActiveNav();
+            updateActiveToc();
+        }, 10);
     });
+    updateActiveToc();
 
     // Intersection Observer for animations
     const observerOptions = {
@@ -312,8 +345,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeLazyLoading();
 
     // Console welcome message
-    console.log('%cRaghimAI Enterprise RAG System', 'color: #2563eb; font-size: 16px; font-weight: bold;');
-    console.log('%cDocumentation v1.0.26', 'color: #64748b; font-size: 12px;');
+    console.log('%cRaghim AI Enterprise Agent Platform', 'color: #2563eb; font-size: 16px; font-weight: bold;');
+    console.log('%cDocumentation v2.0.5', 'color: #64748b; font-size: 12px;');
     console.log('%cBuilt with ❤️ for enterprise AI solutions', 'color: #10b981; font-size: 12px;');
 });
 
