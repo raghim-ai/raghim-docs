@@ -104,6 +104,16 @@
                                     <li data-translate="best_practices.deployment.update_management.document_procedures">Document update procedures</li>
                                 </ul>
                             </div>
+
+                            <div class="security-card">
+                                <h3 data-translate="best_practices.deployment.optional_services.title">Optional Services Management</h3>
+                                <ul>
+                                    <li data-translate="best_practices.deployment.optional_services.monitoring">Enable the monitoring stack only when your host has sufficient resources (adds ~2–4 GB RAM)</li>
+                                    <li data-translate="best_practices.deployment.optional_services.connector_logs">Review connector service logs regularly for integration errors</li>
+                                    <li data-translate="best_practices.deployment.optional_services.disable_unused">Disable unused connector integrations to reduce the attack surface</li>
+                                    <li data-translate="best_practices.deployment.optional_services.profiles">Use Docker Compose profile flags to control which optional services start on boot</li>
+                                </ul>
+                            </div>
                         </div>
                     </section>
 
@@ -140,6 +150,17 @@
                                 <li><strong data-translate="best_practices.security.network.ddos_label">DDoS Protection:</strong> <span data-translate="best_practices.security.network.ddos">Implement DDoS protection</span></li>
                             </ul>
                         </div>
+
+                        <div class="integration-section">
+                            <h3 data-translate="best_practices.security.api_integration">API & Integration Security</h3>
+                            <ul>
+                                <li><strong data-translate="best_practices.security.api.docs_label">Disable API docs in production:</strong> <span data-translate="best_practices.security.api.docs">Set <code>ENABLE_API_DOCS=false</code> to hide <code>/docs</code> and <code>/redoc</code> from public access</span></li>
+                                <li><strong data-translate="best_practices.security.api.cors_label">Scope CORS precisely:</strong> <span data-translate="best_practices.security.api.cors">Set <code>ALLOWED_ORIGINS</code> to your exact domain list — never use wildcards in production</span></li>
+                                <li><strong data-translate="best_practices.security.api.widget_label">Widget domain control:</strong> <span data-translate="best_practices.security.api.widget">Only add trusted domains to <code>WIDGET_DOMAINS</code>; remove domains when embedding is no longer required</span></li>
+                                <li><strong data-translate="best_practices.security.api.connector_label">Connector least-privilege:</strong> <span data-translate="best_practices.security.api.connector">Grant workflow connectors only the minimum permissions needed for each integration; disable unused connectors</span></li>
+                                <li><strong data-translate="best_practices.security.api.jwt_label">Rotate JWT secret periodically:</strong> <span data-translate="best_practices.security.api.jwt">Rotate <code>JWT_SECRET_KEY</code> as part of your credential rotation schedule; all active sessions are invalidated on rotation</span></li>
+                            </ul>
+                        </div>
                     </section>
 
                     <section id="performance">
@@ -155,7 +176,9 @@ GPU_MEMORY_FRACTION=0.85
 WORKER_COUNT=4
 THREAD_POOL_SIZE=16
 BATCH_SIZE=32
-CACHE_TTL=3600</code></pre>
+CACHE_TTL=3600
+# Disable API documentation in production
+ENABLE_API_DOCS=false</code></pre>
                             </div>
                         </div>
 
@@ -238,6 +261,8 @@ CACHE_TTL=3600</code></pre>
                                 <li><strong data-translate="best_practices.monitoring.system.performance_metrics_label">Performance Metrics:</strong> <span data-translate="best_practices.monitoring.system.performance_metrics">Monitor CPU, memory, and disk usage</span></li>
                                 <li><strong data-translate="best_practices.monitoring.system.error_tracking_label">Error Tracking:</strong> <span data-translate="best_practices.monitoring.system.error_tracking">Set up error monitoring and alerting</span></li>
                                 <li><strong data-translate="best_practices.monitoring.system.log_analysis_label">Log Analysis:</strong> <span data-translate="best_practices.monitoring.system.log_analysis">Regular log review and analysis</span></li>
+                                <li><strong data-translate="best_practices.monitoring.system.worker_label">Worker monitoring:</strong> <span data-translate="best_practices.monitoring.system.worker">Monitor the <code>rag-worker</code> container alongside core services — document processing failures surface here first: <code>docker logs rag-worker</code></span></li>
+                                <li><strong data-translate="best_practices.monitoring.system.connector_label">Connector service health:</strong> <span data-translate="best_practices.monitoring.system.connector">Periodically verify all connector service containers are running; failures here cause agent flow tool calls to fail silently</span></li>
                             </ul>
                         </div>
 

@@ -80,7 +80,7 @@
                                 <ul>
                                     <li><strong data-translate="quick_start.prerequisites.docker">Docker:</strong> <span data-translate="quick_start.prerequisites.docker_value">20.10+</span></li>
                                     <li><strong data-translate="quick_start.prerequisites.docker_compose">Docker Compose:</strong> <span data-translate="quick_start.prerequisites.docker_compose_value">2.0+</span></li>
-                                    <li><strong data-translate="quick_start.prerequisites.python">Python:</strong> <span data-translate="quick_start.prerequisites.python_value">3.7+</span></li>
+                                    <li><strong data-translate="quick_start.prerequisites.python">Python:</strong> <span data-translate="quick_start.prerequisites.python_value">3.10+</span></li>
                                     <li><strong data-translate="quick_start.prerequisites.git">Git:</strong> <span data-translate="quick_start.prerequisites.git_value">Latest version</span></li>
                                 </ul>
                             </div>
@@ -99,8 +99,8 @@
                                     <p data-translate="quick_start.installation.download_desc">Download the offline enterprise package from your Raghim AI representative.</p>
                                     <div class="code-block">
                                         <pre><code># Extract the package
-tar -xzf rag-enterprise-2.0.5-offline-managed-local.tar.gz
-cd rag-enterprise-2.0.5-offline-managed-local</code></pre>
+tar -xzf rag-enterprise-&lt;version&gt;-offline.tar.gz
+cd rag-enterprise-&lt;version&gt;-offline</code></pre>
                                     </div>
                                 </div>
                             </div>
@@ -109,13 +109,16 @@ cd rag-enterprise-2.0.5-offline-managed-local</code></pre>
                                 <div class="step-number">2</div>
                                 <div class="step-content">
                                     <h3 data-translate="quick_start.installation.run_installer">Run Installer</h3>
-                                    <p data-translate="quick_start.installation.run_installer_desc">Execute the interactive installer for guided setup.</p>
+                                    <p data-translate="quick_start.installation.run_installer_desc">Execute the interactive installer (<code>INSTALL.sh</code>) for guided setup, or run <code>DEPLOY.sh</code> for automated non-interactive deployment.</p>
                                     <div class="code-block">
-                                        <pre><code># Launch interactive installer
-./deploy.sh</code></pre>
+                                        <pre><code># Interactive guided setup (recommended for first deployment):
+./INSTALL.sh
+
+# Or non-interactive automated deployment (auto-detects IP/network):
+./DEPLOY.sh</code></pre>
                                     </div>
                                     <div class="info-box">
-                                        <strong data-translate="quick_start.installation.note_label">Note:</strong> <span data-translate="quick_start.installation.note">The installer will guide you through license acceptance and configuration.</span>
+                                        <strong data-translate="quick_start.installation.note_label">Note:</strong> <span data-translate="quick_start.installation.note">The interactive installer guides you through environment configuration and deployment. <code>DEPLOY.sh</code> auto-detects your network configuration and generates a secure <code>.env</code> file automatically.</span>
                                     </div>
                                 </div>
                             </div>
@@ -142,10 +145,9 @@ cd rag-enterprise-2.0.5-offline-managed-local</code></pre>
                             <h3 data-translate="quick_start.configuration.env_vars">Environment Variables</h3>
                             <div class="code-block">
                                 <pre><code># Essential configuration
-LICENSE_KEY=your-license-key
 JWT_SECRET_KEY=your-secret-key
-DATABASE_PASSWORD=secure-password
-CACHE_PASSWORD=secure-password
+POSTGRES_PASSWORD=your-secure-password
+REDIS_PASSWORD=your-secure-password
 
 # Optional configuration
 LLM_PROVIDER=&lt;approved-provider&gt;
@@ -155,17 +157,14 @@ API_URL=https://&lt;api-domain&gt;</code></pre>
                         </div>
 
                         <div class="integration-section">
-                            <h3 data-translate="quick_start.configuration.admin_setup">Admin User Setup</h3>
+                            <h3 data-translate="quick_start.configuration.admin_setup">Default Administrator Account</h3>
+                            <p data-translate="quick_start.configuration.admin_setup_desc">A default administrator account is created automatically during first boot by the database initialisation script.</p>
                             <div class="code-block">
-                                <pre><code># Create admin user
-curl -X POST https://&lt;api-domain&gt;/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "admin",
-    "password": "secure-password",
-    "email": "admin@yourcompany.com",
-    "role": "admin"
-  }'</code></pre>
+                                <pre><code>Username: admin
+Password: admin (temporary — you will be required to change this on first login)</code></pre>
+                            </div>
+                            <div class="warning-box" style="margin-top:1rem;">
+                                <strong>Security:</strong> Log in with the default credentials immediately after deployment and set a strong password. The system enforces a mandatory password change on first login and will not grant access until it is completed. Do not leave the default credentials in place on any internet-facing or production system.
                             </div>
                         </div>
                     </section>

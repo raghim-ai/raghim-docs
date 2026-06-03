@@ -61,6 +61,16 @@
                         <li><a href="#admin" data-translate="api_reference.toc.admin">Admin Functions</a></li>
                         <li><a href="#analytics" data-translate="api_reference.toc.analytics">Analytics</a></li>
                         <li><a href="#widgets" data-translate="api_reference.toc.widgets">Widgets</a></li>
+                        <li><a href="#agent-flows" data-translate="api_reference.toc.agent_flows">Agent Flows</a></li>
+                        <li><a href="#mcp-tools" data-translate="api_reference.toc.mcp_tools">MCP Tools</a></li>
+                        <li><a href="#voice" data-translate="api_reference.toc.voice">Voice</a></li>
+                        <li><a href="#campaigns" data-translate="api_reference.toc.campaigns">Campaigns</a></li>
+                        <li><a href="#organizations" data-translate="api_reference.toc.organizations">Organizations</a></li>
+                        <li><a href="#collections-mgmt" data-translate="api_reference.toc.collections_mgmt">Collections</a></li>
+                        <li><a href="#conversations" data-translate="api_reference.toc.conversations">Conversations</a></li>
+                        <li><a href="#sso" data-translate="api_reference.toc.sso">SSO</a></li>
+                        <li><a href="#compliance-consent" data-translate="api_reference.toc.compliance_consent">Compliance & Consent</a></li>
+                        <li><a href="#license" data-translate="api_reference.toc.license">License</a></li>
                     </ul>
                 </nav>
 
@@ -465,6 +475,360 @@ FormData:
                                 </div>
                                 <div class="endpoint-description">
                                     <p data-translate="api_reference.widgets.embed_desc">Get widget embed code</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="agent-flows">
+                        <h2 data-translate="api_reference.agent_flows.title">Agent Flows</h2>
+                        <p data-translate="api_reference.agent_flows.subtitle">Create, trigger, and monitor agent flows — multi-step automated pipelines that combine RAG retrieval, tool execution, conditional logic, and human approval steps.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/agent/&lt;flows-list-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p data-translate="api_reference.agent_flows.list_desc">List available agent flows for the authenticated user</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4 data-translate="api_reference.authentication.response">Response:</h4>
+                                    <div class="code-block">
+                                        <pre><code>[
+  {
+    "note": "Representative structure only",
+    "details": "Field-level contracts are shared with approved integrators"
+  }
+]</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/agent/&lt;flow-run-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p data-translate="api_reference.agent_flows.run_desc">Trigger an agent flow run (streaming SSE response)</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/agent/&lt;flow-run-status-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Check the status of a running or completed flow run</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="mcp-tools">
+                        <h2 data-translate="api_reference.mcp_tools.title">MCP Tools</h2>
+                        <p data-translate="api_reference.mcp_tools.subtitle">Manage Model Context Protocol (MCP) server configurations and available tool registrations.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/mcp-tools/&lt;list-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>List configured MCP servers and their available tools</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/mcp-tools/&lt;configure-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Register or update an MCP server configuration</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="voice">
+                        <h2 data-translate="api_reference.voice.title">Voice</h2>
+                        <p data-translate="api_reference.voice.subtitle">Speech-to-text transcription and text-to-speech synthesis endpoints.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/voice/&lt;transcription-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Transcribe audio to text (speech-to-text)</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4 data-translate="api_reference.documents.request">Request:</h4>
+                                    <div class="code-block">
+                                        <pre><code>Content-Type: multipart/form-data
+FormData:
+- audio: File (audio recording)
+- language: string (optional)</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/voice/&lt;synthesis-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Synthesise text to audio (text-to-speech)</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="campaigns">
+                        <h2 data-translate="api_reference.campaigns.title">Campaigns</h2>
+                        <p data-translate="api_reference.campaigns.subtitle">Email campaign management, delivery tracking, and analytics.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/campaigns/&lt;create-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Create and schedule an email campaign</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/campaigns/&lt;status-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Get campaign delivery status and analytics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="organizations">
+                        <h2 data-translate="api_reference.organizations.title">Organizations</h2>
+                        <p data-translate="api_reference.organizations.subtitle">Multi-tenant organization management, member invites, and role assignment.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/organizations/&lt;list-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>List organizations the current user belongs to</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/organizations/&lt;invite-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Invite a user to an organization with a specified role</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4 data-translate="api_reference.authentication.request_body">Request Body:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "note": "Detailed schema available in approved technical onboarding",
+  "stability": "Versioned per deployment profile"
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="collections-mgmt">
+                        <h2 data-translate="api_reference.collections_mgmt.title">Collections Management</h2>
+                        <p data-translate="api_reference.collections_mgmt.subtitle">Tag management, collection export and import for knowledge base organisation.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/collections/&lt;tag-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Add or manage tags on a document collection</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/collections/&lt;export-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Export a document collection for backup or migration</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/collections/&lt;import-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Import a previously exported document collection</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="conversations">
+                        <h2 data-translate="api_reference.conversations.title">Conversations</h2>
+                        <p data-translate="api_reference.conversations.subtitle">Retrieve and manage conversation history and transcripts.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/conversations/&lt;list-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>List conversations for the authenticated user</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method delete">DELETE</span>
+                                    <span class="path">/api/conversations/&lt;delete-operation&gt;/{conversation_id}</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Delete a conversation and its message history</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="sso">
+                        <h2 data-translate="api_reference.sso.title">Single Sign-On (SSO)</h2>
+                        <p data-translate="api_reference.sso.subtitle">OpenID Connect (OIDC) based SSO login initiation and callback handling.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/sso/&lt;login-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Initiate OIDC login — redirects to the configured identity provider</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/sso/&lt;callback-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>OIDC callback — processes identity provider response and creates session</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="compliance-consent">
+                        <h2 data-translate="api_reference.compliance_consent.title">Compliance & Consent</h2>
+                        <p data-translate="api_reference.compliance_consent.subtitle">User consent record management and compliance audit data access.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method post">POST</span>
+                                    <span class="path">/api/consent/&lt;record-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Record user consent for a given policy version</p>
+                                </div>
+                            </div>
+
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/compliance/&lt;audit-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Retrieve compliance audit logs and data access records (admin only)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="license">
+                        <h2 data-translate="api_reference.license.title">License</h2>
+                        <p data-translate="api_reference.license.subtitle">Check platform license status and active feature entitlements.</p>
+
+                        <div class="endpoint-group">
+                            <div class="endpoint-card">
+                                <div class="endpoint-header">
+                                    <span class="method get">GET</span>
+                                    <span class="path">/api/license/&lt;status-operation&gt;</span>
+                                </div>
+                                <div class="endpoint-description">
+                                    <p>Return license status and enabled feature flags for this deployment</p>
+                                </div>
+                                <div class="endpoint-body">
+                                    <h4 data-translate="api_reference.authentication.response">Response:</h4>
+                                    <div class="code-block">
+                                        <pre><code>{
+  "note": "Representative structure only",
+  "details": "Field-level contracts are shared with approved integrators"
+}</code></pre>
+                                    </div>
                                 </div>
                             </div>
                         </div>

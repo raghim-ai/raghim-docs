@@ -52,6 +52,7 @@
                         <li><a href="#offline-deployment" data-translate="deployment_guide.toc.offline">Offline Deployment</a></li>
                         <li><a href="#cloud-deployment" data-translate="deployment_guide.toc.cloud">Cloud Deployment</a></li>
                         <li><a href="#configuration" data-translate="deployment_guide.toc.configuration">Configuration</a></li>
+                        <li><a href="#optional-services" data-translate="deployment_guide.toc.optional_services">Optional Services</a></li>
                         <li><a href="#verification" data-translate="deployment_guide.toc.verification">Verification</a></li>
                         <li><a href="#troubleshooting" data-translate="deployment_guide.toc.troubleshooting">Troubleshooting</a></li>
                     </ul>
@@ -77,7 +78,7 @@
                                 <ul>
                                     <li data-translate="deployment_guide.prerequisites.software.docker"><strong>Docker:</strong> 20.10+</li>
                                     <li data-translate="deployment_guide.prerequisites.software.compose"><strong>Docker Compose:</strong> 2.0+</li>
-                                    <li data-translate="deployment_guide.prerequisites.software.python"><strong>Python:</strong> 3.7+ (for installer)</li>
+                                    <li data-translate="deployment_guide.prerequisites.software.python"><strong>Python:</strong> 3.7+ (installer scripts only; platform runs inside Docker)</li>
                                     <li data-translate="deployment_guide.prerequisites.software.git"><strong>Git:</strong> Latest version</li>
                                 </ul>
                             </div>
@@ -311,10 +312,6 @@ docker-compose -f runpod-docker-compose.yml up -d</code></pre>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><code>LICENSE_KEY</code></td>
-                                            <td data-translate="deployment_guide.configuration.env.license.desc">Your enterprise license key</td>
-                                            <td data-translate="deployment_guide.configuration.env.required">Required</td>
-                                        </tr>
                                         <tr>
                                             <td><code>JWT_SECRET_KEY</code></td>
                                             <td data-translate="deployment_guide.configuration.env.jwt.desc">JWT secret for authentication</td>
@@ -358,16 +355,15 @@ docker-compose -f runpod-docker-compose.yml up -d</code></pre>
                         <div class="config-section">
                             <h3 data-translate="deployment_guide.configuration.models.title">Model Configuration</h3>
                             <div class="code-block">
-                                <pre><code># Default models (can be overridden)
-EMBEDDING_MODEL=paraphrase-multilingual:278m-mpnet-base-v2-fp16
-LLM_MODEL=llama3.2:3b-instruct-q4_K_M
-TRANSLATION_MODEL=aya:8b
+                                <pre><code># Default models (override in .env)
+EMBEDDING_MODEL=BAAI/bge-m3
+VLLM_MODEL=mistralai/Mistral-Small-Instruct-2409
+VLLM_BASE_URL=http://host.docker.internal:8000
 
-# GPU optimization settings
-LLM_TOKENS_RAG=&lt;profile-default&gt;
-LLM_REASONING_MODE=&lt;policy-default&gt;
-LLM_TOKENS_SQL=&lt;profile-default&gt;
-LLM_TOKENS_HYBRID=&lt;profile-default&gt;</code></pre>
+# Token and reasoning tuning (when LLM_PROVIDER=openai)
+OPENAI_TIER_HYBRID_TOKENS=&lt;profile-default&gt;
+OPENAI_RAG_REASONING_EFFORT=&lt;policy-default&gt;
+LLM_TOKENS_SQL=&lt;profile-default&gt;</code></pre>
                             </div>
                         </div>
                     </section>
@@ -389,6 +385,37 @@ curl -s https://&lt;api-domain&gt;/&lt;health-endpoint&gt;
 
 # 4) Tail logs during first boot
 docker compose logs -f &lt;backend-service&gt;</code></pre>
+                        </div>
+                    </section>
+
+                    <section id="optional-services">
+                        <h2>Optional &amp; Bundled Services</h2>
+
+                        <div class="integration-section">
+                            <h3>Monitoring Stack</h3>
+                            <p>The deployment package includes an optional monitoring stack (Prometheus, Grafana, Sentry) that can be enabled via Docker Compose profiles. These services are disabled by default to conserve resources on smaller deployments.</p>
+                            <div class="code-block">
+                                <pre><code># Enable monitoring stack (Prometheus + Grafana + Sentry + exporters)
+docker compose --profile monitoring up -d
+
+# Check monitoring services
+docker ps | grep -E "rag-prometheus|rag-grafana|rag-sentry"</code></pre>
+                            </div>
+                            <div class="info-box">
+                                <strong>Resource note:</strong> The monitoring stack adds approximately 2–4 GB RAM overhead. Ensure your host has sufficient capacity before enabling.
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3>Workflow Connector Services</h3>
+                            <p>The platform includes bundled workflow automation and connector services that start automatically alongside the core stack. These power the agent flow, MCP tool execution, and external integration features. No additional configuration is required for basic operation; connector-specific settings are managed through the Admin interface.</p>
+                            <div class="code-block">
+                                <pre><code># Verify all services including connectors are running
+docker compose ps
+
+# Check connector service logs if agent flows fail
+docker compose logs --tail=50</code></pre>
+                            </div>
                         </div>
                     </section>
 
@@ -430,7 +457,7 @@ docker-compose -f docker-compose/docker-compose.yml logs -f</code></pre>
                                         <strong data-translate="deployment_guide.verification.urls.health.label">Health Check:</strong> <code>https://&lt;api-domain&gt;/health</code>
                                     </div>
                                     <div class="url-item">
-                                        <strong data-translate="deployment_guide.verification.urls.chromadb.label">pgvector:</strong> <code>https://&lt;app-domain&gt;:8001</code>
+                                        <strong data-translate="deployment_guide.verification.urls.health.label">Worker Status:</strong> <code>docker logs rag-worker</code>
                                     </div>
                                 </div>
                             </div>
@@ -484,14 +511,15 @@ docker-compose -f docker-compose/docker-compose.yml logs -f</code></pre>
 
                             <div class="issue-card">
                                 <h3 data-translate="deployment_guide.troubleshooting.db.title">Database Connection</h3>
-                                <p><strong data-translate="deployment_guide.troubleshooting.symptoms">Symptoms:</strong> <span data-translate="deployment_guide.troubleshooting.db.symptoms">Database connection errors</span></p>
+                                <p><strong data-translate="deployment_guide.troubleshooting.symptoms">Symptoms:</strong> <span data-translate="deployment_guide.troubleshooting.db.symptoms">Database connection errors or vector search failures</span></p>
                                 <div class="solution">
                                     <h4 data-translate="deployment_guide.troubleshooting.solutions">Solutions:</h4>
                                     <ul>
-                                        <li data-translate="deployment_guide.troubleshooting.db.status">Check PostgreSQL container status</li>
-                                        <li data-translate="deployment_guide.troubleshooting.db.credentials">Verify database credentials</li>
-                                        <li data-translate="deployment_guide.troubleshooting.db.network">Check network connectivity</li>
-                                        <li data-translate="deployment_guide.troubleshooting.db.logs">Review database logs</li>
+                                        <li data-translate="deployment_guide.troubleshooting.db.status">Check PostgreSQL container status: <code>docker logs rag-postgres</code></li>
+                                        <li data-translate="deployment_guide.troubleshooting.db.credentials">Verify database credentials in .env</li>
+                                        <li data-translate="deployment_guide.troubleshooting.db.network">Check network connectivity between containers</li>
+                                        <li data-translate="deployment_guide.troubleshooting.db.logs">Review database logs: <code>docker ps | grep rag-postgres</code></li>
+                                        <li>Note: pgvector is integrated into PostgreSQL — no separate vector database container or port is used</li>
                                     </ul>
                                 </div>
                             </div>

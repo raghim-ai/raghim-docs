@@ -12,7 +12,8 @@
       "best_practices": "Best Practices",
       "quick_start": "Quick Start",
       "configuration": "Configuration",
-      "examples": "Examples"
+      "examples": "Examples",
+      "brand": "Raghim AI Enterprise"
     },
     "hero": {
       "title": "Enterprise Agent Platform",
@@ -77,6 +78,34 @@
         "compliance": "financial compliance workflow support",
         "aml": "regulated workflow integration capabilities",
         "encryption": "Client-side encryption for PII"
+      },
+      "agent_flows": "Agent Flows & Automation",
+      "agent_flows_items": {
+        "builder": "Visual no-code flow builder",
+        "conditional": "Conditional logic and branching",
+        "scheduled": "Scheduled and event-triggered flows",
+        "approval": "Human approval step support"
+      },
+      "connectors": "External Connectors & MCP Tools",
+      "connectors_items": {
+        "mcp": "Model Context Protocol (MCP) tool support",
+        "workflow": "Workflow automation connector platform",
+        "sql": "Natural-language SQL database queries",
+        "api": "External API and service integrations"
+      },
+      "voice": "Voice Interface",
+      "voice_items": {
+        "stt": "Speech-to-text transcription",
+        "tts": "Text-to-speech synthesis",
+        "rag": "Voice-enabled RAG queries",
+        "multilingual": "Multilingual voice support"
+      },
+      "campaigns": "Email Campaign Management",
+      "campaigns_items": {
+        "delivery": "Targeted email campaign delivery",
+        "bounce": "Bounce tracking and management",
+        "analytics": "Campaign analytics and reporting",
+        "sender": "Configurable sender profiles"
       }
     },
     "security": {
@@ -156,7 +185,9 @@
         "ai": "AI Processing",
         "ai_desc": "Intelligent document analysis and response generation",
         "communication": "Communication",
-        "communication_desc": "Real-time messaging and collaboration features"
+        "communication_desc": "Real-time messaging and collaboration features",
+        "automation": "Automation & Connectors",
+        "automation_desc": "Agent flows, MCP tool integration, and workflow connector management"
       },
       "integration_methods": "Integration Methods",
       "methods": {
@@ -205,19 +236,24 @@
       "documentation_links": {
         "integration_guide": "Integration Guide",
         "deployment_guide": "Deployment Guide",
-        "troubleshooting": "Troubleshooting"
+        "troubleshooting": "Troubleshooting",
+        "api_reference": "API Reference"
       },
       "support": "Support",
       "support_links": {
         "contact": "Contact",
         "security": "Security",
-        "best_practices": "Best Practices"
+        "best_practices": "Best Practices",
+        "technical_support": "Technical Support",
+        "enterprise_support": "Enterprise Support"
       },
-      "copyright": "© 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5"
-    }
-    ,
+      "copyright": "© 2026 Raghim AI. All rights reserved. Enterprise Agent Platform v2.0.5",
+      "brand": "Raghim AI Enterprise Agent Platform"
+    },
     "deployment_guide": {
-      "meta": { "title": "Deployment Guide - Raghim AI Enterprise Agent Platform" },
+      "meta": {
+        "title": "Deployment Guide - Raghim AI Enterprise Agent Platform"
+      },
       "header": {
         "title": "Deployment Guide",
         "subtitle": "Complete guide for deploying Raghim AI Enterprise Agent Platform"
@@ -230,7 +266,8 @@
         "cloud": "Cloud Deployment",
         "configuration": "Configuration",
         "verification": "Verification",
-        "troubleshooting": "Troubleshooting"
+        "troubleshooting": "Troubleshooting",
+        "optional_services": "Optional Services"
       },
       "prerequisites": {
         "title": "Prerequisites",
@@ -302,7 +339,9 @@
               "monitoring": "• Security Event Monitoring"
             }
           },
-          "compliance": { "title": "Compliance & Standards" }
+          "compliance": {
+            "title": "Compliance & Standards"
+          }
         },
         "overview": {
           "title": "Architecture Overview",
@@ -347,7 +386,9 @@
               "image": "Choose Ubuntu 20.04+ image",
               "ssh": "Configure SSH access"
             },
-            "ssh": { "title": "Setup SSH Tunnel" }
+            "ssh": {
+              "title": "Setup SSH Tunnel"
+            }
           }
         },
         "runpod": {
@@ -359,7 +400,9 @@
               "template": "Use RunPod PyTorch template",
               "network": "Configure network access"
             },
-            "deploy": { "title": "Deploy with RunPod Config" }
+            "deploy": {
+              "title": "Deploy with RunPod Config"
+            }
           }
         }
       },
@@ -373,32 +416,63 @@
             "description": "Description",
             "default": "Default"
           },
-          "license": { "desc": "Your enterprise license key" },
-          "jwt": { "desc": "JWT secret for authentication" },
-          "postgres": { "desc": "Database password" },
-          "redis": { "desc": "Redis cache password" },
-          "gpu": { "desc": "Enable GPU acceleration" },
-          "frontend": { "desc": "Frontend access URL" },
-          "api": { "desc": "Backend API URL" },
-          "widget": { "desc": "Widget embedding domains" },
+          "license": {
+            "desc": "Your enterprise license key"
+          },
+          "jwt": {
+            "desc": "JWT secret for authentication"
+          },
+          "postgres": {
+            "desc": "Database password"
+          },
+          "redis": {
+            "desc": "Redis cache password"
+          },
+          "gpu": {
+            "desc": "Enable GPU acceleration"
+          },
+          "frontend": {
+            "desc": "Frontend access URL"
+          },
+          "api": {
+            "desc": "Backend API URL"
+          },
+          "widget": {
+            "desc": "Widget embedding domains"
+          },
           "generated": "Generated",
           "required": "Required",
           "true": "true",
           "empty": "Empty"
         },
-        "models": { "title": "Model Configuration" }
+        "models": {
+          "title": "Model Configuration"
+        }
       },
       "verification": {
         "title": "Deployment Verification",
         "subtitle": "Verify your deployment is working correctly using the provided health checks.",
-        "health": { "title": "Health Check", "desc": "This will check all services and provide status information." },
-        "status": { "title": "Service Status" },
+        "health": {
+          "title": "Health Check",
+          "desc": "This will check all services and provide status information."
+        },
+        "status": {
+          "title": "Service Status"
+        },
         "urls": {
           "title": "Access URLs",
-          "frontend": { "label": "Frontend:" },
-          "api": { "label": "Backend API:" },
-          "health": { "label": "Health Check:" },
-          "chromadb": { "label": "pgvector:" }
+          "frontend": {
+            "label": "Frontend:"
+          },
+          "api": {
+            "label": "Backend API:"
+          },
+          "health": {
+            "label": "Health Check:"
+          },
+          "chromadb": {
+            "label": "pgvector:"
+          }
         }
       },
       "troubleshooting": {
@@ -440,7 +514,9 @@
       }
     },
     "security_guide": {
-      "meta": { "title": "Security Guide - Raghim AI Enterprise Agent Platform" },
+      "meta": {
+        "title": "Security Guide - Raghim AI Enterprise Agent Platform"
+      },
       "header": {
         "title": "Security Guide",
         "subtitle": "Comprehensive security guide for Raghim AI Enterprise Agent Platform"
@@ -500,7 +576,9 @@
       "authorization": {
         "title": "Authorization",
         "subtitle": "Role-based access control and permission management.",
-        "rbac": { "title": "Role-Based Access Control (RBAC)" },
+        "rbac": {
+          "title": "Role-Based Access Control (RBAC)"
+        },
         "org_perms": {
           "title": "Organization-Level Permissions",
           "admin": "Organization Admin: Full organization control",
@@ -552,7 +630,9 @@
       "network": {
         "title": "Network Security",
         "subtitle": "Network-level security controls and protection mechanisms.",
-        "firewall": { "title": "Firewall Configuration" },
+        "firewall": {
+          "title": "Firewall Configuration"
+        },
         "ip_controls": {
           "title": "IP Access Controls",
           "whitelist": "IP Whitelisting: Restrict access to specific IP ranges",
@@ -560,7 +640,9 @@
           "vpn": "VPN Detection: Detect and block VPN traffic",
           "rate": "Rate Limiting: Prevent abuse and DDoS attacks"
         },
-        "cors": { "title": "CORS Configuration" }
+        "cors": {
+          "title": "CORS Configuration"
+        }
       },
       "audit": {
         "title": "Audit Logging",
@@ -654,7 +736,9 @@
               "monitoring": "• Security Event Monitoring"
             }
           },
-          "compliance": { "title": "Compliance & Standards" }
+          "compliance": {
+            "title": "Compliance & Standards"
+          }
         },
         "overview": {
           "title": "Security Layer Overview",
@@ -716,7 +800,9 @@
             "features": "Features",
             "status": "Status"
           },
-          "values": { "full": "Full" },
+          "values": {
+            "full": "Full"
+          },
           "features": {
             "gdpr": "Data anonymization, consent management, right to be forgotten",
             "ccpa": "Consumer data rights, opt-out mechanisms, data transparency",
@@ -725,7 +811,9 @@
             "pci": "Payment data protection, network security, monitoring",
             "iso": "Information security management, risk assessment"
           },
-          "status": { "compliant": "✅ Compliant" }
+          "status": {
+            "compliant": "✅ Compliant"
+          }
         },
         "banking_financial": {
           "title": "Banking & Financial Compliance",
@@ -785,7 +873,7 @@
       }
     },
     "integration_guide": {
-      "meta": { 
+      "meta": {
         "title": "Integration Guide - Raghim AI Enterprise Agent Platform",
         "description": "Integration guide for Raghim AI Enterprise Agent Platform - API integration and embedding"
       },
@@ -799,7 +887,8 @@
         "widget_embedding": "Widget Embedding",
         "webhook_integration": "Webhook Integration",
         "authentication": "Authentication",
-        "examples": "Code Examples"
+        "examples": "Code Examples",
+        "automation_integration": "Automation & MCP"
       },
       "api_integration": {
         "title": "API Integration",
@@ -848,10 +937,17 @@
         "subtitle": "Practical examples for common integration scenarios.",
         "javascript": "JavaScript Integration",
         "python": "Python Integration"
+      },
+      "automation": {
+        "title": "Workflow Automation & MCP Integration",
+        "subtitle": "The platform includes a built-in workflow automation layer and Model Context Protocol (MCP) support for connecting external tools and systems.",
+        "connectors": "Workflow Connector Configuration",
+        "mcp": "MCP Tool Integration",
+        "agent_flows": "Agent Flow Triggers"
       }
     },
     "quick_start": {
-      "meta": { 
+      "meta": {
         "title": "Quick Start Guide - Raghim AI Enterprise Agent Platform",
         "description": "Quick start guide for Raghim AI Enterprise Agent Platform - get up and running in minutes"
       },
@@ -905,7 +1001,8 @@
         "title": "Configuration",
         "subtitle": "Configure your Raghim AI Enterprise system for your environment.",
         "env_vars": "Environment Variables",
-        "admin_setup": "Admin User Setup"
+        "admin_setup": "Admin User Setup",
+        "admin_setup_desc": "A default administrator account is created automatically during first boot by the database initialisation script."
       },
       "first_steps": {
         "title": "First Steps",
@@ -956,7 +1053,7 @@
       }
     },
     "configuration": {
-      "meta": { 
+      "meta": {
         "title": "Configuration Guide - Raghim AI Enterprise Agent Platform",
         "description": "Configuration guide for Raghim AI Enterprise Agent Platform - system settings and customization"
       },
@@ -1018,7 +1115,7 @@
       }
     },
     "api_reference": {
-      "meta": { 
+      "meta": {
         "title": "API Reference - Raghim AI Enterprise Agent Platform",
         "description": "Complete API reference for Raghim AI Enterprise Agent Platform - authentication, documents, chat, and live chat endpoints"
       },
@@ -1035,7 +1132,17 @@
         "banking": "Banking Integration",
         "admin": "Admin Functions",
         "analytics": "Analytics",
-        "widgets": "Widgets"
+        "widgets": "Widgets",
+        "agent_flows": "Agent Flows",
+        "mcp_tools": "MCP Tools",
+        "voice": "Voice",
+        "campaigns": "Campaigns",
+        "organizations": "Organizations",
+        "collections_mgmt": "Collections",
+        "conversations": "Conversations",
+        "sso": "SSO",
+        "compliance_consent": "Compliance & Consent",
+        "license": "License"
       },
       "authentication": {
         "title": "Authentication",
@@ -1112,10 +1219,52 @@
         "too_many_requests_desc": "Rate limit exceeded",
         "internal_server_error": "Internal Server Error",
         "internal_server_error_desc": "Server error occurred"
+      },
+      "agent_flows": {
+        "title": "Agent Flows",
+        "subtitle": "Create, trigger, and monitor agent flows — multi-step automated pipelines that combine RAG retrieval, tool execution, conditional logic, and human approval steps.",
+        "list_desc": "List available agent flows for the authenticated user",
+        "run_desc": "Trigger an agent flow run (streaming SSE response)"
+      },
+      "mcp_tools": {
+        "title": "MCP Tools",
+        "subtitle": "Manage Model Context Protocol (MCP) server configurations and available tool registrations."
+      },
+      "voice": {
+        "title": "Voice",
+        "subtitle": "Speech-to-text transcription and text-to-speech synthesis endpoints."
+      },
+      "campaigns": {
+        "title": "Campaigns",
+        "subtitle": "Email campaign management, delivery tracking, and analytics."
+      },
+      "organizations": {
+        "title": "Organizations",
+        "subtitle": "Multi-tenant organization management, member invites, and role assignment."
+      },
+      "collections_mgmt": {
+        "title": "Collections Management",
+        "subtitle": "Tag management, collection export and import for knowledge base organisation."
+      },
+      "conversations": {
+        "title": "Conversations",
+        "subtitle": "Retrieve and manage conversation history and transcripts."
+      },
+      "sso": {
+        "title": "Single Sign-On (SSO)",
+        "subtitle": "OpenID Connect (OIDC) based SSO login initiation and callback handling."
+      },
+      "compliance_consent": {
+        "title": "Compliance & Consent",
+        "subtitle": "User consent record management and compliance audit data access."
+      },
+      "license": {
+        "title": "License",
+        "subtitle": "Check platform license status and active feature entitlements."
       }
     },
     "troubleshooting": {
-      "meta": { 
+      "meta": {
         "title": "Troubleshooting - Raghim AI Enterprise Agent Platform",
         "description": "Troubleshooting guide for Raghim AI Enterprise Agent Platform - common issues and solutions"
       },
@@ -1131,7 +1280,8 @@
         "database_issues": "Database Issues",
         "gpu_issues": "GPU Issues",
         "authentication_issues": "Authentication Issues",
-        "diagnostic_tools": "Diagnostic Tools"
+        "diagnostic_tools": "Diagnostic Tools",
+        "connector_issues": "Connector Issues"
       },
       "solutions": "Solutions:",
       "connection_issues": {
@@ -1167,8 +1317,8 @@
         "postgresql_connection_failed_symptoms": "Symptoms: Database connection errors in logs",
         "redis_connection_issues": "Redis Connection Issues",
         "redis_connection_issues_symptoms": "Symptoms: Cache operations failing",
-        "chromadb_issues": "pgvector Issues",
-        "chromadb_issues_symptoms": "Symptoms: Vector search not working"
+        "pgvector_issues": "pgvector Issues",
+        "pgvector_issues_symptoms": "Symptoms: Vector search not working"
       },
       "gpu_issues": {
         "title": "GPU Issues",
@@ -1226,7 +1376,7 @@
       }
     },
     "examples": {
-      "meta": { 
+      "meta": {
         "title": "Integration Examples - Raghim AI Enterprise Agent Platform",
         "description": "Integration examples for Raghim AI Enterprise Agent Platform - practical code samples and use cases"
       },
@@ -1240,7 +1390,10 @@
         "python": "Python Examples",
         "curl": "cURL Examples",
         "widget": "Widget Integration",
-        "webhook": "Webhook Examples"
+        "webhook": "Webhook Examples",
+        "agent_flows": "Agent Flow Examples",
+        "voice": "Voice Examples",
+        "mcp_tools": "MCP Tool Examples"
       },
       "javascript": {
         "title": "JavaScript Examples",
@@ -1272,10 +1425,27 @@
         "subtitle": "Handle real-time events with webhooks.",
         "webhook_configuration": "Webhook Configuration",
         "webhook_handler": "Webhook Handler (Python)"
+      },
+      "agent_flows": {
+        "title": "Agent Flow Examples",
+        "subtitle": "Illustrative examples for triggering and monitoring agent flows via the REST API.",
+        "trigger": "Trigger a Flow (cURL)",
+        "python": "Python — Trigger Flow"
+      },
+      "voice": {
+        "title": "Voice Interface Examples",
+        "subtitle": "Illustrative examples for speech-to-text and text-to-speech endpoints.",
+        "stt": "Speech-to-Text (cURL)",
+        "tts": "Text-to-Speech (cURL)"
+      },
+      "mcp_tools": {
+        "title": "MCP Tool Examples",
+        "subtitle": "Illustrative examples for working with Model Context Protocol tools configured in your deployment.",
+        "list": "List Available MCP Tools (cURL)"
       }
     },
     "best_practices": {
-      "meta": { 
+      "meta": {
         "title": "Best Practices - Raghim AI Enterprise Agent Platform",
         "description": "Best practices for Raghim AI Enterprise Agent Platform - optimization, security, and deployment guidelines"
       },
@@ -1321,6 +1491,13 @@
           "test_staging": "Test updates in staging environment",
           "rollback_procedures": "Maintain rollback procedures",
           "document_procedures": "Document update procedures"
+        },
+        "optional_services": {
+          "title": "Optional Services Management",
+          "monitoring": "Enable the monitoring stack only when your host has sufficient resources (adds ~2–4 GB RAM)",
+          "connector_logs": "Review connector service logs regularly for integration errors",
+          "disable_unused": "Disable unused connector integrations to reduce the attack surface",
+          "profiles": "Use Docker Compose profile flags to control which optional services start on boot"
         }
       },
       "security": {
@@ -1358,6 +1535,19 @@
           "vpn": "Use VPN for remote access",
           "ddos_label": "DDoS Protection:",
           "ddos": "Implement DDoS protection"
+        },
+        "api_integration": "API & Integration Security",
+        "api": {
+          "docs_label": "Disable API docs in production:",
+          "docs": "Set ENABLE_API_DOCS=false to hide /docs and /redoc from public access",
+          "cors_label": "Scope CORS precisely:",
+          "cors": "Set ALLOWED_ORIGINS to your exact domain list — never use wildcards in production",
+          "widget_label": "Widget domain control:",
+          "widget": "Only add trusted domains to WIDGET_DOMAINS; remove domains when embedding is no longer required",
+          "connector_label": "Connector least-privilege:",
+          "connector": "Grant workflow connectors only the minimum permissions needed for each integration; disable unused connectors",
+          "jwt_label": "Rotate JWT secret periodically:",
+          "jwt": "Rotate JWT_SECRET_KEY as part of your credential rotation schedule; all active sessions are invalidated on rotation"
         }
       },
       "performance": {
@@ -1417,6 +1607,24 @@
           "test_restore": "Test restore procedures",
           "offsite_storage": "Offsite backup storage",
           "disaster_recovery": "Disaster recovery planning"
+        },
+        "doc_org": {
+          "collection_names": "Use meaningful collection names",
+          "document_tagging": "Implement document tagging",
+          "folder_structures": "Create logical folder structures",
+          "cleanup": "Regular cleanup of old documents"
+        },
+        "storage": {
+          "monitor_usage": "Monitor storage usage",
+          "implement_compression": "Implement compression",
+          "archive_old_data": "Archive old data",
+          "plan_growth": "Plan for growth"
+        },
+        "backup": {
+          "automated_backups": "Automated daily backups",
+          "test_restore": "Test restore procedures",
+          "offsite_storage": "Offsite backup storage",
+          "disaster_recovery": "Disaster recovery planning"
         }
       },
       "monitoring": {
@@ -1431,7 +1639,11 @@
           "error_tracking_label": "Error Tracking:",
           "error_tracking": "Set up error monitoring and alerting",
           "log_analysis_label": "Log Analysis:",
-          "log_analysis": "Regular log review and analysis"
+          "log_analysis": "Regular log review and analysis",
+          "worker_label": "Worker monitoring:",
+          "worker": "Monitor the rag-worker container alongside core services — document processing failures surface here first",
+          "connector_label": "Connector service health:",
+          "connector": "Periodically verify all connector service containers are running; failures here cause agent flow tool calls to fail silently"
         },
         "user_activity_monitoring": "User Activity Monitoring",
         "user": {
@@ -1472,7 +1684,8 @@
       "best_practices": "Meilleures Pratiques",
       "quick_start": "Démarrage Rapide",
       "configuration": "Configuration",
-      "examples": "Exemples"
+      "examples": "Exemples",
+      "brand": "Raghim AI Enterprise"
     },
     "hero": {
       "title": "Plateforme d'agents IA entreprise",
@@ -1537,6 +1750,34 @@
         "compliance": "Conformité Basel III, MiFID II, FATCA",
         "aml": "Capacités d'intégration AML/KYC",
         "encryption": "Chiffrement côté client pour les PII"
+      },
+      "agent_flows": "Agent Flows & Automation",
+      "agent_flows_items": {
+        "builder": "Visual no-code flow builder",
+        "conditional": "Conditional logic and branching",
+        "scheduled": "Scheduled and event-triggered flows",
+        "approval": "Human approval step support"
+      },
+      "connectors": "External Connectors & MCP Tools",
+      "connectors_items": {
+        "mcp": "Model Context Protocol (MCP) tool support",
+        "workflow": "Workflow automation connector platform",
+        "sql": "Natural-language SQL database queries",
+        "api": "External API and service integrations"
+      },
+      "voice": "Voice Interface",
+      "voice_items": {
+        "stt": "Speech-to-text transcription",
+        "tts": "Text-to-speech synthesis",
+        "rag": "Voice-enabled RAG queries",
+        "multilingual": "Multilingual voice support"
+      },
+      "campaigns": "Email Campaign Management",
+      "campaigns_items": {
+        "delivery": "Targeted email campaign delivery",
+        "bounce": "Bounce tracking and management",
+        "analytics": "Campaign analytics and reporting",
+        "sender": "Configurable sender profiles"
       }
     },
     "security": {
@@ -1616,7 +1857,9 @@
         "ai": "Traitement IA",
         "ai_desc": "Analyse intelligente de documents et génération de réponses",
         "communication": "Communication",
-        "communication_desc": "Messagerie en temps réel et fonctionnalités de collaboration"
+        "communication_desc": "Messagerie en temps réel et fonctionnalités de collaboration",
+        "automation": "Automation & Connectors",
+        "automation_desc": "Agent flows, MCP tool integration, and workflow connector management"
       },
       "integration_methods": "Méthodes d'Intégration",
       "methods": {
@@ -1665,19 +1908,24 @@
       "documentation_links": {
         "integration_guide": "Guide d'Intégration",
         "deployment_guide": "Guide de Déploiement",
-        "troubleshooting": "Dépannage"
+        "troubleshooting": "Dépannage",
+        "api_reference": "API Reference"
       },
       "support": "Support",
       "support_links": {
         "contact": "Contact",
         "security": "Sécurité",
-        "best_practices": "Meilleures Pratiques"
+        "best_practices": "Meilleures Pratiques",
+        "technical_support": "Technical Support",
+        "enterprise_support": "Enterprise Support"
       },
-      "copyright": "© 2026 Raghim AI. Tous droits réservés. Plateforme d'agents IA entreprise v2.0.5"
-    }
-    ,
+      "copyright": "© 2026 Raghim AI. Tous droits réservés. Plateforme d'agents IA entreprise v2.0.5",
+      "brand": "Raghim AI Enterprise Agent Platform"
+    },
     "deployment_guide": {
-      "meta": { "title": "Guide de Déploiement - Plateforme d'agents IA entreprise Raghim AI" },
+      "meta": {
+        "title": "Guide de Déploiement - Plateforme d'agents IA entreprise Raghim AI"
+      },
       "header": {
         "title": "Guide de Déploiement",
         "subtitle": "Guide complet pour déployer le Plateforme d'agents IA entreprise Raghim AI"
@@ -1690,7 +1938,8 @@
         "cloud": "Déploiement Cloud",
         "configuration": "Configuration",
         "verification": "Vérification",
-        "troubleshooting": "Dépannage"
+        "troubleshooting": "Dépannage",
+        "optional_services": "Optional Services"
       },
       "prerequisites": {
         "title": "Prérequis",
@@ -1762,7 +2011,9 @@
               "monitoring": "• Surveillance des événements de sécurité"
             }
           },
-          "compliance": { "title": "Conformité et Standards" }
+          "compliance": {
+            "title": "Conformité et Standards"
+          }
         },
         "overview": {
           "title": "Aperçu de l'Architecture",
@@ -1807,7 +2058,9 @@
               "image": "Choisissez une image Ubuntu 20.04+",
               "ssh": "Configurez l'accès SSH"
             },
-            "ssh": { "title": "Configurer un Tunnel SSH" }
+            "ssh": {
+              "title": "Configurer un Tunnel SSH"
+            }
           }
         },
         "runpod": {
@@ -1819,7 +2072,9 @@
               "template": "Utilisez le modèle RunPod PyTorch",
               "network": "Configurez l'accès réseau"
             },
-            "deploy": { "title": "Déployer avec la Config RunPod" }
+            "deploy": {
+              "title": "Déployer avec la Config RunPod"
+            }
           }
         }
       },
@@ -1833,32 +2088,63 @@
             "description": "Description",
             "default": "Valeur par défaut"
           },
-          "license": { "desc": "Votre clé de licence entreprise" },
-          "jwt": { "desc": "Secret JWT pour l'authentification" },
-          "postgres": { "desc": "Mot de passe de la base de données" },
-          "redis": { "desc": "Mot de passe du cache Redis" },
-          "gpu": { "desc": "Activer l'accélération GPU" },
-          "frontend": { "desc": "URL d'accès Frontend" },
-          "api": { "desc": "URL de l'API Backend" },
-          "widget": { "desc": "Domaines d'intégration du widget" },
+          "license": {
+            "desc": "Votre clé de licence entreprise"
+          },
+          "jwt": {
+            "desc": "Secret JWT pour l'authentification"
+          },
+          "postgres": {
+            "desc": "Mot de passe de la base de données"
+          },
+          "redis": {
+            "desc": "Mot de passe du cache Redis"
+          },
+          "gpu": {
+            "desc": "Activer l'accélération GPU"
+          },
+          "frontend": {
+            "desc": "URL d'accès Frontend"
+          },
+          "api": {
+            "desc": "URL de l'API Backend"
+          },
+          "widget": {
+            "desc": "Domaines d'intégration du widget"
+          },
           "generated": "Généré",
           "required": "Requis",
           "true": "true",
           "empty": "Vide"
         },
-        "models": { "title": "Configuration des Modèles" }
+        "models": {
+          "title": "Configuration des Modèles"
+        }
       },
       "verification": {
         "title": "Vérification du Déploiement",
         "subtitle": "Vérifiez que votre déploiement fonctionne correctement en utilisant les contrôles d'état fournis.",
-        "health": { "title": "Contrôle d'État", "desc": "Ceci vérifiera tous les services et fournira des informations d'état." },
-        "status": { "title": "État des Services" },
+        "health": {
+          "title": "Contrôle d'État",
+          "desc": "Ceci vérifiera tous les services et fournira des informations d'état."
+        },
+        "status": {
+          "title": "État des Services"
+        },
         "urls": {
           "title": "URLs d'Accès",
-          "frontend": { "label": "Frontend :" },
-          "api": { "label": "API Backend :" },
-          "health": { "label": "Contrôle d'État :" },
-          "chromadb": { "label": "pgvector :" }
+          "frontend": {
+            "label": "Frontend :"
+          },
+          "api": {
+            "label": "API Backend :"
+          },
+          "health": {
+            "label": "Contrôle d'État :"
+          },
+          "chromadb": {
+            "label": "pgvector :"
+          }
         }
       },
       "troubleshooting": {
@@ -1900,7 +2186,9 @@
       }
     },
     "security_guide": {
-      "meta": { "title": "Guide de Sécurité - Plateforme d'agents IA entreprise Raghim AI" },
+      "meta": {
+        "title": "Guide de Sécurité - Plateforme d'agents IA entreprise Raghim AI"
+      },
       "header": {
         "title": "Guide de Sécurité",
         "subtitle": "Guide de sécurité complet pour le Plateforme d'agents IA entreprise Raghim AI"
@@ -1960,7 +2248,9 @@
       "authorization": {
         "title": "Autorisation",
         "subtitle": "Contrôle d'accès basé sur les rôles et gestion des permissions.",
-        "rbac": { "title": "Contrôle d'Accès Basé sur les Rôles (RBAC)" },
+        "rbac": {
+          "title": "Contrôle d'Accès Basé sur les Rôles (RBAC)"
+        },
         "org_perms": {
           "title": "Permissions au Niveau de l'Organisation",
           "admin": "Administrateur d'Organisation : Contrôle complet de l'organisation",
@@ -2012,7 +2302,9 @@
       "network": {
         "title": "Sécurité Réseau",
         "subtitle": "Contrôles de sécurité réseau et mécanismes de protection.",
-        "firewall": { "title": "Configuration du Pare-feu" },
+        "firewall": {
+          "title": "Configuration du Pare-feu"
+        },
         "ip_controls": {
           "title": "Contrôles d'Accès IP",
           "whitelist": "Liste blanche IP : Restreindre l'accès à des plages IP spécifiques",
@@ -2020,7 +2312,9 @@
           "vpn": "Détection VPN : Détecter et bloquer le trafic VPN",
           "rate": "Limitation de Débit : Prévenir les abus et attaques DDoS"
         },
-        "cors": { "title": "Configuration CORS" }
+        "cors": {
+          "title": "Configuration CORS"
+        }
       },
       "audit": {
         "title": "Journalisation d'Audit",
@@ -2114,7 +2408,9 @@
               "monitoring": "• Surveillance des événements de sécurité"
             }
           },
-          "compliance": { "title": "Conformité et Standards" }
+          "compliance": {
+            "title": "Conformité et Standards"
+          }
         },
         "overview": {
           "title": "Aperçu de la Couche de Sécurité",
@@ -2176,7 +2472,9 @@
             "features": "Fonctionnalités",
             "status": "Statut"
           },
-          "values": { "full": "Complet" },
+          "values": {
+            "full": "Complet"
+          },
           "features": {
             "gdpr": "Anonymisation des données, gestion du consentement, droit à l'oubli",
             "ccpa": "Droits des consommateurs, mécanismes d'opt-out, transparence des données",
@@ -2185,7 +2483,9 @@
             "pci": "Protection des données de paiement, sécurité réseau, surveillance",
             "iso": "Gestion de la sécurité de l'information, évaluation des risques"
           },
-          "status": { "compliant": "✅ Conforme" }
+          "status": {
+            "compliant": "✅ Conforme"
+          }
         }
       },
       "testing": {
@@ -2245,7 +2545,7 @@
       }
     },
     "integration_guide": {
-      "meta": { 
+      "meta": {
         "title": "Guide d'Intégration - Plateforme d'agents IA entreprise Raghim AI",
         "description": "Guide d'intégration pour le Plateforme d'agents IA entreprise Raghim AI - Intégration API et intégration"
       },
@@ -2259,7 +2559,8 @@
         "widget_embedding": "Intégration de Widget",
         "webhook_integration": "Intégration Webhook",
         "authentication": "Authentification",
-        "examples": "Exemples de Code"
+        "examples": "Exemples de Code",
+        "automation_integration": "Automation & MCP"
       },
       "api_integration": {
         "title": "Intégration API",
@@ -2308,10 +2609,17 @@
         "subtitle": "Exemples pratiques pour les scénarios d'intégration courants.",
         "javascript": "Intégration JavaScript",
         "python": "Intégration Python"
+      },
+      "automation": {
+        "title": "Workflow Automation & MCP Integration",
+        "subtitle": "The platform includes a built-in workflow automation layer and Model Context Protocol (MCP) support for connecting external tools and systems.",
+        "connectors": "Workflow Connector Configuration",
+        "mcp": "MCP Tool Integration",
+        "agent_flows": "Agent Flow Triggers"
       }
     },
     "quick_start": {
-      "meta": { 
+      "meta": {
         "title": "Guide de Démarrage Rapide - Plateforme d'agents IA entreprise Raghim AI",
         "description": "Guide de démarrage rapide pour le Plateforme d'agents IA entreprise Raghim AI - opérationnel en quelques minutes"
       },
@@ -2365,7 +2673,8 @@
         "title": "Configuration",
         "subtitle": "Configurez votre système Raghim AI Entreprise pour votre environnement.",
         "env_vars": "Variables d'Environnement",
-        "admin_setup": "Configuration Utilisateur Admin"
+        "admin_setup": "Configuration Utilisateur Admin",
+        "admin_setup_desc": "A default administrator account is created automatically during first boot by the database initialisation script."
       },
       "first_steps": {
         "title": "Premiers Pas",
@@ -2416,7 +2725,7 @@
       }
     },
     "configuration": {
-      "meta": { 
+      "meta": {
         "title": "Guide de Configuration - Plateforme d'agents IA entreprise Raghim AI",
         "description": "Guide de configuration pour le Plateforme d'agents IA entreprise Raghim AI - paramètres système et personnalisation"
       },
@@ -2478,7 +2787,7 @@
       }
     },
     "api_reference": {
-      "meta": { 
+      "meta": {
         "title": "Référence API - Plateforme d'agents IA entreprise Raghim AI",
         "description": "Référence API complète pour le Plateforme d'agents IA entreprise Raghim AI - authentification, documents, chat et endpoints de chat en direct"
       },
@@ -2495,7 +2804,17 @@
         "banking": "Intégration Bancaire",
         "admin": "Fonctions Admin",
         "analytics": "Analytiques",
-        "widgets": "Widgets"
+        "widgets": "Widgets",
+        "agent_flows": "Agent Flows",
+        "mcp_tools": "MCP Tools",
+        "voice": "Voice",
+        "campaigns": "Campaigns",
+        "organizations": "Organizations",
+        "collections_mgmt": "Collections",
+        "conversations": "Conversations",
+        "sso": "SSO",
+        "compliance_consent": "Compliance & Consent",
+        "license": "License"
       },
       "authentication": {
         "title": "Authentification",
@@ -2572,10 +2891,52 @@
         "too_many_requests_desc": "Limite de taux dépassée",
         "internal_server_error": "Erreur Serveur Interne",
         "internal_server_error_desc": "Erreur serveur survenue"
+      },
+      "agent_flows": {
+        "title": "Agent Flows",
+        "subtitle": "Create, trigger, and monitor agent flows — multi-step automated pipelines that combine RAG retrieval, tool execution, conditional logic, and human approval steps.",
+        "list_desc": "List available agent flows for the authenticated user",
+        "run_desc": "Trigger an agent flow run (streaming SSE response)"
+      },
+      "mcp_tools": {
+        "title": "MCP Tools",
+        "subtitle": "Manage Model Context Protocol (MCP) server configurations and available tool registrations."
+      },
+      "voice": {
+        "title": "Voice",
+        "subtitle": "Speech-to-text transcription and text-to-speech synthesis endpoints."
+      },
+      "campaigns": {
+        "title": "Campaigns",
+        "subtitle": "Email campaign management, delivery tracking, and analytics."
+      },
+      "organizations": {
+        "title": "Organizations",
+        "subtitle": "Multi-tenant organization management, member invites, and role assignment."
+      },
+      "collections_mgmt": {
+        "title": "Collections Management",
+        "subtitle": "Tag management, collection export and import for knowledge base organisation."
+      },
+      "conversations": {
+        "title": "Conversations",
+        "subtitle": "Retrieve and manage conversation history and transcripts."
+      },
+      "sso": {
+        "title": "Single Sign-On (SSO)",
+        "subtitle": "OpenID Connect (OIDC) based SSO login initiation and callback handling."
+      },
+      "compliance_consent": {
+        "title": "Compliance & Consent",
+        "subtitle": "User consent record management and compliance audit data access."
+      },
+      "license": {
+        "title": "License",
+        "subtitle": "Check platform license status and active feature entitlements."
       }
     },
     "troubleshooting": {
-      "meta": { 
+      "meta": {
         "title": "Dépannage - Plateforme d'agents IA entreprise Raghim AI",
         "description": "Guide de dépannage pour le Plateforme d'agents IA entreprise Raghim AI - problèmes courants et solutions"
       },
@@ -2591,7 +2952,8 @@
         "database_issues": "Problèmes de Base de Données",
         "gpu_issues": "Problèmes GPU",
         "authentication_issues": "Problèmes d'Authentification",
-        "diagnostic_tools": "Outils de Diagnostic"
+        "diagnostic_tools": "Outils de Diagnostic",
+        "connector_issues": "Connector Issues"
       },
       "solutions": "Solutions :",
       "connection_issues": {
@@ -2627,8 +2989,8 @@
         "postgresql_connection_failed_symptoms": "Symptômes : Erreurs de connexion base de données dans les logs",
         "redis_connection_issues": "Problèmes Connexion Redis",
         "redis_connection_issues_symptoms": "Symptômes : Les opérations de cache échouent",
-        "chromadb_issues": "Problèmes pgvector",
-        "chromadb_issues_symptoms": "Symptômes : La recherche vectorielle ne fonctionne pas"
+        "pgvector_issues": "Problèmes pgvector",
+        "pgvector_issues_symptoms": "Symptômes : La recherche vectorielle ne fonctionne pas"
       },
       "gpu_issues": {
         "title": "Problèmes GPU",
@@ -2686,7 +3048,7 @@
       }
     },
     "examples": {
-      "meta": { 
+      "meta": {
         "title": "Exemples d'Intégration - Plateforme d'agents IA entreprise Raghim AI",
         "description": "Exemples d'intégration pour le Plateforme d'agents IA entreprise Raghim AI - échantillons de code pratiques et cas d'usage"
       },
@@ -2700,7 +3062,10 @@
         "python": "Exemples Python",
         "curl": "Exemples cURL",
         "widget": "Intégration Widget",
-        "webhook": "Exemples Webhook"
+        "webhook": "Exemples Webhook",
+        "agent_flows": "Agent Flow Examples",
+        "voice": "Voice Examples",
+        "mcp_tools": "MCP Tool Examples"
       },
       "javascript": {
         "title": "Exemples JavaScript",
@@ -2732,10 +3097,27 @@
         "subtitle": "Gérez les événements temps réel avec les webhooks.",
         "webhook_configuration": "Configuration Webhook",
         "webhook_handler": "Gestionnaire Webhook (Python)"
+      },
+      "agent_flows": {
+        "title": "Agent Flow Examples",
+        "subtitle": "Illustrative examples for triggering and monitoring agent flows via the REST API.",
+        "trigger": "Trigger a Flow (cURL)",
+        "python": "Python — Trigger Flow"
+      },
+      "voice": {
+        "title": "Voice Interface Examples",
+        "subtitle": "Illustrative examples for speech-to-text and text-to-speech endpoints.",
+        "stt": "Speech-to-Text (cURL)",
+        "tts": "Text-to-Speech (cURL)"
+      },
+      "mcp_tools": {
+        "title": "MCP Tool Examples",
+        "subtitle": "Illustrative examples for working with Model Context Protocol tools configured in your deployment.",
+        "list": "List Available MCP Tools (cURL)"
       }
     },
     "best_practices": {
-      "meta": { 
+      "meta": {
         "title": "Bonnes Pratiques - Plateforme d'agents IA entreprise Raghim AI",
         "description": "Bonnes pratiques pour le Plateforme d'agents IA entreprise Raghim AI - optimisation, sécurité et directives de déploiement"
       },
@@ -2781,6 +3163,13 @@
           "test_staging": "Testez les mises à jour dans l'environnement de staging",
           "rollback_procedures": "Maintenez les procédures de retour en arrière",
           "document_procedures": "Documentez les procédures de mise à jour"
+        },
+        "optional_services": {
+          "title": "Optional Services Management",
+          "monitoring": "Enable the monitoring stack only when your host has sufficient resources (adds ~2–4 GB RAM)",
+          "connector_logs": "Review connector service logs regularly for integration errors",
+          "disable_unused": "Disable unused connector integrations to reduce the attack surface",
+          "profiles": "Use Docker Compose profile flags to control which optional services start on boot"
         }
       },
       "security": {
@@ -2818,6 +3207,19 @@
           "vpn": "Utilisez VPN pour l'accès distant",
           "ddos_label": "Protection DDoS :",
           "ddos": "Implémentez la protection DDoS"
+        },
+        "api_integration": "API & Integration Security",
+        "api": {
+          "docs_label": "Disable API docs in production:",
+          "docs": "Set ENABLE_API_DOCS=false to hide /docs and /redoc from public access",
+          "cors_label": "Scope CORS precisely:",
+          "cors": "Set ALLOWED_ORIGINS to your exact domain list — never use wildcards in production",
+          "widget_label": "Widget domain control:",
+          "widget": "Only add trusted domains to WIDGET_DOMAINS; remove domains when embedding is no longer required",
+          "connector_label": "Connector least-privilege:",
+          "connector": "Grant workflow connectors only the minimum permissions needed for each integration; disable unused connectors",
+          "jwt_label": "Rotate JWT secret periodically:",
+          "jwt": "Rotate JWT_SECRET_KEY as part of your credential rotation schedule; all active sessions are invalidated on rotation"
         }
       },
       "performance": {
@@ -2877,6 +3279,24 @@
           "test_restore": "Testez les procédures de restauration",
           "offsite_storage": "Stockage de sauvegarde hors site",
           "disaster_recovery": "Planification de récupération d'urgence"
+        },
+        "doc_org": {
+          "collection_names": "Use meaningful collection names",
+          "document_tagging": "Implement document tagging",
+          "folder_structures": "Create logical folder structures",
+          "cleanup": "Regular cleanup of old documents"
+        },
+        "storage": {
+          "monitor_usage": "Monitor storage usage",
+          "implement_compression": "Implement compression",
+          "archive_old_data": "Archive old data",
+          "plan_growth": "Plan for growth"
+        },
+        "backup": {
+          "automated_backups": "Automated daily backups",
+          "test_restore": "Test restore procedures",
+          "offsite_storage": "Offsite backup storage",
+          "disaster_recovery": "Disaster recovery planning"
         }
       },
       "monitoring": {
@@ -2891,7 +3311,11 @@
           "error_tracking_label": "Suivi des Erreurs :",
           "error_tracking": "Configurez la surveillance et l'alerte d'erreurs",
           "log_analysis_label": "Analyse des Logs :",
-          "log_analysis": "Révision et analyse régulières des logs"
+          "log_analysis": "Révision et analyse régulières des logs",
+          "worker_label": "Worker monitoring:",
+          "worker": "Monitor the rag-worker container alongside core services — document processing failures surface here first",
+          "connector_label": "Connector service health:",
+          "connector": "Periodically verify all connector service containers are running; failures here cause agent flow tool calls to fail silently"
         },
         "user_activity_monitoring": "Surveillance Activité Utilisateur",
         "user": {

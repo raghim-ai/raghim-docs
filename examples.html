@@ -41,6 +41,9 @@
                 <h1 data-translate="examples.header.title">Integration Examples</h1>
                 <p class="page-subtitle" data-translate="examples.header.subtitle">Practical examples and code samples for Raghim AI Enterprise integration</p>
             </div>
+            <div class="warning-box" style="margin-top:1.5rem;">
+                <strong>Note:</strong> All code examples on this page are <strong>illustrative pseudocode</strong> demonstrating integration patterns. No official SDK is published. Implement using your preferred HTTP client library (e.g. <code>fetch</code>, <code>axios</code>, <code>requests</code>). Field names shown are representative — validate against your deployment's API responses.
+            </div>
 
             <div class="info-box" style="margin-top:1.5rem;">
                             <strong>Implementation Flow:</strong> Start with cURL -> move to SDK/client wrappers -> add retries/timeouts -> add observability.
@@ -54,7 +57,9 @@
                         <li><a href="#python" data-translate="examples.toc.python">Python Examples</a></li>
                         <li><a href="#curl" data-translate="examples.toc.curl">cURL Examples</a></li>
                         <li><a href="#widget" data-translate="examples.toc.widget">Widget Integration</a></li>
-                        <li><a href="#webhook" data-translate="examples.toc.webhook">Webhook Examples</a></li>
+                        <li><a href="#agent-flows-example" data-translate="examples.toc.agent_flows">Agent Flow Examples</a></li>
+                        <li><a href="#voice-example" data-translate="examples.toc.voice">Voice Examples</a></li>
+                        <li><a href="#mcp-tools-example" data-translate="examples.toc.mcp_tools">MCP Tool Examples</a></li>
                     </ul>
                 </nav>
 
@@ -126,7 +131,7 @@ const uploadResult = await client.uploadDocument(file);
 // Send query
 const response = await client.sendQuery(
   'What is this document about?',
-  uploadResult.collectionId
+  uploadResult.collection_id
 );
 
 console.log(response.message);</code></pre>
@@ -198,7 +203,7 @@ print(f"Document uploaded: {result['documentId']}")
 # Send query
 response = client.send_query(
     'Summarize this document',
-    result['collectionId']
+    result['collection_id']
 )
 print(f"AI Response: {response['message']}")
 
@@ -297,69 +302,96 @@ curl -X POST https://&lt;your-domain&gt;/api/chat \
                         </div>
                     </section>
 
-                    <section id="webhook">
-                        <h2 data-translate="examples.webhook.title">Webhook Examples</h2>
-                        <p data-translate="examples.webhook.subtitle">Handle real-time events with webhooks.</p>
+
+                    <section id="agent-flows-example">
+                        <h2 data-translate="examples.agent_flows.title">Agent Flow Examples</h2>
+                        <p data-translate="examples.agent_flows.subtitle">Illustrative examples for triggering and monitoring agent flows via the REST API.</p>
 
                         <div class="integration-section">
-                            <h3 data-translate="examples.webhook.webhook_configuration">Webhook Configuration</h3>
+                            <h3 data-translate="examples.agent_flows.trigger">Trigger a Flow (cURL)</h3>
                             <div class="code-block">
-                                <pre><code># Configure webhook
-curl -X POST https://&lt;your-domain&gt;/api/webhooks/configure \
+                                <pre><code># List available flows
+curl -X GET https://&lt;your-domain&gt;/api/agent/&lt;flows-list-operation&gt; \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+
+# Trigger a flow run (streaming SSE response)
+curl -X POST https://&lt;your-domain&gt;/api/agent/&lt;flow-run-operation&gt; \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "url": "https://your-app.com/webhook",
-    "events": ["document.processed", "user.created"],
-    "secret": "your-webhook-secret"
+    "note": "Trigger payload schema available in approved technical onboarding"
   }'</code></pre>
                             </div>
                         </div>
 
                         <div class="integration-section">
-                            <h3 data-translate="examples.webhook.webhook_handler">Webhook Handler (Python)</h3>
+                            <h3 data-translate="examples.agent_flows.python">Python — Trigger Flow</h3>
                             <div class="code-block">
-                                <pre><code>from flask import Flask, request, jsonify
-import hmac
-import hashlib
+                                <pre><code>import requests
 
-app = Flask(__name__)
+api_url = 'https://&lt;your-domain&gt;/api'
+headers = {'Authorization': 'Bearer your-jwt-token'}
 
-@app.route('/webhook', methods=['POST'])
-def handle_webhook():
-    # Verify webhook signature
-    signature = request.headers.get('X-Webhook-Signature')
-    payload = request.get_data()
-    
-    expected_signature = hmac.new(
-        'your-webhook-secret'.encode(),
-        payload,
-        hashlib.sha256
-    ).hexdigest()
-    
-    if not hmac.compare_digest(signature, expected_signature):
-        return jsonify({'error': 'Invalid signature'}), 401
-    
-    # Process webhook event
-    event = request.json
-    event_type = event['type']
-    
-    if event_type == 'document.processed':
-        handle_document_processed(event['data'])
-    elif event_type == 'user.created':
-        handle_user_created(event['data'])
-    
-    return jsonify({'status': 'success'})
+# Get available flows
+flows = requests.get(f'{api_url}/agent/&lt;flows-list-operation&gt;', headers=headers)
+flow_list = flows.json()
 
-def handle_document_processed(data):
-    print(f"Document processed: {data['documentId']}")
-
-def handle_user_created(data):
-    print(f"New user created: {data['userId']}")
-
-if __name__ == '__main__':
-    app.run(port=5000)</code></pre>
+# Trigger a flow (note: real endpoint path from your deployment)
+run_response = requests.post(
+    f'{api_url}/agent/&lt;flow-run-operation&gt;',
+    json={'note': 'payload per approved integration docs'},
+    headers=headers,
+    stream=True  # flows return streaming SSE
+)
+for line in run_response.iter_lines():
+    if line:
+        print(line.decode('utf-8'))</code></pre>
                             </div>
+                        </div>
+                    </section>
+
+                    <section id="voice-example">
+                        <h2 data-translate="examples.voice.title">Voice Interface Examples</h2>
+                        <p data-translate="examples.voice.subtitle">Illustrative examples for speech-to-text and text-to-speech endpoints.</p>
+
+                        <div class="integration-section">
+                            <h3 data-translate="examples.voice.stt">Speech-to-Text (cURL)</h3>
+                            <div class="code-block">
+                                <pre><code># Transcribe audio file
+curl -X POST https://&lt;your-domain&gt;/api/voice/&lt;transcription-operation&gt; \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -F "audio=@recording.wav" \
+  -F "language=en"</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3 data-translate="examples.voice.tts">Text-to-Speech (cURL)</h3>
+                            <div class="code-block">
+                                <pre><code># Synthesise text to audio
+curl -X POST https://&lt;your-domain&gt;/api/voice/&lt;synthesis-operation&gt; \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "note": "Payload schema available in approved technical onboarding"
+  }' \
+  --output response.mp3</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="mcp-tools-example">
+                        <h2 data-translate="examples.mcp_tools.title">MCP Tool Examples</h2>
+                        <p data-translate="examples.mcp_tools.subtitle">Illustrative examples for working with Model Context Protocol tools configured in your deployment.</p>
+
+                        <div class="integration-section">
+                            <h3 data-translate="examples.mcp_tools.list">List Available MCP Tools (cURL)</h3>
+                            <div class="code-block">
+                                <pre><code># List configured MCP servers and tools
+curl -X GET https://&lt;your-domain&gt;/api/mcp-tools/&lt;list-operation&gt; \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"</code></pre>
+                            </div>
+                            <p>MCP tools are invoked within agent flows — they are not called directly via the public REST API. Configure MCP servers through <strong>Admin → MCP Tools</strong> and reference them in flow node configurations.</p>
                         </div>
                     </section>
                 </div>

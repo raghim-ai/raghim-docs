@@ -43,7 +43,7 @@
             </div>
 
             <div class="info-box" style="margin-top:1.5rem;">
-                            <strong>Integration Flow:</strong> Auth first -> API test -> Embed/automation integration -> Event/webhook validation -> Production hardening.
+                            <strong>Integration Flow:</strong> Auth first -> API test -> Embed/automation integration -> Event validation -> Production hardening.
                         </div>
 
             <div class="content-grid">
@@ -52,8 +52,8 @@
                     <ul class="toc">
                         <li><a href="#api-integration" data-translate="integration_guide.toc.api_integration">API Integration</a></li>
                         <li><a href="#widget-embedding" data-translate="integration_guide.toc.widget_embedding">Widget Embedding</a></li>
-                        <li><a href="#webhook-integration" data-translate="integration_guide.toc.webhook_integration">Webhook Integration</a></li>
                         <li><a href="#authentication" data-translate="integration_guide.toc.authentication">Authentication</a></li>
+                        <li><a href="#automation-integration" data-translate="integration_guide.toc.automation_integration">Automation & MCP</a></li>
                         <li><a href="#examples" data-translate="integration_guide.toc.examples">Code Examples</a></li>
                     </ul>
                 </nav>
@@ -138,32 +138,6 @@
                         </div>
                     </section>
 
-                    <section id="webhook-integration">
-                        <h2 data-translate="integration_guide.webhook_integration.title">Webhook Integration</h2>
-                        <p data-translate="integration_guide.webhook_integration.subtitle">Receive real-time notifications about system events.</p>
-
-                        <div class="integration-section">
-                            <h3 data-translate="integration_guide.webhook_integration.configuration">Webhook Configuration</h3>
-                            <div class="code-block">
-                                <pre><code>POST /api/webhooks/configure
-{
-  "url": "https://your-app.com/webhook",
-  "events": ["document.processed", "user.created"],
-  "secret": "your-webhook-secret"
-}</code></pre>
-                            </div>
-                        </div>
-
-                        <div class="integration-section">
-                            <h3 data-translate="integration_guide.webhook_integration.event_types">Event Types</h3>
-                            <ul>
-                                <li><strong data-translate="integration_guide.webhook_integration.document_processed">document.processed</strong> - <span data-translate="integration_guide.webhook_integration.document_processed_desc">Document processing completed</span></li>
-                                <li><strong data-translate="integration_guide.webhook_integration.user_created">user.created</strong> - <span data-translate="integration_guide.webhook_integration.user_created_desc">New user registered</span></li>
-                                <li><strong data-translate="integration_guide.webhook_integration.query_processed">query.processed</strong> - <span data-translate="integration_guide.webhook_integration.query_processed_desc">AI query completed</span></li>
-                                <li><strong data-translate="integration_guide.webhook_integration.error_occurred">error.occurred</strong> - <span data-translate="integration_guide.webhook_integration.error_occurred_desc">System error occurred</span></li>
-                            </ul>
-                        </div>
-                    </section>
 
                     <section id="authentication">
                         <h2 data-translate="integration_guide.authentication.title">Authentication</h2>
@@ -178,16 +152,8 @@ curl -X POST https://&lt;your-domain&gt;/api/auth/login \
   -d '{"username": "your-username", "password": "your-password"}'
 
 # Use token in subsequent requests
-curl -X GET https://&lt;your-domain&gt;/api/documents \
+curl -X GET https://&lt;your-domain&gt;/api/documents/collections \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"</code></pre>
-                            </div>
-                        </div>
-
-                        <div class="integration-section">
-                            <h3 data-translate="integration_guide.authentication.api_key">API Key Authentication</h3>
-                            <div class="code-block">
-                                <pre><code>curl -X GET https://&lt;your-domain&gt;/api/documents \
-  -H "X-API-Key: YOUR_API_KEY"</code></pre>
                             </div>
                         </div>
                     </section>
@@ -201,12 +167,67 @@ curl -X GET https://&lt;your-domain&gt;/api/documents \
                             <li>Call one read endpoint and one write endpoint.</li>
                             <li>Validate error handling and retry strategy.</li>
                             <li>Confirm audit/trace visibility for key actions.</li>
+                            <li>Confirm agent flow triggers and MCP tool calls succeed in staging before enabling in production.</li>
                         </ul>
+                    </section>
+
+                    <section id="automation-integration">
+                        <h2 data-translate="integration_guide.automation.title">Workflow Automation & MCP Integration</h2>
+                        <p data-translate="integration_guide.automation.subtitle">The platform includes a built-in workflow automation layer and Model Context Protocol (MCP) support for connecting external tools and systems.</p>
+
+                        <div class="integration-section">
+                            <h3 data-translate="integration_guide.automation.connectors">Workflow Connector Configuration</h3>
+                            <p>Workflow connectors are configured through the platform's <strong>Admin → Integrations</strong> interface. Once configured, connectors can:</p>
+                            <ul>
+                                <li>Read from and write to the RAG knowledge base</li>
+                                <li>Trigger agent flows on schedule or on external events</li>
+                                <li>Route flow outputs to external services and APIs</li>
+                                <li>Synchronise data between external systems and document collections</li>
+                            </ul>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3 data-translate="integration_guide.automation.mcp">MCP Tool Integration</h3>
+                            <p>The platform supports the <strong>Model Context Protocol (MCP)</strong> for connecting external tools, databases, and APIs to agent flows at runtime.</p>
+                            <div class="api-categories">
+                                <div class="api-category">
+                                    <h4>MCP Server Configuration</h4>
+                                    <p>Add MCP servers via <strong>Admin → MCP Tools</strong>. Each server exposes a set of callable tools available within flow nodes.</p>
+                                </div>
+                                <div class="api-category">
+                                    <h4>SQL Database Connector</h4>
+                                    <p>Connect SQL databases (PostgreSQL, MySQL, and others) to enable natural-language-to-SQL query flows within the agent engine.</p>
+                                </div>
+                                <div class="api-category">
+                                    <h4>Tool Allowlisting</h4>
+                                    <p>Each MCP server's tools can be individually allowlisted to enforce least-privilege access within flows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="integration-section">
+                            <h3 data-translate="integration_guide.automation.agent_flows">Agent Flow Triggers</h3>
+                            <p>Agent flows can be triggered via the REST API, on a schedule, or by events within the connector layer. Flows support conditional branching, human approval steps, and multi-step tool execution.</p>
+                            <div class="code-block">
+                                <pre><code># Trigger an agent flow via API (illustrative)
+POST /api/agent/flows/&lt;flow-id&gt;/run
+Authorization: Bearer YOUR_JWT_TOKEN
+Content-Type: application/json
+
+{
+  "note": "Trigger payload schema available in approved technical onboarding"
+}</code></pre>
+                            </div>
+                        </div>
                     </section>
 
                     <section id="examples">
                         <h2 data-translate="integration_guide.examples.title">Code Examples</h2>
                         <p data-translate="integration_guide.examples.subtitle">Practical examples for common integration scenarios.</p>
+
+                        <div class="warning-box" style="margin-top:1rem;">
+                            <strong>Note:</strong> The code examples below are illustrative pseudocode demonstrating integration patterns. No official SDK is published. Implement using your preferred HTTP client library (e.g. <code>fetch</code>, <code>axios</code>, <code>requests</code>).
+                        </div>
 
                         <div class="integration-section">
                             <h3 data-translate="integration_guide.examples.javascript">JavaScript Integration</h3>
@@ -223,7 +244,7 @@ const uploadResult = await raghimAI.documents.upload(file);
 // Send query
 const response = await raghimAI.chat.send({
   message: 'What is this document about?',
-  collectionId: uploadResult.collectionId
+  collectionId: uploadResult.collection_id
 });</code></pre>
                             </div>
                         </div>
@@ -246,7 +267,7 @@ with open('document.pdf', 'rb') as f:
 # Send query
 query_data = {
     'message': 'Summarize this document',
-    'collection_id': response.json()['collectionId']
+    'collection_id': response.json()['collection_id']
 }
 response = requests.post(f'{api_url}/chat', 
                         json=query_data, headers=headers)</code></pre>

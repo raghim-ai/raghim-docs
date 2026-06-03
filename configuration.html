@@ -62,6 +62,9 @@
                     <section id="environment">
                         <h2>Environment Variables</h2>
                         <p>Configure your system using environment variables.</p>
+                        <div class="info-box" style="margin-top:1rem;">
+                            <strong>License Note:</strong> The platform license is embedded in the compiled image. No license key environment variable is required.
+                        </div>
 
                         <div class="config-table">
                             <table>
@@ -74,29 +77,79 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><code>LICENSE_KEY</code></td>
-                                        <td data-translate="configuration.environment.license_key_desc">Your enterprise license key</td>
-                                        <td data-translate="configuration.environment.license_key_default">Required</td>
-                                    </tr>
-                                    <tr>
                                         <td><code>JWT_SECRET_KEY</code></td>
                                         <td data-translate="configuration.environment.jwt_secret_desc">JWT secret for authentication</td>
                                         <td data-translate="configuration.environment.jwt_secret_default">Generated</td>
                                     </tr>
                                     <tr>
-                                        <td><code>DATABASE_PASSWORD</code></td>
-                                        <td data-translate="configuration.environment.db_password_desc">Database password</td>
+                                        <td><code>POSTGRES_PASSWORD</code></td>
+                                        <td>PostgreSQL database password</td>
                                         <td data-translate="configuration.environment.db_password_default">Generated</td>
                                     </tr>
                                     <tr>
-                                        <td><code>CACHE_PASSWORD</code></td>
-                                        <td data-translate="configuration.environment.cache_password_desc">Cache password</td>
+                                        <td><code>REDIS_PASSWORD</code></td>
+                                        <td>Redis cache password</td>
                                         <td data-translate="configuration.environment.cache_password_default">Generated</td>
                                     </tr>
                                     <tr>
                                         <td><code>GPU_ENABLED</code></td>
                                         <td data-translate="configuration.environment.gpu_enabled_desc">Enable GPU acceleration</td>
                                         <td>true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>LLM_PROVIDER</code></td>
+                                        <td>LLM backend: <code>vllm</code> (on-premise, default) or <code>openai</code> (cloud — document content leaves your infrastructure)</td>
+                                        <td><code>vllm</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>VLLM_BASE_URL</code></td>
+                                        <td>URL of your vLLM inference server (required when LLM_PROVIDER=vllm)</td>
+                                        <td><code>http://host.docker.internal:8000</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>VLLM_MODEL</code></td>
+                                        <td>Model name served by your vLLM instance</td>
+                                        <td><code>mistralai/Mistral-Small-Instruct-2409</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>OPENAI_API_KEY</code></td>
+                                        <td>Required when LLM_PROVIDER=openai. Note: queries and document content are sent to OpenAI servers.</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>EMBEDDING_MODEL</code></td>
+                                        <td>Sentence-transformer model for embeddings (bundled in image)</td>
+                                        <td><code>BAAI/bge-m3</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ALLOWED_ORIGINS</code></td>
+                                        <td>Comma-separated CORS allowed origins. If blank, uses FRONTEND_URL and API_URL defaults.</td>
+                                        <td>Empty</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>WIDGET_DOMAINS</code></td>
+                                        <td>Additional domains allowed to embed chat widgets</td>
+                                        <td>Empty</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>SSO_ENABLED</code></td>
+                                        <td>Enable Single Sign-On via OpenID Connect (OIDC)</td>
+                                        <td><code>false</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ENABLE_API_DOCS</code></td>
+                                        <td>Expose OpenAPI docs at /docs and /redoc. Disable in production.</td>
+                                        <td><code>true</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>RUN_MIGRATIONS_ON_STARTUP</code></td>
+                                        <td>Run database migrations on API startup. Set false on secondary replicas.</td>
+                                        <td><code>true</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>AUTH_COOKIE_SECURE</code></td>
+                                        <td>Set Secure flag on auth cookie. Must be true in production (HTTPS).</td>
+                                        <td><code>true</code></td>
                                     </tr>
                                     <tr>
                                         <td><code>FRONTEND_URL</code></td>
@@ -122,16 +175,20 @@
                             <h3 data-translate="configuration.database.postgresql">PostgreSQL Settings</h3>
                             <div class="code-block">
                                 <pre><code># Database configuration
-POSTGRES_DB=rag_enterprise
-POSTGRES_USER=rag_user
-POSTGRES_PASSWORD=secure_password
+POSTGRES_DB=raghim_ai
+POSTGRES_USER=raghim_user
+POSTGRES_PASSWORD=your-secure-password
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
 
-# Connection pooling
-DB_POOL_SIZE=20
-DB_MAX_OVERFLOW=30
-DB_POOL_TIMEOUT=30</code></pre>
+# Or use a full connection URL (takes precedence)
+DATABASE_URL=postgresql://raghim_user:your-secure-password@postgres:5432/raghim_ai
+
+# Connection pooling (per API replica)
+DB_POOL_SIZE=150
+DB_MAX_OVERFLOW=150
+DB_POOL_TIMEOUT=10
+DB_STATEMENT_TIMEOUT_MS=30000</code></pre>
                             </div>
                         </div>
 
@@ -158,28 +215,28 @@ SESSION_TTL=86400</code></pre>
                         <div class="integration-section">
                             <h3 data-translate="configuration.ai_models.model_config">Model Configuration</h3>
                             <div class="code-block">
-                                <pre><code># AI model settings
-EMBEDDING_MODEL=multilingual-embedding-model
-LLM_MODEL=advanced-language-model
-TRANSLATION_MODEL=multilingual-translation-model
+                                <pre><code># LLM provider (vllm = on-premise | openai = cloud)
+LLM_PROVIDER=vllm
 
-# Processing optimization
-GPU_LAYERS=40
-GPU_MEMORY_FRACTION=0.85
-NUM_PARALLEL=8
-MAX_LOADED_MODELS=3</code></pre>
+# vLLM — self-hosted inference (data stays on your infrastructure)
+VLLM_BASE_URL=http://host.docker.internal:8000
+VLLM_MODEL=mistralai/Mistral-Small-Instruct-2409
+
+# OpenAI — cloud inference (document content sent to OpenAI servers)
+# LLM_PROVIDER=openai
+# OPENAI_API_KEY=your-api-key
+
+# Embeddings (sentence-transformer model bundled in image)
+EMBEDDING_MODEL=BAAI/bge-m3</code></pre>
                             </div>
                         </div>
 
                         <div class="integration-section">
-                            <h3 data-translate="configuration.ai_models.performance_settings">Performance Settings</h3>
+                            <h3 data-translate="configuration.ai_models.performance_settings">Model Token Settings</h3>
                             <div class="code-block">
-                                <pre><code># Performance tuning
-BATCH_SIZE=32
-MAX_TOKENS=2048
-TEMPERATURE=0.7
-TOP_P=0.9
-REPETITION_PENALTY=1.1</code></pre>
+                                <pre><code># RAG token budget (when LLM_PROVIDER=openai)
+OPENAI_TIER_HYBRID_TOKENS=&lt;profile-default&gt;
+OPENAI_RAG_REASONING_EFFORT=&lt;policy-default&gt;</code></pre>
                             </div>
                         </div>
                     </section>
@@ -191,30 +248,30 @@ REPETITION_PENALTY=1.1</code></pre>
                         <div class="integration-section">
                             <h3 data-translate="configuration.security.auth_settings">Authentication Settings</h3>
                             <div class="code-block">
-                                <pre><code># JWT configuration
-JWT_SECRET_KEY=your-secret-key
-JWT_ALGORITHM=HS256
-JWT_EXPIRATION=3600
-JWT_REFRESH_EXPIRATION=86400
+                                <pre><code># JWT configuration (only the secret key is operator-configurable)
+JWT_SECRET_KEY=your-secret-key-minimum-32-chars
 
-# Session settings
-SESSION_SECRET=your-session-secret
-SESSION_TIMEOUT=1800
-MAX_LOGIN_ATTEMPTS=5</code></pre>
+# SSO via OpenID Connect
+SSO_ENABLED=false
+SSO_OIDC_DISCOVERY_URL=https://idp.example.com/.well-known/openid-configuration
+SSO_CLIENT_ID=your-client-id
+SSO_CLIENT_SECRET=your-client-secret
+SSO_PROVIDER_NAME=SSO</code></pre>
                             </div>
                         </div>
 
                         <div class="integration-section">
-                            <h3 data-translate="configuration.security.access_control">Access Control</h3>
+                            <h3 data-translate="configuration.security.access_control">CORS &amp; Cookie Configuration</h3>
+                            <p>IP filtering and rate limiting are handled at the infrastructure/network layer (reverse proxy, firewall) rather than as application environment variables.</p>
                             <div class="code-block">
-                                <pre><code># IP restrictions
-ALLOWED_IPS=192.168.1.0/24,10.0.0.0/8
-BLOCKED_COUNTRIES=CN,RU,IR
+                                <pre><code># CORS — restrict to your actual domains
+ALLOWED_ORIGINS=https://your-app-domain.com,https://your-api-domain.com
 
-# Rate limiting
-RATE_LIMIT_REQUESTS=100
-RATE_LIMIT_WINDOW=3600
-RATE_LIMIT_BURST=200</code></pre>
+# Widget embedding — only list domains that host your embedded chat widgets
+WIDGET_DOMAINS=https://your-customer-site.com
+
+# Auth cookie — must be true when serving over HTTPS
+AUTH_COOKIE_SECURE=true</code></pre>
                             </div>
                         </div>
                     </section>
@@ -224,32 +281,33 @@ RATE_LIMIT_BURST=200</code></pre>
                         <p data-translate="configuration.performance.subtitle">Optimize system performance for your environment.</p>
 
                         <div class="integration-section">
-                            <h3 data-translate="configuration.performance.resource_allocation">Resource Allocation</h3>
+                            <h3 data-translate="configuration.performance.resource_allocation">Resource Allocation (Docker Compose)</h3>
+                            <p>These set Docker Compose resource constraints for each service container.</p>
                             <div class="code-block">
-                                <pre><code># Memory settings
-WORKER_MEMORY_LIMIT=4G
-CACHE_MEMORY_LIMIT=2G
-MODEL_MEMORY_LIMIT=8G
+                                <pre><code># Docker Compose resource limits for the backend container
+BACKEND_CPU_LIMIT=8.0
+BACKEND_MEMORY_LIMIT=8G
+BACKEND_CPU_RESERVATION=2.0
+BACKEND_MEMORY_RESERVATION=4G
 
-# CPU settings
-WORKER_CPU_LIMIT=4
-WORKER_COUNT=4
-THREAD_POOL_SIZE=16</code></pre>
+# Celery worker concurrency (document processing)
+CELERY_CONCURRENCY=4</code></pre>
                             </div>
                         </div>
 
                         <div class="integration-section">
                             <h3 data-translate="configuration.performance.optimization_settings">Optimization Settings</h3>
                             <div class="code-block">
-                                <pre><code># Processing optimization
-ENABLE_BATCH_PROCESSING=true
-ENABLE_ASYNC_PROCESSING=true
-ENABLE_CACHING=true
-ENABLE_COMPRESSION=true
+                                <pre><code># API documentation (disable in production)
+ENABLE_API_DOCS=false
 
-# Monitoring
-ENABLE_METRICS=true
-METRICS_PORT=9090
+# Database migration on startup (disable on secondary API replicas)
+RUN_MIGRATIONS_ON_STARTUP=true
+
+# Scheduled background jobs (disable on secondary API replicas)
+ENABLE_APSCHEDULER=true
+
+# Logging
 LOG_LEVEL=INFO</code></pre>
                             </div>
                         </div>
