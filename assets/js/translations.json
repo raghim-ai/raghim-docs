@@ -153,9 +153,10 @@
         "title": "Requirements:",
         "docker": "Docker 20.10+",
         "compose": "Docker Compose 2.0+",
-        "disk_space": "20GB+ free disk space",
-        "ram": "8GB+ RAM recommended",
-        "gpu": "GPU support (optional)"
+        "disk_space": "80GB+ free disk space",
+        "ram": "16GB RAM minimum, 32GB+ recommended",
+        "gpu": "NVIDIA GPU with CUDA — required for offline LLM inference (8 GB VRAM min, 24 GB+ recommended)",
+        "nvidia_toolkit": "NVIDIA Container Toolkit (for local GPU passthrough)"
       },
       "cloud_deployment": "Cloud Deployment",
       "cloud_deployment_desc": "Scalable cloud deployment with external processing capabilities.",
@@ -275,10 +276,10 @@
         "software_requirements": "Software Requirements",
         "items": {
           "os": "OS: Linux (Ubuntu 18.04+, CentOS 7+, Alpine 3.10+)",
-          "ram": "RAM: 8GB minimum, 16GB recommended",
-          "storage": "Storage: 20GB+ free disk space",
+          "ram": "RAM: 16GB minimum, 32GB+ recommended",
+          "storage": "Storage: 80GB+ free disk space (Docker images ~30–40 GB; model weights ~8–50 GB additional)",
           "cpu": "CPU: 4 cores minimum, 8 cores recommended",
-          "gpu": "GPU: NVIDIA GPU with CUDA support (optional)"
+          "gpu": "GPU / VRAM: NVIDIA GPU with CUDA support — required for offline LLM inference (8 GB VRAM minimum for small quantised models; 24 GB+ recommended). GPU may be local or a remote instance accessed via SSH tunnel. Not required if using a managed cloud LLM provider."
         },
         "software": {
           "docker": "Docker: 20.10+",
@@ -968,13 +969,13 @@
         "subtitle": "Ensure your system meets the minimum requirements before installation.",
         "system_requirements": "System Requirements",
         "os": "OS:",
-        "os_value": "Linux (Ubuntu 18.04+, CentOS 7+)",
+        "os_value": "Linux (Ubuntu 20.04+, CentOS 7+)",
         "ram": "RAM:",
-        "ram_value": "8GB minimum",
+        "ram_value": "16GB minimum, 32GB+ recommended",
         "storage": "Storage:",
-        "storage_value": "20GB+ free space",
+        "storage_value": "80GB+ free disk space",
         "cpu": "CPU:",
-        "cpu_value": "4 cores minimum",
+        "cpu_value": "4 cores minimum, 8 cores recommended",
         "software_requirements": "Software Requirements",
         "docker": "Docker:",
         "docker_value": "20.10+",
@@ -983,7 +984,11 @@
         "python": "Python:",
         "python_value": "3.7+",
         "git": "Git:",
-        "git_value": "Latest version"
+        "git_value": "Latest version",
+        "gpu": "GPU / VRAM:",
+        "gpu_value": "NVIDIA GPU with CUDA support — required for offline LLM inference. 8 GB VRAM minimum (small quantised models); 24 GB+ recommended. May be local or a remote GPU instance via SSH tunnel. Not required when using a cloud LLM provider.",
+        "nvidia_toolkit": "NVIDIA Container Toolkit:",
+        "nvidia_toolkit_value": "Required when GPU is local (enables Docker GPU passthrough)"
       },
       "installation": {
         "title": "Installation",
@@ -1473,7 +1478,7 @@
         },
         "resource_planning": {
           "title": "Resource Planning",
-          "ram_allocation": "Allocate sufficient RAM (16GB+ recommended)",
+          "ram_allocation": "Allocate sufficient RAM (16GB minimum, 32GB+ recommended for offline LLM inference)",
           "gpu_acceleration": "Plan for GPU acceleration if available",
           "storage_space": "Ensure adequate storage space",
           "resource_monitoring": "Monitor resource utilization"
@@ -1825,9 +1830,10 @@
         "title": "Exigences :",
         "docker": "Docker 20.10+",
         "compose": "Docker Compose 2.0+",
-        "disk_space": "20GB+ d'espace disque libre",
-        "ram": "8GB+ RAM recommandé",
-        "gpu": "Support GPU (optionnel)"
+        "disk_space": "80GB+ free disk space",
+        "ram": "16GB RAM minimum, 32GB+ recommended",
+        "gpu": "NVIDIA GPU with CUDA — required for offline LLM inference (8 GB VRAM min, 24 GB+ recommended)",
+        "nvidia_toolkit": "NVIDIA Container Toolkit (for local GPU passthrough)"
       },
       "cloud_deployment": "Déploiement Cloud",
       "cloud_deployment_desc": "Déploiement cloud évolutif avec capacités de traitement externe.",
@@ -1947,10 +1953,10 @@
         "software_requirements": "Exigences Logiciels",
         "items": {
           "os": "OS : Linux (Ubuntu 18.04+, CentOS 7+, Alpine 3.10+)",
-          "ram": "RAM : 8GB minimum, 16GB recommandé",
-          "storage": "Stockage : 20GB+ d'espace disque libre",
+          "ram": "RAM: 16GB minimum, 32GB+ recommended",
+          "storage": "Storage: 80GB+ free disk space (Docker images ~30–40 GB; model weights ~8–50 GB additional)",
           "cpu": "CPU : 4 cœurs minimum, 8 cœurs recommandés",
-          "gpu": "GPU : GPU NVIDIA avec support CUDA (optionnel)"
+          "gpu": "GPU / VRAM: NVIDIA GPU with CUDA support — required for offline LLM inference (8 GB VRAM minimum for small quantised models; 24 GB+ recommended). GPU may be local or a remote instance accessed via SSH tunnel. Not required if using a managed cloud LLM provider."
         },
         "software": {
           "docker": "Docker : 20.10+",
@@ -2640,13 +2646,13 @@
         "subtitle": "Assurez-vous que votre système répond aux exigences minimales avant l'installation.",
         "system_requirements": "Exigences Système",
         "os": "OS :",
-        "os_value": "Linux (Ubuntu 18.04+, CentOS 7+)",
+        "os_value": "Linux (Ubuntu 20.04+, CentOS 7+)",
         "ram": "RAM :",
-        "ram_value": "8GB minimum",
+        "ram_value": "16GB minimum, 32GB+ recommended",
         "storage": "Stockage :",
-        "storage_value": "20GB+ d'espace libre",
+        "storage_value": "80GB+ free disk space",
         "cpu": "CPU :",
-        "cpu_value": "4 cœurs minimum",
+        "cpu_value": "4 cores minimum, 8 cores recommended",
         "software_requirements": "Exigences Logiciels",
         "docker": "Docker :",
         "docker_value": "20.10+",
@@ -2655,7 +2661,11 @@
         "python": "Python :",
         "python_value": "3.7+",
         "git": "Git :",
-        "git_value": "Dernière version"
+        "git_value": "Dernière version",
+        "gpu": "GPU / VRAM:",
+        "gpu_value": "NVIDIA GPU with CUDA support — required for offline LLM inference. 8 GB VRAM minimum (small quantised models); 24 GB+ recommended. May be local or a remote GPU instance via SSH tunnel. Not required when using a cloud LLM provider.",
+        "nvidia_toolkit": "NVIDIA Container Toolkit:",
+        "nvidia_toolkit_value": "Required when GPU is local (enables Docker GPU passthrough)"
       },
       "installation": {
         "title": "Installation",
@@ -3145,7 +3155,7 @@
         },
         "resource_planning": {
           "title": "Planification Ressources",
-          "ram_allocation": "Allouez suffisamment de RAM (16GB+ recommandé)",
+          "ram_allocation": "Allocate sufficient RAM (16GB minimum, 32GB+ recommended for offline LLM inference)",
           "gpu_acceleration": "Planifiez l'accélération GPU si disponible",
           "storage_space": "Assurez-vous d'un espace de stockage adéquat",
           "resource_monitoring": "Surveillez l'utilisation des ressources"

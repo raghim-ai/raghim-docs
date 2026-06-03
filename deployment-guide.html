@@ -66,10 +66,10 @@
                                 <h3 data-translate="deployment_guide.prerequisites.system_requirements">System Requirements</h3>
                                 <ul>
                                     <li data-translate="deployment_guide.prerequisites.items.os"><strong>OS:</strong> Linux (Ubuntu 18.04+, CentOS 7+, Alpine 3.10+)</li>
-                                    <li data-translate="deployment_guide.prerequisites.items.ram"><strong>RAM:</strong> 8GB minimum, 16GB recommended</li>
-                                    <li data-translate="deployment_guide.prerequisites.items.storage"><strong>Storage:</strong> 20GB+ free disk space</li>
+                                    <li data-translate="deployment_guide.prerequisites.items.ram"><strong>RAM:</strong> 16GB minimum, 32GB+ recommended</li>
+                                    <li data-translate="deployment_guide.prerequisites.items.storage"><strong>Storage:</strong> 80GB+ free disk space (Docker images ~30–40 GB; model weights ~8–50 GB additional)</li>
                                     <li data-translate="deployment_guide.prerequisites.items.cpu"><strong>CPU:</strong> 4 cores minimum, 8 cores recommended</li>
-                                    <li data-translate="deployment_guide.prerequisites.items.gpu"><strong>GPU:</strong> NVIDIA GPU with CUDA support (optional)</li>
+                                    <li data-translate="deployment_guide.prerequisites.items.gpu"><strong>GPU / VRAM:</strong> NVIDIA GPU with CUDA support — <strong>required</strong> for offline LLM inference (8 GB VRAM minimum for small quantised models; 24 GB+ recommended). GPU may be local or a remote instance accessed via SSH tunnel. Not required if using a managed cloud LLM provider.</li>
                                 </ul>
                             </div>
 
